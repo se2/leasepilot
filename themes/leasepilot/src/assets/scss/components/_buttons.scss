@@ -1,8 +1,16 @@
+button,
 .sites-button {
+  background: transparent;
+  font-size: 18px;
+  font-weight: normal;
+  box-shadow: none;
+  border: 1px solid;
+}
+
+.button-menu {
   background: $primary-color;
-  font-size: 1.25rem;
-  font-weight: bold;
-  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
-  border-radius: 3px;
-  border: none;
+
+  a {
+    color: white !important;
+  }
 }

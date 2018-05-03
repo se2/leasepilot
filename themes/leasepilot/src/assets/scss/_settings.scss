@@ -68,11 +68,12 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1200px);
+$container-width: rem-calc(900px);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
-  secondary: #767676,
+  primary: #fc4513,
+  secondary: #3c4542,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
@@ -84,7 +85,8 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+// $body-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+$body-font-family: "Helvetica Neue", sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -108,7 +110,8 @@ $print-transparent-backgrounds: true;
 
 $breakpoints: (
   small: 0,
-  medium: 640px,
+  mobile: 480px,
+  medium: 768px,
   large: 1024px,
   xlarge: 1200px,
   xxlarge: 1440px,
@@ -119,11 +122,11 @@ $breakpoint-classes: (small medium large);
 // 3. The Grid
 // -----------
 
-$grid-row-width: $global-width;
+$grid-row-width: $container-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
-  small: 20px,
-  medium: 30px,
+  small: 10px,
+  medium: 10px,
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
@@ -501,7 +504,7 @@ $offcanvas-sizes: (
 $offcanvas-vertical-sizes: (
   small: 250px,
 );
-$offcanvas-background: $dark-nav-color;
+$offcanvas-background: white;
 $offcanvas-shadow: 0 0 10px rgba($black, 0.7);
 $offcanvas-inner-shadow-size: 20px;
 $offcanvas-inner-shadow-color: rgba($black, 0.25);
@@ -821,7 +824,7 @@ $thumbnail-radius: $global-radius;
 // 53. Title Bar
 // -------------
 
-$titlebar-background: $dark-nav-color;
+$titlebar-background: white;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
@@ -848,7 +851,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0;
-$topbar-background: $dark-nav-color;
+$topbar-background: white;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
@@ -858,13 +861,13 @@ $topbar-unstack-breakpoint: medium;
 // -----------
 
 $xy-grid: true;
-$grid-container: $global-width;
+$grid-container: $container-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
-  small: 20px,
-  medium: 30px
+  small: 10px,
+  medium: 10px
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
-$grid-container-max: $global-width;
+$grid-container-max: $container-width;
 $xy-block-grid-max: 8;

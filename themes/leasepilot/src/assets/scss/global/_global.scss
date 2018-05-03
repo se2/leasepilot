@@ -1,0 +1,11 @@
+.container {
+    @include xy-grid-container;
+    position: relative;
+}
+
+.flex-bottom {
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+}
