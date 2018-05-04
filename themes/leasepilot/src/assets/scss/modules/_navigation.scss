@@ -14,11 +14,6 @@
     @include show-for(medium);
 }
 
-// Site title
-.site-desktop-title a {
-    font-weight: bold;
-}
-
 // Mobile menu
 .mobile-menu {
     display: none; // prevents repaint caused by JS hiding menu onload
@@ -37,18 +32,6 @@
     .menu .active>a {
         background-color: #ccc;
     }
-}
-
-.title-bar-title {
-    a {
-        font-size: 1rem;
-        color: #B9B9B9;
-    }
-}
-
-.mobile-menu,
-.mobile-off-canvas-menu {
-    .menu .is-active>a {}
 }
 
 // Tablet and desktop menu
@@ -77,8 +60,9 @@
   padding: 0 0 17px 15px;
 }
 
-.menu .active>a {
-    background-color: #ccc;
+.dropdown.menu .is-active>a,
+.dropdown.menu .active>a {
+    color: $primary-color;
 }
 
 .dropdown.menu .submenu {

@@ -1,5 +1,7 @@
 .container {
     @include xy-grid-container;
+    max-width: $global-width;
+    margin: 0 auto;
     position: relative;
 }
 
@@ -8,4 +10,40 @@
     display: -webkit-flex;
     align-items: flex-end;
     -webkit-align-items: flex-end;
+}
+
+.chronicle-deck {
+    font-family: "Chronicle Deck", serif;
+}
+
+.red-bg {
+    background: $primary-color;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    a {
+        color: white;
+    }
+}
+
+.light {
+    font-weight: 300;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.flex-center-items {
+    align-items: center;
+    -webkit-align-items: center;
 }

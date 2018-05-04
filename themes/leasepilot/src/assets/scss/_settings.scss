@@ -152,13 +152,13 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': 48),
-    'h2': ('font-size': 40),
-    'h3': ('font-size': 31),
-    'h4': ('font-size': 25),
-    'h5': ('font-size': 20),
-    'h6': ('font-size': 16),
-  ),
+    'h1': ('font-size': 62.27px),
+    'h2': ('font-size': 45px),
+    'h3': ('font-size': 37.5px),
+    'h4': ('font-size': 21px),
+    'h5': ('font-size': 20px),
+    'h6': ('font-size': 16px),
+  )
 );
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
@@ -869,5 +869,5 @@ $grid-margin-gutters: (
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
-$grid-container-max: $container-width;
+$grid-container-max: $global-width;
 $xy-block-grid-max: 8;
