@@ -59,7 +59,7 @@ function custom_post_type_case_study() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 	);
-	register_post_type( 'case_study', $args );
+	register_post_type( 'case-study', $args );
 }
 add_action( 'init', 'custom_post_type_case_study', 0 );
 

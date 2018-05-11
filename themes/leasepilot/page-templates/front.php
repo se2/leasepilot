@@ -13,7 +13,7 @@ get_header(); ?>
 
 </section>
 
-<section class="red-bg front-subhero">
+<!-- <section class="red-bg front-subhero">
   <div class="grid-container">
     <div class="grid-x flex-center-items">
       <div class="cell medium-10">
@@ -23,11 +23,11 @@ get_header(); ?>
         <h3 class="bold"><a href="#!">Request a Demo »</a></h3>
       </div>
       <div class="cell medium-2">
-        <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/image-front-1.png" alt="">
+        <img src="<?php // echo get_template_directory_uri(); ?>/dist/assets/images/image-front-1.png" alt="">
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <?php endwhile; ?>
 
