@@ -11,25 +11,15 @@
 //
 // Sizes are optimized and cropped for landscape aspect ratio
 // and optimized for HiDPI displays on 'small' and 'medium' screen sizes.
-add_image_size( 'featured-small', 640, 200, true ); // name, width, height, crop
-add_image_size( 'featured-medium', 1280, 400, true );
-add_image_size( 'featured-large', 1440, 400, true );
-add_image_size( 'featured-xlarge', 1920, 400, true );
-
-// Add additional image sizes
-add_image_size( 'fp-small', 640 );
-add_image_size( 'fp-medium', 1024 );
-add_image_size( 'fp-large', 1200 );
-add_image_size( 'fp-xlarge', 1920 );
+add_image_size( 'cover_small', 400, 205, true ); // name, width, height, crop
+add_image_size( 'cover_large', 1200, 615, true );
 
 // Register the new image sizes for use in the add media modal in wp-admin
 function foundationpress_custom_sizes( $sizes ) {
 	return array_merge(
 		$sizes, array(
-			'fp-small'  => __( 'FP Small' ),
-			'fp-medium' => __( 'FP Medium' ),
-			'fp-large'  => __( 'FP Large' ),
-			'fp-xlarge' => __( 'FP XLarge' ),
+			'cover_small'  => __( 'Cover Small' ),
+			'cover_large'  => __( 'Cover Large' )
 		)
 	);
 }

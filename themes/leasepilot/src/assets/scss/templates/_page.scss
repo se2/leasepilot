@@ -1,0 +1,44 @@
+.page-header {
+  &--bg-img {
+    @extend .bg-cover;
+    width: 100vw;
+    margin: 0 auto;
+    max-width: $global-width;
+    @include breakpoint(large) {
+      height: 0;
+      padding-bottom: 51.25vw;
+    }
+    @include breakpoint(xlarge) {
+      padding-bottom: 0;
+      height: 615px;
+    }
+  }
+  &__content {
+    @include breakpoint(large) {
+      position: absolute;
+      left: 0;
+      top: 14vw;
+    }
+    @include breakpoint(xlarge) {
+      top: 170px;
+    }
+  }
+}
+
+.page-title {
+    @include breakpoint(medium) {
+      font-size: 36px;
+    }
+    &__red {
+      color: $primary-color;
+    }
+}
+
+.page-subheading {
+  color: $secondary-color;
+  line-height: 1.33;
+  letter-spacing: 0.01em;
+  @include breakpoint(medium) {
+    font-size: 21px;
+  }
+}
