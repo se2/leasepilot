@@ -29,6 +29,10 @@ h6 {
     font-family: "Helvetica Neue", sans-serif;
 }
 
+.primary-color {
+  color: $primary-color;
+}
+
 .red-bg {
     background: $primary-color;
     h1,
@@ -65,6 +69,10 @@ h6 {
 }
 
 .light {
+    font-weight: 400;
+}
+
+.lighter {
     font-weight: 300;
 }
 
@@ -79,4 +87,22 @@ h6 {
 .flex-center-items {
     align-items: center;
     -webkit-align-items: center;
+}
+
+.site-logo {
+  @include breakpoint(small) {
+    width: 50vw;
+  }
+  @include breakpoint(medium) {
+    width: auto;
+  }
+}
+
+.abs-center {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  transform: translateY(-50%);
 }

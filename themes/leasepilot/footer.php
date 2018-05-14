@@ -23,7 +23,7 @@
         <div class="grid-x">
             <div class="cell medium-3">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/leasepilot-logo-footer.png" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/leasepilot-logo-footer.png" alt="<?php bloginfo(); ?>" class="site-logo">
                 </a>
             </div>
             <div class="cell medium-offset-1 medium-5 copyright">

@@ -54,5 +54,8 @@ require_once( 'library/responsive-images.php' );
 /** Custom Post Type */
 require_once( 'library/custom-post-type.php' );
 
+/** ACF Options Page */
+require_once( 'library/acf-options-page.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );

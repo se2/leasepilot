@@ -1,44 +1,87 @@
 .page-header {
-  &--bg-img {
-    @extend .bg-cover;
-    width: 100vw;
-    margin: 0 auto;
-    max-width: $global-width;
-    @include breakpoint(large) {
-      height: 0;
-      padding-bottom: 51.25vw;
+    &--bg-img {
+        @extend .bg-cover;
+        width: 100vw;
+        margin: 0 auto;
+        @include breakpoint(small) {
+            padding-bottom: 0;
+            height: 246px;
+        }
+        @include breakpoint(medium) {
+            height: 0;
+            padding-bottom: 51.25vw;
+        }
+        @include breakpoint(xlarge) {
+            padding-bottom: 0;
+            height: calc(100vh - 123px);
+        }
     }
-    @include breakpoint(xlarge) {
-      padding-bottom: 0;
-      height: 615px;
+    &__content {
+        @include breakpoint(small only) {
+            position: relative;
+            padding-top: 30px;
+            text-align: center;
+        }
+        @include breakpoint(medium) {
+            text-align: left;
+            position: absolute;
+            left: 10px;
+            top: 14vw;
+        }
+        @include breakpoint(xlarge) {
+            top: 170px;
+        }
     }
-  }
-  &__content {
-    @include breakpoint(large) {
-      position: absolute;
-      left: 0;
-      top: 14vw;
-    }
-    @include breakpoint(xlarge) {
-      top: 170px;
-    }
-  }
 }
 
 .page-title {
     @include breakpoint(medium) {
-      font-size: 36px;
+        font-size: 36px;
+    }
+    @include breakpoint(xlarge) {
+        font-size: 42px;
     }
     &__red {
-      color: $primary-color;
+        color: $primary-color;
+    }
+    &__white {
+        color: white;
     }
 }
 
 .page-subheading {
-  color: $secondary-color;
-  line-height: 1.33;
-  letter-spacing: 0.01em;
-  @include breakpoint(medium) {
-    font-size: 21px;
-  }
+    p {
+        color: $secondary-color;
+        line-height: 1.33;
+        letter-spacing: 0.01em;
+        @include breakpoint(medium) {
+            font-size: 21px;
+        }
+        @include breakpoint(xlarge) {
+            font-size: 24px;
+        }
+    }
+    &__white {
+        p {
+            color: white;
+        }
+    }
+}
+
+.content-padding {
+    .main-container,
+    .container {
+        @include breakpoint(small) {
+            padding-top: 50px;
+            padding-bottom: 56px;
+        }
+        @include breakpoint(medium) {
+            padding-top: 80px;
+            padding-bottom: 90px;
+        }
+        @include breakpoint(large) {
+            padding-top: 125px;
+            padding-bottom: 140px;
+        }
+    }
 }

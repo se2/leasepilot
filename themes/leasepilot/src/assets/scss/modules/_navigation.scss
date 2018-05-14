@@ -19,25 +19,30 @@
     display: none; // prevents repaint caused by JS hiding menu onload
 }
 
-.off-canvas {
-    >ul.menu {
-        height: 100vh;
-        padding: 1rem;
-        a {
-            color: $white;
-            font-weight: 600;
-            font-size: rem-calc(15);
-        }
-    }
-    .menu .active>a {
-        background-color: #ccc;
-    }
-}
+// .off-canvas {
+//     >ul.menu {
+//         height: 100vh;
+//         padding: 1rem;
+//         a {
+//             color: $white;
+//             font-weight: 600;
+//             font-size: rem-calc(15);
+//         }
+//     }
+//     .menu .active>a {
+//         background-color: #ccc;
+//     }
+// }
 
 // Tablet and desktop menu
 .dropdown.menu,
 .top-menu .menu {
-  justify-content: flex-end;
+    justify-content: flex-end;
+    li {
+        @include breakpoint(medium down) {
+            text-align: center;
+        }
+    }
 }
 
 .top-menu .menu a,
@@ -48,16 +53,26 @@
     padding-bottom: 0;
     font-weight: bold;
     line-height: 1;
-    padding: 10px 16px;
     transition: color 300ms;
     &:hover:not(.button-menu) {
-      color: $primary-color;
+        color: $primary-color;
+    }
+    @include breakpoint(medium) {
+      padding: 10px;
+    }
+    @include breakpoint(large) {
+        padding: 10px 16px;
     }
 }
 
-.top-menu .menu a {
-  font-weight: normal;
-  padding: 0 0 17px 15px;
+.top-menu {
+    @include breakpoint(small only) {
+        display: none;
+    }
+    .menu a {
+        font-weight: normal;
+        padding: 0 0 17px 15px;
+    }
 }
 
 .dropdown.menu .is-active>a,
@@ -84,6 +99,36 @@
 .site-navigation {
     @include breakpoint(small only) {
         padding: 0; // prevents container visibility on small screens
+    }
+}
+
+.site-title-bar.title-bar {
+    @include breakpoint(medium down) {
+        position: absolute;
+        right: 10px;
+        background: none;
+        button.menu-icon {
+            border: 0;
+            &:after {
+                background: $primary-color;
+                box-shadow: 0 7px 0 $primary-color, 0 14px 0 $primary-color;
+            }
+        }
+    }
+}
+
+.vertical.menu {
+    @include breakpoint(medium down) {
+        padding-top: 10px;
+        li {
+            text-align: center;
+        }
+    }
+}
+
+.menu .mobile-only {
+    @include breakpoint(medium) {
+        display: none;
     }
 }
 
