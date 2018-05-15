@@ -26,11 +26,19 @@ h6 {
 }
 
 .ff-hn {
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: "Helvetica Neue Condensed", sans-serif;
 }
 
 .primary-color {
   color: $primary-color;
+}
+
+.secondary-color {
+  color: $secondary-color;
+}
+
+.white-color {
+  color: white;
 }
 
 .red-bg {
@@ -105,4 +113,8 @@ h6 {
   margin-right: auto;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.mb0 {
+  margin-bottom: 0;
 }

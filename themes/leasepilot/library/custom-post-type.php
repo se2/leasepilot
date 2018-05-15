@@ -44,7 +44,7 @@ function custom_post_type_case_study() {
 		'label'                 => __( 'Case Study', 'leasepilot' ),
 		'description'           => __( 'Case Study Description', 'leasepilot' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'excerpt' ),
+		'supports'              => array( 'title', 'thumbnail', 'excerpt' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,

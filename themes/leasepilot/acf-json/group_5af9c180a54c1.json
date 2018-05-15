@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5af9c192d0d30",
-            "label": "Case Study Logo",
+            "label": "Case Study Logo in Archive Page",
             "name": "case_study_logo",
             "type": "image",
             "instructions": "",
@@ -27,8 +27,32 @@
             "mime_types": ""
         },
         {
+            "key": "field_5afadc153c9e0",
+            "label": "Case Study Logo in Single Page",
+            "name": "case_study_logo_single",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5af9c1d9d0d31",
-            "label": "Case Study Cover",
+            "label": "Case Study Cover in Archive Page",
             "name": "case_study_cover",
             "type": "image",
             "instructions": "",
@@ -68,5 +92,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1526317645
+    "modified": 1526395087
 }

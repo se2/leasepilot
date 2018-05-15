@@ -67,7 +67,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 18px;
 $global-width: rem-calc(1200px);
 $container-width: rem-calc(900px);
 $global-lineheight: 1.5;
@@ -85,8 +85,8 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-// $body-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-$body-font-family: "Helvetica Neue", sans-serif;
+// $body-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue Condensed", sans-serif;
+$body-font-family: "Helvetica Neue Condensed", sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;

@@ -19,10 +19,11 @@
     &__content {
         @include breakpoint(small only) {
             position: relative;
-            padding-top: 30px;
             text-align: center;
+            transform: translateY(25%);
         }
         @include breakpoint(medium) {
+            transform: none;
             text-align: left;
             position: absolute;
             left: 10px;
@@ -30,6 +31,9 @@
         }
         @include breakpoint(xlarge) {
             top: 170px;
+            &--singular {
+              top: 210px;
+            }
         }
     }
 }
