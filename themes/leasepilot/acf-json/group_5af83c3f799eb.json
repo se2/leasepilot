@@ -1,7 +1,22 @@
 {
     "key": "group_5af83c3f799eb",
-    "title": "Page and Archive",
+    "title": "Page",
     "fields": [
+        {
+            "key": "field_5afa4a216bff6",
+            "label": "Page Title Color",
+            "name": "page_title_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#fc4513"
+        },
         {
             "key": "field_5af83db84808e",
             "label": "Page Subheading",
@@ -17,7 +32,7 @@
             },
             "default_value": "",
             "tabs": "all",
-            "toolbar": "basic",
+            "toolbar": "full",
             "media_upload": 1,
             "delay": 0
         },
@@ -137,16 +152,9 @@
         ],
         [
             {
-                "param": "options_page",
+                "param": "post_type",
                 "operator": "==",
-                "value": "acf-options-case-studies-archive-page-settings"
-            }
-        ],
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "acf-options-resources-archive-page-settings"
+                "value": "case-study"
             }
         ]
     ],
@@ -158,5 +166,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1526315653
+    "modified": 1526354346
 }

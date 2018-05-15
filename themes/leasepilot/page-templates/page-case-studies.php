@@ -1,11 +1,18 @@
-<?php get_header(); ?>
+<?php
+/*
+ * Template Name: Case Studies Page
+ */
 
-<div class="page-wrapper">
+get_header(); ?>
 
-	<div class="case-study content-padding">
-		<div class="main-container">
-			<div class="grid-x">
-				<div class="case-study-grid small-12 medium-12 large-12 cell">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php get_template_part( 'template-parts/page', 'header' ); ?>
+
+  <div class="case-study content-padding">
+    <div class="main-container">
+      <div class="grid-x">
+        <div class="case-study-grid small-12 medium-12 large-12 cell">
           <div class="grid-x grid-margin-x case-studies-wrapper">
           <?php
             $default_posts_per_page = get_option( 'posts_per_page' );
@@ -37,12 +44,14 @@
               <?php endwhile; ?>
             <?php endif; ?>
           </div>
-				</div>
-				<?php wp_reset_query(); ?>
-			</div>
-		</div>
-	</div>
+        </div>
+        <?php wp_reset_query(); ?>
+      </div>
+    </div>
+  </div>
 
-</div>
+	<?php get_template_part( 'template-parts/page', 'footer' ); ?>
+
+</article>
 
 <?php get_footer(); ?>

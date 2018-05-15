@@ -1,7 +1,7 @@
 .page-header {
     &--bg-img {
         @extend .bg-cover;
-        width: 100vw;
+        width: 100%;
         margin: 0 auto;
         @include breakpoint(small) {
             padding-bottom: 0;
