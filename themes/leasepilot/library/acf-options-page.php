@@ -22,18 +22,6 @@ if ( function_exists('acf_add_options_page') ) {
 	// 	'parent_slug'	=> 'theme-general-settings',
   // ));
 
-  acf_add_options_sub_page(array(
-    'page_title'  => 'Case Studies Archive Page Settings',
-    'menu_title'  => 'Case Studies Archive Page Settings',
-    'parent_slug'   => 'edit.php?post_type=case-study'
-  ));
-
-  acf_add_options_sub_page(array(
-    'page_title'  => 'Resources Archive Page Settings',
-    'menu_title'  => 'Resources Archive Page Settings',
-    'parent_slug'   => 'edit.php?post_type=resource'
-  ));
-
 }
 
 ?>
