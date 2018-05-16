@@ -1,4 +1,6 @@
 .footer {
+    position: relative;
+    z-index: 999;
     background-color: $secondary-color;
     @include breakpoint(small) {
       padding: 35px 0 39px;

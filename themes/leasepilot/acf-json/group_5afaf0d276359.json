@@ -1,10 +1,10 @@
 {
     "key": "group_5afaf0d276359",
-    "title": "Case Study Blocks",
+    "title": "Page Blocks",
     "fields": [
         {
             "key": "field_5afaf0ea2cc83",
-            "label": "Case Study Blocks",
+            "label": "Page Blocks",
             "name": "case_study_blocks",
             "type": "flexible_content",
             "instructions": "",
@@ -188,6 +188,30 @@
                             "mime_types": ""
                         },
                         {
+                            "key": "field_5afc6a8b48683",
+                            "label": "Image Vertical Align",
+                            "name": "image_vertical_align",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "center": "Center",
+                                "bottom": "Bottom"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "center",
+                            "layout": "vertical",
+                            "return_format": "value"
+                        },
+                        {
                             "key": "field_5afaf4e378118",
                             "label": "CTA Title",
                             "name": "cta_title",
@@ -226,25 +250,6 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5afaf5107811a",
-                            "label": "CTA Button Title",
-                            "name": "cta_button_title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
                             "key": "field_5afaf66c7ce55",
                             "label": "CTA Description",
                             "name": "cta_description",
@@ -264,6 +269,25 @@
                             "new_lines": ""
                         },
                         {
+                            "key": "field_5afaf5107811a",
+                            "label": "CTA Button Title",
+                            "name": "cta_button_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5afaf5217811b",
                             "label": "CTA Button Link",
                             "name": "cta_button_link",
@@ -278,6 +302,21 @@
                             },
                             "default_value": "",
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_5afc696ed6bbe",
+                            "label": "Text Color",
+                            "name": "text_color",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "#ffffff"
                         },
                         {
                             "key": "field_5afaf3fa78117",
@@ -311,6 +350,13 @@
                 "operator": "==",
                 "value": "case-study"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
         ]
     ],
     "menu_order": 0,
@@ -321,5 +367,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1526397574
+    "modified": 1526491864
 }

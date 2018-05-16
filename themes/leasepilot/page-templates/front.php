@@ -9,25 +9,26 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-<section class="front-hero" role="main">
+<div class="page-wrapper">
 
-</section>
+  <?php get_template_part( 'template-parts/page', 'header' ); ?>
 
-<!-- <section class="red-bg front-subhero">
-  <div class="grid-container">
-    <div class="grid-x flex-center-items">
-      <div class="cell medium-10">
-        <h3 class="light">
-          LeasePilot is a document automation platform that reframes the familiar, for a greater ROI.
-        </h3>
-        <h3 class="bold"><a href="#!">Request a Demo »</a></h3>
-      </div>
-      <div class="cell medium-2">
-        <img src="<?php // echo get_template_directory_uri(); ?>/dist/assets/images/image-front-1.png" alt="">
+  <!-- Text background section -->
+  <div class="cta-section cta-section--secondary">
+    <div class="main-container">
+      <div class="grid-x">
+        <div class="cell large-12 small-12 medium-12">
+          <h3 class="lighter fz-30 ff-hn">Harvest the latest intelligence in your leasing process</h3>
+          <p class="mb0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet hendrerit libero. Nulla tincidunt, mauris vitae varius sodales, lectus ipsum facilisis arcu, vel feugiat nulla elit consequat lacus.</p>
+        </div>
       </div>
     </div>
   </div>
-</section> -->
+  <!-- /Text background section -->
+
+  <?php get_template_part( 'template-parts/page', 'blocks' ); ?>
+
+</div>
 
 <?php endwhile; ?>
 

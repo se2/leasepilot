@@ -1,10 +1,38 @@
-.front-hero {
-    @include breakpoint(small) {}
-    @include breakpoint(medium) {}
-}
-
-.front-subhero {
-    @include breakpoint(medium) {
-        padding: 48px 0;
+.home {
+    @include breakpoint(large down) {
+        .page-header {
+            &__content {
+                top: 75px;
+            }
+        }
+    }
+    @include breakpoint(medium down) {
+        .page-header {
+            &__content {
+                h1 {
+                    font-size: 36px;
+                    line-height: 1.15;
+                }
+                .cell {
+                    margin: 0 auto;
+                }
+                .page-subheading {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    @include breakpoint(mobile down) {
+        .page-header {
+            &__content {
+                top: 60px;
+                left: 0;
+                transform: none;
+                h1 {
+                    font-size: 30px;
+                    line-height: 1.15;
+                }
+            }
+        }
     }
 }
