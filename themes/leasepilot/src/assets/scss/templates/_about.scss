@@ -1,46 +1,121 @@
 .about-content {
-  .people-section {
-    &__person {
-      @include breakpoint(small) {
-        margin-bottom: 36px;
-        &:last-child {
-          margin-bottom: 0;
+    .people-section {
+        &__person {
+            @include breakpoint(small) {
+                margin-bottom: 36px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
         }
-      }
+        &__avatar {
+            @extend .bg-cover;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+        }
+        &__name {
+            color: $secondary-color;
+            font-size: 32px;
+            line-height: 1;
+            margin: 36px 0 7px;
+        }
+        &__position {
+            font-size: 18px;
+            line-height: 1;
+            margin-bottom: 0;
+        }
     }
-    &__avatar {
-      @extend .bg-cover;
-      width: 100%;
-      height: 0;
-      padding-bottom: 100%;
-    }
-    &__name {
-      color: $secondary-color;
-      font-size: 32px;
-      line-height: 1;
-      margin: 36px 0 7px;
-    }
-    &__position {
-      font-size: 18px;
-      line-height: 1;
-      margin-bottom: 0;
-    }
-  }
 }
 
 .cta-section {
-  text-align: center;
-  &--red {
-    background-color: $primary-color;
-    color: white;
-  }
-  &__title {
-    font-size: 24px;
-    font-weight: 300;
-    margin-bottom: 30px;
-    line-height: 1;
-  }
-  @include breakpoint(small) {
-    padding: 45px 0 35px;
-  }
+    text-align: center;
+    &--blue {
+        background-color: $blue;
+        color: $secondary-color;
+    }
+    &--red {
+        background-color: $primary-color;
+        color: white;
+    }
+    &__title {
+        font-size: 24px;
+        margin-bottom: 36px;
+        line-height: 1;
+    }
+    @include breakpoint(small) {
+        padding: 51px 0;
+    }
+}
+
+.form-section {
+    @include breakpoint(small) {
+        padding: 48px 0 58px;
+        .form-title {
+            font-size: 36px;
+            margin: 0 auto 40px;
+        }
+    }
+    @include breakpoint(medium) {
+        padding: 70px 0 90px;
+        .form-title {
+            margin: 0 auto 45px;
+        }
+    }
+    form {
+        fieldset.form-columns-1,
+        fieldset.form-columns-2 {
+            label {
+                display: none;
+            }
+            div.input {
+                margin-bottom: 13px;
+            }
+            .hs-form-field {
+                input.hs-input,
+                select.hs-input,
+                textarea.hs-input {
+                    @include breakpoint(small) {
+                        @extend .light;
+                        border: 1px solid white;
+                        font-size: 16px;
+                        color: $secondary-color;
+                        width: 100%;
+                        background-color: #fff;
+                        padding: 12px 25px;
+                        height: 42px;
+                        &.error {
+                            border-color: $primary-color;
+                        }
+                    }
+                }
+                textarea.hs-input {
+                    height: 125px;
+                }
+            }
+            .field.hs-form-field {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        .hs_submit,
+        .hs-submit {
+            .actions {
+                margin-top: 15px;
+                padding-left: 10px;
+                padding-right: 10px;
+                text-align: center;
+                .hs-button {
+                    @extend .button__primary;
+                    @extend .light;
+                    background-image: none;
+                    border-radius: unset;
+                    width: 215px;
+                    height: 42px;
+                    box-sizing: border-box;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
 }

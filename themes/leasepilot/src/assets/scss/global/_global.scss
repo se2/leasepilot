@@ -30,15 +30,15 @@ h6 {
 }
 
 .primary-color {
-  color: $primary-color;
+    color: $primary-color;
 }
 
 .secondary-color {
-  color: $secondary-color;
+    color: $secondary-color;
 }
 
 .white-color {
-  color: white;
+    color: white;
 }
 
 .red-bg {
@@ -98,25 +98,25 @@ h6 {
 }
 
 .site-logo {
-  @include breakpoint(small) {
-    width: 50vw;
-  }
-  @include breakpoint(medium) {
-    width: auto;
-  }
+    @include breakpoint(small) {
+        width: 50vw;
+    }
+    @include breakpoint(medium) {
+        width: auto;
+    }
 }
 
 .abs-center {
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: 50%;
-  transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .mb0 {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .nostyle-list {
@@ -138,6 +138,52 @@ h6 {
         &.active {
             button {
                 color: $primary-color;
+            }
+        }
+    }
+}
+
+.hubspot-form-reset {
+    form {
+        margin: 0;
+        .form-columns-1,
+        .form-columns-2 {
+            max-width: none;
+            label {
+                margin: 0;
+                font-weight: normal;
+            }
+            input.hs-input,
+            select.hs-input,
+            textarea.hs-input {
+                padding: 0;
+                background: none;
+                background-image: none;
+                box-shadow: none;
+                max-width: none;
+                width: auto;
+                margin-bottom: 0;
+                border-radius: unset;
+                display: block;
+                box-sizing: border-box;
+                border: none;
+                line-height: 1;
+            }
+            div.input {
+                margin-right: 0;
+            }
+            .field.hs-form-field {
+                margin: 0;
+            }
+        }
+        .hs_submit,
+        .hs-submit {
+            .actions {
+                margin: 0;
+                padding: 0;
+                .hs-button {
+                  text-shadow: none;
+                }
             }
         }
     }

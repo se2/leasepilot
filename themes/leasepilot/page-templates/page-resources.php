@@ -37,7 +37,7 @@ get_header(); ?>
           while ( $resource_query->have_posts() ) : $resource_query->the_post();
           $term = wp_get_post_terms(get_the_ID(), 'resource-category'); ?>
           <div class="archive-page-item cell small-12 mobile-6 medium-4 large-4 <?php echo $term[0]->slug; ?>">
-            <a href="<?php the_permalink(); ?>">
+            <a href="<?php get_field( 'download_file' ) ? the_field( 'download_file' ) : '/#!'; ?>">
               <div class="archive-page-bg">
                 <img class="archive-page-logo" src="<?php the_field( 'category_avatar', $term[0] ); ?>" alt="<?php the_title(); ?>">
               </div>
