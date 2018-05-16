@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import whatInput from 'what-input';
+// import isotope from 'isotope-layout';
+var Isotope = require('isotope-layout');
 
 window.$ = $;
 
@@ -9,3 +11,21 @@ import Foundation from 'foundation-sites';
 //import './lib/foundation-explicit-pieces';
 
 $(document).foundation();
+
+// init Isotope
+var iso = new Isotope('#resource-grid', {
+  itemSelector: '.cell',
+  percentPosition: true
+});
+
+// filter items on button click
+$('#resource-filter').on('click', 'button', function () {
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().each(function() {
+    $(this).removeClass('active');
+  });
+  var filterValue = $(this).attr('data-filter');
+  iso.arrange({
+    filter: filterValue
+  });
+});

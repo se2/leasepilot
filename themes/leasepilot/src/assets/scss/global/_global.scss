@@ -118,3 +118,27 @@ h6 {
 .mb0 {
   margin-bottom: 0;
 }
+
+.nostyle-list {
+    list-style-type: none;
+    margin: 0;
+}
+
+.filter-list {
+    margin-bottom: 55px;
+    li {
+        display: inline-block;
+        margin-right: 24px;
+        button {
+            color: $secondary-color;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        &.active {
+            button {
+                color: $primary-color;
+            }
+        }
+    }
+}

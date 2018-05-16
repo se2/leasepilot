@@ -1,4 +1,4 @@
-.case-study.content-padding {
+.archive-page.content-padding {
     .main-container,
     .container {
         @include breakpoint(large) {
@@ -7,7 +7,7 @@
     }
 }
 
-.case-study-bg {
+.archive-page-bg {
     background-color: #f1efef;
     width: 100%;
     position: relative;
@@ -15,9 +15,9 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    @include breakpoint(xlarge) {
+    @include breakpoint(large) {
         &:hover {
-            img.case-study-cover {
+            img.archive-page-cover {
                 bottom: 0;
             }
         }
@@ -27,7 +27,11 @@
     }
 }
 
-img.case-study-logo {
+.archive-page-category {
+  font-size: 18px;
+}
+
+img.archive-page-logo {
     max-width: 50%;
     max-height: 90px;
     &--singular {
@@ -43,7 +47,7 @@ img.case-study-logo {
     }
 }
 
-img.case-study-cover {
+img.archive-page-cover {
     max-height: 215px;
     transition: bottom 400ms linear;
     position: absolute;
@@ -51,7 +55,7 @@ img.case-study-cover {
     box-shadow: 7px 12px 18px 0px rgba(0, 0, 0, 0.15);
 }
 
-.case-study-item {
+.archive-page-item {
     @include breakpoint(small) {
         margin-bottom: 60px;
         &:last-child {
@@ -60,10 +64,11 @@ img.case-study-cover {
     }
 }
 
-.case-study-name {
+.archive-page-name {
     line-height: 1;
     margin-bottom: 0;
     font-size: 28px;
+    color: $secondary-color;
     a {
         line-height: 1;
         font-size: 28px;

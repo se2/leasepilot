@@ -99,7 +99,7 @@ function custom_post_type_resource() {
 		'label'                 => __( 'Resource', 'leasepilot' ),
 		'description'           => __( 'Resource Description', 'leasepilot' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'supports'              => array( 'title', 'thumbnail' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
