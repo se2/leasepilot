@@ -125,7 +125,7 @@ $breakpoint-classes: (small mobile medium large xlarge);
 $grid-row-width: $container-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
-  small: 20px,
+  small: 60px,
   medium: 20px,
   large: 20px
 );
@@ -501,14 +501,16 @@ $meter-fill-bad: $alert-color;
 
 $offcanvas-sizes: (
   small: 250px,
+  375px: 315px
 );
 $offcanvas-vertical-sizes: (
   small: 250px,
+  375px: 315px
 );
-$offcanvas-background: white;
-$offcanvas-shadow: 0 0 10px rgba($black, 0.7);
+$offcanvas-background: $secondary-color;
+$offcanvas-shadow: none;
 $offcanvas-inner-shadow-size: 20px;
-$offcanvas-inner-shadow-color: rgba($black, 0.25);
+$offcanvas-inner-shadow-color: none;
 $offcanvas-overlay-zindex: 11;
 $offcanvas-push-zindex: 12;
 $offcanvas-overlap-zindex: 13;
@@ -865,7 +867,7 @@ $xy-grid: true;
 $grid-container: $container-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
-  small: 20px,
+  small: 60px,
   medium: 20px,
   large: 20px
 );

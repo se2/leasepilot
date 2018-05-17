@@ -1,4 +1,14 @@
 .page-header {
+    @include breakpoint(small) {
+        .main-container {
+            height: 100%;
+        }
+    }
+    @include breakpoint(medium) {
+        .main-container {
+            height: auto;
+        }
+    }
     &--bg-img {
         @extend .bg-cover;
         background-position: center bottom;
@@ -6,7 +16,7 @@
         margin: 0 auto;
         @include breakpoint(small) {
             padding-bottom: 0;
-            height: 246px;
+            height: calc(100vh - 84px);
         }
         @include breakpoint(medium) {
             height: 0;
@@ -18,15 +28,17 @@
         }
     }
     &__content {
-        @include breakpoint(small only) {
-            position: relative;
-            text-align: center;
-            transform: translateY(25%);
+        @include breakpoint(small) {
+            top: auto;
+            left: 0;
+            height: 100%;
+            align-items: center;
         }
         @include breakpoint(medium) {
             transform: none;
             text-align: left;
             position: absolute;
+            height: auto;
             left: 10px;
             top: 14vw;
         }

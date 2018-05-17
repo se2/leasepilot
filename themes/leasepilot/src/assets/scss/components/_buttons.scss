@@ -11,17 +11,22 @@
   &__cta {
     line-height: 1;
     border-width: 1.5px;
-    @include breakpoint(small) {
+    @include breakpoint(small only) {
       font-size: 18px;
       font-weight: normal;
       padding: 11px 55px;
+      border-width: 1px;
+      min-width: 215px;
+      min-height: 41px;
+      line-height: 41px;
+      padding: 0;
+      margin-bottom: 0;
     }
     &--dark {
       border-color: $secondary-color;
       color: $secondary-color;
       &:hover,
-      &:focus,
-      &:visited {
+      &:focus {
         background-color: $secondary-color;
         color: white;
       }
@@ -39,8 +44,7 @@
     justify-content: center;
     margin-bottom: 30px;
     &:hover,
-    &:focus,
-    &:visited {
+    &:focu {
       background-color: darken($secondary-color, 10);
     }
   }
@@ -51,8 +55,7 @@
     padding: 12px 35px;
     border: none;
     &:hover,
-    &:focus,
-    &:visited {
+    &:focu {
       background: darken($primary-color, 10);
     }
   }
@@ -62,8 +65,7 @@
   background: $primary-color;
   transition: background 300ms;
   &:hover,
-  &:focus,
-  &:visited {
+  &:foc {
     background: darken($primary-color, 10);
   }
   a {

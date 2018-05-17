@@ -1,4 +1,12 @@
 .home {
+    @include breakpoint(large) {
+        .page-header {
+            background-image: none !important;
+        }
+        .fullscreen-bg__video {
+            display: block;
+        }
+    }
     @include breakpoint(large down) {
         .page-header {
             &__content {
@@ -10,27 +18,9 @@
         .page-header {
             &__content {
                 h1 {
-                    font-size: 36px;
+                    font-size: 43px;
                     line-height: 1.15;
-                }
-                .cell {
-                    margin: 0 auto;
-                }
-                .page-subheading {
-                    text-align: center;
-                }
-            }
-        }
-    }
-    @include breakpoint(mobile down) {
-        .page-header {
-            &__content {
-                top: 60px;
-                left: 0;
-                transform: none;
-                h1 {
-                    font-size: 30px;
-                    line-height: 1.15;
+                    margin-bottom: 20px;
                 }
             }
         }
