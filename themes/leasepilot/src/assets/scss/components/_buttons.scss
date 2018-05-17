@@ -11,7 +11,7 @@
   &__cta {
     line-height: 1;
     border-width: 1.5px;
-    @include breakpoint(small only) {
+    @include breakpoint(mobile down) {
       font-size: 18px;
       font-weight: normal;
       padding: 11px 55px;
@@ -44,7 +44,7 @@
     justify-content: center;
     margin-bottom: 30px;
     &:hover,
-    &:focu {
+    &:focus {
       background-color: darken($secondary-color, 10);
     }
   }
@@ -55,7 +55,7 @@
     padding: 12px 35px;
     border: none;
     &:hover,
-    &:focu {
+    &:focus {
       background: darken($primary-color, 10);
     }
   }
@@ -65,7 +65,7 @@
   background: $primary-color;
   transition: background 300ms;
   &:hover,
-  &:foc {
+  &:focus {
     background: darken($primary-color, 10);
   }
   a {

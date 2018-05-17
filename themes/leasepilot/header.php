@@ -39,7 +39,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="cell hide-for-small-only hide-for-medium-only large-9">
+				<div class="cell hide-for-small-only hide-for-mobile-only hide-for-medium-only large-9">
 					<div class="top-menu">
 						<?php wp_nav_menu(array(
 							'menu' => 'Top Menu'

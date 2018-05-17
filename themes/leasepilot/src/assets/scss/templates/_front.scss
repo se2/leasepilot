@@ -7,13 +7,6 @@
             display: block;
         }
     }
-    @include breakpoint(large down) {
-        .page-header {
-            &__content {
-                top: 75px;
-            }
-        }
-    }
     @include breakpoint(medium down) {
         .page-header {
             &__content {

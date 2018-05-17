@@ -12,7 +12,7 @@
       margin-bottom: 30px;
     }
     .site-logo {
-      @include breakpoint(small only) {
+      @include breakpoint(mobile down) {
         margin-bottom: 20px;
         display: block;
         margin-left: auto;
@@ -29,7 +29,7 @@
             margin-bottom: 0;
             color: #6c7c76;
         }
-        @include breakpoint(small only) {
+        @include breakpoint(mobile down) {
           margin-bottom: 20px;
           justify-content: center;
         }
@@ -45,7 +45,7 @@
             line-height: 0;
             margin-left: 20px;
         }
-        @include breakpoint(small only) {
+        @include breakpoint(mobile down) {
           justify-content: center;
         }
     }

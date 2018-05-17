@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import whatInput from 'what-input';
+import slick from 'slick-carousel';
 var Isotope = require('isotope-layout');
 
 window.$ = $;

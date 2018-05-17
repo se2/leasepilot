@@ -126,6 +126,7 @@ $grid-row-width: $container-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
   small: 60px,
+  mobile: 110px,
   medium: 20px,
   large: 20px
 );
@@ -146,8 +147,8 @@ $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
     'h1': ('font-size': 33px),
-    'h2': ('font-size': 20px),
-    'h3': ('font-size': 19px),
+    'h2': ('font-size': 28px),
+    'h3': ('font-size': 23px),
     'h4': ('font-size': 18px),
     'h5': ('font-size': 17px),
     'h6': ('font-size': 16px),
@@ -868,7 +869,8 @@ $grid-container: $container-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
   small: 60px,
-  medium: 20px,
+  mobile: 110px,
+  medium: 30px,
   large: 20px
 );
 $grid-padding-gutters: $grid-margin-gutters;

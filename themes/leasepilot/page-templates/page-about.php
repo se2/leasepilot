@@ -21,7 +21,7 @@ get_header(); ?>
             if ( have_rows( 'people' ) ) : ?>
             <div class="grid-x grid-margin-x people-section">
               <?php while ( have_rows( 'people' ) ) : the_row(); ?>
-              <div class="cell small-12 mobile-6 medium-4 large-4 people-section__person">
+              <div class="cell small-12 medium-4 large-4 people-section__person">
                 <div class="people-section__avatar" style="background-image:url('<?php the_sub_field( 'avatar' ); ?>');"></div>
                 <h3 class="people-section__name">
                   <span class="ff-cd"><?php the_sub_field( 'first_name' ); ( get_sub_field( 'name_separator' ) ) ? the_sub_field( 'name_separator' ) : ' '; ?></span>

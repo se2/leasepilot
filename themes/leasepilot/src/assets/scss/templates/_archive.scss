@@ -76,101 +76,132 @@ img.archive-page-cover {
     }
 }
 
-/* Single Case Study Page */
+/* Page Blocks */
 
-.page {
-    &__block {
-        &--big-text {
+.cta-section {
+    text-align: center;
+    &--blue {
+        background-color: $blue;
+        color: $secondary-color;
+    }
+    &--red {
+        background-color: $primary-color;
+        color: white;
+    }
+    &--secondary {
+        background-color: $secondary-color;
+        color: white;
+    }
+    &__title {
+        line-height: 1;
+        margin-bottom: 0;
+        @include breakpoint(mobile down) {
+            font-size: 26px;
+        }
+    }
+    &__content {
+        margin-top: 24px;
+    }
+    .button {
+        margin-top: 36px;
+    }
+    @include breakpoint(small) {
+        padding: 51px 0;
+    }
+}
+
+.page-block {
+    &--big-text {
+        h1 {
+            line-height: 1.15;
+            letter-spacing: 0.01em;
+            margin-bottom: 0;
+        }
+        @include breakpoint(small) {
+            padding: 40px 0 50px;
             h1 {
-                line-height: 1.15;
-                letter-spacing: 0.01em;
+                font-size: 34px;
+            }
+        }
+        @include breakpoint(medium) {
+            padding: 63px 0 78px;
+            h1 {
+                font-size: 52px;
+            }
+        }
+    }
+    &--text-quote {
+        p {
+            @extend .secondary-color;
+        }
+        @include breakpoint(small) {
+            padding: 32px 0 38px;
+            h3 {
+                font-size: 36px;
+            }
+            .quote {
+                font-size: 21px;
+                padding: 15px;
                 margin-bottom: 0;
             }
-            @include breakpoint(small) {
-                padding: 40px 0 50px;
-                h1 {
-                    font-size: 34px;
-                }
-            }
-            @include breakpoint(medium) {
-                padding: 63px 0 78px;
-                h1 {
-                    font-size: 52px;
-                }
+        }
+        @include breakpoint(medium) {
+            padding: 50px 0 60px;
+            .quote {
+                font-size: 24px;
+                padding: 0;
+                margin-top: 80px;
             }
         }
-        &--text-quote {
-            p {
-                @extend .secondary-color;
-            }
-            @include breakpoint(small) {
-                padding: 32px 0 38px;
-                h3 {
-                    font-size: 36px;
-                }
-                .quote {
-                    font-size: 21px;
-                    padding: 15px;
-                    margin-bottom: 0;
-                }
-            }
-            @include breakpoint(medium) {
-                padding: 50px 0 60px;
-                .quote {
-                    font-size: 24px;
-                    padding: 0;
-                    margin-top: 80px;
-                }
-            }
-            @include breakpoint(large) {
-                .quote {
-                    margin-top: 130px;
-                    padding-right: 22px;
-                }
+        @include breakpoint(large) {
+            .quote {
+                margin-top: 130px;
+                padding-right: 22px;
             }
         }
-        &--cta {
-            &__img-wrapper {
+    }
+    &--cta-img {
+        &__img-wrapper {
+            text-align: center;
+            img {
+                max-width: 100%;
+                box-shadow: 8px 14px 18px 0px rgba(0, 0, 0, 0.36);
+            }
+        }
+        &__content-wrapper {
+            @include breakpoint(mobile down) {
+                margin-top: 30px;
                 text-align: center;
-                img {
-                    max-width: 100%;
-                    box-shadow: 8px 14px 18px 0px rgba(0, 0, 0, 0.36);
-                }
             }
-            &__content-wrapper {
-                @include breakpoint(small only) {
-                    margin-top: 30px;
-                    text-align: center;
-                }
+        }
+        @include breakpoint(small) {
+            padding: 40px 0 48px;
+            h2 {
+                font-size: 34px;
             }
-            @include breakpoint(small) {
-                padding: 40px 0 48px;
-                h2 {
-                    font-size: 34px;
-                }
+        }
+        @include breakpoint(medium) {
+            padding: 62px 0 75px;
+            h2 {
+                font-size: 52px;
+                line-height: 1;
+                font-weight: lighter;
             }
+            p {
+                margin-top: 20px;
+                font-size: 16px;
+                line-height: 1.15;
+            }
+        }
+        &--img-bottom {
             @include breakpoint(medium) {
-                padding: 62px 0 75px;
-                h2 {
-                    font-size: 52px;
-                    line-height: 1;
-                    font-weight: lighter;
-                }
-                p {
-                    margin-top: 20px;
-                    font-size: 16px;
-                    line-height: 1.15;
-                }
-            }
-            &--img-bottom {
-              @include breakpoint(medium) {
                 padding: 0;
                 height: 425px;
                 .main-container,
                 .container {
-                  height: 100%;
+                    height: 100%;
                 }
-                .page__block--cta__img-wrapper {
+                .page-block--cta-img__img-wrapper {
                     text-align: left;
                     height: 100%;
                     position: relative;
@@ -178,20 +209,99 @@ img.archive-page-cover {
                         box-shadow: 8px 14px 18px 0px rgba(0, 0, 0, 0.15);
                         position: absolute;
                         bottom: 0;
-                        left: 10px;
+                        left: 20px;
                     }
                 }
-              }
-              @include breakpoint(large) {
-                .page__block--cta__img-wrapper {
-                  img {
-                    left: 40px;
-                  }
-                }
-              }
             }
+            @include breakpoint(large) {
+                .page-block--cta-img__img-wrapper {
+                    img {
+                        left: 40px;
+                    }
+                }
+            }
+        }
+    }
+    &--2-cols {
+        @include breakpoint(mobile down) {
+            /* reverse stack mobile */
+            .stack-up {
+                order: 11;
+            }
+            .stack-down {
+                order: 12;
+            }
+            &__left,
+            &__right {
+                text-align: center;
+            }
+            &__title {
+                font-size: 26px;
+            }
+        }
+        @include breakpoint(small) {
+            padding: 50px 0;
+            color: $secondary-color;
+            .button {
+                margin-top: 36px;
+            }
+            &__title {
+                margin-bottom: 21px;
+            }
+            &--img {
+                margin-bottom: 44px;
+                img {
+                    width: 280px;
+                }
+            }
+        }
+        @include breakpoint(medium) {
+            padding: 60px 0 80px;
+            &__left {
+                text-align: left;
+            }
+            &--img {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &--animated-bg {
+        height: 718px;
+        align-content: center;
+        .img-crop {
+          position: absolute;
+          width: 0;
+          height: 100%;
+          right: 0;
+          z-index: -1;
+          text-align: right;
+          overflow: hidden;
+          animation: animate 5s linear infinite;
+          img {
+            height: 100%;
+            max-width: initial;
+            position: absolute;
+            right: 0;
+          }
+        }
+        @keyframes animate {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        .grid-x {
+            align-items: center;
+        }
+        &--right {
+            background-position: center right;
+        }
+        &--left {
+            background-position: center left;
         }
     }
 }
 
-/* /Single Case Study Page */
+/* /Page Blocks */

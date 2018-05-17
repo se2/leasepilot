@@ -6,7 +6,7 @@
 					case 'big_heading_block':
 	?>
 	<!-- Big text block -->
-	<div class="page__block page__block--big-text" style="background-color:<?php echo $block['block_background_color']; ?>;">
+	<div class="page-block page-block--big-text" style="background-color:<?php echo $block['block_background_color']; ?>;">
 		<div class="main-container">
 			<div class="grid-x">
 				<div class="cell small-12 medium-9">
@@ -22,7 +22,7 @@
 					case 'text_quote_block':
 	?>
 	<!-- Text Quote block -->
-	<div class="page__block page__block--text-quote" style="background-color:<?php echo $block['block_background_color']; ?>;">
+	<div class="page-block page-block--text-quote" style="background-color:<?php echo $block['block_background_color']; ?>;">
 		<div class="main-container">
 			<div class="grid-x grid-margin-x">
 				<div class="cell medium-4">
@@ -39,14 +39,14 @@
 
 					case 'cta_block':
 	?>
-	<!-- Case Study CTA -->
-	<div class="page__block page__block--cta <?php echo ( $block['image_vertical_align'] == 'bottom' ) ? 'page__block--cta--img-bottom' : ''; ?>" style="background-color:<?php echo $block['block_background_color']; ?>;">
+	<!-- Block CTA -->
+	<div class="page-block page-block--cta-img <?php echo ( $block['image_vertical_align'] == 'bottom' ) ? 'page-block--cta-img--img-bottom' : ''; ?>" style="background-color:<?php echo $block['block_background_color']; ?>;">
 		<div class="main-container">
 			<div class="grid-x grid-margin-x flex-center-items">
-				<div class="cell medium-7 <?php echo ( $block['image_vertical_align'] == 'bottom' ) ? 'large-8' : 'large-7'; ?> page__block--cta__img-wrapper">
+				<div class="cell medium-7 <?php echo ( $block['image_vertical_align'] == 'bottom' ) ? 'large-8' : 'large-7'; ?> page-block--cta-img__img-wrapper">
 					<img src="<?php echo $block['cta_image']; ?>" alt="<?php the_title(); ?>">
 				</div>
-				<div class="cell medium-5 <?php echo ( $block['image_vertical_align'] == 'bottom' ) ? 'large-4' : 'large-5'; ?> page__block--cta__content-wrapper">
+				<div class="cell medium-5 <?php echo ( $block['image_vertical_align'] == 'bottom' ) ? 'large-4' : 'large-5'; ?> page-block--cta-img__content-wrapper">
 					<h2 style="<?php echo 'color:' . $block['text_color']; ?>">
 						<?php echo $block['cta_title']; ?>
 						<span class="lighter ff-hn"><?php echo $block['cta_subtitle']; ?></span>
@@ -57,14 +57,31 @@
 			</div>
 		</div>
 	</div>
-	<!-- /Case Study CTA -->
+	<!-- /Block CTA -->
 	<?php
 						break;
 
-					default:
+          case 'text_block':
+    ?>
+  <!-- Text background section -->
+  <div class="page-block cta-section cta-section--secondary" style="<?php echo 'background-color:' . $block['block_background_color']; ?>">
+    <div class="main-container">
+      <div class="grid-x">
+        <div class="cell large-12 small-12 medium-12">
+          <h3 class="lighter ff-hn cta-section__title" style="<?php echo 'color:' . $block['text_color']; ?>"><?php echo $block['block_title']; ?></h3>
+          <p class="mb0 cta-section__content" style="<?php echo 'color:' . $block['text_color']; ?>"><?php echo $block['block_content']; ?></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Text background section -->
+  <?php
+        break;
 
-						break;
-				}
-			}
-		}
+        default:
+
+          break;
+      }
+    }
+  }
 	?>

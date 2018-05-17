@@ -1,3 +1,10 @@
+body,
+p {
+    @include breakpoint(mobile down) {
+        font-size: 16px;
+    }
+}
+
 h1,
 h2,
 h3,
@@ -98,9 +105,18 @@ h6 {
     -webkit-align-items: center;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
 .fz-30 {
+    line-height: 1.2;
     @include breakpoint(small) {
-        font-size: 20px;
+        font-size: 26px;
     }
     @include breakpoint(medium) {
         font-size: 30px;
@@ -169,6 +185,10 @@ h6 {
             }
         }
     }
+}
+
+.h100p {
+    height: 100%;
 }
 
 .hubspot-form-reset {
