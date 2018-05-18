@@ -19,7 +19,8 @@ get_header(); ?>
       <div class="grid-x">
         <div class="cell stack-down page-block--2-cols__left small-12 medium-7">
           <h3 class="ff-hn lighter fz-30 page-block--2-cols__title secondary-color">Document automation & data capture for commerical leasing.</h3>
-          <p class="secondary-color mb0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet hendrerit libero. Nulla tincidunt, mauris vitae varius.</p>
+          <p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet hendrerit libero. Nulla tincidunt, mauris vitae varius.</p>
+          <br>
           <a href="/#!" class="button button__primary mb0">Learn more »</a>
         </div>
         <div class="cell stack-up page-block--2-cols--img page-block--2-cols__right small-12 medium-5 text-right">
