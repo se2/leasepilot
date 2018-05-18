@@ -23,7 +23,7 @@ get_header(); ?>
           <a href="/#!" class="button button__primary mb0">Learn more »</a>
         </div>
         <div class="cell stack-up page-block--2-cols--img page-block--2-cols__right small-12 medium-5 text-right">
-          <img src="/wp-content/uploads/2018/05/screenshot_11.png" alt="LeasePilot" class="box-shadow">
+          <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/05/screenshot_11.png" alt="LeasePilot" class="box-shadow">
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@ get_header(); ?>
   <!-- Animated background section -->
   <div class="page-block page-block--animated-bg page-block--animated-bg--right">
     <div class="h100p img-crop">
-      <img src="/wp-content/uploads/2018/05/tailored.png" alt="" class="bg-image">
+      <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2018/05/tailored.png" alt="" class="bg-image">
     </div>
     <div class="main-container h100p">
       <div class="grid-x h100p">
@@ -48,7 +48,7 @@ get_header(); ?>
   <!-- /Animated background section -->
 
   <!-- Animated background section -->
-  <div class="page-block page-block--animated-bg page-block--animated-bg--left bg-cover pos-rel" style="background-image:url('/wp-content/uploads/2018/05/turbocharge.png');">
+  <div class="page-block page-block--animated-bg page-block--animated-bg--left bg-cover pos-rel" style="background-image:url('<?php echo get_site_url(); ?>/wp-content/uploads/2018/05/turbocharge.png');">
     <div class="text-right main-container h100p">
       <div class="grid-x h100p">
         <div class="cell small-12 medium-7 large-6 large-offset-6">
@@ -62,7 +62,7 @@ get_header(); ?>
   <!-- /Animated background section -->
 
   <!-- Animated background section -->
-  <div class="page-block page-block--animated-bg page-block--animated-bg--right bg-cover" style="background-image:url('/wp-content/uploads/2018/05/transform.png');">
+  <div class="page-block page-block--animated-bg page-block--animated-bg--right bg-cover" style="background-image:url('<?php echo get_site_url(); ?>/wp-content/uploads/2018/05/transform.png');">
     <div class="main-container h100p">
       <div class="grid-x h100p">
         <div class="cell small-12 medium-7 large-6">
