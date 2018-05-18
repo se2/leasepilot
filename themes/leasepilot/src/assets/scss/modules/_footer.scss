@@ -1,96 +1,96 @@
 .footer {
-    position: relative;
-    z-index: 999;
-    background-color: $secondary-color;
-    @include breakpoint(small) {
-      padding: 35px 0 39px;
+  position: relative;
+  z-index: 999;
+  background-color: $secondary-color;
+  @include breakpoint(small) {
+    padding: 35px 0 39px;
+  }
+  @include breakpoint(medium) {
+    padding: 85px 0 96px;
+  }
+  #footer-widgets {
+    margin-bottom: 30px;
+  }
+  .site-logo {
+    @include breakpoint(mobile down) {
+      margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
-    @include breakpoint(medium) {
-      padding: 85px 0 96px;
+  }
+  .copyright {
+    align-items: flex-end;
+    display: flex;
+    p {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 0;
+      color: #6c7c76;
     }
-    #footer-widgets {
-      margin-bottom: 30px;
+    @include breakpoint(mobile down) {
+      margin-bottom: 20px;
+      justify-content: center;
     }
-    .site-logo {
-      @include breakpoint(mobile down) {
-        margin-bottom: 20px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+  }
+  .socials {
+    justify-content: flex-end;
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+    a {
+      font-size: 33px;
+      display: inline-block;
+      line-height: 0;
+      margin-left: 20px;
+    }
+    @include breakpoint(mobile down) {
+      justify-content: center;
+    }
+  }
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    &.sub-menu {
+      a {
+        font-weight: 400;
+        margin-bottom: 12px;
       }
     }
-    .copyright {
-        align-items: flex-end;
-        display: flex;
-        p {
-            font-size: 15px;
-            font-weight: 600;
-            line-height: 1;
-            margin-bottom: 0;
-            color: #6c7c76;
-        }
-        @include breakpoint(mobile down) {
-          margin-bottom: 20px;
-          justify-content: center;
-        }
+  }
+  .menu {
+    a,
+    .button {
+      padding: 0;
+      font-size: 17px;
+      line-height: 1.33;
+      color: $footer-menu-color;
+      font-weight: bold;
+      margin-bottom: 15px;
     }
-    .socials {
-        justify-content: flex-end;
-        text-align: right;
-        display: flex;
-        align-items: flex-end;
-        a {
-            font-size: 33px;
-            display: inline-block;
-            line-height: 0;
-            margin-left: 20px;
-        }
-        @include breakpoint(mobile down) {
-          justify-content: center;
-        }
+    .is-active>a {
+      background: none;
     }
-    ul {
-        list-style-type: none;
-        margin-left: 0;
-        &.sub-menu {
-          a {
-            font-weight: 400;
-            margin-bottom: 12px;
-          }
-        }
-    }
-    .menu {
-        a,
-        .button {
-          padding: 0;
-          font-size: 17px;
-          line-height: 1.33;
-          color: $footer-menu-color;
-          font-weight: bold;
-          margin-bottom: 15px;
-        }
-        .is-active>a {
-            background: none;
-        }
-    }
+  }
 }
 
 .footer-container {
-    @include xy-grid-container;
+  @include xy-grid-container;
 }
 
 .footer-grid {
-    @include xy-grid;
-    padding: rem-calc(30) 0;
-    section {
-        @include xy-cell();
-        @include breakpoint(large) {
-            @include xy-cell(auto);
-        }
+  @include xy-grid;
+  padding: rem-calc(30) 0;
+  section {
+    @include xy-cell();
+    @include breakpoint(large) {
+      @include xy-cell(auto);
     }
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 }

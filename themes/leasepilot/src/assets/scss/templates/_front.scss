@@ -1,21 +1,21 @@
 .home {
-    @include breakpoint(large) {
-        .page-header {
-            background-image: none !important;
-        }
-        .fullscreen-bg__video {
-            display: block;
-        }
+  @include breakpoint(large) {
+    .page-header {
+      background-image: none !important;
     }
-    @include breakpoint(medium down) {
-        .page-header {
-            &__content {
-                h1 {
-                    font-size: 43px;
-                    line-height: 1.15;
-                    margin-bottom: 20px;
-                }
-            }
-        }
+    .fullscreen-bg__video {
+      display: block;
     }
+  }
+  @include breakpoint(medium down) {
+    .page-header {
+      &__content {
+        h1 {
+          font-size: 43px;
+          line-height: 1.15;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
 }

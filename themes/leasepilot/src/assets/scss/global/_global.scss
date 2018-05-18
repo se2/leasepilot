@@ -1,8 +1,8 @@
 body,
 p {
-    @include breakpoint(mobile down) {
-        font-size: 16px;
-    }
+  @include breakpoint(mobile down) {
+    font-size: 16px;
+  }
 }
 
 h1,
@@ -11,98 +11,98 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Chronicle Deck", serif;
+  font-family: "Chronicle Deck", serif;
 }
 
 .container {
-    @include xy-grid-container;
-    max-width: $global-width;
-    margin: 0 auto;
-    position: relative;
+  @include xy-grid-container;
+  max-width: $global-width;
+  margin: 0 auto;
+  position: relative;
 }
 
 .flex-bottom {
-    display: flex;
-    display: -webkit-flex;
-    align-items: flex-end;
-    -webkit-align-items: flex-end;
+  display: flex;
+  display: -webkit-flex;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
 }
 
 .ff-cd {
-    font-family: "Chronicle Deck", serif;
+  font-family: "Chronicle Deck", serif;
 }
 
 .ff-hn {
-    font-family: "Helvetica Neue Condensed", sans-serif;
+  font-family: "Helvetica Neue Condensed", sans-serif;
 }
 
 .primary-color {
-    color: $primary-color;
+  color: $primary-color;
 }
 
 .secondary-color {
-    color: $secondary-color;
+  color: $secondary-color;
 }
 
 .white-color {
-    color: white;
+  color: white;
 }
 
 .red-bg {
-    background: $primary-color;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    span,
-    a {
-        color: white;
-    }
+  background: $primary-color;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a {
+    color: white;
+  }
 }
 
 .bg-cover {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .bg-contain {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .pos-rel {
-    position: relative;
+  position: relative;
 }
 
 .pos-abs {
-    position: absolute;
+  position: absolute;
 }
 
 .light {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .lighter {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .bolder {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 .flex-center-items {
-    height: 100%;
-    align-items: center;
-    -webkit-align-items: center;
+  height: 100%;
+  align-items: center;
+  -webkit-align-items: center;
 }
 
 .text-center {
@@ -114,133 +114,133 @@ h6 {
 }
 
 .fz-30 {
-    line-height: 1.2;
-    @include breakpoint(small) {
-        font-size: 26px;
-    }
-    @include breakpoint(medium) {
-        font-size: 30px;
-    }
+  line-height: 1.2;
+  @include breakpoint(small) {
+    font-size: 26px;
+  }
+  @include breakpoint(medium) {
+    font-size: 30px;
+  }
 }
 
 .big-dot {
-    line-height: 0.001;
-    @include breakpoint(small) {
-        font-size: 51px;
-    }
-    @include breakpoint(medium) {
-        font-size: 80px;
-    }
+  line-height: 0.001;
+  @include breakpoint(small) {
+    font-size: 51px;
+  }
+  @include breakpoint(medium) {
+    font-size: 80px;
+  }
 }
 
 .box-shadow {
-    box-shadow: 8px 13px 18px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 8px 13px 18px 0px rgba(0, 0, 0, 0.15);
 }
 
 .text-shadow {
-    text-shadow: 8px 13px 18px rgba(0, 0, 0, 0.15);
+  text-shadow: 8px 13px 18px rgba(0, 0, 0, 0.15);
 }
 
 .site-logo {
-    @include breakpoint(small) {
-        width: 160px;
-    }
-    @include breakpoint(medium) {
-        width: auto;
-    }
+  @include breakpoint(small) {
+    width: 160px;
+  }
+  @include breakpoint(medium) {
+    width: auto;
+  }
 }
 
 .abs-center {
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    top: 50%;
-    transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .mb0 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .nostyle-list {
-    list-style-type: none;
-    margin: 0;
+  list-style-type: none;
+  margin: 0;
 }
 
 .filter-list {
-    margin-bottom: 55px;
-    li {
-        display: inline-block;
-        margin-right: 24px;
-        button {
-            color: $secondary-color;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-        &.active {
-            button {
-                color: $primary-color;
-            }
-        }
+  margin-bottom: 55px;
+  li {
+    display: inline-block;
+    margin-right: 24px;
+    button {
+      color: $secondary-color;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: 600;
     }
+    &.active {
+      button {
+        color: $primary-color;
+      }
+    }
+  }
 }
 
 .h100p {
-    height: 100%;
+  height: 100%;
 }
 
 .hubspot-form-reset {
-    form {
+  form {
+    margin: 0;
+    .form-columns-1,
+    .form-columns-2 {
+      max-width: none;
+      label {
         margin: 0;
-        .form-columns-1,
-        .form-columns-2 {
-            max-width: none;
-            label {
-                margin: 0;
-                font-weight: normal;
-            }
-            input.hs-input,
-            select.hs-input,
-            textarea.hs-input {
-                padding: 0;
-                background: none;
-                background-image: none;
-                box-shadow: none;
-                max-width: none;
-                width: auto;
-                margin-bottom: 0;
-                border-radius: unset;
-                display: block;
-                box-sizing: border-box;
-                border: none;
-                line-height: 1;
-            }
-            div.input {
-                margin-right: 0;
-            }
-            .field.hs-form-field {
-                margin: 0;
-            }
-        }
-        .hs_submit,
-        .hs-submit {
-            .actions {
-                margin: 0;
-                padding: 0;
-                .hs-button {
-                    text-shadow: none;
-                }
-            }
-        }
+        font-weight: normal;
+      }
+      input.hs-input,
+      select.hs-input,
+      textarea.hs-input {
+        padding: 0;
+        background: none;
+        background-image: none;
+        box-shadow: none;
+        max-width: none;
+        width: auto;
+        margin-bottom: 0;
+        border-radius: unset;
+        display: block;
+        box-sizing: border-box;
+        border: none;
+        line-height: 1;
+      }
+      div.input {
+        margin-right: 0;
+      }
+      .field.hs-form-field {
+        margin: 0;
+      }
     }
+    .hs_submit,
+    .hs-submit {
+      .actions {
+        margin: 0;
+        padding: 0;
+        .hs-button {
+          text-shadow: none;
+        }
+      }
+    }
+  }
 }
 
 .fullscreen-bg__video {
-    position: absolute;
-    display: none;
-    bottom: 0;
-    z-index: -999;
-    width: 100%;
+  position: absolute;
+  display: none;
+  bottom: 0;
+  z-index: -999;
+  width: 100%;
 }

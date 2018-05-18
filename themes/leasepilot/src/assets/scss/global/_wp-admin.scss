@@ -10,8 +10,7 @@ body.admin-bar {
     .sticky.fixed {
       margin-top: rem-calc(32);
     }
-  }
-  // Offset mobile off-canvas menu
+  } // Offset mobile off-canvas menu
   &.offcanvas {
     .off-canvas.is-open {
       top: rem-calc(46);

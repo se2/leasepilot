@@ -22,7 +22,7 @@ if ($('#resource-grid').length > 0) {
   // filter items on button click
   $('#resource-filter').on('click', 'button', function () {
     $(this).parent().addClass('active');
-    $(this).parent().siblings().each(function() {
+    $(this).parent().siblings().each(function () {
       $(this).removeClass('active');
     });
     var filterValue = $(this).attr('data-filter');

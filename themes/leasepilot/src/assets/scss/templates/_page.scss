@@ -1,104 +1,104 @@
 .page-header {
+  @include breakpoint(small) {
+    .main-container {
+      height: 100%;
+    }
+  }
+  @include breakpoint(medium) {
+    .main-container {
+      height: auto;
+    }
+  }
+  &--bg-img {
+    @extend .bg-cover;
+    background-position: center bottom;
+    width: 100%;
+    margin: 0 auto;
     @include breakpoint(small) {
-        .main-container {
-            height: 100%;
-        }
+      padding-bottom: 0;
+      height: calc(100vh - 84px);
     }
     @include breakpoint(medium) {
-        .main-container {
-            height: auto;
-        }
+      height: 0;
+      padding-bottom: 51.25vw;
     }
-    &--bg-img {
-        @extend .bg-cover;
-        background-position: center bottom;
-        width: 100%;
-        margin: 0 auto;
-        @include breakpoint(small) {
-            padding-bottom: 0;
-            height: calc(100vh - 84px);
-        }
-        @include breakpoint(medium) {
-            height: 0;
-            padding-bottom: 51.25vw;
-        }
-        @include breakpoint(xlarge) {
-            padding-bottom: 0;
-            height: calc(100vh - 123px);
-        }
+    @include breakpoint(xlarge) {
+      padding-bottom: 0;
+      height: calc(100vh - 123px);
     }
-    &__content {
-        @include breakpoint(small) {
-            top: auto;
-            left: 0;
-            height: 100%;
-            align-items: center;
-        }
-        @include breakpoint(medium) {
-            transform: none;
-            text-align: left;
-            position: absolute;
-            height: auto;
-            left: 20px;
-            top: 14vw;
-        }
-        @include breakpoint(xlarge) {
-            top: 170px;
-            &--singular {
-              top: 210px;
-            }
-        }
+  }
+  &__content {
+    @include breakpoint(small) {
+      top: auto;
+      left: 0;
+      height: 100%;
+      align-items: center;
     }
+    @include breakpoint(medium) {
+      transform: none;
+      text-align: left;
+      position: absolute;
+      height: auto;
+      left: 20px;
+      top: 14vw;
+    }
+    @include breakpoint(xlarge) {
+      top: 170px;
+      &--singular {
+        top: 210px;
+      }
+    }
+  }
 }
 
 .page-title {
-    @include breakpoint(medium) {
-        font-size: 36px;
-    }
-    @include breakpoint(xlarge) {
-        font-size: 42px;
-    }
-    &__red {
-        color: $primary-color;
-    }
-    &__white {
-        color: white;
-    }
+  @include breakpoint(medium) {
+    font-size: 36px;
+  }
+  @include breakpoint(xlarge) {
+    font-size: 42px;
+  }
+  &__red {
+    color: $primary-color;
+  }
+  &__white {
+    color: white;
+  }
 }
 
 .page-subheading {
+  p {
+    color: $secondary-color;
+    line-height: 1.33;
+    letter-spacing: 0.01em;
+    @include breakpoint(medium) {
+      font-size: 21px;
+    }
+    @include breakpoint(xlarge) {
+      font-size: 24px;
+    }
+  }
+  &__white {
     p {
-        color: $secondary-color;
-        line-height: 1.33;
-        letter-spacing: 0.01em;
-        @include breakpoint(medium) {
-            font-size: 21px;
-        }
-        @include breakpoint(xlarge) {
-            font-size: 24px;
-        }
+      color: white;
     }
-    &__white {
-        p {
-            color: white;
-        }
-    }
+  }
 }
 
 .content-padding {
-    .main-container,
-    .container {
-        @include breakpoint(small) {
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-        @include breakpoint(medium) {
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-        @include breakpoint(large) {
-            padding-top: 125px;
-            padding-bottom: 125px;
-        }
+  .main-container,
+  .container {
+    @include breakpoint(small) {
+      padding-top: 50px;
+      padding-bottom: 50px;
     }
+    @include breakpoint(medium) {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    @include breakpoint(large) {
+      padding-top: 125px;
+      padding-bottom: 125px;
+    }
+  }
 }
