@@ -1,307 +1,335 @@
 .archive-page.content-padding {
-    .main-container,
-    .container {
-        @include breakpoint(large) {
-            padding-bottom: 110px;
-        }
+  .main-container,
+  .container {
+    @include breakpoint(large) {
+      padding-bottom: 110px;
     }
+  }
 }
 
 .archive-page-bg {
-    background-color: #f1efef;
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    @include breakpoint(large) {
-        &:hover {
-            img.archive-page-cover {
-                bottom: 0;
-            }
-        }
+  background-color: #f1efef;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  @include breakpoint(large) {
+    &:hover {
+      img.archive-page-cover {
+        bottom: 0;
+      }
     }
-    @include breakpoint(small) {
-        height: 245px;
-    }
+  }
+  @include breakpoint(small) {
+    height: 245px;
+  }
 }
 
 .archive-page-category {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 img.archive-page-logo {
-    max-width: 50%;
-    max-height: 90px;
-    &--singular {
-        max-height: none;
-        @include breakpoint(small) {
-            max-width: 122px;
-            margin-bottom: 15px;
-        }
-        @include breakpoint(medium) {
-            max-width: 191px;
-            margin-bottom: 35px;
-        }
+  max-width: 50%;
+  max-height: 90px;
+  &--singular {
+    max-height: none;
+    @include breakpoint(small) {
+      max-width: 122px;
+      margin-bottom: 15px;
     }
+    @include breakpoint(medium) {
+      max-width: 191px;
+      margin-bottom: 35px;
+    }
+  }
 }
 
 img.archive-page-cover {
-    max-height: 215px;
-    transition: bottom 400ms linear;
-    position: absolute;
-    bottom: -100%;
-    box-shadow: 7px 12px 18px 0px rgba(0, 0, 0, 0.15);
+  max-height: 215px;
+  transition: bottom 400ms linear;
+  position: absolute;
+  bottom: -100%;
+  box-shadow: 7px 12px 18px 0px rgba(0, 0, 0, 0.15);
 }
 
 .archive-page-item {
-    @include breakpoint(small) {
-        margin-bottom: 60px;
-        &:last-child {
-            margin-bottom: 0;
-        }
+  @include breakpoint(small) {
+    margin-bottom: 60px;
+    &:last-child {
+      margin-bottom: 0;
     }
+  }
 }
 
 .archive-page-name {
+  line-height: 1;
+  margin-bottom: 0;
+  font-size: 28px;
+  color: $secondary-color;
+  a {
     line-height: 1;
-    margin-bottom: 0;
     font-size: 28px;
     color: $secondary-color;
-    a {
-        line-height: 1;
-        font-size: 28px;
-        color: $secondary-color;
-    }
+  }
 }
 
 /* Page Blocks */
 
 .cta-section {
-    text-align: center;
-    &--blue {
-        background-color: $blue;
-        color: $secondary-color;
+  text-align: center;
+  &--blue {
+    background-color: $blue;
+    color: $secondary-color;
+  }
+  &--red {
+    background-color: $primary-color;
+    color: white;
+  }
+  &--secondary {
+    background-color: $secondary-color;
+    color: white;
+  }
+  &__title {
+    line-height: 1;
+    margin-bottom: 0;
+    @include breakpoint(mobile down) {
+      font-size: 26px;
     }
-    &--red {
-        background-color: $primary-color;
-        color: white;
-    }
-    &--secondary {
-        background-color: $secondary-color;
-        color: white;
-    }
-    &__title {
-        line-height: 1;
-        margin-bottom: 0;
-        @include breakpoint(mobile down) {
-            font-size: 26px;
-        }
-    }
-    &__content {
-        margin-top: 24px;
-    }
-    .button {
-        margin-top: 36px;
-    }
-    @include breakpoint(small) {
-        padding: 51px 0;
-    }
+  }
+  &__content {
+    margin-top: 24px;
+  }
+  .button {
+    margin-top: 36px;
+  }
+  @include breakpoint(small) {
+    padding: 51px 0;
+  }
 }
 
 .page-block {
-    &--big-text {
-        h1 {
-            line-height: 1.15;
-            letter-spacing: 0.01em;
-            margin-bottom: 0;
-        }
-        @include breakpoint(small) {
-            padding: 40px 0 50px;
-            h1 {
-                font-size: 34px;
-            }
-        }
-        @include breakpoint(medium) {
-            padding: 63px 0 78px;
-            h1 {
-                font-size: 52px;
-            }
-        }
+  &--big-text {
+    h1 {
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+      margin-bottom: 0;
     }
-    &--text-quote {
-        p {
-            @extend .secondary-color;
-        }
-        @include breakpoint(small) {
-            padding: 32px 0 38px;
-            h3 {
-                font-size: 36px;
-            }
-            .quote {
-                font-size: 21px;
-                padding: 15px;
-                margin-bottom: 0;
-            }
-        }
-        @include breakpoint(medium) {
-            padding: 50px 0 60px;
-            .quote {
-                font-size: 24px;
-                padding: 0;
-                margin-top: 80px;
-            }
-        }
-        @include breakpoint(large) {
-            .quote {
-                margin-top: 130px;
-                padding-right: 22px;
-            }
-        }
+    @include breakpoint(small) {
+      padding: 40px 0 50px;
+      h1 {
+        font-size: 34px;
+      }
     }
-    &--cta-img {
-        &__img-wrapper {
-            text-align: center;
-            img {
-                max-width: 100%;
-                box-shadow: 8px 14px 18px 0px rgba(0, 0, 0, 0.36);
-            }
-        }
-        &__content-wrapper {
-            @include breakpoint(mobile down) {
-                margin-top: 30px;
-                text-align: center;
-            }
-        }
-        @include breakpoint(small) {
-            padding: 40px 0 48px;
-            h2 {
-                font-size: 34px;
-            }
-        }
-        @include breakpoint(medium) {
-            padding: 62px 0 75px;
-            h2 {
-                font-size: 52px;
-                line-height: 1;
-                font-weight: lighter;
-            }
-            p {
-                margin-top: 20px;
-                font-size: 16px;
-                line-height: 1.15;
-            }
-        }
-        &--img-bottom {
-            @include breakpoint(medium) {
-                padding: 0;
-                height: 425px;
-                .main-container,
-                .container {
-                    height: 100%;
-                }
-                .page-block--cta-img__img-wrapper {
-                    text-align: left;
-                    height: 100%;
-                    position: relative;
-                    img {
-                        box-shadow: 8px 14px 18px 0px rgba(0, 0, 0, 0.15);
-                        position: absolute;
-                        bottom: 0;
-                        left: 20px;
-                    }
-                }
-            }
-            @include breakpoint(large) {
-                .page-block--cta-img__img-wrapper {
-                    img {
-                        left: 40px;
-                    }
-                }
-            }
-        }
+    @include breakpoint(medium) {
+      padding: 63px 0 78px;
+      h1 {
+        font-size: 52px;
+      }
     }
-    &--2-cols {
-        @include breakpoint(mobile down) {
-            /* reverse stack mobile */
-            .stack-up {
-                order: 11;
-            }
-            .stack-down {
-                order: 12;
-            }
-            &__left,
-            &__right {
-                text-align: center;
-            }
-            &__title {
-                font-size: 26px;
-            }
-        }
-        @include breakpoint(small) {
-            padding: 50px 0;
-            color: $secondary-color;
-            .button {
-                margin-top: 36px;
-            }
-            &__title {
-                margin-bottom: 21px;
-            }
-            &--img {
-                margin-bottom: 44px;
-                img {
-                    width: 280px;
-                }
-            }
-        }
-        @include breakpoint(medium) {
-            padding: 60px 0 80px;
-            &__left {
-                text-align: left;
-            }
-            &--img {
-                margin-bottom: 0;
-            }
-        }
+  }
+  &--text-quote {
+    p {
+      @extend .secondary-color;
     }
-    &--animated-bg {
-        height: 718px;
-        align-content: center;
-        .img-crop {
-          position: absolute;
-          width: 0;
+    @include breakpoint(small) {
+      padding: 32px 0 38px;
+      h3 {
+        font-size: 36px;
+      }
+      .quote {
+        font-size: 21px;
+        padding: 15px;
+        margin-bottom: 0;
+      }
+    }
+    @include breakpoint(medium) {
+      padding: 50px 0 60px;
+      .quote {
+        font-size: 24px;
+        padding: 0;
+        margin-top: 80px;
+      }
+    }
+    @include breakpoint(large) {
+      .quote {
+        margin-top: 130px;
+        padding-right: 22px;
+      }
+    }
+  }
+  &--cta-img {
+    &__img-wrapper {
+      text-align: center;
+      img {
+        max-width: 100%;
+        box-shadow: 8px 14px 18px 0px rgba(0, 0, 0, 0.36);
+      }
+    }
+    &__content-wrapper {
+      @include breakpoint(mobile down) {
+        margin-top: 30px;
+        text-align: center;
+      }
+    }
+    @include breakpoint(small) {
+      padding: 40px 0 48px;
+      h2 {
+        font-size: 34px;
+      }
+    }
+    @include breakpoint(medium) {
+      padding: 62px 0 75px;
+      h2 {
+        font-size: 52px;
+        line-height: 1;
+        font-weight: lighter;
+      }
+      p {
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 1.15;
+      }
+    }
+    &--img-bottom {
+      @include breakpoint(medium) {
+        padding: 0;
+        height: 425px;
+        .main-container,
+        .container {
           height: 100%;
-          right: 0;
-          z-index: -1;
-          text-align: right;
-          overflow: hidden;
-          animation: animate 5s linear infinite;
+        }
+        .page-block--cta-img__img-wrapper {
+          text-align: left;
+          height: 100%;
+          position: relative;
           img {
-            height: 100%;
-            max-width: initial;
+            box-shadow: 8px 14px 18px 0px rgba(0, 0, 0, 0.15);
             position: absolute;
-            right: 0;
+            bottom: 0;
+            left: 20px;
           }
         }
-        @keyframes animate {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
+      }
+      @include breakpoint(large) {
+        .page-block--cta-img__img-wrapper {
+          img {
+            left: 40px;
+          }
         }
-        .grid-x {
-            align-items: center;
-        }
-        &--right {
-            background-position: center right;
-        }
-        &--left {
-            background-position: center left;
-        }
+      }
     }
+  }
+  &--2-cols {
+    @include breakpoint(mobile down) {
+      /* reverse stack mobile */
+      .stack-up {
+        order: 11;
+      }
+      .stack-down {
+        order: 12;
+      }
+      &__left,
+      &__right {
+        text-align: center;
+      }
+      &__title {
+        font-size: 26px;
+      }
+    }
+    @include breakpoint(small) {
+      padding: 50px 0;
+      color: $secondary-color;
+      .button {
+        margin-top: 36px;
+      }
+      &__title {
+        margin-bottom: 21px;
+      }
+      &--img {
+        margin-bottom: 44px;
+        img {
+          width: 280px;
+        }
+      }
+    }
+    @include breakpoint(medium) {
+      padding: 60px 0 80px;
+      .button {
+          margin-top: 0;
+      }
+      &__left {
+        text-align: left;
+      }
+      &--img {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &--animated-bg {
+    @include breakpoint(mobile down) {
+      padding-top: 80px;
+      padding-bottom: 80px;
+      h3 {
+        font-size: 32px;
+      }
+      .main-container,
+      .container {
+        text-align: center;
+      }
+      .img-crop {
+        display: none;
+      }
+    }
+    @include breakpoint(medium) {
+      height: 465px;
+    }
+    @include breakpoint(large) {
+      height: 620px;
+    }
+    @include breakpoint(xlarge) {
+      height: 726px;
+    }
+    align-content: center;
+    .img-crop {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      right: 0;
+      z-index: -1;
+      text-align: right;
+      overflow: hidden;
+      img {
+        height: 100%;
+        max-width: initial;
+        position: absolute;
+        right: 0;
+      }
+      @include breakpoint(medium) {
+        width: 0;
+        animation: animate 6s linear infinite;
+      }
+    }
+    @keyframes animate {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+    .grid-x {
+      align-items: center;
+    }
+    &--right {
+      background-position: center right;
+    }
+    &--left {
+      background-position: center left;
+    }
+  }
 }
 
 /* /Page Blocks */
