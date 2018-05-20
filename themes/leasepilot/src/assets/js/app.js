@@ -34,8 +34,14 @@ if ($('#resource-grid').length > 0) {
   });
 }
 
-$(window).on('resize scroll', function() {
-  if ( $('#section-img-crop').is( ':in-viewport( -700 )' ) ) {
-    $('#section-img-crop').addClass( 'animated' );
+$(window).on('resize scroll', function () {
+  if ($('#section-img-crop').is(':in-viewport( -700 )')) {
+    $('#section-img-crop').addClass('animated');
+  }
+  if ($('#section-computer').is(':in-viewport( -700 )')) {
+    $('#section-computer').addClass('animated');
+  }
+  if ($('#section-bar').is(':in-viewport( -700 )')) {
+    $('#section-bar').addClass('animated');
   }
 });

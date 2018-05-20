@@ -41,12 +41,12 @@ while ( have_posts() ) :
 	</div>
 	<!-- /2-column section -->
 
-	<!-- Animated background section -->
-	<div class="page-block page-block--animated-bg page-block--animated-bg--right pos-rel" id="section-img-crop">
-		<div class="h100p img-crop">
+	<!-- Animated section -->
+	<div class="page-block page-block--animated page-block--animated--right pos-rel" id="section-img-crop">
+		<div class="h100p inner-div-bg img-crop">
 			<img src="<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/tailored.png" alt="" class="bg-image">
 		</div>
-		<div class="main-container h100p">
+		<div class="main-container h100p pos-rel">
 			<div class="grid-x h100p">
 				<div class="cell small-12 medium-7 large-6">
 					<h3 class="secondary-color">Tailored for your company’s <span class="lighter ff-hn">documents and process</span></h3>
@@ -56,13 +56,23 @@ while ( have_posts() ) :
 			</div>
 		</div>
 	</div>
-	<!-- /Animated background section -->
+	<!-- /Animated section -->
 
-	<!-- Animated background section -->
-	<div class="page-block page-block--animated-bg page-block--animated-bg--left bg-cover pos-rel" style="background-image:url('<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/turbocharge.png');">
-		<div class="text-right main-container h100p">
+	<!-- Animated section -->
+	<div class="page-block page-block--animated pos-rel" id="section-bar" style="background-color:#f9f4f2;">
+		<div class="inner-div-bg bars bg-contain page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/turbocharge.png');">
+			<?php
+			$bars = array( 341, 90, 134, 558, 206, 90 );
+			foreach ( $bars as $key => $bar ) {
+			?>
+			<div class="bar__outer" style="height:<?php echo esc_attr( $bar ); ?>px;">
+				<div class="bar__inner"></div>
+			</div>
+			<?php } ?>
+		</div>
+		<div class="main-container h100p pos-rel">
 			<div class="grid-x h100p">
-				<div class="cell small-12 medium-7 large-6 large-offset-6">
+				<div class="cell small-12 medium-7 medium-offset-5 large-6 large-offset-6 text-right">
 					<h3 class="secondary-color">Turbocharge lease<span class="lighter ff-hn"><br>drafting & negotiation</span></h3>
 					<p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur quam quis magna convallis dictum. Sed sapien sapien, tempus.</p>
 					<a href="/#!" class="button button__cta--dark">See our partners »</a>
@@ -70,12 +80,14 @@ while ( have_posts() ) :
 			</div>
 		</div>
 	</div>
-	<!-- /Animated background section -->
+	<!-- /Animated section -->
 
-	<!-- Animated background section -->
-	<div class="page-block page-block--animated-bg page-block--animated-bg--right bg-cover" style="background-image:url('<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/transform.png');">
+	<!-- Animated section -->
+	<div class="page-block page-block--animated pos-rel" id="section-computer">
+		<div class="h100p inner-div-bg inner-div-bg--fade page-block--animated--right bg-cover" style="background-image:url('<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/transform.png');">
+		</div>
 		<div class="main-container h100p">
-			<div class="grid-x h100p">
+			<div class="grid-x h100p pos-rel">
 				<div class="cell small-12 medium-7 large-6">
 					<h3 class="secondary-color">Transform your business <span class="lighter ff-hn">with leasing data</span></h3>
 					<p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur quam quis magna convallis dictum. Sed sapien sapien, tempus.</p>
@@ -83,8 +95,9 @@ while ( have_posts() ) :
 				</div>
 			</div>
 		</div>
+		<img class="computer-img hide-for-small-only hide-for-mobile-only " src="<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/computer.png" alt="">
 	</div>
-	<!-- /Animated background section -->
+	<!-- /Animated section -->
 
 	<!-- 2-column section -->
 	<div class="page-block page-block--2-cols" style="background-color:#ffffff;">
