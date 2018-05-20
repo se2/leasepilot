@@ -269,6 +269,7 @@ img.archive-page-cover {
     }
   }
   &--animated-bg {
+    align-content: center;
     @include breakpoint(mobile down) {
       padding-top: 80px;
       padding-bottom: 80px;
@@ -292,10 +293,18 @@ img.archive-page-cover {
     @include breakpoint(xlarge) {
       height: 726px;
     }
-    align-content: center;
+    &.animated {
+      .img-crop {
+        @include breakpoint(medium) {
+          animation: animateWidth 6s linear;
+          /* keep state after animation */
+          animation-fill-mode: forwards;
+        }
+      }
+    }
     .img-crop {
       position: absolute;
-      width: 100%;
+      width: 0;
       height: 100%;
       right: 0;
       z-index: -1;
@@ -307,12 +316,8 @@ img.archive-page-cover {
         position: absolute;
         right: 0;
       }
-      @include breakpoint(medium) {
-        width: 0;
-        animation: animate 6s linear infinite;
-      }
     }
-    @keyframes animate {
+    @keyframes animateWidth {
       from {
         width: 0;
       }

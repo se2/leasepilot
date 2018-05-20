@@ -1,6 +1,8 @@
 import $ from 'jquery';
 import whatInput from 'what-input';
 import slick from 'slick-carousel';
+import isInViewport from 'is-in-viewport';
+
 var Isotope = require('isotope-layout');
 
 window.$ = $;
@@ -31,3 +33,9 @@ if ($('#resource-grid').length > 0) {
     });
   });
 }
+
+$(window).on('resize scroll', function() {
+  if ( $('#section-img-crop').is( ':in-viewport( -700 )' ) ) {
+    $('#section-img-crop').addClass( 'animated' );
+  }
+});
