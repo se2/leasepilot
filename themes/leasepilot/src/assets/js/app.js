@@ -101,7 +101,7 @@ $(document).ready(function () {
 // Update sliders on resize.
 // Because we all do this: i.imgur.com/YkbaV.gif
 $(window).resize(function () {
-  $('.ba-slider').each(function () {
+  $('#section-compare').each(function () {
     var cur = $(this);
     var width = cur.width() + 'px';
     cur.find('.resize img').css('width', width);
@@ -116,6 +116,9 @@ function drags(dragElement, resizeElement, container) {
     dragElement.addClass('draggable');
     resizeElement.addClass('resizable');
 
+    var beforeElement = container.find('.before');
+    beforeElement.addClass('resizable--reverse');
+
     // Check if it's a mouse or touch event and pass along the correct value
     var startX = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
 
@@ -126,8 +129,8 @@ function drags(dragElement, resizeElement, container) {
       containerWidth = container.outerWidth();
 
     // Set limits
-    var minLeft = containerOffset;
-    var maxLeft = containerOffset + containerWidth - dragWidth;
+    var minLeft = containerOffset - 20;
+    var maxLeft = containerOffset + containerWidth - dragWidth + 20;
 
     // Calculate the dragging distance on mousemove.
     dragElement.parents().on("mousemove touchmove", function (e) {
@@ -149,18 +152,22 @@ function drags(dragElement, resizeElement, container) {
 
       // Set the new values for the slider and the handle.
       // Bind mouseup events to stop dragging.
-      $('.draggable').css('left', widthValue).on('mouseup touchend touchcancel', function () {
+      container.find('.draggable').css('left', widthValue).on('mouseup touchend touchcancel', function () {
         $(this).removeClass('draggable');
         resizeElement.removeClass('resizable');
+        beforeElement.removeClass('resizable--reverse');
       });
       $('.resizable').css('width', widthValue);
+      $('.resizable--reverse').css('width', 'calc(100% - ' + widthValue + ')');
     }).on('mouseup touchend touchcancel', function () {
       dragElement.removeClass('draggable');
       resizeElement.removeClass('resizable');
+      beforeElement.removeClass('resizable--reverse');
     });
     e.preventDefault();
   }).on('mouseup touchend touchcancel', function (e) {
     dragElement.removeClass('draggable');
     resizeElement.removeClass('resizable');
+    beforeElement.removeClass('resizable--reverse');
   });
 }

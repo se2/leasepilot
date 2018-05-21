@@ -103,15 +103,17 @@ while ( have_posts() ) :
 	<div class="page-block page-block--compare pos-rel bg-cover" id="section-compare" style="background-image:url('<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/compare.png');">
 		<div class="main-container h100p">
 			<div class="grid-x pos-rel flex-center-items">
-				<div class="cell small-12 medium-6 large-4 page-block--compare__left">
+				<div class="cell small-12 large-4 page-block--compare__left">
 					<h2 class="secondary-color">How do you <span class="lighter ff-hn">stack up?</span></h2>
 					<p class="secondary-color">Want a more personalized comparison?</p>
 					<a href="/#!" class="button button__cta button__cta--dark mb0">Find our now »</a>
 				</div>
-				<div class="cell large-6 large-offset-2 ba-slider page-block--compare__right" id="comparison">
-					<img src="<?php echo esc_attr( get_site_url() ) ?>/wp-content/uploads/2018/05/before.png" alt="<?php the_title(); ?>">
+				<div class="cell small-12 large-6 large-offset-2 ba-slider page-block--compare__right" id="comparison">
+					<div class="before h100p">
+						<img src="<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/before.png" alt="<?php the_title(); ?>">
+					</div>
 					<div class="resize no-overflow after h100p">
-						<img src="<?php echo esc_attr( get_site_url() ) ?>/wp-content/uploads/2018/05/after.png" alt="<?php the_title(); ?>">
+						<img src="<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/after.png" alt="<?php the_title(); ?>">
 					</div>
 					<div class="handle">
 						<img src="<?php echo esc_attr( get_template_directory_uri() ); ?>/dist/assets/images/handle.png" alt="<?php the_title(); ?>">
@@ -133,7 +135,7 @@ while ( have_posts() ) :
 				array(
 					'post_type' => 'case-study',
 					'paged'     => $paged,
-					'order'     => 'ASC'
+					'order'     => 'ASC',
 				)
 			);
 			if ( $case_study_query->have_posts() ) :
@@ -166,11 +168,11 @@ while ( have_posts() ) :
 					<p class="ff-hn hide-for-medium white-color"><?php the_field( 'testimonial' ); ?></p>
 				</div>
 				<?php
-					$index += 1;
+					$index++;
 				endwhile;
 				?>
 			</div>
-			<?php endif;?>
+			<?php endif; ?>
 		</div>
 	</div>
 	<!-- /Testimonials section -->

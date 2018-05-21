@@ -402,12 +402,20 @@ img.archive-page-cover {
         line-height: 1.15;
       }
     }
+    @include breakpoint(large) {
+      height: 680px;
+      &__right {
+        height: 384px;
+      }
+    }
     @include breakpoint(xlarge) {
       height: 798px;
       &__right {
         height: 450px;
       }
     }
+    $img-width: 440px;
+    $before-width: 100%;
     #comparison {
       position: relative;
       overflow: visible;
@@ -424,19 +432,20 @@ img.archive-page-cover {
         }
       }
       img {
-        max-width: 440px;
+        max-width: $img-width;
         max-height: 100%;
       }
-      $before-width: 100%;
       .before {
         width: $before-width;
         position: relative;
         float: right;
         z-index: 1;
-        // &__inner {
-        //   position: absolute;
-        //   width: 440px;
-        // }
+        overflow: hidden;
+        img {
+          height: 100%;
+          position: absolute;
+          right: 0;
+        }
       }
       .after {
         position: absolute;
@@ -447,19 +456,16 @@ img.archive-page-cover {
         overflow: hidden;
         z-index: 2;
         img {
+          max-width: none;
+          height: 100%;
           position: absolute;
-          left: -3px;
         }
-        // &__inner {
-        //   position: absolute;
-        //   width: 440px;
-        // }
       }
       .handle {
         /* Thin line seperator */
         position: absolute;
         z-index: 4;
-        left: #{100% - $before-width};
+        left: calc(#{100% - $before-width} - 20px);
         top: 0;
         bottom: 0;
         width: 2px;
