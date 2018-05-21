@@ -1,4 +1,52 @@
 @font-face {
+  font-family: 'HelveticaNeueLTStd-Th';
+  src: url('../fonts/helveticaneueltstd-th.eot');
+  src: url('../fonts/helveticaneueltstd-th.woff2') format('woff2'),
+       url('../fonts/helveticaneueltstd-th.woff') format('woff'),
+       url('../fonts/helveticaneueltstd-th.ttf') format('truetype'),
+       url('../fonts/helveticaneueltstd-th.svg#helveticaneueltstd-th') format('svg'),
+       url('../fonts/helveticaneueltstd-th.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueLTStd-UltLt';
+  src: url('../fonts/helveticaneueltstd-ultlt.eot');
+  src: url('../fonts/helveticaneueltstd-ultlt.woff2') format('woff2'),
+       url('../fonts/helveticaneueltstd-ultlt.woff') format('woff'),
+       url('../fonts/helveticaneueltstd-ultlt.ttf') format('truetype'),
+       url('../fonts/helveticaneueltstd-ultlt.svg#helveticaneueltstd-ultlt') format('svg'),
+       url('../fonts/helveticaneueltstd-ultlt.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueLTStd-ThCn';
+  src: url('../fonts/HelveticaNeueLTStd-ThCn.eot');
+  src: url('../fonts/HelveticaNeueLTStd-ThCn.woff2') format('woff2'),
+       url('../fonts/HelveticaNeueLTStd-ThCn.woff') format('woff'),
+       url('../fonts/HelveticaNeueLTStd-ThCn.ttf') format('truetype'),
+       url('../fonts/HelveticaNeueLTStd-ThCn.svg#HelveticaNeueLTStd-ThCn') format('svg'),
+       url('../fonts/HelveticaNeueLTStd-ThCn.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueLTStd-UltLtCn';
+  src: url('../fonts/HelveticaNeueLTStd-UltLtCn.eot');
+  src: url('../fonts/HelveticaNeueLTStd-UltLtCn.woff2') format('woff2'),
+       url('../fonts/HelveticaNeueLTStd-UltLtCn.woff') format('woff'),
+       url('../fonts/HelveticaNeueLTStd-UltLtCn.ttf') format('truetype'),
+       url('../fonts/HelveticaNeueLTStd-UltLtCn.svg#HelveticaNeueLTStd-UltLtCn') format('svg'),
+       url('../fonts/HelveticaNeueLTStd-UltLtCn.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Chronicle Deck';
   src: url('../fonts/ChronicleDeck-Roman.woff2') format('woff2'), url('../fonts/ChronicleDeck-Roman.woff') format('woff'), url('../fonts/ChronicleDeck-Roman.ttf') format('truetype');
   font-weight: normal;

@@ -100,61 +100,80 @@ while ( have_posts() ) :
 	<!-- /Animated section -->
 
 	<!-- Comparison section -->
-	<!-- <div class="page-block page-block--compare pos-rel bg-cover" id="section-compare" style="background-image:url('<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/compare.png');">
+	<div class="page-block page-block--compare pos-rel bg-cover" id="section-compare" style="background-image:url('<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/compare.png');">
 		<div class="main-container h100p">
 			<div class="grid-x pos-rel flex-center-items">
-				<div class="cell small-12 medium-6 large-4">
+				<div class="cell small-12 medium-6 large-4 page-block--compare__left">
 					<h2 class="secondary-color">How do you <span class="lighter ff-hn">stack up?</span></h2>
 					<p class="secondary-color">Want a more personalized comparison?</p>
 					<a href="/#!" class="button button__cta button__cta--dark mb0">Find our now »</a>
 				</div>
-				<div class="cell large-6 large-offset-2 ba-slider" id="comparison">
-					<div class="after no-overflow">
-						<div class="grid-x grid-margin-x">
-							<div class="cell small-6">
-								<h1 class="ff-hn lighter">0</h1>
-								<h5 class="ff-hn lighter">pages needed to review for accuracy of edits</h5>
-							</div>
-							<div class="cell small-6">
-								<h1 class="ff-hn lighter">30</h1>
-								<h5 class="ff-hn lighter">days to complete lease</h5>
-							</div>
-							<div class="cell small-6">
-								<h1 class="ff-hn lighter">90%</h1>
-								<h5 class="ff-hn lighter">stat/info goes here</h5>
-							</div>
-							<div class="cell small-6">
-								<h1 class="ff-hn lighter">30</h1>
-								<h5 class="ff-hn lighter">minutes to prepare first-draft of lease</h5>
-							</div>
-						</div>
+				<div class="cell large-6 large-offset-2 ba-slider page-block--compare__right" id="comparison">
+					<img src="<?php echo esc_attr( get_site_url() ) ?>/wp-content/uploads/2018/05/before.png" alt="<?php the_title(); ?>">
+					<div class="resize no-overflow after h100p">
+						<img src="<?php echo esc_attr( get_site_url() ) ?>/wp-content/uploads/2018/05/after.png" alt="<?php the_title(); ?>">
 					</div>
-					<div class="before no-overflow">
-						<div class="grid-x grid-margin-x">
-							<div class="cell small-6">
-								<h1 class="ff-hn lighter">60+</h1>
-								<h5 class="ff-hn lighter">pages needed to review for accuracy of edits</h5>
-							</div>
-							<div class="cell small-6">
-								<h1 class="ff-hn lighter">100</h1>
-								<h5 class="ff-hn lighter">days to complete lease</h5>
-							</div>
-							<div class="cell small-6">
-								<h1 class="ff-hn lighter">28%</h1>
-								<h5 class="ff-hn lighter">stat/info goes here</h5>
-							</div>
-							<div class="cell small-6">
-								<h1 class="ff-hn lighter">120</h1>
-								<h5 class="ff-hn lighter">minutes to prepare first-draft of lease</h5>
-							</div>
-						</div>
+					<div class="handle">
+						<img src="<?php echo esc_attr( get_template_directory_uri() ); ?>/dist/assets/images/handle.png" alt="<?php the_title(); ?>">
 					</div>
-					<span class="handle"></span>
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 	<!-- /Comparison section -->
+
+	<!-- Testimonials section -->
+	<div class="page-block page-block--testimonials pos-rel" style="background-color:#3c4542;">
+		<div class="main-container">
+			<h3 class="white-color text-center ff-hn lighter">Seizing the future with LeasePilot</h3>
+			<?php
+			$default_posts_per_page = get_option( 'posts_per_page' );
+			$paged                  = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+			$case_study_query       = new WP_Query(
+				array(
+					'post_type' => 'case-study',
+					'paged'     => $paged,
+					'order'     => 'ASC'
+				)
+			);
+			if ( $case_study_query->have_posts() ) :
+			?>
+			<div class="testimonial-slider hide-for-small-only hide-for-mobile-only" id="testimonial-slider">
+				<?php
+				while ( $case_study_query->have_posts() ) :
+					$case_study_query->the_post();
+				?>
+				<div class="grid-x testimonial-item">
+					<div class="cell medium-4">
+						<img src="<?php the_field( 'case_study_logo_slider' ); ?>" alt="">
+					</div>
+					<div class="cell medium-7">
+						<p class="white-color ff-hn"><?php the_field( 'testimonial' ); ?></p>
+					</div>
+				</div>
+				<?php endwhile; ?>
+			</div>
+			<div class="logo-slider" id="case-study-slider">
+				<?php
+				$index = 0;
+				while ( $case_study_query->have_posts() ) :
+					$case_study_query->the_post();
+				?>
+				<div class="logo-item">
+					<a class="js-logo-click" data-index="<?php echo esc_attr( $index ); ?>">
+						<img src="<?php the_field( 'case_study_logo_slider' ); ?>" alt="<?php the_title(); ?>">
+					</a>
+					<p class="ff-hn hide-for-medium white-color"><?php the_field( 'testimonial' ); ?></p>
+				</div>
+				<?php
+					$index += 1;
+				endwhile;
+				?>
+			</div>
+			<?php endif;?>
+		</div>
+	</div>
+	<!-- /Testimonials section -->
 
 	<!-- 2-column section -->
 	<div class="page-block page-block--2-cols" style="background-color:#ffffff;">

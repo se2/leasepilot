@@ -33,7 +33,23 @@ h6 {
 }
 
 .ff-hn {
-  font-family: "Helvetica Neue Condensed", sans-serif;
+  font-family: "Helvetica Neue", serif;
+}
+
+.ff-hn-thin-cd {
+  font-family: 'HelveticaNeueLTStd-ThCn', serif;
+}
+
+.ff-hn-ultralight-cd {
+  font-family: 'HelveticaNeueLTStd-UltLtCn', serif;
+}
+
+.ff-hn-thin {
+  font-family: 'HelveticaNeueLTStd-Th', serif;
+}
+
+.ff-hn-ultralight {
+  font-family: 'HelveticaNeueLTStd-UltLt', serif;
 }
 
 .primary-color {
@@ -274,4 +290,20 @@ h6 {
 
 .no-overflow {
   overflow: hidden;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 0 13px 23px;
+  border-color: transparent transparent transparent #59615e;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 23px 13px 0;
+  border-color: transparent #59615e transparent transparent;
 }
