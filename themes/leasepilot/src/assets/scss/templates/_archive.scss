@@ -446,6 +446,10 @@ img.archive-page-cover {
         width: #{100% - $before-width};
         overflow: hidden;
         z-index: 2;
+        img {
+          position: absolute;
+          left: -3px;
+        }
         // &__inner {
         //   position: absolute;
         //   width: 440px;
