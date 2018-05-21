@@ -100,7 +100,7 @@ while ( have_posts() ) :
 	<!-- /Animated section -->
 
 	<!-- Comparison section -->
-	<div class="page-block page-block--compare pos-rel bg-cover" id="section-compare" style="background-image:url('<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/compare.png');">
+	<!-- <div class="page-block page-block--compare pos-rel bg-cover" id="section-compare" style="background-image:url('<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/compare.png');">
 		<div class="main-container h100p">
 			<div class="grid-x pos-rel flex-center-items">
 				<div class="cell small-12 medium-6 large-4">
@@ -153,7 +153,7 @@ while ( have_posts() ) :
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- /Comparison section -->
 
 	<!-- 2-column section -->
