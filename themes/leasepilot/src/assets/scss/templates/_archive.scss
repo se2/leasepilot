@@ -389,6 +389,41 @@ img.archive-page-cover {
       background-position: bottom left;
     }
   }
+  &--compare {
+    background-position: center center;
+    @include breakpoint(medium) {
+      height: 510px;
+      h2 {
+        font-size: 48px;
+        line-height: 1.15;
+      }
+      p {
+        font-size: 22.5px;
+        line-height: 1.15;
+      }
+    }
+    @include breakpoint(xlarge) {
+      height: 798px;
+    }
+    #comparison {
+      @include breakpoint(large) {
+        h1 {
+          font-size: 100px;
+          line-height: 1;
+        }
+        h5 {
+          font-size: 18px;
+          line-height: 1;
+        }
+      }
+      .after {
+        position: absolute;
+      }
+      .before {
+        z-index: -1;
+      }
+    }
+  }
 }
 
 /* /Page Blocks */

@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import 'jquery-ui-bundle';
+import 'before-after.js';
 import whatInput from 'what-input';
 import slick from 'slick-carousel';
 import isInViewport from 'is-in-viewport';
@@ -45,3 +47,5 @@ $(window).on('resize scroll', function () {
     $('#section-bar').addClass('animated');
   }
 });
+
+$('#comparison').beforeAfter();

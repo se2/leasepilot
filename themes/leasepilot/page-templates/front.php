@@ -51,7 +51,7 @@ while ( have_posts() ) :
 				<div class="cell small-12 medium-7 large-6">
 					<h3 class="secondary-color">Tailored for your company’s <span class="lighter ff-hn">documents and process</span></h3>
 					<p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur quam quis magna convallis dictum. Sed sapien sapien, tempus.</p>
-					<a href="/#!" class="button button__cta--dark">See the product »</a>
+					<a href="/#!" class="button button__cta button__cta--dark">See the product »</a>
 				</div>
 			</div>
 		</div>
@@ -75,7 +75,7 @@ while ( have_posts() ) :
 				<div class="cell small-12 medium-7 medium-offset-5 large-6 large-offset-6 text-right">
 					<h3 class="secondary-color">Turbocharge lease<span class="lighter ff-hn"><br>drafting & negotiation</span></h3>
 					<p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur quam quis magna convallis dictum. Sed sapien sapien, tempus.</p>
-					<a href="/#!" class="button button__cta--dark">See our partners »</a>
+					<a href="/#!" class="button button__cta button__cta--dark">See our partners »</a>
 				</div>
 			</div>
 		</div>
@@ -91,13 +91,70 @@ while ( have_posts() ) :
 				<div class="cell small-12 medium-7 large-6">
 					<h3 class="secondary-color">Transform your business <span class="lighter ff-hn">with leasing data</span></h3>
 					<p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur quam quis magna convallis dictum. Sed sapien sapien, tempus.</p>
-					<a href="/#!" class="button button__cta--dark">Explore features »</a>
+					<a href="/#!" class="button button__cta button__cta--dark">Explore features »</a>
 				</div>
 			</div>
 		</div>
 		<img class="computer-img hide-for-small-only hide-for-mobile-only " src="<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/computer.png" alt="">
 	</div>
 	<!-- /Animated section -->
+
+	<!-- Comparison section -->
+	<div class="page-block page-block--compare pos-rel bg-cover" id="section-compare" style="background-image:url('<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/compare.png');">
+		<div class="main-container h100p">
+			<div class="grid-x pos-rel flex-center-items">
+				<div class="cell small-12 medium-6 large-4">
+					<h2 class="secondary-color">How do you <span class="lighter ff-hn">stack up?</span></h2>
+					<p class="secondary-color">Want a more personalized comparison?</p>
+					<a href="/#!" class="button button__cta button__cta--dark mb0">Find our now »</a>
+				</div>
+				<div class="cell large-6 large-offset-2 ba-slider" id="comparison">
+					<div class="after no-overflow">
+						<div class="grid-x grid-margin-x">
+							<div class="cell small-6">
+								<h1 class="ff-hn lighter">0</h1>
+								<h5 class="ff-hn lighter">pages needed to review for accuracy of edits</h5>
+							</div>
+							<div class="cell small-6">
+								<h1 class="ff-hn lighter">30</h1>
+								<h5 class="ff-hn lighter">days to complete lease</h5>
+							</div>
+							<div class="cell small-6">
+								<h1 class="ff-hn lighter">90%</h1>
+								<h5 class="ff-hn lighter">stat/info goes here</h5>
+							</div>
+							<div class="cell small-6">
+								<h1 class="ff-hn lighter">30</h1>
+								<h5 class="ff-hn lighter">minutes to prepare first-draft of lease</h5>
+							</div>
+						</div>
+					</div>
+					<div class="before no-overflow">
+						<div class="grid-x grid-margin-x">
+							<div class="cell small-6">
+								<h1 class="ff-hn lighter">60+</h1>
+								<h5 class="ff-hn lighter">pages needed to review for accuracy of edits</h5>
+							</div>
+							<div class="cell small-6">
+								<h1 class="ff-hn lighter">100</h1>
+								<h5 class="ff-hn lighter">days to complete lease</h5>
+							</div>
+							<div class="cell small-6">
+								<h1 class="ff-hn lighter">28%</h1>
+								<h5 class="ff-hn lighter">stat/info goes here</h5>
+							</div>
+							<div class="cell small-6">
+								<h1 class="ff-hn lighter">120</h1>
+								<h5 class="ff-hn lighter">minutes to prepare first-draft of lease</h5>
+							</div>
+						</div>
+					</div>
+					<span class="handle"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Comparison section -->
 
 	<!-- 2-column section -->
 	<div class="page-block page-block--2-cols" style="background-color:#ffffff;">

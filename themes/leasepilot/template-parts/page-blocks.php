@@ -11,17 +11,17 @@
 	 */
 
 if ( have_rows( 'case_study_blocks' ) ) {
-	$blocks = get_field( 'case_study_blocks' );
-	foreach ( $blocks as $key => $block ) {
-		switch ( $block['acf_fc_layout'] ) {
+	while ( have_rows( 'case_study_blocks' ) ) :
+		the_row();
+		switch ( get_row_layout() ) {
 			case 'big_heading_block':
 ?>
 <!-- Big text block -->
-<div class="page-block page-block--big-text" style="background-color:<?php echo esc_attr( $block['block_background_color'] ); ?>;">
+<div class="page-block page-block--big-text" style="background-color:<?php the_sub_field( 'block_background_color' ); ?>;">
 	<div class="main-container">
 		<div class="grid-x">
 			<div class="cell small-12 medium-9">
-				<h1 class="ff-hn lighter" style="<?php echo 'color:' . esc_attr( $block['text_color'] ); ?>"><?php echo esc_attr( $block['big_heading'] ); ?></h1>
+				<h1 class="ff-hn lighter" style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_sub_field( 'big_heading' ); ?></h1>
 			</div>
 		</div>
 	</div>
@@ -32,14 +32,14 @@ if ( have_rows( 'case_study_blocks' ) ) {
 			case 'text_quote_block':
 ?>
 <!-- Text Quote block -->
-<div class="page-block page-block--text-quote" style="background-color:<?php echo esc_attr( $block['block_background_color'] ); ?>;">
+<div class="page-block page-block--text-quote" style="background-color:<?php the_sub_field( 'block_background_color' ); ?>;">
 	<div class="main-container">
 		<div class="grid-x grid-margin-x">
 			<div class="cell medium-4">
-				<h3 class="ff-cd primary-color"><?php echo esc_attr( $block['block_title'] ); ?></h3>
-				<h4 class="quote secondary-color"><?php echo esc_attr( $block['block_quote'] ); ?></h4>
+				<h3 class="ff-cd primary-color"><?php the_sub_field( 'block_title' ); ?></h3>
+				<h4 class="quote secondary-color"><?php the_sub_field( 'block_quote' ); ?></h4>
 			</div>
-			<div class="cell medium-8"><?php echo esc_attr( $block['block_content'] ); ?></div>
+			<div class="cell medium-8"><?php the_sub_field( 'block_content' ); ?></div>
 		</div>
 	</div>
 </div>
@@ -49,19 +49,19 @@ if ( have_rows( 'case_study_blocks' ) ) {
 			case 'cta_block':
 ?>
 <!-- Block CTA -->
-<div class="page-block page-block--cta-img <?php echo ( 'bottom' === $block['image_vertical_align'] ) ? 'page-block--cta-img--img-bottom' : ''; ?>" style="background-color:<?php echo esc_attr( $block['block_background_color'] ); ?>;">
+<div class="page-block page-block--cta-img <?php echo ( 'bottom' === get_sub_field( 'image_vertical_align' ) ) ? 'page-block--cta-img--img-bottom' : ''; ?>" style="background-color:<?php the_sub_field( 'block_background_color' ); ?>;">
 	<div class="main-container">
 		<div class="grid-x grid-margin-x flex-center-items">
-			<div class="cell medium-7 <?php echo ( 'bottom' === $block['image_vertical_align'] ) ? 'large-8' : 'large-7'; ?> page-block--cta-img__img-wrapper">
-				<img src="<?php echo esc_attr( $block['cta_image'] ); ?>" alt="<?php the_title(); ?>">
+			<div class="cell medium-7 <?php echo ( 'bottom' === get_sub_field( 'image_vertical_align' ) ) ? 'large-8' : 'large-7'; ?> page-block--cta-img__img-wrapper">
+				<img src="<?php the_sub_field( 'cta_image' ); ?>" alt="<?php the_title(); ?>">
 			</div>
-			<div class="cell medium-5 <?php echo ( 'bottom' === $block['image_vertical_align'] ) ? 'large-4' : 'large-5'; ?> page-block--cta-img__content-wrapper">
-				<h2 style="<?php echo 'color:' . esc_attr( $block['text_color'] ); ?>">
-					<?php echo esc_attr( $block['cta_title'] ); ?>
-					<span class="lighter ff-hn"><?php echo esc_attr( $block['cta_subtitle'] ); ?></span>
+			<div class="cell medium-5 <?php echo ( 'bottom' === get_sub_field( 'image_vertical_align' ) ) ? 'large-4' : 'large-5'; ?> page-block--cta-img__content-wrapper">
+				<h2 style="color:<?php the_sub_field( 'text_color' ); ?>">
+					<?php the_sub_field( 'cta_title' ); ?>
+					<span class="lighter ff-hn"><?php the_sub_field( 'cta_subtitle' ); ?></span>
 				</h2>
-				<p style="<?php echo 'color:' . esc_attr( $block['text_color'] ); ?>"><?php echo esc_attr( $block['cta_description'] ); ?></p>
-				<a href="<?php echo esc_attr( $block['cta_link'] ); ?>" class="button button__primary mb0"><?php echo esc_attr( $block['cta_button_title'] ); ?></a>
+				<p style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_sub_field( 'cta_description' ); ?></p>
+				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_button_title' ); ?></a>
 			</div>
 		</div>
 	</div>
@@ -72,12 +72,12 @@ if ( have_rows( 'case_study_blocks' ) ) {
 			case 'text_block':
 ?>
 <!-- Text background section -->
-<div class="page-block cta-section cta-section--secondary" style="<?php echo 'background-color:' . esc_attr( $block['block_background_color'] ); ?>">
+<div class="page-block cta-section cta-section--secondary" style="background-color:<?php the_sub_field( 'block_background_color' ); ?>">
 	<div class="main-container">
 		<div class="grid-x">
 			<div class="cell large-12 small-12 medium-12">
-				<h3 class="lighter ff-hn cta-section__title" style="<?php echo 'color:' . esc_attr( $block['text_color'] ); ?>"><?php echo esc_attr( $block['block_title'] ); ?></h3>
-				<p class="mb0 cta-section__content" style="<?php echo 'color:' . esc_attr( $block['text_color'] ); ?>"><?php echo esc_attr( $block['block_content'] ); ?></p>
+				<h3 class="lighter ff-hn cta-section__title" style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_sub_field( 'block_title' ); ?></h3>
+				<p class="mb0 cta-section__content" style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_sub_field( 'block_content' ); ?></p>
 			</div>
 		</div>
 	</div>
@@ -88,6 +88,6 @@ if ( have_rows( 'case_study_blocks' ) ) {
 			default:
 				break;
 		}
-	}
+	endwhile;
 }
 ?>
