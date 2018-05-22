@@ -1,6 +1,4 @@
 import $ from 'jquery';
-import 'jquery-ui-bundle';
-import 'before-after.js';
 import whatInput from 'what-input';
 import slick from 'slick-carousel';
 import isInViewport from 'is-in-viewport';
@@ -93,13 +91,11 @@ $(document).ready(function () {
     var width = cur.width() + 'px';
     cur.find('.resize img').css('width', width);
     // Bind dragging events
-    // drags(cur.find('.handle'), cur.find('.resize'), cur.find('.resize-reverse'), cur);
     drags(cur.find('.handle'), cur.find('.resize'), cur);
   });
 });
 
 // Update sliders on resize.
-// Because we all do this: i.imgur.com/YkbaV.gif
 $(window).resize(function () {
   $('#section-compare').each(function () {
     var cur = $(this);
@@ -108,6 +104,7 @@ $(window).resize(function () {
   });
 });
 
+/* Credit: https://codepen.io/bamf/pen/jEpxOX */
 function drags(dragElement, resizeElement, container) {
 
   // Initialize the dragging event on mousedown.
