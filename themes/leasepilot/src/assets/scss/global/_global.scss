@@ -260,14 +260,6 @@ h6 {
   }
 }
 
-.fullscreen-bg__video {
-  position: absolute;
-  display: none;
-  bottom: 0;
-  z-index: -999;
-  width: 100%;
-}
-
 @keyframes animate-width {
   from {
     width: 0;

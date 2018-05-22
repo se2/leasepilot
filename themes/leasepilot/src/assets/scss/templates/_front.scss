@@ -1,10 +1,15 @@
 .home {
+	@include breakpoint(small) {
+		.fullscreen-bg__video {
+			display: none;
+		}
+	}
   @include breakpoint(large) {
-    .page-header {
-      background-image: none !important;
-    }
     .fullscreen-bg__video {
       display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
     }
   }
   @include breakpoint(medium down) {
@@ -17,5 +22,5 @@
         }
       }
     }
-  }
+	}
 }

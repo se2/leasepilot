@@ -324,12 +324,14 @@ img.archive-page-cover {
       }
       .bars {
         $bars: 6;
-        $duration: 1s;
+        $duration: 700ms;
+        $delay: 500ms;
         @for $i from 0 to $bars {
           .bar__outer:nth-child(#{$i + 1}) {
             .bar__inner {
+              // overlap animation
               animation: animate-height $duration linear;
-              animation-delay: ($i * $duration);
+              animation-delay: ($i * $delay);
               /* keep state after animation */
               animation-fill-mode: forwards;
             }

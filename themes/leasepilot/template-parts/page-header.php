@@ -20,7 +20,7 @@
 <!-- Page header -->
 <header class="page-header page-header--bg-img pos-rel" style="<?php echo $bg; ?>;">
   <?php if ( $bg_type == 'video' ) : ?>
-  <video loop muted autoplay playsinline preload="none" class="fullscreen-bg__video">
+  <video muted autoplay playsinline preload="none" class="fullscreen-bg__video" poster="<?php the_field( 'background_video_poster' ); ?>">
       <source src="<?php the_field( 'background_video' ); ?>" type="video/mp4">
   </video>
   <?php endif; ?>
