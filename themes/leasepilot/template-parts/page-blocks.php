@@ -85,6 +85,123 @@ if ( have_rows( 'case_study_blocks' ) ) {
 <!-- /Text background section -->
 <?php
 				break;
+			case 'comparison_block':
+?>
+<!-- Comparison section -->
+<div class="page-block page-block--compare pos-rel bg-cover" id="section-compare" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+	<div class="main-container h100p">
+		<div class="grid-x pos-rel flex-center-items">
+			<div class="cell small-12 medium-5 large-4 page-block--compare__left">
+				<h2 class="secondary-color"><?php the_sub_field( 'block_title' ); ?></h2>
+				<p class="secondary-color"><?php the_sub_field( 'block_content' ); ?></p>
+				<?php if ( get_field( 'cta_title' ) && get_field( 'cta_link' ) ) : ?>
+				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark mb0"><?php the_sub_field( 'cta_title' ); ?></a>
+				<?php endif; ?>
+			</div>
+			<div class="cell small-12 medium-7 large-6 large-offset-2 ba-slider page-block--compare__right" id="comparison">
+				<div class="before h100p">
+					<img src="<?php the_sub_field( 'before_image' ); ?>" alt="<?php the_title(); ?>">
+				</div>
+				<div class="resize no-overflow after h100p">
+					<img src="<?php the_sub_field( 'after_image' ); ?>" alt="<?php the_title(); ?>">
+				</div>
+				<div class="handle">
+					<img src="<?php echo esc_attr( get_template_directory_uri() ); ?>/dist/assets/images/handle.png" alt="<?php the_title(); ?>">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Comparison section -->
+<?php
+				break;
+			case 'testimonial_block':
+?>
+<!-- Testimonials section -->
+<div class="page-block page-block--testimonials pos-rel" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
+	<div class="main-container">
+		<h3 class="white-color text-center ff-hn lighter"><?php the_sub_field( 'block_title' ); ?></h3>
+		<?php
+		$default_posts_per_page = get_option( 'posts_per_page' );
+		$paged                  = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+		$case_study_query       = new WP_Query(
+			array(
+				'post_type' => 'case-study',
+				'paged'     => $paged,
+				'order'     => 'ASC',
+			)
+		);
+		if ( $case_study_query->have_posts() ) :
+		?>
+		<div class="testimonial-slider hide-for-small-only hide-for-mobile-only" id="testimonial-slider">
+			<?php
+			while ( $case_study_query->have_posts() ) :
+				$case_study_query->the_post();
+			?>
+			<div class="grid-x testimonial-item flex-center-items">
+				<div class="cell medium-4">
+					<img src="<?php the_field( 'case_study_logo_slider' ); ?>" alt="<?php the_title(); ?>">
+				</div>
+				<div class="cell medium-7">
+					<p class="ff-hn" style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_field( 'testimonial' ); ?></p>
+				</div>
+			</div>
+			<?php endwhile; ?>
+		</div>
+		<div class="logo-slider" id="case-study-slider">
+			<?php
+			$index = 0;
+			while ( $case_study_query->have_posts() ) :
+				$case_study_query->the_post();
+			?>
+			<div class="logo-item">
+				<a class="js-logo-click" data-index="<?php echo esc_attr( $index ); ?>">
+					<img src="<?php the_field( 'case_study_logo_slider' ); ?>" alt="<?php the_title(); ?>">
+				</a>
+				<p class="ff-hn hide-for-medium white-color"><?php the_field( 'testimonial' ); ?></p>
+			</div>
+			<?php
+				$index++;
+			endwhile;
+			wp_reset_postdata();
+			?>
+		</div>
+		<?php endif; ?>
+	</div>
+</div>
+<!-- /Testimonials section -->
+<?php
+				break;
+			case 'posts_block':
+?>
+<!-- Posts section -->
+<div class="page-block page-block--posts">
+	<div class="main-content-full-width">
+		<div class="grid-x">
+			<?php
+			$post_query = new WP_Query(
+				array(
+					'post_type' => 'post',
+					'paged'     => $paged,
+					'order'     => 'ASC',
+				)
+			);
+			while ( $post_query->have_posts() ) :
+				$post_query->the_post();
+				$layout = ( is_sticky( get_the_ID() ) ) ? 'small-12 medium-6' : 'small-6 medium-3';
+			?>
+			<div class="cell bg-cover no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>" style="background-image:url('<?php echo esc_attr( get_the_post_thumbnail_url( $post, 'full' ) ); ?>');">
+				<p><a class="white-color bold" href="<?php the_permalink(); ?>"><?php the_title(); ?> »</a></p>
+				<div class="gradient-overlay"></div>
+			</div>
+			<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
+		</div>
+	</div>
+</div>
+<!-- /Posts section -->
+<?php
+				break;
 			default:
 				break;
 		}

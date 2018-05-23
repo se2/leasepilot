@@ -37,6 +37,41 @@
             "delay": 0
         },
         {
+            "key": "field_5b04caacd3649",
+            "label": "Page CTA Title",
+            "name": "page_cta_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b04caefd364a",
+            "label": "Page CTA Link",
+            "name": "page_cta_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_5af83c494f983",
             "label": "Background",
             "name": "background",
@@ -50,15 +85,14 @@
                 "id": ""
             },
             "choices": {
-                "none": "None",
-                "color": "Color",
                 "image": "Image",
+                "color": "Color",
                 "video": "Video"
             },
             "allow_null": 0,
             "other_choice": 0,
             "save_other_choice": 0,
-            "default_value": "none",
+            "default_value": "image",
             "layout": "horizontal",
             "return_format": "value"
         },
@@ -201,5 +235,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1526495522
+    "modified": 1527040779
 }

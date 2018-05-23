@@ -23,6 +23,8 @@ while ( have_posts() ) :
 
 	<?php get_template_part( 'template-parts/page', 'header' ); ?>
 
+	<?php get_template_part( 'template-parts/page', 'blocks' ); ?>
+
 	<!-- 2-column section -->
 	<div class="page-block page-block--2-cols" style="background-color:#ffffff;">
 		<div class="main-container">
@@ -99,84 +101,6 @@ while ( have_posts() ) :
 	</div>
 	<!-- /Animated section -->
 
-	<!-- Testimonials section -->
-	<div class="page-block page-block--testimonials pos-rel" style="background-color:#3c4542;">
-		<div class="main-container">
-			<h3 class="white-color text-center ff-hn lighter">Seizing the future with LeasePilot</h3>
-			<?php
-			$default_posts_per_page = get_option( 'posts_per_page' );
-			$paged                  = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-			$case_study_query       = new WP_Query(
-				array(
-					'post_type' => 'case-study',
-					'paged'     => $paged,
-					'order'     => 'ASC',
-				)
-			);
-			if ( $case_study_query->have_posts() ) :
-			?>
-			<div class="testimonial-slider hide-for-small-only hide-for-mobile-only" id="testimonial-slider">
-				<?php
-				while ( $case_study_query->have_posts() ) :
-					$case_study_query->the_post();
-				?>
-				<div class="grid-x testimonial-item flex-center-items">
-					<div class="cell medium-4">
-						<img src="<?php the_field( 'case_study_logo_slider' ); ?>" alt="<?php the_title(); ?>">
-					</div>
-					<div class="cell medium-7">
-						<p class="white-color ff-hn"><?php the_field( 'testimonial' ); ?></p>
-					</div>
-				</div>
-				<?php endwhile; ?>
-			</div>
-			<div class="logo-slider" id="case-study-slider">
-				<?php
-				$index = 0;
-				while ( $case_study_query->have_posts() ) :
-					$case_study_query->the_post();
-				?>
-				<div class="logo-item">
-					<a class="js-logo-click" data-index="<?php echo esc_attr( $index ); ?>">
-						<img src="<?php the_field( 'case_study_logo_slider' ); ?>" alt="<?php the_title(); ?>">
-					</a>
-					<p class="ff-hn hide-for-medium white-color"><?php the_field( 'testimonial' ); ?></p>
-				</div>
-				<?php
-					$index++;
-				endwhile;
-				?>
-			</div>
-			<?php endif; ?>
-		</div>
-	</div>
-	<!-- /Testimonials section -->
-
-	<!-- Comparison section -->
-	<div class="page-block page-block--compare pos-rel bg-cover" id="section-compare" style="background-image:url('<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/compare.png');">
-		<div class="main-container h100p">
-			<div class="grid-x pos-rel flex-center-items">
-				<div class="cell small-12 medium-5 large-4 page-block--compare__left">
-					<h2 class="secondary-color">How do you <span class="lighter ff-hn">stack up?</span></h2>
-					<p class="secondary-color">Want a more personalized comparison?</p>
-					<a href="/#!" class="button button__cta button__cta--dark mb0">Find our now »</a>
-				</div>
-				<div class="cell small-12 medium-7 large-6 large-offset-2 ba-slider page-block--compare__right" id="comparison">
-					<div class="before h100p">
-						<img src="<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/before.png" alt="<?php the_title(); ?>">
-					</div>
-					<div class="resize no-overflow after h100p">
-						<img src="<?php echo esc_attr( get_site_url() ); ?>/wp-content/uploads/2018/05/after.png" alt="<?php the_title(); ?>">
-					</div>
-					<div class="handle">
-						<img src="<?php echo esc_attr( get_template_directory_uri() ); ?>/dist/assets/images/handle.png" alt="<?php the_title(); ?>">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /Comparison section -->
-
 	<!-- 2-column section -->
 	<div class="page-block page-block--2-cols" style="background-color:#ffffff;">
 		<div class="main-container">
@@ -192,34 +116,6 @@ while ( have_posts() ) :
 		</div>
 	</div>
 	<!-- /2-column section -->
-
-	<?php get_template_part( 'template-parts/page', 'blocks' ); ?>
-
-	<!-- Posts section -->
-	<div class="page-block page-block--posts">
-		<div class="main-content-full-width">
-			<div class="grid-x">
-				<?php
-				$post_query = new WP_Query(
-					array(
-						'post_type' => 'post',
-						'paged'     => $paged,
-						'order'     => 'ASC',
-					)
-				);
-				while ( $post_query->have_posts() ) :
-					$post_query->the_post();
-					$layout = ( is_sticky( get_the_ID() ) ) ? 'small-12 medium-6' : 'small-6 medium-3';
-				?>
-				<div class="cell bg-cover no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>" style="background-image:url('<?php echo esc_attr( get_the_post_thumbnail_url( $post, 'full' ) ); ?>');">
-					<p><a class="white-color bold" href="<?php the_permalink(); ?>"><?php the_title(); ?> »</a></p>
-					<div class="gradient-overlay"></div>
-				</div>
-				<?php endwhile; ?>
-			</div>
-		</div>
-	</div>
-	<!-- /Posts section -->
 
 </div>
 

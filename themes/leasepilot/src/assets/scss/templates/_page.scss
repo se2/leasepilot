@@ -4,11 +4,6 @@
       height: 100%;
     }
   }
-  @include breakpoint(medium) {
-    .main-container {
-      height: auto;
-    }
-  }
   &--bg-img {
     @extend .bg-cover;
     background-position: center bottom;
@@ -43,10 +38,8 @@
       top: 14vw;
     }
     @include breakpoint(xlarge) {
-      top: 170px;
-      &--singular {
-        top: 210px;
-      }
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }
