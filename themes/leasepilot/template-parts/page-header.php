@@ -37,7 +37,7 @@ switch ( $bg_type ) {
 	</video>
 	<?php endif; ?>
 	<div class="main-container pos-rel">
-		<div class="grid-x page-header__content <?php echo ( is_single() && ! is_front_page() ) ? 'page-header__content--singular' : ''; ?>">
+		<div class="grid-x page-header__content <?php echo ( is_front_page() ) ? 'page-header__content--home' : ''; ?> <?php echo ( is_single() && ! is_front_page() ) ? 'page-header__content--singular' : ''; ?>">
 			<div class="cell small-12 medium-6 large-5">
 				<?php if ( is_singular( 'case-study' ) && get_field( 'case_study_logo_single' ) ) : ?>
 				<img src="<?php the_field( 'case_study_logo_single' ); ?>" alt="<?php the_title(); ?>" class="archive-page-logo archive-page-logo--singular">

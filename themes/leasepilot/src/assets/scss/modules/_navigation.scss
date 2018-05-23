@@ -1,9 +1,12 @@
+.top-bar-title {
+  margin: 0;
+}
 .site-header {
   position: relative;
   background-color: white;
   z-index: 999;
   @include breakpoint(small) {
-    height: 84px;
+    height: map-get($nav-height, small);
     .grid-container,
     .grid-x {
       height: 100%;
@@ -13,8 +16,8 @@
     }
   }
   @include breakpoint(large) {
-    height: auto;
-    padding: 36px 0 22px;
+    padding: 0;
+    height: map-get($nav-height, large);
   }
 }
 
@@ -39,6 +42,9 @@
 .top-menu .menu {
   justify-content: flex-end;
   li {
+    &.button-menu {
+      margin-left: 10px;
+    }
     @include breakpoint(medium down) {
       text-align: center;
     }
@@ -59,9 +65,6 @@
   }
   @include breakpoint(medium) {
     padding: 10px;
-  }
-  @include breakpoint(large) {
-    padding: 10px 16px;
   }
 }
 
@@ -127,16 +130,13 @@
   border: 0;
 }
 
-.dropdown.menu .has-submenu.is-down-arrow a {
-  padding-right: 1rem;
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  margin-top: -2px;
+  right: 11px;
 }
 
 .dropdown.menu .has-submenu.is-down-arrow>a::after {
   border: 0;
-}
-
-.dropdown.menu:first-child>li.is-dropdown-submenu-parent>a::after {
-  display: none;
 }
 
 .site-navigation {
@@ -148,15 +148,15 @@
 /* Re-style hamburger menu */
 
 .site-title-bar.title-bar {
-  @include breakpoint(medium down) {
+  @include breakpoint(small) {
     position: absolute;
-    right: 30px;
     background: none;
     padding: 0;
     width: 35px;
     height: 20px;
     top: 50%;
     transform: translateY(-50%);
+    right: calc(#{map-get($grid-margin-gutters, small)} / 2);
     .title-bar-left,
     .title-bar-right {
       height: 100%;
@@ -174,11 +174,17 @@
       }
     }
   }
+  @include breakpoint(mobile) {
+    right: calc(#{map-get($grid-margin-gutters, mobile)} / 2);
+  }
+  @include breakpoint(medium) {
+    right: calc(#{map-get($grid-margin-gutters, medium)} / 2);
+  }
 }
 
 .menu .mobile-only {
   @include breakpoint(large) {
-    display: none;
+    display: none !important;
   }
 }
 

@@ -1,3 +1,15 @@
+// global variables
+$nav-height: (
+  small: 84px,
+  large: 120px
+);
+
+// colors
+$menu-color:        #404845;
+$footer-menu-color: #bbbebd;
+$light-gray:        #dcd8d6;
+$blue:              #97daea;
+
 body,
 p {
   @include breakpoint(mobile down) {
