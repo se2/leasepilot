@@ -202,6 +202,88 @@ if ( have_rows( 'case_study_blocks' ) ) {
 <!-- /Posts section -->
 <?php
 				break;
+			case '2_column_cta_block':
+?>
+<!-- 2-column section -->
+<div class="page-block page-block--2-cols" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
+	<div class="main-container">
+		<div class="grid-x">
+			<div class="cell page-block--2-cols__left small-12 medium-7 stack-down">
+				<h3 class="ff-hn lighter page-block--2-cols__title"><?php the_sub_field( 'block_title' ); ?></h3>
+				<p style="color:<?php the_sub_field( 'text_color' ); ?>;"><?php the_sub_field( 'block_subtitle' ); ?></p>
+				<?php if ( 'content_image' === get_sub_field( 'layout' ) ) : ?>
+				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_title' ); ?></a>
+				<?php endif; ?>
+			</div>
+			<?php if ( 'content_image' === get_sub_field( 'layout' ) ) : ?>
+			<div class="cell page-block--2-cols--img page-block--2-cols__right small-12 medium-5 text-right stack-up">
+				<img src="<?php the_sub_field( 'cta_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>" class="<?php echo ( 'yes' === get_sub_field( 'image_box_shadow' ) ) ? 'box-shadow' : ''; ?>">
+			</div>
+			<?php else : ?>
+			<div class="cell page-block--2-cols__right small-12 medium-5 text-center">
+				<br><br>
+				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_title' ); ?></a>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</div>
+<!-- /2-column section -->
+<?php
+				break;
+			case 'animated_background_block':
+?>
+<!-- Animated section -->
+<?php
+	$type = get_sub_field( 'animation_type' );
+	$type_class = 'section-img-crop';
+	$right_class = 'medium-offset-5 large-offset-6 text-right';
+	switch ( $type ) {
+		case 'bar':
+			$type_class = 'section-bar';
+			break;
+		case 'fade':
+			$type_class = 'section-computer';
+			break;
+		default:
+			break;
+	}
+?>
+<div class="page-block page-block--animated page-block--animated--right pos-rel <?php echo esc_attr( $type_class ); ?>" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
+	<?php if ( 'slide' === $type ) : ?>
+	<div class="h100p inner-div-bg img-crop">
+		<img src="<?php the_sub_field( 'background_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>" class="bg-image">
+	</div>
+	<?php endif; ?>
+	<?php if ( 'fade' === $type ) : ?>
+	<div class="h100p inner-div-bg inner-div-bg--fade page-block--animated--right bg-cover" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');"></div>
+	<img class="computer-img hide-for-small-only hide-for-mobile-only " src="<?php the_sub_field( 'block_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>">
+	<?php endif; ?>
+	<?php if ( 'bar' === $type ) : ?>
+	<div class="inner-div-bg bars bg-contain page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+	<?php
+	$bars = array( 341, 90, 134, 558, 206, 90 );
+	foreach ( $bars as $key => $bar ) {
+	?>
+	<div class="bar__outer" style="height:<?php echo esc_attr( $bar ); ?>px;">
+		<div class="bar__inner"></div>
+	</div>
+	<?php } ?>
+	</div>
+	<?php endif; ?>
+	<div class="main-container h100p pos-rel">
+		<div class="grid-x h100p">
+			<div class="cell small-12 medium-7 large-6 <?php echo ( 'right' === get_sub_field( 'text_layout' ) ) ? esc_attr( $right_class ) : '' ; ?>">
+				<h3 class="secondary-color"><?php the_sub_field( 'block_title' ); ?> <span class="lighter ff-hn"><?php the_sub_field( 'block_subtitle' ); ?></span></h3>
+				<p class="secondary-color"><?php the_sub_field( 'block_description' ); ?></p>
+				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Animated section -->
+<?php
+				break;
 			default:
 				break;
 		}

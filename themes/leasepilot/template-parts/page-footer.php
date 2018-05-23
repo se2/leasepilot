@@ -1,3 +1,18 @@
+<?php if ( get_field( 'show_footer_cta' ) ) : ?>
+<!-- CTA Section -->
+<div class="cta-section cta-section--blue">
+  <div class="main-container">
+    <div class="grid-x">
+      <div class="cell large-12 small-12 medium-12">
+        <h4 class="cta-section__title ff-hn"><?php the_field( 'footer_cta_content' ); ?></h4>
+        <a class="button button__cta button__cta--dark mb0" href="<?php the_field( 'footer_cta_link' ); ?>"><?php the_field( 'footer_cta_title' ); ?></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /CTA Section -->
+<?php endif; ?>
+
 <!-- Page Footer -->
 <div class="main-container">
   <div class="main-grid">

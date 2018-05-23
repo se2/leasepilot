@@ -79,19 +79,6 @@ get_header(); ?>
 	</div>
 	<!-- /Form Section -->
 
-	<!-- CTA Section -->
-	<div class="cta-section cta-section--blue">
-		<div class="main-container">
-			<div class="grid-x">
-				<div class="cell large-12 small-12 medium-12">
-					<h4 class="cta-section__title ff-hn">Interested in joining our team? See all open positions.</h4>
-					<a class="button button__cta button__cta--dark mb0" href="/careers">Visit careers »</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /CTA Section -->
-
 	<?php get_template_part( 'template-parts/page', 'footer' ); ?>
 
 	<?php endwhile; ?>

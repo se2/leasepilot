@@ -4,14 +4,20 @@
 			display: none;
 		}
 	}
-  @include breakpoint(large) {
+  @include breakpoint(landscape) {
     .fullscreen-bg__video {
       display: block;
       position: absolute;
       bottom: 0;
-      width: 100%;
+			width: 100%;
+			&--portrait {
+				width: auto;
+				height: auto;
+				min-width: 100%;
+				min-height: 100%;
+			}
     }
-  }
+	}
   @include breakpoint(medium down) {
     .page-header {
       &__content {

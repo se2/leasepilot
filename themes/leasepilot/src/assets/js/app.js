@@ -35,18 +35,29 @@ if ($('#resource-grid').length > 0) {
 }
 
 $(window).on('resize scroll', function () {
-  if ($('#section-img-crop').is(':in-viewport( -700 )')) {
-    $('#section-img-crop').addClass('animated');
-  }
-  if ($('#section-computer').is(':in-viewport( -700 )')) {
-    $('#section-computer').addClass('animated');
-  }
-  if ($('#section-bar').is(':in-viewport( -700 )')) {
-    $('#section-bar').addClass('animated');
-  }
+  $('.section-img-crop').each(function() {
+    if ($(this).is(':in-viewport( -700 )')) {
+      $(this).addClass('animated');
+    }
+  });
+  $('.section-computer').each(function() {
+    if ($(this).is(':in-viewport( -700 )')) {
+      $(this).addClass('animated');
+    }
+  });
+  $('.section-bar').each(function() {
+    if ($(this).is(':in-viewport( -700 )')) {
+      $(this).addClass('animated');
+    }
+  });
 });
 
 $(document).ready(function () {
+  // fullscreen-bg__video
+  // 0.7
+  if ($(window).height() / $(window).width() > 0.7) {
+    $('.fullscreen-bg__video').addClass('fullscreen-bg__video--portrait');
+  }
   $('#case-study-slider').slick({
     infinite: true,
     speed: 500,
