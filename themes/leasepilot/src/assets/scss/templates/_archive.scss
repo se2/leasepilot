@@ -461,8 +461,12 @@ img.archive-page-cover {
         height: 450px;
       }
       img {
-        max-width: $img-width;
-        // max-height: 100%;
+        @include breakpoint(small) {
+          max-width: 100%;
+        }
+        @include breakpoint(large) {
+          max-width: $img-width;
+        }
       }
       .before {
         width: $before-width;
