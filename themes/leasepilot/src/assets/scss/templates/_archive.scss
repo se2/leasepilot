@@ -278,6 +278,9 @@ img.archive-page-cover {
     }
     @include breakpoint(medium) {
       height: 465px;
+      &--none {
+        height: 400px;
+      }
     }
     @include breakpoint(large) {
       height: 620px;

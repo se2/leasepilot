@@ -64,7 +64,7 @@ while ( have_posts() ) :
 			<div class="grid-x grid-margin-x h100p">
 				<?php if ( $is_right ) : ?>
 				<div class="cell small-12 medium-6 large-6 pos-rel stack-up">
-					<?php the_post_thumbnail( 'full', array( 'class' => 'product-image abs-center-vertical box-shadow ' . $product_image_class ) ); ?>
+					<?php the_post_thumbnail( 'full', array( 'class' => 'product-image box-shadow ' . $product_image_class ) ); ?>
 				</div>
 				<?php endif; ?>
 				<div class="cell small-12 medium-6 large-6 stack-down <?php echo ( $is_right ) ? 'text-right' : ''; ?>">
@@ -74,7 +74,7 @@ while ( have_posts() ) :
 				</div>
 				<?php if ( ! $is_right ) : ?>
 				<div class="cell small-12 medium-6 large-6 pos-rel stack-up">
-					<?php the_post_thumbnail( 'full', array( 'class' => 'product-image abs-center-vertical box-shadow ' . $product_image_class ) ); ?>
+					<?php the_post_thumbnail( 'full', array( 'class' => 'product-image box-shadow ' . $product_image_class ) ); ?>
 				</div>
 				<?php endif; ?>
 			</div>
