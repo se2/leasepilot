@@ -166,7 +166,9 @@ img.archive-page-cover {
     &__img-wrapper {
       text-align: center;
       img {
-        max-width: 100%;
+        @include breakpoint(mobile down) {
+          max-width: 255px;
+        }
         box-shadow: 8px 14px 18px 0px rgba(0, 0, 0, 0.36);
       }
     }
@@ -226,13 +228,6 @@ img.archive-page-cover {
   }
   &--2-cols {
     @include breakpoint(mobile down) {
-      /* reverse stack mobile */
-      .stack-up {
-        order: 11;
-      }
-      .stack-down {
-        order: 12;
-      }
       &__left,
       &__right {
         text-align: center;
@@ -245,7 +240,7 @@ img.archive-page-cover {
       padding: 50px 0;
       color: $secondary-color;
       .button {
-        margin-top: 36px;
+        margin-top: 20px;
       }
       &__title {
         margin-bottom: 21px;
@@ -256,9 +251,6 @@ img.archive-page-cover {
     }
     @include breakpoint(medium) {
       padding: 60px 0 80px;
-      .button {
-        margin-top: 0;
-      }
       &__left {
         text-align: left;
       }
@@ -286,9 +278,6 @@ img.archive-page-cover {
     }
     @include breakpoint(medium) {
       height: 465px;
-      &--none {
-        height: 355px;
-      }
     }
     @include breakpoint(large) {
       height: 620px;
@@ -337,8 +326,8 @@ img.archive-page-cover {
         @for $i from 0 to $bars {
           .bar__outer:nth-child(#{$i + 1}) {
             .bar__inner {
-              // overlap animation
               animation: animate-height $duration ease-in;
+              /* overlap animation */
               animation-delay: ($i * $delay);
               /* keep state after animation */
               animation-fill-mode: forwards;
@@ -402,11 +391,20 @@ img.archive-page-cover {
   }
   &--compare {
     background-position: center center;
+    @include breakpoint(small) {
+      background-size: 500%;
+      height: auto;
+      padding-top: 100px;
+      padding-bottom: 145px;
+    }
+    @include breakpoint(mobile) {
+      background-size: 375%;
+    }
     @include breakpoint(medium) {
-      height: 510px;
-      &__right {
-        height: 384px;
-      }
+      background-size: 125%;
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 435px;
       h2 {
         font-size: 48px;
         line-height: 1.15;
@@ -417,23 +415,34 @@ img.archive-page-cover {
       }
     }
     @include breakpoint(large) {
+      padding-top: 0;
+      padding-bottom: 0;
       height: 680px;
-      &__right {
-        height: 384px;
-      }
     }
     @include breakpoint(xlarge) {
+      background-size: cover;
       height: 798px;
-      &__right {
-        height: 450px;
+    }
+    &__left {
+      @include breakpoint(mobile down) {
+        text-align: center;
+        margin-bottom: 33px;
+        h2 {
+          font-size: 36px;
+        }
       }
     }
     $img-width: 440px;
+    $handle-width: 40px;
     $before-width: 100%;
-    #comparison {
+    &__right {
       position: relative;
       overflow: visible;
+      @include breakpoint(small) {
+        height: 390px;
+      }
       @include breakpoint(large) {
+        height: 450px;
         h1 {
           font-weight: 100;
           font-size: 135px;
@@ -445,9 +454,12 @@ img.archive-page-cover {
           line-height: 1;
         }
       }
+      @include breakpoint(xlarge) {
+        height: 450px;
+      }
       img {
         max-width: $img-width;
-        max-height: 100%;
+        // max-height: 100%;
       }
       .before {
         width: $before-width;
@@ -474,20 +486,24 @@ img.archive-page-cover {
         }
       }
       .handle {
-        position: absolute;
-        z-index: 4;
-        left: calc(#{100% - $before-width} - 20px);
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: $primary-color;
-        cursor: ew-resize;
-        $handle-width: 40px;
-        img {
-          @extend .abs-center-vertical;
-          width: $handle-width;
-          max-width: none;
-          left: -($handle-width / 2);
+        @include breakpoint(small) {
+          position: absolute;
+          z-index: 4;
+          top: 0;
+          left: calc(#{100% - $before-width} - 10px);
+          bottom: 0;
+          width: 2px;
+          background: $primary-color;
+          cursor: ew-resize;
+          img {
+            @extend .abs-center-vertical;
+            width: $handle-width;
+            max-width: none;
+            left: -($handle-width / 2);
+          }
+        }
+        @include breakpoint(mobile) {
+          left: calc(#{100% - $before-width} - 20px);
         }
       }
     }

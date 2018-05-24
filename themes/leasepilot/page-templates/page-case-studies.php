@@ -32,7 +32,7 @@ get_header(); ?>
 				while ( $case_study_query->have_posts() ) :
 					$case_study_query->the_post();
 			?>
-					<div class="archive-page-item cell small-12 mobile-6 medium-4 large-4">
+					<div class="archive-page-item cell small-12 medium-4 large-4">
 						<a href="<?php the_permalink(); ?>">
 							<div class="archive-page-bg">
 								<img class="archive-page-logo" src="<?php the_field( 'case_study_logo' ); ?>" alt="<?php the_title(); ?>">

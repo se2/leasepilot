@@ -23,39 +23,69 @@ while ( have_posts() ) :
 
 	<?php get_template_part( 'template-parts/page', 'header' ); ?>
 
-  <?php
-  $right_class = 'medium-offset-5 large-offset-6 text-right';
-  $args = array(
-    'post_type'      => 'page',
-    'posts_per_page' => -1,
-    'post_parent'    => $post->ID,
-    'order'          => 'ASC',
-    'orderby'        => 'menu_order'
-  );
-  $parent = new WP_Query( $args );
-  if ( $parent->have_posts() ) : ?>
-  <?php
-    $index = 0;
-    while ( $parent->have_posts() ) :
-      $parent->the_post();
-  ?>
-  <div class="page-block page-block--animated page-block--animated--none pos-rel" <?php echo ( $index % 2 == 0 ) ? ' style="background-color:#f6f5f5;"' : ''; ?>>
-    <div class="main-container h100p pos-rel">
-      <div class="grid-x h100p">
-        <div class="cell small-12 medium-7 large-6 <?php echo ( $index % 2 == 0 ) ? esc_attr( $right_class ) : '' ; ?>">
-          <h3 class="secondary-color"><?php the_field( 'page_title' ); ?><br><span class="lighter ff-hn"><?php the_field( 'page_subtitle' ); ?></span></h3>
-          <p class="secondary-color"><?php the_field( 'page_subheading' ); ?></p>
-          <a href="<?php the_permalink(); ?>" class="button button__cta button__cta--dark">Learn more »</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <?php
-      $index++;
-    endwhile;
-  ?>
-  <?php endif; ?>
-  <?php wp_reset_postdata(); ?>
+	<div class="product-features pos-rel">
+		<div class="main-container h100p">
+			<div class="grid-x h100p flex-center-items">
+				<div class="cell product-features__cell small-12 medium-4 large-4">
+					<img src="<?php the_clean_url(); ?>/wp-content/uploads/2018/05/resource-teer-sheet.png" alt="Freeform Editing">
+					<h3 class="secondary-color">Freeform<br><span class="lighter ff-hn">Editing</span></h3>
+					<p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur justo sed nulla commodo.</p>
+				</div>
+				<div class="cell product-features__cell small-12 medium-4 large-4">
+					<img src="<?php the_clean_url(); ?>/wp-content/uploads/2018/05/standardization.png" alt="">
+					<h3 class="secondary-color">Standardization<br><span class="lighter ff-hn">of Terms</span></h3>
+					<p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur justo sed nulla commodo.</p>
+				</div>
+				<div class="cell product-features__cell small-12 medium-4 large-4">
+					<img src="<?php the_clean_url(); ?>/wp-content/uploads/2018/05/resource-case-study.png" alt="">
+					<h3 class="secondary-color">Reporting &<br><span class="lighter ff-hn">Analytics</span></h3>
+					<p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur justo sed nulla commodo.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<?php
+	$parent = new WP_Query(array(
+		'post_type'   => 'page',
+		'post_parent' => $post->ID,
+		'order'       => 'ASC',
+		'orderby'     => 'menu_order',
+	));
+	if ( $parent->have_posts() ) :
+		$index    = 0;
+		while ( $parent->have_posts() ) :
+			$is_right = ( 0 === ( $index % 2 ) );
+			$parent->the_post();
+			$product_image_class = ( $is_right ) ? 'product-image--left' : '';
+	?>
+	<div class="page-block page-block--animated page-block--animated--none pos-rel no-overflow" <?php echo ( $is_right ) ? ' style="background-color:#f6f5f5;"' : ''; ?>>
+		<div class="main-container h100p pos-rel">
+			<div class="grid-x grid-margin-x h100p">
+				<?php if ( $is_right ) : ?>
+				<div class="cell small-12 medium-6 large-6 pos-rel stack-up">
+					<?php the_post_thumbnail( 'full', array( 'class' => 'product-image abs-center-vertical box-shadow ' . $product_image_class ) ); ?>
+				</div>
+				<?php endif; ?>
+				<div class="cell small-12 medium-6 large-6 stack-down <?php echo ( $is_right ) ? 'text-right' : ''; ?>">
+					<h3 class="secondary-color"><?php the_field( 'page_title' ); ?><br><span class="lighter ff-hn"><?php the_field( 'page_subtitle' ); ?></span></h3>
+					<p class="secondary-color"><?php the_field( 'page_subheading' ); ?></p>
+					<a href="<?php the_permalink(); ?>" class="button button__cta button__cta--dark">Learn more »</a>
+				</div>
+				<?php if ( ! $is_right ) : ?>
+				<div class="cell small-12 medium-6 large-6 pos-rel stack-up">
+					<?php the_post_thumbnail( 'full', array( 'class' => 'product-image abs-center-vertical box-shadow ' . $product_image_class ) ); ?>
+				</div>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+	<?php
+			$index++;
+		endwhile;
+	endif;
+	?>
+	<?php wp_reset_postdata(); ?>
 
 	<?php get_template_part( 'template-parts/page', 'footer' ); ?>
 

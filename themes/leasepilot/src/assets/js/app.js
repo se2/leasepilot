@@ -35,17 +35,17 @@ if ($('#resource-grid').length > 0) {
 }
 
 $(window).on('resize scroll', function () {
-  $('.section-img-crop').each(function() {
+  $('.section-img-crop').each(function () {
     if ($(this).is(':in-viewport( -700 )')) {
       $(this).addClass('animated');
     }
   });
-  $('.section-computer').each(function() {
+  $('.section-computer').each(function () {
     if ($(this).is(':in-viewport( -700 )')) {
       $(this).addClass('animated');
     }
   });
-  $('.section-bar').each(function() {
+  $('.section-bar').each(function () {
     if ($(this).is(':in-viewport( -700 )')) {
       $(this).addClass('animated');
     }
@@ -91,27 +91,31 @@ $(document).ready(function () {
     fade: true,
     cssEase: 'ease-in'
   });
-  $('.js-logo-click').on('click', function(e) {
+  $('.js-logo-click').on('click', function (e) {
     e.preventDefault();
     var slideNumber = $(this).data('index');
     $('#testimonial-slider').slick('slickGoTo', slideNumber, false);
   });
   $('.ba-slider').each(function () {
-    var cur = $(this);
+    var current = $(this);
     // Adjust the slider
-    var width = cur.width() + 'px';
-    cur.find('.resize img').css('width', width);
+    var width = current.width() + 'px';
+    current.find('.resize img').css('width', width);
+    current.find('.before img').css('max-width', width);
+    if ($(window).width() < 415) {
+      current.css('height', current.find('.before img').height() + 20);
+    }
     // Bind dragging events
-    drags(cur.find('.handle'), cur.find('.resize'), cur);
+    drags(current.find('.handle'), current.find('.resize'), current);
   });
 });
 
 // Update sliders on resize.
 $(window).resize(function () {
-  $('#section-compare').each(function () {
-    var cur = $(this);
-    var width = cur.width() + 'px';
-    cur.find('.resize img').css('width', width);
+  $('.section-compare').each(function () {
+    var current = $(this);
+    var width = current.width() + 'px';
+    current.find('.resize img').css('width', width);
   });
 });
 
@@ -137,8 +141,13 @@ function drags(dragElement, resizeElement, container) {
       containerWidth = container.outerWidth();
 
     // Set limits
-    var minLeft = containerOffset - 20;
-    var maxLeft = containerOffset + containerWidth - dragWidth + 20;
+    var offset = 20;
+    // tweak for iPhone 7+ and lower, need to tweak CSS for left position of .handle
+    if ($(window).width() < 415) {
+      offset = 10;
+    }
+    var minLeft = containerOffset - offset;
+    var maxLeft = containerOffset + containerWidth - dragWidth + offset;
 
     // Calculate the dragging distance on mousemove.
     dragElement.parents().on("mousemove touchmove", function (e) {

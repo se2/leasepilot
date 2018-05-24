@@ -57,6 +57,9 @@ require_once 'library/custom-post-type.php';
 /** ACF Options Page */
 require_once 'library/acf-options-page.php';
 
+/** Miscellaneous function */
+require_once 'library/misc.php';
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // phpcs:ignore
 // require_once 'library/class-foundationpress-protocol-relative-theme-assets.php';

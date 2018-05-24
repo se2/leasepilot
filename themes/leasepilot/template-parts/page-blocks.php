@@ -88,17 +88,17 @@ if ( have_rows( 'case_study_blocks' ) ) {
 			case 'comparison_block':
 ?>
 <!-- Comparison section -->
-<div class="page-block page-block--compare pos-rel bg-cover" id="section-compare" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+<div class="page-block page-block--compare pos-rel bg-cover section-compare" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
 	<div class="main-container h100p">
 		<div class="grid-x pos-rel flex-center-items">
-			<div class="cell small-12 medium-5 large-4 page-block--compare__left">
+			<div class="cell small-12 medium-6 large-6 xlarge-4 page-block--compare__left">
 				<h2 class="secondary-color"><?php the_sub_field( 'block_title' ); ?></h2>
 				<p class="secondary-color"><?php the_sub_field( 'block_content' ); ?></p>
-				<?php if ( get_field( 'cta_title' ) && get_field( 'cta_link' ) ) : ?>
+				<?php if ( get_sub_field( 'cta_title' ) && get_sub_field( 'cta_link' ) ) : ?>
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark mb0"><?php the_sub_field( 'cta_title' ); ?></a>
 				<?php endif; ?>
 			</div>
-			<div class="cell small-12 medium-7 large-6 large-offset-2 ba-slider page-block--compare__right" id="comparison">
+			<div class="cell small-12 medium-6 large-6 xlarge-6 xlarge-offset-2 page-block--compare__right ba-slider">
 				<div class="before h100p">
 					<img src="<?php the_sub_field( 'before_image' ); ?>" alt="<?php the_title(); ?>">
 				</div>
@@ -163,10 +163,10 @@ if ( have_rows( 'case_study_blocks' ) ) {
 			<?php
 				$index++;
 			endwhile;
-			wp_reset_postdata();
 			?>
 		</div>
 		<?php endif; ?>
+		<?php wp_reset_postdata(); ?>
 	</div>
 </div>
 <!-- /Testimonials section -->
@@ -188,7 +188,7 @@ if ( have_rows( 'case_study_blocks' ) ) {
 			);
 			while ( $post_query->have_posts() ) :
 				$post_query->the_post();
-				$layout = ( is_sticky( get_the_ID() ) ) ? 'small-12 medium-6' : 'small-6 medium-3';
+				$layout = ( is_sticky( get_the_ID() ) ) ? 'small-12 mobile-12 medium-6' : 'small-12 mobile-6 medium-3';
 			?>
 			<div class="cell bg-cover no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>" style="background-image:url('<?php echo esc_attr( get_the_post_thumbnail_url( $post, 'full' ) ); ?>');">
 				<p><a class="white-color bold" href="<?php the_permalink(); ?>"><?php the_title(); ?> »</a></p>
@@ -220,8 +220,7 @@ if ( have_rows( 'case_study_blocks' ) ) {
 				<img src="<?php the_sub_field( 'cta_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>" class="<?php echo ( 'yes' === get_sub_field( 'image_box_shadow' ) ) ? 'box-shadow' : ''; ?>">
 			</div>
 			<?php else : ?>
-			<div class="cell page-block--2-cols__right small-12 medium-5 text-center">
-				<br><br>
+			<div class="cell page-block--2-cols__right small-12 medium-5 text-center stack-down">
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_title' ); ?></a>
 			</div>
 			<?php endif; ?>
@@ -235,19 +234,19 @@ if ( have_rows( 'case_study_blocks' ) ) {
 ?>
 <!-- Animated section -->
 <?php
-	$type = get_sub_field( 'animation_type' );
-	$type_class = 'section-img-crop';
-	$right_class = 'medium-offset-5 large-offset-6 text-right';
-	switch ( $type ) {
-		case 'bar':
-			$type_class = 'section-bar';
-			break;
-		case 'fade':
-			$type_class = 'section-computer';
-			break;
-		default:
-			break;
-	}
+$type        = get_sub_field( 'animation_type' );
+$type_class  = 'section-img-crop';
+$right_class = 'medium-offset-5 large-offset-6 text-right';
+switch ( $type ) {
+	case 'bar':
+		$type_class = 'section-bar';
+		break;
+	case 'fade':
+		$type_class = 'section-computer';
+		break;
+	default:
+		break;
+}
 ?>
 <div class="page-block page-block--animated page-block--animated--right pos-rel <?php echo esc_attr( $type_class ); ?>" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
 	<?php if ( 'slide' === $type ) : ?>
@@ -273,7 +272,7 @@ if ( have_rows( 'case_study_blocks' ) ) {
 	<?php endif; ?>
 	<div class="main-container h100p pos-rel">
 		<div class="grid-x h100p">
-			<div class="cell small-12 medium-7 large-6 <?php echo ( 'right' === get_sub_field( 'text_layout' ) ) ? esc_attr( $right_class ) : '' ; ?>">
+			<div class="cell small-12 medium-7 large-6 <?php echo ( 'right' === get_sub_field( 'text_layout' ) ) ? esc_attr( $right_class ) : ''; ?>">
 				<h3 class="secondary-color"><?php the_sub_field( 'block_title' ); ?> <span class="lighter ff-hn"><?php the_sub_field( 'block_subtitle' ); ?></span></h3>
 				<p class="secondary-color"><?php the_sub_field( 'block_description' ); ?></p>
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>

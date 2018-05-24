@@ -1,15 +1,10 @@
 // global variables
-$nav-height: (
-  small: 84px,
-  large: 120px
-);
-
+$nav-height: ( small: 84px, large: 120px);
 // colors
-$menu-color:        #404845;
+$menu-color: #404845;
 $footer-menu-color: #bbbebd;
-$light-gray:        #dcd8d6;
-$blue:              #97daea;
-
+$light-gray: #dcd8d6;
+$blue: #97daea;
 body,
 p {
   @include breakpoint(mobile down) {
@@ -220,6 +215,19 @@ h6 {
       }
     }
   }
+  @include breakpoint(mobile down) {
+    text-align: center;
+    li {
+      margin-right: 10px;
+    }
+  }
+  @include breakpoint(375px down) {
+    li {
+      button {
+        font-size: 14px;
+      }
+    }
+  }
 }
 
 .h100p {
@@ -317,6 +325,16 @@ h6 {
   border-style: solid;
   border-width: 13px 23px 13px 0;
   border-color: transparent #59615e transparent transparent;
+}
+
+/* reverse stack mobile */
+@include breakpoint(mobile down) {
+  .stack-up {
+    order: 11;
+  }
+  .stack-down {
+    order: 12;
+  }
 }
 
 .gradient-overlay {
