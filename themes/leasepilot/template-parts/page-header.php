@@ -10,8 +10,18 @@
 	 * @link       https://delindesign.com
 	 */
 
-$prefix   = ( is_archive( 'resources' ) ) ? 'r_' : '';
-$option   = ( is_archive( 'resources' ) ) ? 'option' : '';
+$prefix   = '';
+$option   = '';
+$page_title = get_the_title();
+if ( get_queried_object()->term_id ) {
+	$term = get_term( get_queried_object()->term_id );
+	$option = $term;
+	$page_title = $term->name;
+} else if ( is_archive( 'resources' ) ) {
+	$prefix = 'r_';
+	$option = 'option';
+	$page_title = 'Resources';
+}
 $bg_type  = get_field( $prefix . 'background', $option );
 $bg       = '';
 $video_id = null;
@@ -40,12 +50,12 @@ switch ( $bg_type ) {
 	<?php endif; ?>
 	<div class="main-container pos-rel">
 		<div class="grid-x page-header__content <?php echo ( is_front_page() ) ? 'page-header__content--home' : ''; ?> <?php echo ( is_single() && ! is_front_page() ) ? 'page-header__content--singular' : ''; ?>">
-			<div class="cell small-12 medium-6 large-5">
+			<div class="cell small-9 medium-6 large-5">
 				<?php if ( is_singular( 'resources' ) && get_field( $prefix . 'case_study_logo_single', $option ) ) : ?>
 				<img src="<?php the_field( $prefix . 'case_study_logo_single' ); ?>" alt="<?php the_title(); ?>" class="archive-page-logo archive-page-logo--singular">
 				<?php else : ?>
 				<?php if ( ! is_front_page() ) : ?>
-				<h1 class="page-title" style="color:<?php the_field( $prefix . 'page_title_color', $option ); ?>"><?php the_title(); ?>:</h1>
+				<h1 class="page-title" style="color:<?php the_field( $prefix . 'page_title_color', $option ); ?>"><?php echo esc_attr( $page_title ); ?>:</h1>
 				<?php endif; ?>
 				<?php endif; ?>
 				<div class="page-subheading">

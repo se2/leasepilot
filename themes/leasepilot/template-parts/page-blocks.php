@@ -52,10 +52,10 @@ if ( have_rows( 'page_blocks' ) ) {
 <div class="page-block page-block--cta-img <?php echo ( 'bottom' === get_sub_field( 'image_vertical_align' ) ) ? 'page-block--cta-img--img-bottom' : ''; ?>" style="background-color:<?php the_sub_field( 'block_background_color' ); ?>;">
 	<div class="main-container">
 		<div class="grid-x grid-margin-x flex-center-items">
-			<div class="cell medium-7 <?php echo ( 'bottom' === get_sub_field( 'image_vertical_align' ) ) ? 'large-8' : 'large-7'; ?> page-block--cta-img__img-wrapper">
+			<div class="cell medium-7 <?php echo ( 'bottom' === get_sub_field( 'image_vertical_align' ) ) ? 'large-7' : 'large-7'; ?> page-block--cta-img__img-wrapper">
 				<img src="<?php the_sub_field( 'cta_image' ); ?>" alt="<?php the_title(); ?>">
 			</div>
-			<div class="cell medium-5 <?php echo ( 'bottom' === get_sub_field( 'image_vertical_align' ) ) ? 'large-4' : 'large-5'; ?> page-block--cta-img__content-wrapper">
+			<div class="cell medium-5 <?php echo ( 'bottom' === get_sub_field( 'image_vertical_align' ) ) ? 'large-5' : 'large-5'; ?> page-block--cta-img__content-wrapper">
 				<h2 style="color:<?php the_sub_field( 'text_color' ); ?>">
 					<?php the_sub_field( 'cta_title' ); ?>
 					<span class="lighter ff-hn"><?php the_sub_field( 'cta_subtitle' ); ?></span>
@@ -216,8 +216,8 @@ if ( have_rows( 'page_blocks' ) ) {
 <!-- 2-column section -->
 <div class="page-block page-block--2-cols" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
 	<div class="main-container">
-		<div class="grid-x">
-			<div class="cell page-block--2-cols__left small-12 medium-7 stack-down">
+		<div class="grid-x grid-margin-x flex-center-items">
+			<div class="cell page-block--2-cols__left small-12 medium-8 stack-down">
 				<h3 class="ff-hn lighter page-block--2-cols__title"><?php the_sub_field( 'block_title' ); ?></h3>
 				<p style="color:<?php the_sub_field( 'text_color' ); ?>;"><?php the_sub_field( 'block_subtitle' ); ?></p>
 				<?php if ( 'content_image' === get_sub_field( 'layout' ) ) : ?>
@@ -225,11 +225,11 @@ if ( have_rows( 'page_blocks' ) ) {
 				<?php endif; ?>
 			</div>
 			<?php if ( 'content_image' === get_sub_field( 'layout' ) ) : ?>
-			<div class="cell page-block--2-cols--img page-block--2-cols__right small-12 medium-5 text-right stack-up">
+			<div class="cell page-block--2-cols--img page-block--2-cols__right small-12 medium-4 text-right stack-up">
 				<img src="<?php the_sub_field( 'cta_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>" class="<?php echo ( 'yes' === get_sub_field( 'image_box_shadow' ) ) ? 'box-shadow' : ''; ?>">
 			</div>
 			<?php else : ?>
-			<div class="cell page-block--2-cols__right small-12 medium-5 text-center stack-down">
+			<div class="cell page-block--2-cols__right small-12 medium-4 text-center stack-down">
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_title' ); ?></a>
 			</div>
 			<?php endif; ?>
@@ -245,7 +245,7 @@ if ( have_rows( 'page_blocks' ) ) {
 <?php
 $type        = get_sub_field( 'animation_type' );
 $type_class  = 'section-img-crop';
-$right_class = 'medium-offset-5 large-offset-6 text-right';
+$right_class = 'medium-offset-3 large-offset-6 xlarge-offset-5 text-right';
 switch ( $type ) {
 	case 'bar':
 		$type_class = 'section-bar';
@@ -268,7 +268,7 @@ switch ( $type ) {
 	<img class="computer-img hide-for-small-only hide-for-mobile-only " src="<?php the_sub_field( 'block_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>">
 	<?php endif; ?>
 	<?php if ( 'bar' === $type ) : ?>
-	<div class="inner-div-bg bars bg-contain page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+	<div class="inner-div-bg bars bg-cover page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
 	<?php
 	$bars = array( 341, 90, 134, 558, 206, 90 );
 	foreach ( $bars as $key => $bar ) {
@@ -281,13 +281,14 @@ switch ( $type ) {
 	<?php endif; ?>
 	<div class="main-container h100p pos-rel">
 		<div class="grid-x h100p">
-			<div class="cell small-12 medium-7 large-6 <?php echo ( 'right' === get_sub_field( 'text_layout' ) ) ? esc_attr( $right_class ) : ''; ?>">
+			<div class="cell small-12 medium-9 large-6 xlarge-7 <?php echo ( 'right' === get_sub_field( 'text_layout' ) ) ? esc_attr( $right_class ) : ''; ?>">
 				<h3 class="secondary-color"><?php the_sub_field( 'block_title' ); ?> <span class="lighter ff-hn"><?php the_sub_field( 'block_subtitle' ); ?></span></h3>
 				<p class="secondary-color"><?php the_sub_field( 'block_description' ); ?></p>
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>
 			</div>
 		</div>
 	</div>
+	<img class="hide-for-medium hide-for-medium-up animated-mobile-img" src="<?php the_sub_field( 'mobile_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>">
 </div>
 <!-- /Animated section -->
 <?php

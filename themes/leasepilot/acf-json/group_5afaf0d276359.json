@@ -291,7 +291,7 @@
                             "key": "field_5afaf5217811b",
                             "label": "CTA Button Link",
                             "name": "cta_button_link",
-                            "type": "url",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -300,8 +300,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": ""
+                            "return_format": "url"
                         },
                         {
                             "key": "field_5afc696ed6bbe",
@@ -482,7 +481,7 @@
                             "key": "field_5b04dc58817e2",
                             "label": "CTA Link",
                             "name": "cta_link",
-                            "type": "url",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -491,8 +490,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": ""
+                            "return_format": "url"
                         },
                         {
                             "key": "field_5b04ccfbe38c1",
@@ -729,7 +727,7 @@
                             "key": "field_5b057c35ebfdf",
                             "label": "CTA Link",
                             "name": "cta_link",
-                            "type": "url",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -738,8 +736,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": ""
+                            "return_format": "url"
                         },
                         {
                             "key": "field_5b057c40ebfe0",
@@ -925,7 +922,7 @@
                             "key": "field_5b05a6749f3a3",
                             "label": "CTA Link",
                             "name": "cta_link",
-                            "type": "url",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -934,8 +931,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": ""
+                            "return_format": "url"
                         },
                         {
                             "key": "field_5b05a88bb5a53",
@@ -1056,6 +1052,30 @@
                                 "id": ""
                             },
                             "default_value": "#ffffff"
+                        },
+                        {
+                            "key": "field_5b082f4c8994b",
+                            "label": "Mobile Image",
+                            "name": "mobile_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -1098,5 +1118,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1527219576
+    "modified": 1527263081
 }

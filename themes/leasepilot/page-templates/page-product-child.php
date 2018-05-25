@@ -69,6 +69,40 @@ while ( have_posts() ) :
 	</div>
 	<!-- Step Block -->
 
+	<!-- Block CTA -->
+	<div class="page-block page-block--cta-img page-block--cta-img--img-bottom page-block--cta-img--with-title" style="background-color:#3d4442;">
+		<div class="main-container">
+			<div class="grid-x grid-margin-x">
+				<div class="cell title">
+					<h1 class="fz-30 white-color ff-hn text-center lighter">eBook CTA Headline</h1>
+					<p class="white-color text-center" style="font-size:24px;">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum dapibus posuere. Vestibulum mollis nibh purus
+					</p>
+				</div>
+				<div class="cell medium-6 large-6 page-block--cta-img__img-wrapper">
+					<img src="<?php the_clean_url(); ?>/wp-content/uploads/2018/05/cta-img.png" alt="<?php the_title(); ?>">
+				</div>
+				<div class="cell medium-5 large-5 page-block--cta-img__content-wrapper form-section form-section--1-column">
+					<?php // phpcs:disable ?>
+					<!--[if lte IE 8]>
+					<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+					<![endif]-->
+					<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+					<script>
+						hbspt.forms.create({
+							portalId: "2789668",
+							formId: "9ba8d9c8-b30d-4a99-9620-38416b5c77ee",
+							css: ""
+						});
+					</script>
+					<?php // phpcs:enable ?>
+					<!-- <a href="/#!" class="button button__primary mb0">Download eBook »</a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Block CTA -->
+
 	<!-- Step Block -->
 	<div class="page-block page-block--animated pos-rel no-overflow product-child" style="background-color:#f6f5f5;">
 		<div class="main-container h100p pos-rel">

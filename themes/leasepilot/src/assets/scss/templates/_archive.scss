@@ -187,7 +187,7 @@ img.archive-page-cover {
     @include breakpoint(medium) {
       padding: 62px 0 75px;
       h2 {
-        font-size: 52px;
+        font-size: 36px;
         line-height: 1;
         font-weight: lighter;
       }
@@ -225,6 +225,23 @@ img.archive-page-cover {
         }
       }
     }
+    &--with-title {
+      @include breakpoint(medium) {
+        position: relative;
+        height: auto;
+        .title {
+          padding-top: 45px;
+          padding-bottom: 20px;
+        }
+        .page-block--cta-img__img-wrapper {
+          text-align: center;
+          img {
+            position: relative;
+            left: auto;
+          }
+        }
+      }
+    }
   }
   &--2-cols {
     @include breakpoint(mobile down) {
@@ -244,6 +261,7 @@ img.archive-page-cover {
       }
       &__title {
         margin-bottom: 21px;
+        line-height: 1.2;
       }
       &--img {
         margin-bottom: 44px;
@@ -261,11 +279,15 @@ img.archive-page-cover {
   }
   &--animated {
     align-content: center;
+    $padding: 80px;
     @include breakpoint(mobile down) {
-      padding-top: 80px;
-      padding-bottom: 80px;
+      padding-top: #{$padding};
+      padding-bottom: #{$padding};
       h3 {
         font-size: 32px;
+      }
+      img.animated-mobile-img {
+        margin-bottom: -#{$padding};
       }
       .main-container,
       .container,
@@ -278,6 +300,9 @@ img.archive-page-cover {
     }
     @include breakpoint(medium) {
       height: 465px;
+      h3 {
+        font-size: 34px;
+      }
       &--none {
         height: 400px;
       }
@@ -292,7 +317,7 @@ img.archive-page-cover {
 			}
     }
     @include breakpoint(xlarge) {
-      height: 725px;
+      height: 100vh;
       &--none {
         height: 555px;
 			}
@@ -309,7 +334,10 @@ img.archive-page-cover {
           max-width: 50%;
         }
         @include breakpoint(large) {
-          right: calc((100vw - #{$container-width}) / 4);
+          right: 0;
+        }
+        @include breakpoint(xlarge) {
+          right: calc((100vw - #{$container-width}) / 8);
         }
       }
     }

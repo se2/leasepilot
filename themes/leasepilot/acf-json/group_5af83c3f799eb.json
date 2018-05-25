@@ -361,6 +361,13 @@
                 "operator": "==",
                 "value": "resources"
             }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "resource-category"
+            }
         ]
     ],
     "menu_order": 0,
@@ -371,5 +378,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1527221530
+    "modified": 1527253095
 }

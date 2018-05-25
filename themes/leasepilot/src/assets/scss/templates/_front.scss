@@ -20,13 +20,27 @@
 	}
   @include breakpoint(medium down) {
     .page-header {
+			background-position-x: -510px;
       &__content {
         h1 {
-          font-size: 43px;
+					font-size: 43px;
           line-height: 1.15;
           margin-bottom: 20px;
         }
       }
     }
+	}
+	@include breakpoint(414px down) {
+		.page-header {
+			background-position-x: -350px;
+			&__content {
+				h1 {
+					font-size: 36px;
+				}
+			}
+		}
+	}
+	.site-header {
+		background-color: transparent;
 	}
 }
