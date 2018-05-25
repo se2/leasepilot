@@ -6,6 +6,8 @@
 
 	<?php get_template_part( 'template-parts/page', 'blocks' ); ?>
 
+	<?php get_template_part( 'template-parts/page', 'footer' ); ?>
+
 </div>
 
 <?php get_footer(); ?>

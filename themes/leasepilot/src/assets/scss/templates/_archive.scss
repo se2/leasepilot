@@ -16,7 +16,7 @@
   justify-content: center;
   overflow: hidden;
   @include breakpoint(large) {
-    &:hover {
+		&:hover {
       img.archive-page-cover {
         bottom: 0;
       }
@@ -286,13 +286,19 @@ img.archive-page-cover {
       height: 620px;
       &--none {
         height: 475px;
-      }
+			}
+			&.product-child {
+				height: 435px;
+			}
     }
     @include breakpoint(xlarge) {
       height: 725px;
       &--none {
         height: 555px;
-      }
+			}
+			&.product-child {
+				height: 510px;
+			}
     }
     &.section-computer {
       .computer-img {

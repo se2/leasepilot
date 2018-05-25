@@ -7,6 +7,7 @@ $light-gray: #dcd8d6;
 $blue: #97daea;
 body,
 p {
+	line-height: 1.4;
   @include breakpoint(mobile down) {
     font-size: 16px;
   }
@@ -327,8 +328,12 @@ h6 {
   border-color: transparent #59615e transparent transparent;
 }
 
-/* reverse stack mobile */
+.float-right {
+  float: right;
+}
+
 @include breakpoint(mobile down) {
+  /* reverse stack mobile */
   .stack-up {
     order: 11;
   }

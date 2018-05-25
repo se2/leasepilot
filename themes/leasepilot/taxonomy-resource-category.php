@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * Template Name: Case Studies Page
+	 * Resource Category Custom Taxonomy Archive Page
 	 *
-	 * @category   Template
+	 * @category   Archive
 	 * @package    FoundationPress
 	 * @subpackage LeasePilot
 	 * @author     Delin Design <contact@delindesign.com>
@@ -20,19 +20,28 @@ get_header(); ?>
 		<div class="main-container">
 			<div class="grid-x grid-margin-x">
 			<?php
-			$default_posts_per_page = get_option( 'posts_per_page' );
-			$paged                  = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-			$case_study_query       = new WP_Query(
+			$posts_per_page   = get_option( 'posts_per_page' );
+			$paged            = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+			$term_id          = get_queried_object()->term_id;
+			$case_study_query = new WP_Query(
 				array(
-					'post_type' => 'case-study',
+					'post_type' => 'resources',
 					'paged'     => $paged,
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'resource-category',
+							'field'    => 'term_id',
+							'terms'    => $term_id,
+							'operator' => 'IN', // Possible values are 'IN', 'NOT IN', 'AND'.
+						),
+					),
 				)
 			);
 			if ( $case_study_query->have_posts() ) :
 				while ( $case_study_query->have_posts() ) :
 					$case_study_query->the_post();
 			?>
-					<div class="archive-page-item cell small-12 medium-4 large-4">
+					<div class="archive-page-item cell small-12 mobile-6 medium-4 large-4">
 						<a href="<?php the_permalink(); ?>">
 							<div class="archive-page-bg">
 								<img class="archive-page-logo" src="<?php the_field( 'case_study_logo' ); ?>" alt="<?php the_title(); ?>">

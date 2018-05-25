@@ -10,8 +10,8 @@
 	 * @link       https://delindesign.com
 	 */
 
-if ( have_rows( 'case_study_blocks' ) ) {
-	while ( have_rows( 'case_study_blocks' ) ) :
+if ( have_rows( 'page_blocks' ) ) {
+	while ( have_rows( 'page_blocks' ) ) :
 		the_row();
 		switch ( get_row_layout() ) {
 			case 'big_heading_block':
@@ -61,7 +61,7 @@ if ( have_rows( 'case_study_blocks' ) ) {
 					<span class="lighter ff-hn"><?php the_sub_field( 'cta_subtitle' ); ?></span>
 				</h2>
 				<p style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_sub_field( 'cta_description' ); ?></p>
-				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_button_title' ); ?></a>
+				<a href="<?php the_sub_field( 'cta_button_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_button_title' ); ?></a>
 			</div>
 		</div>
 	</div>
@@ -122,13 +122,22 @@ if ( have_rows( 'case_study_blocks' ) ) {
 	<div class="main-container">
 		<h3 class="white-color text-center ff-hn lighter"><?php the_sub_field( 'block_title' ); ?></h3>
 		<?php
-		$default_posts_per_page = get_option( 'posts_per_page' );
-		$paged                  = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-		$case_study_query       = new WP_Query(
+		$posts_per_page  = get_option( 'posts_per_page' );
+		$paged            = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+		$case_study_id    = 13;
+		$case_study_query = new WP_Query(
 			array(
-				'post_type' => 'case-study',
+				'post_type' => 'resources',
 				'paged'     => $paged,
 				'order'     => 'ASC',
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'resource-category',
+						'field'    => 'term_id',
+						'terms'    => $case_study_id,
+						'operator' => 'IN', // Possible values are 'IN', 'NOT IN', 'AND'.
+					),
+				),
 			)
 		);
 		if ( $case_study_query->have_posts() ) :

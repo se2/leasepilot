@@ -37,13 +37,13 @@
       left: 20px;
       top: 14vw;
       &--home {
-          left: 92px;
-          top: 40px;
+        left: 92px;
+        top: 40px;
       }
     }
     @include breakpoint(large) {
-        top: 75px;
-        left: 60px;
+      top: 75px;
+      left: 60px;
     }
     @include breakpoint(xlarge) {
       top: 50%;

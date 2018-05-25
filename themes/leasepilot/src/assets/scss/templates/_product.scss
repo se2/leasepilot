@@ -11,6 +11,17 @@
 	}
 	@include breakpoint(large) {
 		max-width: 100vw;
+		&--boxed {
+			position: relative;
+			max-width: 100%;
+			top: 0;
+			transform: none;
+		}
+		&--max-height {
+			max-width: none;
+			max-height: 100%;
+			height: 100%;
+		}
 	}
 	&--left {
 		right: 0;

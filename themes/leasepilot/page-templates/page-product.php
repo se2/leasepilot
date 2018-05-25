@@ -23,6 +23,7 @@ while ( have_posts() ) :
 
 	<?php get_template_part( 'template-parts/page', 'header' ); ?>
 
+	<!-- Product Features Section -->
 	<div class="product-features pos-rel">
 		<div class="main-container h100p">
 			<div class="grid-x h100p flex-center-items">
@@ -32,18 +33,19 @@ while ( have_posts() ) :
 					<p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur justo sed nulla commodo.</p>
 				</div>
 				<div class="cell product-features__cell small-12 medium-4 large-4">
-					<img src="<?php the_clean_url(); ?>/wp-content/uploads/2018/05/standardization.png" alt="">
+					<img src="<?php the_clean_url(); ?>/wp-content/uploads/2018/05/standardization.png" alt="Standardization of Terms">
 					<h3 class="secondary-color">Standardization<br><span class="lighter ff-hn">of Terms</span></h3>
 					<p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur justo sed nulla commodo.</p>
 				</div>
 				<div class="cell product-features__cell small-12 medium-4 large-4">
-					<img src="<?php the_clean_url(); ?>/wp-content/uploads/2018/05/resource-case-study.png" alt="">
+					<img src="<?php the_clean_url(); ?>/wp-content/uploads/2018/05/resource-case-study.png" alt="Reporting and Analytics">
 					<h3 class="secondary-color">Reporting &<br><span class="lighter ff-hn">Analytics</span></h3>
 					<p class="secondary-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur justo sed nulla commodo.</p>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- /Product Features Section -->
 
 	<?php
 	$parent = new WP_Query(array(

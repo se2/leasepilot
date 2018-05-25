@@ -10,20 +10,22 @@
 	 * @link       https://delindesign.com
 	 */
 
-$bg_type  = get_field( 'background' );
+$prefix   = ( is_archive( 'resources' ) ) ? 'r_' : '';
+$option   = ( is_archive( 'resources' ) ) ? 'option' : '';
+$bg_type  = get_field( $prefix . 'background', $option );
 $bg       = '';
 $video_id = null;
 
 switch ( $bg_type ) {
 	case 'color':
-		$bg = 'background-color:' . get_field( 'background_color' );
+		$bg = 'background-color:' . get_field( $prefix . 'background_color', $option );
 		break;
 	case 'image':
-		$bg = 'background-image:url(' . get_field( 'background_image' ) . ')';
+		$bg = 'background-image:url(' . get_field( $prefix . 'background_image', $option ) . ')';
 		break;
 	case 'video':
-		$bg       = 'background-image:url(' . get_field( 'background_video_poster' ) . ')';
-		$video_id = (int) substr( wp_parse_url( get_field( 'background_video' ), PHP_URL_PATH ), 1 );
+		$bg       = 'background-image:url(' . get_field( $prefix . 'background_video_poster', $option ) . ')';
+		$video_id = (int) substr( wp_parse_url( get_field( $prefix . 'background_video', $option ), PHP_URL_PATH ), 1 );
 		break;
 	default:
 		break;
@@ -32,24 +34,24 @@ switch ( $bg_type ) {
 <!-- Page header -->
 <header class="page-header page-header--bg-img pos-rel" style="<?php echo esc_attr( $bg ); ?>;">
 	<?php if ( 'video' === $bg_type ) : ?>
-	<video muted autoplay playsinline preload="none" class="fullscreen-bg__video" poster="<?php the_field( 'background_video_poster' ); ?>">
-			<source src="<?php the_field( 'background_video' ); ?>" type="video/mp4">
+	<video muted autoplay playsinline preload="none" class="fullscreen-bg__video" poster="<?php the_field( $prefix . 'background_video_poster', $option ); ?>">
+		<source src="<?php the_field( $prefix . 'background_video', $option ); ?>" type="video/mp4">
 	</video>
 	<?php endif; ?>
 	<div class="main-container pos-rel">
 		<div class="grid-x page-header__content <?php echo ( is_front_page() ) ? 'page-header__content--home' : ''; ?> <?php echo ( is_single() && ! is_front_page() ) ? 'page-header__content--singular' : ''; ?>">
 			<div class="cell small-12 medium-6 large-5">
-				<?php if ( is_singular( 'case-study' ) && get_field( 'case_study_logo_single' ) ) : ?>
-				<img src="<?php the_field( 'case_study_logo_single' ); ?>" alt="<?php the_title(); ?>" class="archive-page-logo archive-page-logo--singular">
+				<?php if ( is_singular( 'resources' ) && get_field( $prefix . 'case_study_logo_single', $option ) ) : ?>
+				<img src="<?php the_field( $prefix . 'case_study_logo_single' ); ?>" alt="<?php the_title(); ?>" class="archive-page-logo archive-page-logo--singular">
 				<?php else : ?>
 				<?php if ( ! is_front_page() ) : ?>
-				<h1 class="page-title" style="color:<?php the_field( 'page_title_color' ); ?>"><?php the_title(); ?>:</h1>
+				<h1 class="page-title" style="color:<?php the_field( $prefix . 'page_title_color', $option ); ?>"><?php the_title(); ?>:</h1>
 				<?php endif; ?>
 				<?php endif; ?>
 				<div class="page-subheading">
-					<?php the_field( 'page_subheading' ); ?>
-					<?php if ( get_field( 'page_cta_title' ) && get_field( 'page_cta_link' ) ) : ?>
-					<a href="<?php the_field( 'page_cta_link' ); ?>" class="button button__cta"><?php the_field( 'page_cta_title' ); ?></a>
+					<?php the_field( $prefix . 'page_subheading', $option ); ?>
+					<?php if ( get_field( $prefix . 'page_cta_title', $option ) && get_field( $prefix . 'page_cta_link', $option ) ) : ?>
+					<a href="<?php the_field( $prefix . 'page_cta_link', $option ); ?>" class="button button__cta"><?php the_field( $prefix . 'page_cta_title', $option ); ?></a>
 					<?php endif; ?>
 				</div>
 			</div>

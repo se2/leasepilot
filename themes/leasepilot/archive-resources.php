@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * Template Name: Resources Page
+	 * Resource CPT archive page
 	 *
-	 * @category   Template
+	 * @category   Archive
 	 * @package    FoundationPress
 	 * @subpackage LeasePilot
 	 * @author     Delin Design <contact@delindesign.com>
@@ -38,7 +38,7 @@ get_header(); ?>
 			$paged                  = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 			$resource_query         = new WP_Query(
 				array(
-					'post_type' => 'resource',
+					'post_type' => 'resources',
 					'paged'     => $paged,
 				)
 			);
@@ -47,14 +47,14 @@ get_header(); ?>
 					$resource_query->the_post();
 					$term = wp_get_post_terms( get_the_ID(), 'resource-category' );
 			?>
-					<div class="archive-page-item cell small-12 medium-4 large-4 <?php echo esc_attr( $term[0]->slug ); ?>">
-						<a href="<?php get_field( 'download_file' ) ? the_field( 'download_file' ) : '/#!'; ?>">
+					<div class="archive-page-item cell small-12 mobile-6 medium-4 large-4 <?php echo esc_attr( $term[0]->slug ); ?>">
+						<a href="<?php get_field( 'download_file' ) ? the_field( 'download_file' ) : the_permalink(); ?>">
 							<div class="archive-page-bg">
 								<img class="archive-page-logo" src="<?php the_field( 'category_avatar', $term[0] ); ?>" alt="<?php the_title(); ?>">
 							</div>
 						</a>
 						<div class="archive-page--learn-more">
-							<a class="button button__archive-page" href="<?php get_field( 'download_file' ) ? the_field( 'download_file' ) : '/#!'; ?>" target="_blank">Download »</a>
+							<a class="button button__archive-page" href="<?php get_field( 'download_file' ) ? the_field( 'download_file' ) : the_permalink(); ?>" target="_blank">Download »</a>
 						</div>
 						<h6 class="archive-page-category bold primary-color ff-hn"><?php echo esc_attr( $term[0]->name ); ?></h6>
 						<h3 class="archive-page-name">
