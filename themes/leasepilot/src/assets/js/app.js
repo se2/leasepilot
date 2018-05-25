@@ -143,8 +143,8 @@ function drags(dragElement, resizeElement, container) {
     // Set limits
     var offset = 20;
     // tweak for iPhone 7+ and lower, need to tweak CSS for left position of .handle
-    if (($(window).width() < 415) || ($(window).width() > 480 && $(window).width() < 769)) {
-      offset = 10;
+    if (($(window).width() < 481) || ($(window).width() > 481 && $(window).width() < 769)) {
+      offset = 5;
     }
     var minLeft = containerOffset - offset;
     var maxLeft = containerOffset + containerWidth - dragWidth + offset;

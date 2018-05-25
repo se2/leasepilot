@@ -531,7 +531,7 @@ img.archive-page-cover {
           position: absolute;
           z-index: 4;
           top: 0;
-          left: calc(#{100% - $before-width} - 10px);
+          left: calc(#{100% - $before-width} - 5px);
           bottom: 0;
           width: 2px;
           background: $primary-color;
@@ -543,7 +543,7 @@ img.archive-page-cover {
             left: -($handle-width / 2);
           }
         }
-        @include breakpoint(mobile) {
+        @include breakpoint(medium) {
           left: calc(#{100% - $before-width} - 20px);
         }
       }
