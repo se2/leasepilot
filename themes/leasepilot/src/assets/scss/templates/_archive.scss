@@ -280,6 +280,9 @@ img.archive-page-cover {
   &--animated {
     align-content: center;
     $padding: 80px;
+    p {
+      font-size: 17px;
+    }
     @include breakpoint(mobile down) {
       padding-top: #{$padding};
       padding-bottom: #{$padding};
@@ -317,7 +320,7 @@ img.archive-page-cover {
 			}
     }
     @include breakpoint(xlarge) {
-      height: 100vh;
+      height: 800px;
       &--none {
         height: 555px;
 			}

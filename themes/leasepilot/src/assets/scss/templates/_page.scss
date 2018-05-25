@@ -44,6 +44,10 @@
     @include breakpoint(large) {
       top: 75px;
       left: 60px;
+      &--home {
+        left: 0;
+        position: relative;
+      }
     }
     @include breakpoint(xlarge) {
       top: 50%;

@@ -16,8 +16,12 @@
     }
   }
   @include breakpoint(large) {
-    padding: 0 20px;
+    // padding: 0 20px;
     height: map-get($nav-height, large);
+    .cell.large-9 {
+      position: absolute;
+      right: 20px;
+    }
   }
 }
 

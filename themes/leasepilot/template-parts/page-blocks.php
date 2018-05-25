@@ -245,7 +245,7 @@ if ( have_rows( 'page_blocks' ) ) {
 <?php
 $type        = get_sub_field( 'animation_type' );
 $type_class  = 'section-img-crop';
-$right_class = 'medium-offset-3 large-offset-6 xlarge-offset-5 text-right';
+$right_class = 'medium-offset-3 large-offset-6 xlarge-offset-4 text-right';
 switch ( $type ) {
 	case 'bar':
 		$type_class = 'section-bar';
@@ -268,7 +268,7 @@ switch ( $type ) {
 	<img class="computer-img hide-for-small-only hide-for-mobile-only " src="<?php the_sub_field( 'block_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>">
 	<?php endif; ?>
 	<?php if ( 'bar' === $type ) : ?>
-	<div class="inner-div-bg bars bg-cover page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+	<div class="inner-div-bg bars bg-contain page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
 	<?php
 	$bars = array( 341, 90, 134, 558, 206, 90 );
 	foreach ( $bars as $key => $bar ) {
@@ -281,7 +281,7 @@ switch ( $type ) {
 	<?php endif; ?>
 	<div class="main-container h100p pos-rel">
 		<div class="grid-x h100p">
-			<div class="cell small-12 medium-9 large-6 xlarge-7 <?php echo ( 'right' === get_sub_field( 'text_layout' ) ) ? esc_attr( $right_class ) : ''; ?>">
+			<div class="cell small-12 medium-9 large-6 xlarge-8 <?php echo ( 'right' === get_sub_field( 'text_layout' ) ) ? esc_attr( $right_class ) : ''; ?>">
 				<h3 class="secondary-color"><?php the_sub_field( 'block_title' ); ?> <span class="lighter ff-hn"><?php the_sub_field( 'block_subtitle' ); ?></span></h3>
 				<p class="secondary-color"><?php the_sub_field( 'block_description' ); ?></p>
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>

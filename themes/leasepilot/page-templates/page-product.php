@@ -65,17 +65,17 @@ while ( have_posts() ) :
 		<div class="main-container h100p pos-rel">
 			<div class="grid-x grid-margin-x h100p">
 				<?php if ( $is_right ) : ?>
-				<div class="cell small-12 medium-6 large-6 pos-rel stack-up">
+				<div class="cell small-12 medium-6 large-5 pos-rel stack-up">
 					<?php the_post_thumbnail( 'full', array( 'class' => 'product-image box-shadow ' . $product_image_class ) ); ?>
 				</div>
 				<?php endif; ?>
-				<div class="cell small-12 medium-6 large-6 stack-down <?php echo ( $is_right ) ? 'text-right' : ''; ?>">
+				<div class="cell small-12 medium-6 large-6 stack-down <?php echo ( $is_right ) ? 'large-offset-1 text-right' : ''; ?>">
 					<h3 class="secondary-color"><?php the_field( 'page_title' ); ?><br><span class="lighter ff-hn"><?php the_field( 'page_subtitle' ); ?></span></h3>
 					<p class="secondary-color"><?php the_field( 'page_subheading' ); ?></p>
 					<a href="<?php the_permalink(); ?>" class="button button__cta button__cta--dark">Learn more »</a>
 				</div>
 				<?php if ( ! $is_right ) : ?>
-				<div class="cell small-12 medium-6 large-6 pos-rel stack-up">
+				<div class="cell small-12 medium-6 large-5 large-offset-1 pos-rel stack-up">
 					<?php the_post_thumbnail( 'full', array( 'class' => 'product-image box-shadow ' . $product_image_class ) ); ?>
 				</div>
 				<?php endif; ?>

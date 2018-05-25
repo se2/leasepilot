@@ -76,10 +76,23 @@
   }
 }
 
+@include breakpoint(medium) {
+	.product-go-live {
+		position: absolute;
+		right: 0;
+		height: 100%;
+		width: calc((100vw - #{$container-width}) / 2 + (#{$container-width} * 0.4166666667));
+		top: 0;
+	}
+}
+
 .form-section--1-column {
 	padding-top: 0;
 	padding-bottom: 0;
 	form {
+		.hs-error-msgs {
+			display: none !important;
+		}
 		.hs_submit,
 		.hs-submit {
 			.actions {

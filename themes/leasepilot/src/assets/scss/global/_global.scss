@@ -166,6 +166,8 @@ h6 {
 }
 
 .site-logo {
+  position: relative;
+  z-index: 999;
   max-width: 194px;
   @include breakpoint(small) {
     width: 160px;

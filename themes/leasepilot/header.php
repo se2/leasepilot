@@ -28,9 +28,9 @@
 				<button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
 			</div>
 		</div>
-		<div class="main-content-full-width h100p">
-			<div class="grid-x grid-padding-x flex-bottom">
-				<div class="cell small-12 medium-3 large-2">
+		<div class="main-container h100p">
+			<div class="grid-x grid-margin-x flex-bottom">
+				<div class="cell small-12 medium-3 large-3">
 					<div class="top-bar-left">
 						<div class="site-desktop-title top-bar-title">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -39,7 +39,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="cell hide-for-small-only hide-for-mobile-only hide-for-medium-only large-10">
+				<div class="cell hide-for-small-only hide-for-mobile-only hide-for-medium-only large-9">
 					<?php foundationpress_top_bar_r(); ?>
 					<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
 						<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
