@@ -1,7 +1,7 @@
 [
     {
         "key": "group_5af9c180a54c1",
-        "title": "Case Study CPT",
+        "title": "Case Study Category",
         "fields": [
             {
                 "key": "field_5af9c192d0d30",
@@ -105,7 +105,12 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "case-study"
+                    "value": "resources"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "resource-category:case-study"
                 }
             ]
         ],
@@ -147,7 +152,12 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "case-study"
+                    "value": "resources"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "resource-category:case-study"
                 }
             ]
         ],
@@ -514,7 +524,14 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "case-study"
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "resources"
                 }
             ]
         ],
@@ -678,7 +695,7 @@
             {
                 "key": "field_5afaf0ea2cc83",
                 "label": "Page Blocks",
-                "name": "case_study_blocks",
+                "name": "page_blocks",
                 "type": "flexible_content",
                 "instructions": "",
                 "required": 0,
@@ -1745,7 +1762,7 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "case-study"
+                    "value": "post"
                 }
             ],
             [
@@ -1753,6 +1770,13 @@
                     "param": "post_type",
                     "operator": "==",
                     "value": "page"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "resources"
                 }
             ]
         ],
@@ -1909,12 +1933,372 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "resource"
+                    "value": "resources"
                 }
             ]
         ],
         "menu_order": 0,
         "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5b078d227418a",
+        "title": "Resources Archive",
+        "fields": [
+            {
+                "key": "field_5b078d227a8b7",
+                "label": "Page Heading",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_5b078d227a8d1",
+                "label": "Page Title Color",
+                "name": "r_page_title_color",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "#fc4513"
+            },
+            {
+                "key": "field_5b078d227a8e8",
+                "label": "Page Subheading",
+                "name": "r_page_subheading",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5b078d227a8fd",
+                "label": "Page CTA Title",
+                "name": "r_page_cta_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5b078d227a912",
+                "label": "Page CTA Link",
+                "name": "r_page_cta_link",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_5b078d227a928",
+                "label": "Background",
+                "name": "r_background",
+                "type": "radio",
+                "instructions": "Background for page header section",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "image": "Image",
+                    "color": "Color",
+                    "video": "Video"
+                },
+                "allow_null": 0,
+                "other_choice": 0,
+                "save_other_choice": 0,
+                "default_value": "image",
+                "layout": "horizontal",
+                "return_format": "value"
+            },
+            {
+                "key": "field_5b078d227a93e",
+                "label": "Background Color",
+                "name": "r_background_color",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5b078d227a928",
+                            "operator": "==",
+                            "value": "color"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "#FFFFFF"
+            },
+            {
+                "key": "field_5b078d227a953",
+                "label": "Background Image",
+                "name": "r_background_image",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5b078d227a928",
+                            "operator": "==",
+                            "value": "image"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "cover_small",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_5b078d227a969",
+                "label": "Background Video",
+                "name": "r_background_video",
+                "type": "file",
+                "instructions": "Background video",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5b078d227a928",
+                            "operator": "==",
+                            "value": "video"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "all",
+                "min_size": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_5b078d227a97f",
+                "label": "Background Video Poster",
+                "name": "r_background_video_poster",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5b078d227a928",
+                            "operator": "==",
+                            "value": "video"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_5b078d227a994",
+                "label": "Page Footer",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_5b078d227a9aa",
+                "label": "Show Footer CTA?",
+                "name": "r_show_footer_cta",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_5b078d227a9c0",
+                "label": "Footer CTA Content",
+                "name": "r_footer_cta_content",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5b078d227a9aa",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5b078d227a9d6",
+                "label": "Footer CTA Title",
+                "name": "r_footer_cta_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5b078d227a9aa",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5b078d227a9ec",
+                "label": "Footer CTA Link",
+                "name": "r_footer_cta_link",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5b078d227a9aa",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-resources-archive-page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",

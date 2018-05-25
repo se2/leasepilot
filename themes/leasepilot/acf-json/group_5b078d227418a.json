@@ -1,9 +1,9 @@
 {
-    "key": "group_5af83c3f799eb",
-    "title": "Page",
+    "key": "group_5b078d227418a",
+    "title": "Resources Archive",
     "fields": [
         {
-            "key": "field_5b05b2c922bd8",
+            "key": "field_5b078d227a8b7",
             "label": "Page Heading",
             "name": "",
             "type": "tab",
@@ -19,9 +19,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_5afa4a216bff6",
+            "key": "field_5b078d227a8d1",
             "label": "Page Title Color",
-            "name": "page_title_color",
+            "name": "r_page_title_color",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
@@ -34,9 +34,9 @@
             "default_value": "#fc4513"
         },
         {
-            "key": "field_5af83db84808e",
+            "key": "field_5b078d227a8e8",
             "label": "Page Subheading",
-            "name": "page_subheading",
+            "name": "r_page_subheading",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -53,9 +53,9 @@
             "delay": 0
         },
         {
-            "key": "field_5b04caacd3649",
+            "key": "field_5b078d227a8fd",
             "label": "Page CTA Title",
-            "name": "page_cta_title",
+            "name": "r_page_cta_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -72,9 +72,9 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b04caefd364a",
+            "key": "field_5b078d227a912",
             "label": "Page CTA Link",
-            "name": "page_cta_link",
+            "name": "r_page_cta_link",
             "type": "url",
             "instructions": "",
             "required": 0,
@@ -88,9 +88,9 @@
             "placeholder": ""
         },
         {
-            "key": "field_5af83c494f983",
+            "key": "field_5b078d227a928",
             "label": "Background",
-            "name": "background",
+            "name": "r_background",
             "type": "radio",
             "instructions": "Background for page header section",
             "required": 0,
@@ -113,16 +113,16 @@
             "return_format": "value"
         },
         {
-            "key": "field_5af83ca54f984",
+            "key": "field_5b078d227a93e",
             "label": "Background Color",
-            "name": "background_color",
+            "name": "r_background_color",
             "type": "color_picker",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5af83c494f983",
+                        "field": "field_5b078d227a928",
                         "operator": "==",
                         "value": "color"
                     }
@@ -136,16 +136,16 @@
             "default_value": "#FFFFFF"
         },
         {
-            "key": "field_5af83ccd4f985",
+            "key": "field_5b078d227a953",
             "label": "Background Image",
-            "name": "background_image",
+            "name": "r_background_image",
             "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5af83c494f983",
+                        "field": "field_5b078d227a928",
                         "operator": "==",
                         "value": "image"
                     }
@@ -168,16 +168,16 @@
             "mime_types": ""
         },
         {
-            "key": "field_5af83cef4f986",
+            "key": "field_5b078d227a969",
             "label": "Background Video",
-            "name": "background_video",
+            "name": "r_background_video",
             "type": "file",
             "instructions": "Background video",
             "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5af83c494f983",
+                        "field": "field_5b078d227a928",
                         "operator": "==",
                         "value": "video"
                     }
@@ -195,16 +195,16 @@
             "mime_types": ""
         },
         {
-            "key": "field_5afc7907d71fd",
+            "key": "field_5b078d227a97f",
             "label": "Background Video Poster",
-            "name": "background_video_poster",
+            "name": "r_background_video_poster",
             "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5af83c494f983",
+                        "field": "field_5b078d227a928",
                         "operator": "==",
                         "value": "video"
                     }
@@ -227,7 +227,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5b05b2f122bd9",
+            "key": "field_5b078d227a994",
             "label": "Page Footer",
             "name": "",
             "type": "tab",
@@ -243,9 +243,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_5b05b33e22bdc",
+            "key": "field_5b078d227a9aa",
             "label": "Show Footer CTA?",
-            "name": "show_footer_cta",
+            "name": "r_show_footer_cta",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -262,16 +262,16 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5b05b30022bda",
+            "key": "field_5b078d227a9c0",
             "label": "Footer CTA Content",
-            "name": "footer_cta_content",
+            "name": "r_footer_cta_content",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5b05b33e22bdc",
+                        "field": "field_5b078d227a9aa",
                         "operator": "==",
                         "value": "1"
                     }
@@ -289,16 +289,16 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b05b32c22bdb",
+            "key": "field_5b078d227a9d6",
             "label": "Footer CTA Title",
-            "name": "footer_cta_title",
+            "name": "r_footer_cta_title",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5b05b33e22bdc",
+                        "field": "field_5b078d227a9aa",
                         "operator": "==",
                         "value": "1"
                     }
@@ -316,16 +316,16 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b05b38022bdd",
+            "key": "field_5b078d227a9ec",
             "label": "Footer CTA Link",
-            "name": "footer_cta_link",
+            "name": "r_footer_cta_link",
             "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5b05b33e22bdc",
+                        "field": "field_5b078d227a9aa",
                         "operator": "==",
                         "value": "1"
                     }
@@ -343,23 +343,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "options_page",
                 "operator": "==",
-                "value": "page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "resources"
+                "value": "acf-options-resources-archive-page"
             }
         ]
     ],
@@ -371,5 +357,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1527221530
+    "modified": 1527221876
 }

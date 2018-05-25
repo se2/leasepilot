@@ -27,7 +27,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "resource"
+                "value": "resources"
             }
         ]
     ],
@@ -39,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1526428271
+    "modified": 1527213649
 }
