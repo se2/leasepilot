@@ -54,7 +54,7 @@ get_header(); ?>
 							</div>
 						</a>
 						<div class="archive-page--learn-more">
-							<a class="button button__archive-page" href="<?php get_field( 'download_file' ) ? the_field( 'download_file' ) : the_permalink(); ?>" target="_blank">Download »</a>
+							<a class="button button__archive-page" href="<?php get_field( 'download_file' ) ? the_field( 'download_file' ) : the_permalink(); ?>">Download »</a>
 						</div>
 						<h6 class="archive-page-category bold primary-color ff-hn"><?php echo esc_attr( $term[0]->name ); ?></h6>
 						<h3 class="archive-page-name">
