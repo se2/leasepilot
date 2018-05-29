@@ -23,6 +23,7 @@ get_header(); ?>
 			$posts_per_page   = get_option( 'posts_per_page' );
 			$paged            = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 			$term_id          = get_queried_object()->term_id;
+			$term             = get_term( $term_id, 'resource-category' );
 			$case_study_query = new WP_Query(
 				array(
 					'post_type' => 'resources',
@@ -44,8 +45,14 @@ get_header(); ?>
 					<div class="archive-page-item cell small-12 mobile-6 medium-4 large-4">
 						<a href="<?php the_permalink(); ?>">
 							<div class="archive-page-bg">
+								<?php if ( get_field( 'case_study_logo' ) ) : ?>
 								<img class="archive-page-logo" src="<?php the_field( 'case_study_logo' ); ?>" alt="<?php the_title(); ?>">
+								<?php else : ?>
+								<img class="archive-page-logo" src="<?php the_field( 'category_avatar', $term ); ?>" alt="<?php the_title(); ?>">
+								<?php endif; ?>
+								<?php if ( get_field( 'case_study_cover' ) ) : ?>
 								<img class="archive-page-cover" src="<?php the_field( 'case_study_cover' ); ?>" alt="<?php the_title(); ?>">
+								<?php endif; ?>
 							</div>
 						</a>
 						<div class="archive-page--learn-more">

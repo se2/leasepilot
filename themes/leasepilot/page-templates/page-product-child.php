@@ -133,7 +133,7 @@ while ( have_posts() ) :
 				</div>
 			</div>
 		</div>
-		<div class="product-go-live bg-cover" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/go-live.png');"></div>
+		<div class="product-go-live bg-cover bg-center-left" style="background-image:url('<?php the_clean_url(); ?>/wp-content/uploads/2018/05/go-live.png');"></div>
 	</div>
 	<!-- Step Block -->
 
