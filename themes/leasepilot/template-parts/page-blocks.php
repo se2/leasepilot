@@ -88,7 +88,7 @@ if ( have_rows( 'page_blocks' ) ) {
 			case 'comparison_block':
 ?>
 <!-- Comparison section -->
-<div class="page-block page-block--compare pos-rel bg-cover section-compare" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+<div class="page-block page-block--compare pos-rel bg-cover section-compare no-overflow" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
 	<div class="main-container h100p">
 		<div class="grid-x pos-rel flex-center-items">
 			<div class="cell small-12 medium-6 large-6 xlarge-4 page-block--compare__left">
@@ -270,7 +270,8 @@ switch ( $type ) {
 	<?php if ( 'bar' === $type ) : ?>
 	<div class="inner-div-bg bars bg-contain page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
 	<?php
-	$bars = array( 341, 90, 134, 558, 206, 90 );
+	$bars = array( 341, 100, 134, 558, 206, 90 );
+	sort( $bars );
 	foreach ( $bars as $key => $bar ) {
 	?>
 	<div class="bar__outer" style="height:<?php echo esc_attr( $bar ); ?>px;">

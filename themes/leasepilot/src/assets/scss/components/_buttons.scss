@@ -38,6 +38,9 @@
         color: white;
       }
     }
+    &--opacity {
+      background-color: rgba($color: #fcfcfc, $alpha: 0.75);
+    }
   }
   &__archive-page {
     background-color: $secondary-color;

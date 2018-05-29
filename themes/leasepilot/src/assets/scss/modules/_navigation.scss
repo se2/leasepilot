@@ -5,6 +5,7 @@
   position: relative;
   background-color: white;
   z-index: 999;
+  width: 100%;
   @include breakpoint(small) {
     height: map-get($nav-height, small);
     .grid-container,
@@ -16,12 +17,11 @@
     }
   }
   @include breakpoint(large) {
-    // padding: 0 20px;
+    padding: 0 20px;
     height: map-get($nav-height, large);
-    .cell.large-9 {
-      position: absolute;
-      right: 20px;
-    }
+  }
+  &.pos-fixed {
+    position: fixed;
   }
 }
 

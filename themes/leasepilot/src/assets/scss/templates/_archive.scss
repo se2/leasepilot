@@ -1,8 +1,34 @@
-.archive-page.content-padding {
-  .main-container,
-  .container {
-    @include breakpoint(large) {
-      padding-bottom: 110px;
+.archive-page {
+  &__intro {
+    padding-top: 60px;
+    padding-bottom: 70px;
+    h3 {
+      margin-bottom: 30px;
+    }
+  }
+  &--careers {
+    .archive-page-bg {
+      height: 0;
+      padding-bottom: 100%;
+    }
+    .archive-page-item {
+      p {
+        font-size: 16px;
+        line-height: 1.2;
+      }
+      @include breakpoint(large) {
+        &:first-child {
+          margin-top: 80px;
+        }
+        margin-bottom: 80px;
+      }
+    }
+    .archive-page-name {
+      font-size: 26px;
+      margin-bottom: 23px;
+    }
+    &__info {
+      padding-left: 45px;
     }
   }
 }
@@ -16,7 +42,7 @@
   justify-content: center;
   overflow: hidden;
   @include breakpoint(large) {
-		&:hover {
+    &:hover {
       img.archive-page-cover {
         bottom: 0;
       }
@@ -314,19 +340,19 @@ img.archive-page-cover {
       height: 620px;
       &--none {
         height: 475px;
-			}
-			&.product-child {
-				height: 435px;
-			}
+      }
+      &.product-child {
+        height: 435px;
+      }
     }
     @include breakpoint(xlarge) {
       height: 800px;
       &--none {
         height: 555px;
-			}
-			&.product-child {
-				height: 510px;
-			}
+      }
+      &.product-child {
+        height: 510px;
+      }
     }
     &.section-computer {
       .computer-img {
@@ -544,6 +570,11 @@ img.archive-page-cover {
             width: $handle-width;
             max-width: none;
             left: -($handle-width / 2);
+            &.animated {
+              top: calc(50% - (#{$handle-width} / 2));
+              animation-iteration-count: 6;
+              -vendor-animation-iteration-count: 6;
+            }
           }
         }
         @include breakpoint(medium) {

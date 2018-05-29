@@ -13,14 +13,19 @@
 $prefix     = '';
 $option     = '';
 $page_title = get_the_title();
+
 if ( isset( get_queried_object()->term_id ) ) {
 	$term       = get_term( get_queried_object()->term_id );
 	$option     = $term;
 	$page_title = $term->name;
-} elseif ( is_archive( 'resources' ) ) {
+} elseif ( is_post_type_archive( 'resources' ) ) {
 	$prefix     = 'r_';
 	$option     = 'option';
 	$page_title = 'Resources';
+} elseif ( is_post_type_archive( 'careers' ) ) {
+	$prefix     = 'c_';
+	$option     = 'option';
+	$page_title = 'Careers';
 }
 $bg_type  = get_field( $prefix . 'background', $option );
 $bg       = '';

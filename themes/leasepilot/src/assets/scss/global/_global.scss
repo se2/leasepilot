@@ -7,7 +7,7 @@ $light-gray: #dcd8d6;
 $blue: #97daea;
 body,
 p {
-	line-height: 1.4;
+  line-height: 1.4;
   @include breakpoint(mobile down) {
     font-size: 16px;
   }
@@ -355,6 +355,11 @@ h6 {
   float: right;
 }
 
+p.small,
+a.small {
+  font-size: 16px;
+}
+
 @include breakpoint(mobile down) {
   /* reverse stack mobile */
   .stack-up {
@@ -385,3 +390,62 @@ h6 {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
   /* IE6-8 */
 }
+
+/* Override pulse animation from Animate.css */
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(1);
+  }
+  50% {
+    -moz-transform: scale(1.2);
+  }
+  100% {
+    -moz-transform: scale(1);
+  }
+}
+
+@-o-keyframes pulse {
+  0% {
+    -o-transform: scale(1);
+  }
+  50% {
+    -o-transform: scale(1.2);
+  }
+  100% {
+    -o-transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -o-animation-name: pulse;
+  animation-name: pulse;
+}
+
+/* /Override pulse animation from Animate.css */

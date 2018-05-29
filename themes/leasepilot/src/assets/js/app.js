@@ -50,6 +50,11 @@ $(window).on('resize scroll', function () {
       $(this).addClass('animated');
     }
   });
+  $('.section-compare').each(function () {
+    if ($(this).is(':in-viewport( -800 )')) {
+      $(this).find('.handle img').addClass('animated').addClass('pulse');
+    }
+  });
 });
 
 $(document).ready(function () {
@@ -102,8 +107,8 @@ $(document).ready(function () {
     var width = current.width() + 'px';
     current.find('.resize img').css('width', width);
     current.find('.before img').css('max-width', width);
-    if ($(window).width() < 415) {
-      current.css('height', current.find('.before img').height() + 20);
+    if ($(window).width() < 481) {
+      current.css('height', current.find('.before img').height() + 10);
     }
     // Bind dragging events
     drags(current.find('.handle'), current.find('.resize'), current);

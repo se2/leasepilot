@@ -28,8 +28,8 @@
 				<button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
 			</div>
 		</div>
-		<div class="main-container h100p">
-			<div class="grid-x grid-margin-x flex-bottom">
+		<div class="main-content-full-width h100p">
+			<div class="grid-x grid-padding-x flex-bottom">
 				<div class="cell small-12 medium-3 large-3">
 					<div class="top-bar-left">
 						<div class="site-desktop-title top-bar-title">

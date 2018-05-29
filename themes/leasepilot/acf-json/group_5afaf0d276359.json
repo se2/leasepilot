@@ -1108,6 +1108,13 @@
                 "operator": "==",
                 "value": "resources"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "careers"
+            }
         ]
     ],
     "menu_order": 0,
@@ -1118,5 +1125,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1527263081
+    "modified": 1527616735
 }

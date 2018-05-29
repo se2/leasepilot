@@ -8,6 +8,7 @@
     @extend .bg-cover;
     background-position: center bottom;
     width: 100%;
+    max-height: 800px;
     margin: 0 auto;
     @include breakpoint(small) {
       padding-bottom: 0;
@@ -19,7 +20,7 @@
     }
     @include breakpoint(xlarge) {
       padding-bottom: 0;
-      height: calc(100vh - #{map-get($nav-height, large)});
+      height: calc(85vh - #{map-get($nav-height, large)});
     }
   }
   &__content {
@@ -50,8 +51,7 @@
       }
     }
     @include breakpoint(xlarge) {
-      top: 50%;
-      transform: translateY(-50%);
+      top: 170px;
     }
   }
 }
@@ -104,6 +104,14 @@
     @include breakpoint(large) {
       padding-top: 125px;
       padding-bottom: 125px;
+    }
+  }
+  &.archive-page--careers {
+    .main-container,
+    .container {
+      @include breakpoint(large) {
+        padding-top: 90px;
+      }
     }
   }
 }
