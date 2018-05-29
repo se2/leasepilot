@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="page-wrapper archive-page">
 
 	<?php get_template_part( 'template-parts/page', 'header' ); ?>
 

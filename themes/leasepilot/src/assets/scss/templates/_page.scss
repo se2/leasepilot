@@ -8,8 +8,16 @@
     @extend .bg-cover;
     background-position: center bottom;
     width: 100%;
-    max-height: 800px;
     margin: 0 auto;
+		max-height: 800px;
+		&--thin {
+			max-height: 390px;
+			.page-header__content {
+				left: 10px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
     @include breakpoint(small) {
       padding-bottom: 0;
       height: calc(100vh - #{map-get($nav-height, small)});

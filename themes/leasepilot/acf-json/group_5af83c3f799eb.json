@@ -360,6 +360,18 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "resources"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "resource-category:case-study"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "careers"
             }
         ],
         [
@@ -378,5 +390,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1527253095
+    "modified": 1527633905
 }

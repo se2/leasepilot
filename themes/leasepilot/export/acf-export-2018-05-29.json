@@ -892,6 +892,18 @@
                     "param": "post_type",
                     "operator": "==",
                     "value": "resources"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "resource-category:case-study"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "careers"
                 }
             ],
             [
@@ -2164,13 +2176,11 @@
                     "param": "post_type",
                     "operator": "==",
                     "value": "resources"
-                }
-            ],
-            [
+                },
                 {
-                    "param": "post_type",
+                    "param": "post_taxonomy",
                     "operator": "==",
-                    "value": "careers"
+                    "value": "resource-category:case-study"
                 }
             ]
         ],
@@ -2300,7 +2310,7 @@
     },
     {
         "key": "group_5afb724b31fe4",
-        "title": "Resource CPT",
+        "title": "Resource Download",
         "fields": [
             {
                 "key": "field_5afb7255bce6e",
@@ -2328,6 +2338,11 @@
                     "param": "post_type",
                     "operator": "==",
                     "value": "resources"
+                },
+                {
+                    "param": "post_taxonomy",
+                    "operator": "!=",
+                    "value": "resource-category:case-study"
                 }
             ]
         ],

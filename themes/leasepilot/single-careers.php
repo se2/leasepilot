@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * Single Resource
+	 * Single Career
 	 *
 	 * @category   Single
 	 * @package    FoundationPress
@@ -22,7 +22,14 @@ if ( have_posts() ) :
 
 	<?php get_template_part( 'template-parts/page', 'header' ); ?>
 
-	<?php get_template_part( 'template-parts/page', 'blocks' ); ?>
+	<div class="content-padding">
+		<div class="main-container">
+			<h3 class="ff-hn"><?php the_title(); ?></h3>
+			<?php the_excerpt(); ?>
+			<br>
+			<?php the_content(); ?>
+		</div>
+	</div>
 
 	<?php get_template_part( 'template-parts/page', 'footer' ); ?>
 

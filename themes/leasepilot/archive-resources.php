@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="page-wrapper archive-page">
 
 	<?php get_template_part( 'template-parts/page', 'header' ); ?>
 
@@ -47,22 +47,22 @@ get_header(); ?>
 					$resource_query->the_post();
 					$term = wp_get_post_terms( get_the_ID(), 'resource-category' );
 			?>
-					<div class="archive-page-item cell small-12 mobile-6 medium-4 large-4 <?php echo esc_attr( $term[0]->slug ); ?>">
-						<a href="<?php get_field( 'download_file' ) ? the_field( 'download_file' ) : the_permalink(); ?>">
-							<div class="archive-page-bg">
-								<img class="archive-page-logo" src="<?php the_field( 'category_avatar', $term[0] ); ?>" alt="<?php the_title(); ?>">
-							</div>
-						</a>
-						<div class="archive-page--learn-more">
-							<a class="button button__archive-page" href="<?php get_field( 'download_file' ) ? the_field( 'download_file' ) : the_permalink(); ?>">Download »</a>
+				<div class="archive-page-item cell small-12 mobile-6 medium-4 large-4 <?php echo esc_attr( $term[0]->slug ); ?>">
+					<a href="<?php get_field( 'download_file' ) ? the_field( 'download_file' ) : the_permalink(); ?>">
+						<div class="archive-page-bg">
+							<img class="archive-page-logo" src="<?php the_field( 'category_avatar', $term[0] ); ?>" alt="<?php the_title(); ?>">
 						</div>
-						<h6 class="archive-page-category bold primary-color ff-hn"><?php echo esc_attr( $term[0]->name ); ?></h6>
-						<h3 class="archive-page-name">
-							<?php the_title(); ?>
-						</h3>
+					</a>
+					<div class="archive-page--learn-more">
+						<a class="button button__archive-page" href="<?php get_field( 'download_file' ) ? the_field( 'download_file' ) : the_permalink(); ?>">Download »</a>
 					</div>
-					<?php endwhile; ?>
-				<?php endif; ?>
+					<h6 class="archive-page-category bold primary-color ff-hn"><?php echo esc_attr( $term[0]->name ); ?></h6>
+					<h3 class="archive-page-name">
+						<?php the_title(); ?>
+					</h3>
+				</div>
+				<?php endwhile; ?>
+			<?php endif; ?>
 			</div>
 			<?php wp_reset_postdata(); ?>
 		</div>
