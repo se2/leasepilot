@@ -46,5 +46,8 @@
 	}
 	.site-header {
 		background-color: transparent;
+		&.pos-fixed {
+			background-color: white;
+		}
 	}
 }

@@ -2,7 +2,9 @@
   margin: 0;
 }
 .site-header {
-  position: relative;
+	transition: background 350ms;
+	position: absolute;
+	top: 0;
   background-color: white;
   z-index: 999;
   width: 100%;

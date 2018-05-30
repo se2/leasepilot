@@ -433,9 +433,9 @@ img.archive-page-cover {
         display: flex;
         align-items: flex-end;
         @include breakpoint(small) {
-          width: 70px;
-        }
-        @include breakpoint(large) {
+          width: 80px;
+				}
+        @include breakpoint(xlarge) {
           width: 108px;
         }
       }
