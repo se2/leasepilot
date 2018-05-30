@@ -72,13 +72,13 @@
 }
 
 .button-menu {
-  background: $primary-color;
   transition: background 300ms;
   &:hover,
   &:focus {
     background: darken($primary-color, 10);
   }
   a {
+		background-color: $primary-color !important;
     color: white !important;
   }
   @include breakpoint(medium down) {

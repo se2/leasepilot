@@ -112,7 +112,11 @@ $(document).ready(function () {
     }
     // Bind dragging events
     drags(current.find('.handle'), current.find('.resize'), current);
-  });
+	});
+	$('.js-request-demo').on('click', function(e) {
+		$('#request-demo').foundation('open');
+		e.preventDefault();
+	});
 });
 
 // Update sliders on resize.

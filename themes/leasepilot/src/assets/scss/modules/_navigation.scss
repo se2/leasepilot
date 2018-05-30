@@ -204,3 +204,12 @@
 .nav-next {
   float: right;
 }
+
+#request-demo {
+	.form-section {
+		ul.hs-error-msgs {
+			display: none !important;
+		}
+		padding: 25px 0;
+	}
+}
