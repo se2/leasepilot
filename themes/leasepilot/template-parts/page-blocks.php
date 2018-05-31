@@ -189,15 +189,17 @@ if ( have_rows( 'page_blocks' ) ) {
 		<div class="grid-x">
 			<?php
 			$posts = get_sub_field( 'post' );
+			if ( $posts ) :
 			foreach ( $posts as $key => $post ) :
 				$post_obj = $post['post_object'];
 				$layout   = ( '2col' === $post['post_layout'] ) ? 'small-12 mobile-12 medium-6' : 'small-12 mobile-6 medium-3';
 			?>
-			<div class="cell bg-cover no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>" style="background-image:url('<?php echo esc_attr( get_the_post_thumbnail_url( $post_obj, 'full' ) ); ?>');">
+			<div class="cell bg-cover no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>" style="background-image:url('<?php echo esc_attr( get_the_post_thumbnail_url( $post_obj, 'large' ) ); ?>');">
 				<p><a class="white-color bold" href="<?php the_permalink( $post_obj->ID ); ?>"><?php echo esc_html( $post_obj->post_title ); ?> »</a></p>
 				<div class="gradient-overlay"></div>
 			</div>
 			<?php endforeach; ?>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>
@@ -261,9 +263,9 @@ switch ( $type ) {
 	<img class="computer-img hide-for-small-only hide-for-mobile-only " src="<?php the_sub_field( 'block_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>">
 	<?php endif; ?>
 	<?php if ( 'bar' === $type ) : ?>
-	<div class="inner-div-bg bars bg-contain page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+	<div class="inner-div-bg bars bg-cover page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
 	<?php
-	$bars = array( 20, 30, 40, 50, 60, 70 );
+	$bars = array( 10, 20, 35, 55, 85 );
 	sort( $bars );
 	foreach ( $bars as $key => $bar ) {
 	?>

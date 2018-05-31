@@ -71,12 +71,16 @@
       top: 75px;
       left: 60px;
       &--home {
-        left: 0;
-        position: relative;
       }
     }
     @include breakpoint(xlarge) {
-      top: 170px;
+      top: 14vh;
+      // transform: translateY(-50%);
+      &--home {
+        top: 6vh;
+        transform: none;
+        left: 0;
+      }
     }
   }
 }

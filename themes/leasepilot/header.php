@@ -49,7 +49,9 @@
 		</div>
 	</header>
 
-	<div class="reveal" id="request-demo" data-reveal style="background-color:#f6f5f5;" data-animation-in="ease-in" data-animation-out="ease-out">
+	<!-- Known issue if using data-animation-out -->
+	<!-- https://github.com/zurb/foundation-sites/issues/10626 -->
+	<div class="reveal" id="request-demo" data-reveal style="background-color:#f6f5f5;" data-animation-in="ease-in">
 		<!-- Form Section -->
 		<div class="hubspot-form-reset form-section">
 			<div class="grid-x grid-margin-x form-wrapper">
