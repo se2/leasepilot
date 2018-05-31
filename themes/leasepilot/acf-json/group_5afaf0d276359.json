@@ -632,7 +632,73 @@
                     "name": "posts_block",
                     "label": "Posts Block",
                     "display": "row",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_5b0f40b9cca78",
+                            "label": "Post",
+                            "name": "post",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 3,
+                            "layout": "row",
+                            "button_label": "Add Post",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5b0f417ccca79",
+                                    "label": "Post Object",
+                                    "name": "post_object",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [],
+                                    "taxonomy": [],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "return_format": "object",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_5b0f4192cca7a",
+                                    "label": "Post Layout",
+                                    "name": "post_layout",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "1col": "1-Column",
+                                        "2col": "2-Column"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "save_other_choice": 0,
+                                    "default_value": "1col",
+                                    "layout": "horizontal",
+                                    "return_format": "value"
+                                }
+                            ]
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 },
@@ -1123,5 +1189,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1527633715
+    "modified": 1527726575
 }

@@ -2,7 +2,6 @@
   margin: 0;
 }
 .site-header {
-	transition: background 350ms;
 	position: absolute;
 	top: 0;
   background-color: white;
@@ -21,9 +20,21 @@
   @include breakpoint(large) {
     padding: 0 20px;
     height: map-get($nav-height, large);
-  }
+	}
+	&.transition {
+		transition: all 400ms ease-in-out;
+	}
   &.pos-fixed {
-    position: fixed;
+		position: fixed;
+		@include breakpoint(small) {
+			top: -#{map-get($nav-height, small)};
+		}
+		@include breakpoint(large) {
+			top: -#{map-get($nav-height, large)};
+		}
+		&.scroll-up {
+			top: 0;
+		}
   }
 }
 

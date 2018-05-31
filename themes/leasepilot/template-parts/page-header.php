@@ -27,8 +27,16 @@ if ( isset( get_queried_object()->term_id ) ) {
 	$prefix     = 'c_';
 	$option     = 'option';
 	$page_title = 'Careers';
+} elseif ( is_home() ) {
+	$option      = get_option( 'page_for_posts' );
+	$page_title  = 'Blog';
+	$thin_header = 'page-header--bg-img--thin';
 } elseif ( is_singular( 'careers' ) ) {
 	$page_title  = 'Careers';
+	$thin_header = 'page-header--bg-img--thin';
+} elseif ( is_singular( 'post' ) ) {
+	// $option      = get_option( 'page_for_posts' );
+	// $page_title  = 'Blog';
 	$thin_header = 'page-header--bg-img--thin';
 }
 
@@ -60,7 +68,7 @@ switch ( $bg_type ) {
 	<?php endif; ?>
 	<div class="main-container pos-rel">
 		<div class="grid-x page-header__content <?php echo ( is_front_page() ) ? 'page-header__content--home' : ''; ?> <?php echo ( is_single() && ! is_front_page() ) ? 'page-header__content--singular' : ''; ?>">
-			<div class="cell small-9 medium-6 large-5">
+			<div class="cell <?php echo ( ! is_singular( 'post' ) ) ? 'small-9 medium-6 large-5' : 'small-12'; ?>">
 				<?php if ( is_singular( 'resources' ) && get_field( $prefix . 'case_study_logo_single', $option ) ) : ?>
 				<img src="<?php the_field( $prefix . 'case_study_logo_single' ); ?>" alt="<?php the_title(); ?>" class="archive-page-logo archive-page-logo--singular">
 				<?php else : ?>

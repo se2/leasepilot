@@ -135,7 +135,10 @@ function resource_taxonomy() {
 			'label'             => __( 'Categories' ),
 			'hierarchical'      => true,
 			'show_admin_column' => true,
-			'rewrite'           => array( 'slug' => 'resource', 'with_front' => false ),
+			'rewrite'           => array(
+				'slug'       => 'resources',
+				'with_front' => false,
+			),
 		)
 	);
 }

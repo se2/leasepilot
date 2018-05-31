@@ -11,6 +11,8 @@
 	 */
 
 if ( have_rows( 'page_blocks' ) ) {
+	$posts_per_page = get_option( 'posts_per_page' );
+	$paged          = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 	while ( have_rows( 'page_blocks' ) ) :
 		the_row();
 		switch ( get_row_layout() ) {
@@ -122,8 +124,6 @@ if ( have_rows( 'page_blocks' ) ) {
 	<div class="main-container">
 		<h3 class="white-color text-center ff-hn lighter"><?php the_sub_field( 'block_title' ); ?></h3>
 		<?php
-		$posts_per_page  = get_option( 'posts_per_page' );
-		$paged            = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 		$case_study_id    = 13;
 		$case_study_query = new WP_Query(
 			array(
@@ -188,23 +188,16 @@ if ( have_rows( 'page_blocks' ) ) {
 	<div class="main-content-full-width">
 		<div class="grid-x">
 			<?php
-			$post_query = new WP_Query(
-				array(
-					'post_type' => 'post',
-					'paged'     => $paged,
-					'order'     => 'ASC',
-				)
-			);
-			while ( $post_query->have_posts() ) :
-				$post_query->the_post();
-				$layout = ( is_sticky( get_the_ID() ) ) ? 'small-12 mobile-12 medium-6' : 'small-12 mobile-6 medium-3';
+			$posts = get_sub_field( 'post' );
+			foreach ( $posts as $key => $post ) :
+				$post_obj = $post['post_object'];
+				$layout   = ( '2col' === $post['post_layout'] ) ? 'small-12 mobile-12 medium-6' : 'small-12 mobile-6 medium-3';
 			?>
-			<div class="cell bg-cover no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>" style="background-image:url('<?php echo esc_attr( get_the_post_thumbnail_url( $post, 'full' ) ); ?>');">
-				<p><a class="white-color bold" href="<?php the_permalink(); ?>"><?php the_title(); ?> »</a></p>
+			<div class="cell bg-cover no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>" style="background-image:url('<?php echo esc_attr( get_the_post_thumbnail_url( $post_obj, 'full' ) ); ?>');">
+				<p><a class="white-color bold" href="<?php the_permalink( $post_obj->ID ); ?>"><?php echo esc_html( $post_obj->post_title ); ?> »</a></p>
 				<div class="gradient-overlay"></div>
 			</div>
-			<?php endwhile; ?>
-			<?php wp_reset_postdata(); ?>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </div>

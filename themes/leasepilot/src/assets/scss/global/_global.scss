@@ -22,6 +22,15 @@ h6 {
   font-family: "Chronicle Deck", serif;
 }
 
+.off-canvas-content {
+	@include breakpoint(small) {
+		padding-top: #{map-get($nav-height, small)};
+	}
+	@include breakpoint(large) {
+		padding-top: #{map-get($nav-height, large)};
+	}
+}
+
 .container {
   @include xy-grid-container;
   max-width: $global-width;
@@ -402,7 +411,7 @@ a.small {
     -webkit-transform: scale(1);
   }
   50% {
-    -webkit-transform: scale(1.2);
+    -webkit-transform: scale(1.25);
   }
   100% {
     -webkit-transform: scale(1);
@@ -414,7 +423,7 @@ a.small {
     -moz-transform: scale(1);
   }
   50% {
-    -moz-transform: scale(1.2);
+    -moz-transform: scale(1.25);
   }
   100% {
     -moz-transform: scale(1);
@@ -426,7 +435,7 @@ a.small {
     -o-transform: scale(1);
   }
   50% {
-    -o-transform: scale(1.2);
+    -o-transform: scale(1.25);
   }
   100% {
     -o-transform: scale(1);
@@ -438,7 +447,7 @@ a.small {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.25);
   }
   100% {
     transform: scale(1);
