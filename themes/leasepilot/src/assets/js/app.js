@@ -119,7 +119,7 @@ $(document).ready(function () {
 		e.preventDefault();
 	});
 
-	const scroll = updwn({ speed: 100 })
+	const scroll = updwn({ speed: 150 })
 
 	scroll.up(() => {
 		/* up */

@@ -9,43 +9,43 @@
     background-position: center bottom;
     width: 100%;
     margin: 0 auto;
-		max-height: 800px;
-		&--thin {
-			max-height: 390px;
-			@include breakpoint(medium) {
-				.page-header__content {
-					left: 20px;
-					top: 50%;
-					transform: translateY(-50%);
-				}
-			}
-		}
+    max-height: 800px;
+    &--thin {
+      max-height: 390px;
+      @include breakpoint(medium) {
+        .page-header__content {
+          left: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
     @include breakpoint(small) {
-			padding-bottom: 0;
-			height: calc(100vh - #{map-get($nav-height, small)});
-			.main-container,
-			.container {
-				padding-bottom: 0;
-				height: 100%;
-			}
+      padding-bottom: 0;
+      height: calc(100vh - #{map-get($nav-height, small)});
+      .main-container,
+      .container {
+        padding-bottom: 0;
+        height: 100%;
+      }
     }
     @include breakpoint(medium) {
-			height: 0;
-			padding-bottom: 51.25vw;
-			.main-container,
-			.container {
-				height: 0;
-				padding-bottom: 51.25vw;
-			}
+      height: 0;
+      padding-bottom: 51.25vw;
+      .main-container,
+      .container {
+        height: 0;
+        padding-bottom: 51.25vw;
+      }
     }
     @include breakpoint(xlarge) {
-			padding-bottom: 0;
-			height: calc(85vh - #{map-get($nav-height, large)});
-			.main-container,
-			.container {
-				padding-bottom: 0;
-				height: 100%;
-			}
+      padding-bottom: 0;
+      height: calc(85vh - #{map-get($nav-height, large)});
+      .main-container,
+      .container {
+        padding-bottom: 0;
+        height: 100%;
+      }
     }
   }
   &__content {
@@ -142,26 +142,39 @@
   }
 }
 
+.single {
+  .post {
+    .content-padding {
+      .main-container,
+      .container {
+        @include breakpoint(large) {
+          padding-top: 80px;
+        }
+      }
+    }
+  }
+}
+
 aside.sidebar {
-	h6 {
-		font-size: 26px;
-	}
-	ul {
-		list-style-type: none;
-		margin-left: 0;
-		li {
-			line-height: 1.2;
-			margin-bottom: 23px;
-			a {
-				font-size: 16px;
-			}
-			.post-date {
-				font-size: 16px;
-				display: block;
-			}
-		}
-	}
-	@include breakpoint(mobile down) {
-		margin-bottom: 60px;
-	}
+  h6 {
+    font-size: 26px;
+  }
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    li {
+      line-height: 1.2;
+      margin-bottom: 23px;
+      a {
+        font-size: 16px;
+      }
+      .post-date {
+        font-size: 16px;
+        display: block;
+      }
+    }
+  }
+  @include breakpoint(mobile down) {
+    margin-bottom: 60px;
+  }
 }

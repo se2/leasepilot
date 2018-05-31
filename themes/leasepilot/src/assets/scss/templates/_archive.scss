@@ -32,7 +32,8 @@
     }
     .archive-page-name {
       font-size: 26px;
-      margin-bottom: 23px;
+      margin-bottom: 8px;
+      line-height: 1.2;
     }
     &__info {
 			@include breakpoint(small) {
@@ -343,14 +344,26 @@ img.archive-page-cover {
     @include breakpoint(medium) {
       height: 465px;
       h3 {
-        font-size: 34px;
+        font-size: 24px;
+      }
+      p {
+        font-size: 15px;
       }
       &--none {
         height: 400px;
+        h3 {
+          font-size: 34px;
+        }
       }
     }
     @include breakpoint(large) {
       height: 620px;
+      h3 {
+        font-size: 36px;
+      }
+      p {
+        font-size: 17px;
+      }
       &--none {
         height: 475px;
       }
@@ -367,8 +380,11 @@ img.archive-page-cover {
         height: 510px;
       }
     }
-    @include breakpoint(xxlarge) {
+    @include breakpoint(1600) {
       height: 100vh;
+      &--none {
+        height: 555px;
+      }
     }
     &.section-computer {
       .computer-img {
@@ -378,11 +394,9 @@ img.archive-page-cover {
           right: 0;
           max-width: 50%;
         }
-        @include breakpoint(large) {
-          right: 0;
-        }
         @include breakpoint(xlarge) {
-          right: calc((100vw - #{$container-width}) / 8);
+          max-width: none;
+          width: 45%;
         }
       }
     }

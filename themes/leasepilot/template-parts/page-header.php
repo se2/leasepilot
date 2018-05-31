@@ -13,6 +13,7 @@
 $prefix      = '';
 $option      = '';
 $thin_header = '';
+$bg          = '';
 $page_title  = get_the_title();
 
 if ( isset( get_queried_object()->term_id ) ) {
@@ -35,13 +36,10 @@ if ( isset( get_queried_object()->term_id ) ) {
 	$page_title  = 'Careers';
 	$thin_header = 'page-header--bg-img--thin';
 } elseif ( is_singular( 'post' ) ) {
-	// $option      = get_option( 'page_for_posts' );
-	// $page_title  = 'Blog';
 	$thin_header = 'page-header--bg-img--thin';
 }
 
 $bg_type  = get_field( $prefix . 'background', $option );
-$bg       = '';
 $video_id = null;
 
 switch ( $bg_type ) {
@@ -58,6 +56,12 @@ switch ( $bg_type ) {
 	default:
 		break;
 }
+
+// Default bg image for single post
+if ( is_singular( 'post' ) && ! get_field( $prefix . 'background_image', $option ) ) {
+	$bg = 'background-image:url(' . get_field( $prefix . 'background_image', get_option( 'page_for_posts' ) ) . ')';
+}
+
 ?>
 <!-- Page header -->
 <header class="page-header page-header--bg-img <?php echo esc_attr( $thin_header ); ?> pos-rel" style="<?php echo esc_attr( $bg ); ?>;">

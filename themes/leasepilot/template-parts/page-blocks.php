@@ -243,7 +243,7 @@ if ( have_rows( 'page_blocks' ) ) {
 <?php
 $type        = get_sub_field( 'animation_type' );
 $type_class  = 'section-img-crop';
-$right_class = 'medium-offset-2 large-offset-5 xlarge-offset-4 text-right';
+$right_class = 'medium-offset-6 large-offset-5 xlarge-offset-4 text-right';
 switch ( $type ) {
 	case 'bar':
 		$type_class = 'section-bar';
@@ -280,7 +280,7 @@ switch ( $type ) {
 	<?php endif; ?>
 	<div class="main-container h100p pos-rel">
 		<div class="grid-x h100p">
-			<div class="cell small-12 medium-10 large-7 xlarge-8 <?php echo ( 'right' === get_sub_field( 'text_layout' ) ) ? esc_attr( $right_class ) : ''; ?>">
+			<div class="cell small-12 medium-6 large-7 xlarge-8 <?php echo ( 'right' === get_sub_field( 'text_layout' ) ) ? esc_attr( $right_class ) : ''; ?>">
 				<h3 class="secondary-color"><?php the_sub_field( 'block_title' ); ?> <span class="lighter ff-hn"><?php the_sub_field( 'block_subtitle' ); ?></span></h3>
 				<p class="secondary-color"><?php the_sub_field( 'block_description' ); ?></p>
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>

@@ -24,7 +24,7 @@ while ( have_posts() ) :
 	<?php get_template_part( 'template-parts/page', 'header' ); ?>
 
 	<!-- Big text block -->
-	<div class="page-block page-block--big-text" style="background-color:#fff;">
+	<div class="page-block page-block--big-text">
 		<div class="main-container">
 			<div class="grid-x">
 				<div class="cell small-12">
