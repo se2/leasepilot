@@ -161,13 +161,14 @@ $(window).resize(function () {
 /* Credit: https://codepen.io/bamf/pen/jEpxOX */
 function drags(dragElement, resizeElement, container) {
 
+  var beforeElement = container.find('.before');
+
 	// Initialize the dragging event on mousedown.
 	dragElement.on('mousedown touchstart', function (e) {
 
 		dragElement.addClass('draggable');
 		resizeElement.addClass('resizable');
 
-		var beforeElement = container.find('.before');
 		beforeElement.addClass('resizable--reverse');
 
 		// Check if it's a mouse or touch event and pass along the correct value

@@ -367,6 +367,9 @@ img.archive-page-cover {
         height: 510px;
       }
     }
+    @include breakpoint(xxlarge) {
+      height: 100vh;
+    }
     &.section-computer {
       .computer-img {
         position: absolute;
@@ -441,7 +444,7 @@ img.archive-page-cover {
       display: flex;
       align-items: flex-end;
       .bar__outer {
-        max-height: 98%;
+        max-height: 100%;
         margin-right: 4px;
         display: flex;
         align-items: flex-end;
@@ -519,6 +522,9 @@ img.archive-page-cover {
       overflow: visible;
       @include breakpoint(small) {
         height: 390px;
+      }
+      @include breakpoint(medium) {
+        height: 350px;
       }
       @include breakpoint(large) {
         height: 450px;

@@ -13,6 +13,8 @@ get_header(); ?>
 		<main class="main-content">
 			<article>
 				<header>
+					<br>
+					<br>
 					<h1 class="entry-title"><?php _e( 'File Not Found', 'foundationpress' ); ?></h1>
 				</header>
 				<div class="entry-content">
@@ -38,9 +40,10 @@ get_header(); ?>
 						</li>
 					</ul>
 				</div>
+				<br>
+				<br>
 			</article>
 		</main>
-		<?php get_sidebar(); ?>
 	</div>
 </div>
 <?php get_footer();

@@ -70,12 +70,9 @@
     @include breakpoint(large) {
       top: 75px;
       left: 60px;
-      &--home {
-      }
     }
     @include breakpoint(xlarge) {
       top: 14vh;
-      // transform: translateY(-50%);
       &--home {
         top: 6vh;
         transform: none;

@@ -20,7 +20,6 @@ if ( have_posts() ) :
 
 	<div class="content-padding">
 		<div class="main-container">
-			<!-- <h3 class="ff-hn primary-color"><?php the_title(); ?></h3> -->
 			<?php the_content(); ?>
 		</div>
 	</div>

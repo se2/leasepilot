@@ -26,6 +26,26 @@
   &--left {
     right: 0;
   }
+  &--full-height {
+    @include breakpoint(small) {
+      display: none;
+    }
+    @include breakpoint(medium) {
+      display: block;
+      position: absolute;
+      right: 0;
+      height: 100%;
+      width: calc((100vw - #{$container-width}) / 2 + (#{$container-width} * 0.5));
+      top: 0;
+      &--left {
+        right: auto;
+        left: 0;
+      }
+    }
+    @include breakpoint(large) {
+      width: calc((100vw - #{$container-width}) / 2 + (#{$container-width} * 0.41667));
+    }
+  }
 }
 
 .product-features {
@@ -44,9 +64,9 @@
     }
     @include breakpoint(medium) {
       text-align: inherit;
-      &:nth-child(2) {
-        border-left: 1px solid $secondary-color;
-        border-right: 1px solid $secondary-color;
+      border-right: 1px solid $secondary-color;
+      &:last-child {
+        border-right: none;
       }
     }
     @include breakpoint(large) {
@@ -76,33 +96,23 @@
   }
 }
 
-@include breakpoint(medium) {
-	.product-go-live {
-		position: absolute;
-		right: 0;
-		height: 100%;
-		width: calc((100vw - #{$container-width}) / 2 + (#{$container-width} * 0.4166666667));
-		top: 0;
-	}
-}
-
 .form-section--1-column {
-	padding-top: 0;
-	padding-bottom: 0;
-	form {
-		.hs-error-msgs {
-			display: none !important;
-		}
-		.hs_submit,
-		.hs-submit {
-			.actions {
-				padding-left: 0;
-				padding-right: 0;
-				margin-top: 28px;
-				@include breakpoint(medium) {
-					text-align: left;
-				}
-			}
-		}
-	}
+  padding-top: 0;
+  padding-bottom: 0;
+  form {
+    .hs-error-msgs {
+      display: none !important;
+    }
+    .hs_submit,
+    .hs-submit {
+      .actions {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 28px;
+        @include breakpoint(medium) {
+          text-align: left;
+        }
+      }
+    }
+  }
 }
