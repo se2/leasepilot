@@ -57,7 +57,7 @@ switch ( $bg_type ) {
 		break;
 }
 
-// Default bg image for single post
+// Default bg image for single post.
 if ( is_singular( 'post' ) && ! get_field( $prefix . 'background_image', $option ) ) {
 	$bg = 'background-image:url(' . get_field( $prefix . 'background_image', get_option( 'page_for_posts' ) ) . ')';
 }

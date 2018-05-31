@@ -297,12 +297,12 @@ switch ( $type ) {
 <!-- Product Features Section -->
 <?php
 	$features = get_sub_field( 'feature' );
-	$width    = floor( 12 / sizeof( $features ) );
+	$width    = floor( 12 / count( $features ) );
 ?>
 <div class="product-features pos-rel">
 	<div class="main-container h100p">
 		<div class="grid-x h100p flex-center-items">
-			<?php foreach ($features as $key => $feature) : ?>
+			<?php foreach ( $features as $key => $feature ) : ?>
 			<div class="cell product-features__cell small-12 medium-<?php echo esc_attr( $width ); ?> large-<?php echo esc_attr( $width ); ?>">
 				<img src="<?php echo esc_attr( $feature['feature_icon'] ); ?>" alt="">
 				<h3><?php echo esc_html( $feature['feature_title'] ); ?><br><span class="lighter ff-hn"><?php echo esc_html( $feature['feature_subtitle'] ); ?></span></h3>
@@ -372,10 +372,6 @@ switch ( $type ) {
 			</div>
 			<div class="cell medium-5 large-5 page-block--cta-img__content-wrapper form-section form-section--1-column">
 				<?php // phpcs:disable ?>
-				<!--[if lte IE 8]>
-				<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-				<![endif]-->
-				<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
 				<script>
 					hbspt.forms.create({
 						portalId: "<?php the_sub_field( 'hubspot_portalid' ); ?>",
@@ -400,10 +396,6 @@ switch ( $type ) {
 			<h3 class="form-title ff-hn secondary-color lighter"><?php the_sub_field( 'block_title' ); ?></h3>
 			<div class="cell medium-12 large-10 large-offset-1">
 				<?php // phpcs:disable ?>
-				<!--[if lte IE 8]>
-				<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-				<![endif]-->
-				<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
 				<script>
 					hbspt.forms.create({
 						portalId: "<?php the_sub_field( 'hubspot_portalid' ); ?>",

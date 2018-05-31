@@ -178,3 +178,70 @@ aside.sidebar {
     margin-bottom: 60px;
   }
 }
+
+.comments-section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  h3 {
+    display: none;
+  }
+  img.avatar {
+    display: none;
+  }
+  ol.comment-list,
+  ul.comment-list {
+    list-style-type: none;
+    margin-left: 0;
+    li.comment {
+      margin-bottom: 30px;
+    }
+  }
+  ul.children {
+    list-style-type: none;
+    margin-left: 50px;
+  }
+  cite.fn {
+    color: $secondary-color;
+    font-weight: bold;
+    font-size: 18px;
+    font-style: normal;
+    display: inline-block;
+    &:before {
+      content: none;
+    }
+  }
+  time {
+    line-height: 1;
+    display: inline-block;
+    a {
+      &:before {
+        content: "— ";
+      }
+      font-size: 14px;
+    }
+  }
+  .comment-reply-link {
+    font-size: 14px;
+    line-height: 1;
+  }
+  .form-section {
+    padding: 0;
+  }
+}
+
+.pagination {
+	a,
+	span {
+		@extend .ff-cd;
+		font-size: 21px;
+		transition: color 300ms;
+	}
+	a:hover {
+		background-color: transparent;
+		color: $primary-color;
+	}
+  .current {
+		background-color: transparent;
+		color: $primary-color;
+	}
+}

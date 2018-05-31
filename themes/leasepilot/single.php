@@ -24,6 +24,12 @@ if ( have_posts() ) :
 		</div>
 	</div>
 
+	<div class="comments-section" style="background-color:#f6f5f5;">
+		<div class="main-container">
+			<?php comments_template(); ?>
+		</div>
+	</div>
+
 	<?php get_template_part( 'template-parts/page', 'footer' ); ?>
 
 </article>

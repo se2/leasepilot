@@ -52,6 +52,17 @@ get_header(); ?>
 						<?php endif; ?>
 					</div>
 					<?php wp_reset_postdata(); ?>
+					<br><br>
+					<?php
+					if ( function_exists( 'foundationpress_pagination' ) ) :
+						foundationpress_pagination();
+					elseif ( is_paged() ) :
+					?>
+					<nav id="post-nav">
+						<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
+						<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+					</nav>
+					<?php endif; ?>
 				</div>
 				<div class="cell small-12 medium-3 stack-up">
 					<?php get_sidebar(); ?>
