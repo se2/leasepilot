@@ -65,6 +65,12 @@
 @import "global/wp-overrides";
 @import "global/fonts";
 
+// Libraries
+@import "components/slick/slick";
+@import "components/slick/slick-theme";
+@import '../../../node_modules/animate.css/animate.css';
+@import '../../../node_modules/font-awesome/scss/font-awesome';
+
 // Modules
 @import "modules/navigation";
 @import "modules/content";
@@ -78,11 +84,6 @@
 @import "components/featured-image";
 @import "components/dividers";
 @import "components/links";
-// Slick style
-@import "components/slick/slick";
-@import "components/slick/slick-theme";
-// Animate.css
-@import '../../../node_modules/animate.css/animate.css';
 
 // Templates
 @import "templates/front";
