@@ -25,10 +25,8 @@ if ( have_posts() ) :
 		</div>
 	</div>
 	<?php if ( comments_open() ) : ?>
-	<div class="comments-section" style="background-color:#f6f5f5;">
-		<div class="main-container">
-			<?php comments_template(); ?>
-		</div>
+	<div class="comments-section">
+		<?php comments_template(); ?>
 	</div>
 	<?php endif; ?>
 	<?php get_template_part( 'template-parts/page', 'footer' ); ?>

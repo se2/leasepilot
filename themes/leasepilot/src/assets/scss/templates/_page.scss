@@ -137,6 +137,7 @@
     .container {
       @include breakpoint(large) {
         padding-top: 90px;
+        padding-bottom: 90px;
       }
     }
   }
@@ -149,6 +150,7 @@
       .container {
         @include breakpoint(large) {
           padding-top: 80px;
+          padding-bottom: 80px;
         }
       }
     }
@@ -180,13 +182,22 @@ aside.sidebar {
 }
 
 .comments-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  #respond {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   h3 {
-    display: none;
+    margin-bottom: 40px;
   }
   img.avatar {
-    display: none;
+    display: inline-block;
+  }
+  div.author-meta {
+    display: inline-block;
+    padding-left: 15px;
+  }
+  section.comment {
+    padding-left: 68px;
   }
   ol.comment-list,
   ul.comment-list {
@@ -194,6 +205,10 @@ aside.sidebar {
     margin-left: 0;
     li.comment {
       margin-bottom: 30px;
+      // &.depth-1 {
+      //   padding-bottom: 30px;
+      //   border-bottom: 1px solid #999;
+      // }
     }
   }
   ul.children {
@@ -231,6 +246,8 @@ aside.sidebar {
 }
 
 .pagination {
+  border-top: 1px solid #999;
+  padding-top: 20px;
 	a,
 	span {
 		@extend .ff-cd;
