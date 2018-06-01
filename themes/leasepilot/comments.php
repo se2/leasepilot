@@ -9,7 +9,8 @@
  * @since FoundationPress 1.0.0
  */
 
-if ( have_comments() ) :
+if ( have_comments() ) : ?>
+<?php
 	if ( ( is_page() || is_single() ) && ( ! is_home() && ! is_front_page() ) ) :
 ?>
 	<section id="comments">
@@ -129,6 +130,6 @@ if ( comments_open() ) :
 	</form>
 	<?php endif; // If registration required and not logged in. ?>
 </section>
-<?php
-	endif; // If you delete this the sky will fall on your head.
-	endif; // If you delete this the sky will fall on your head.
+
+<?php endif; ?>
+<?php endif; ?>
