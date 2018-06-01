@@ -21,6 +21,7 @@ if ( have_posts() ) :
 	<div class="content-padding">
 		<div class="main-container">
 			<?php the_content(); ?>
+			<?php the_socials_share(); ?>
 		</div>
 	</div>
 	<?php if ( comments_open() ) : ?>

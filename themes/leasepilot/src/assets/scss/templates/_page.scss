@@ -214,10 +214,11 @@ aside.sidebar {
     line-height: 1;
     display: inline-block;
     a {
+			color: $secondary-color;
+			font-size: 14px;
       &:before {
         content: "— ";
       }
-      font-size: 14px;
     }
   }
   .comment-reply-link {
