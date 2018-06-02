@@ -20,7 +20,6 @@ get_header(); ?>
 		<div class="main-container">
 			<div class="grid-x grid-margin-x">
 			<?php
-			$posts_per_page   = get_option( 'posts_per_page' );
 			$paged            = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 			$term_id          = get_queried_object()->term_id;
 			$term             = get_term( $term_id, 'resource-category' );

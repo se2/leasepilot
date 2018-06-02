@@ -34,12 +34,18 @@ get_header(); ?>
 			</ul>
 			<div id="resource-grid" class="grid-x grid-margin-x">
 			<?php
+
+			/*
+			 * This limit is to avoid conflict with Settings->Reading->'Blog pages show at most' of WordPress.
+			 * DO NOT use -1 to list all for performance issues.
+			 * Reference: https://stackoverflow.com/questions/25012474/error-with-posts-per-page-1-when-verify-my-plugin-with-wordpress-plugin-cod
+			*/
+			$limit                  = 999;
 			$default_posts_per_page = get_option( 'posts_per_page' );
-			$paged                  = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 			$resource_query         = new WP_Query(
 				array(
-					'post_type' => 'resources',
-					'paged'     => $paged,
+					'post_type'      => 'resources',
+					'posts_per_page' => $limit,
 				)
 			);
 			if ( $resource_query->have_posts() ) :
