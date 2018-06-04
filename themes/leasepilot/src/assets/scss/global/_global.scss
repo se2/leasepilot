@@ -22,6 +22,15 @@ h6 {
   font-family: "Chronicle Deck", serif;
 }
 
+a.secondary-color {
+  &:hover {
+    color: $primary-color;
+    h3 {
+      color: $primary-color;
+    }
+  }
+}
+
 .off-canvas-content {
 	@include breakpoint(small) {
 		padding-top: #{map-get($nav-height, small)};
@@ -145,7 +154,7 @@ h6 {
 }
 
 .lighter {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .bold {

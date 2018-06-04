@@ -93,7 +93,7 @@ if ( have_rows( 'page_blocks' ) ) {
 			case 'comparison_block':
 ?>
 <!-- Comparison section -->
-<div class="page-block page-block--compare pos-rel bg-cover section-compare no-overflow" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+<div class="page-block page-block--compare pos-rel bg-cover section-compare no-overflow animated-move" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
 	<div class="main-container h100p">
 		<div class="grid-x pos-rel flex-center-items">
 			<div class="cell small-12 medium-5 medium-offset-1 large-6 large-offset-0 xlarge-4 page-block--compare__left">
@@ -195,7 +195,7 @@ if ( have_rows( 'page_blocks' ) ) {
 			if ( $posts ) :
 			foreach ( $posts as $key => $post ) :
 				$post_obj = $post['post_object'];
-				$layout   = ( '2col' === $post['post_layout'] ) ? 'small-12 mobile-12 medium-6' : 'small-12 mobile-6 medium-3';
+				$layout   = ( '2col' === $post['post_layout'] ) ? 'small-12 mobile-12 medium-6 featured' : 'small-12 mobile-6 medium-3';
 			?>
 			<div class="cell bg-cover no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>" style="background-image:url('<?php echo esc_attr( get_the_post_thumbnail_url( $post_obj, 'large' ) ); ?>');">
 				<p><a class="white-color bold" href="<?php the_permalink( $post_obj->ID ); ?>"><?php echo esc_html( $post_obj->post_title ); ?> »</a></p>

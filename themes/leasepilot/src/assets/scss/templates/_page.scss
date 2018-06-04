@@ -70,6 +70,9 @@
     @include breakpoint(large) {
       top: 75px;
       left: 60px;
+      &--home {
+        top: 50px;
+      }
     }
     @include breakpoint(xlarge) {
       top: 14vh;
@@ -205,10 +208,6 @@ aside.sidebar {
     margin-left: 0;
     li.comment {
       margin-bottom: 30px;
-      // &.depth-1 {
-      //   padding-bottom: 30px;
-      //   border-bottom: 1px solid #999;
-      // }
     }
   }
   ul.children {
@@ -262,4 +261,12 @@ aside.sidebar {
 		background-color: transparent;
 		color: $primary-color;
 	}
+}
+
+.single-post-content {
+  h1,
+  h2,
+  h3 {
+    font-size: 34px;
+  }
 }

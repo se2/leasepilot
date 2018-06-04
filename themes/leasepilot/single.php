@@ -18,7 +18,7 @@ if ( have_posts() ) :
 
 	<?php get_template_part( 'template-parts/page', 'header' ); ?>
 
-	<div class="content-padding">
+	<div class="content-padding single-post-content">
 		<div class="main-container">
 			<?php the_content(); ?>
 			<?php the_socials_share(); ?>

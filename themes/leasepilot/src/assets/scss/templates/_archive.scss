@@ -623,6 +623,24 @@ img.archive-page-cover {
         }
       }
     }
+    &.animated-move {
+      .before,
+      .after,
+      .handle {
+        transition: all 500ms;
+      }
+    }
+    &.handle-move {
+      .before {
+        width: 75%;
+      }
+      .after {
+        width: 25%;
+      }
+      .handle {
+        left: 25%;
+      }
+    }
   }
   &--testimonials {
     .main-container,
@@ -764,7 +782,21 @@ img.archive-page-cover {
         bottom: 40px;
       }
       .cell {
+        position: relative;
         height: 322px;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        &.featured {
+          -webkit-filter: none;
+          filter: none;
+          &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #4cc8e8, $alpha: 0.5);
+          }
+        }
       }
     }
     p {

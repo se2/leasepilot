@@ -1,4 +1,14 @@
 .home {
+	.page-header {
+		@include breakpoint(xlarge) {
+			height: auto;
+			padding-bottom: calc(56.25vw - #{map-get($nav-height, large)});
+		}
+		@include breakpoint(xxlarge) {
+			padding-bottom: 0;
+			height: calc(85vh - #{map-get($nav-height, large)});
+		}
+	}
 	@include breakpoint(small) {
 		.fullscreen-bg__video {
 			display: none;

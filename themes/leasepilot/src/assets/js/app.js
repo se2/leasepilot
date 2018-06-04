@@ -53,6 +53,7 @@ $(window).on('resize scroll', function () {
 	});
 	$('.section-compare').each(function () {
 		if ($(this).is(':in-viewport( -750 )')) {
+			$(this).addClass('handle-move');
 			$(this).find('.handle img').addClass('animated').addClass('pulse');
 		}
 	});
@@ -61,9 +62,9 @@ $(window).on('resize scroll', function () {
 $(document).ready(function () {
 	// fullscreen-bg__video
 	// 0.7
-	if ($(window).height() / $(window).width() > 0.7) {
-		$('.fullscreen-bg__video').addClass('fullscreen-bg__video--portrait');
-	}
+	// if ($(window).height() / $(window).width() > 0.7) {
+	// 	$('.fullscreen-bg__video').addClass('fullscreen-bg__video--portrait');
+	// }
 	$('#case-study-slider').slick({
 		infinite: true,
 		speed: 500,

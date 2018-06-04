@@ -41,7 +41,7 @@ get_header(); ?>
 									<div class="pos-rel archive-page-bg bg-cover bg-center" style="<?php echo esc_attr( $background ); ?>"></div>
 								</div>
 								<div class="cell medium-9 archive-page--careers__info">
-									<h3 class="ff-hn archive-page-name lighter"><?php the_title(); ?></h3>
+									<a class="secondary-color" href="<?php the_permalink(); ?>"><h3 class="ff-hn archive-page-name lighter"><?php the_title(); ?></h3></a>
 									<p><?php the_date( 'F j, Y' ); ?></p>
 									<?php the_excerpt(); ?>
 									<a class="small bold primary-color" href="<?php the_permalink(); ?>">Read More »</a>
