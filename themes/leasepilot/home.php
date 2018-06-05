@@ -38,7 +38,7 @@ get_header(); ?>
 						<div class="archive-page-item">
 							<div class="grid-x">
 								<div class="cell medium-3">
-									<div class="pos-rel archive-page-bg bg-cover bg-center" style="<?php echo esc_attr( $background ); ?>"></div>
+									<div class="pos-rel archive-page-bg bg-cover bg-center grayscale" style="<?php echo esc_attr( $background ); ?>"></div>
 								</div>
 								<div class="cell medium-9 archive-page--careers__info">
 									<a class="secondary-color" href="<?php the_permalink(); ?>"><h3 class="ff-hn archive-page-name lighter"><?php the_title(); ?></h3></a>

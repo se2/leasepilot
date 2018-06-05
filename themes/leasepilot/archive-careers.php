@@ -18,8 +18,8 @@ get_header(); ?>
 
 	<div class="archive-page careers archive-page__intro" style="background-color:#f6f5f5;">
 		<div class="main-container">
-			<h3 class="ff-hn text-center lighter"><?php the_field(  'c_intro_title', 'option' ); ?></h3>
-      <?php the_field( 'c_intro_content', 'option' ); ?>
+			<h3 class="ff-hn text-center lighter"><?php the_field( 'c_intro_title', 'option' ); ?></h3>
+			<?php the_field( 'c_intro_content', 'option' ); ?>
 		</div>
 	</div>
 
@@ -43,7 +43,7 @@ get_header(); ?>
 				<div class="grid-x">
 					<div class="cell medium-2">
 						<div class="pos-rel archive-page-bg" style="background-color:#3d4543;">
-							<h1 class="ff-cdisp white-color abs-center text-center"><?php the_field( 'initials' ); ?></h1>
+							<h1 class="mb0 white-color abs-center text-center"><?php the_field( 'initials' ); ?></h1>
 						</div>
 					</div>
 					<div class="cell medium-10 archive-page--careers__info">

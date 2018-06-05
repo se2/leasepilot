@@ -52,8 +52,10 @@ $(window).on('resize scroll', function () {
 		}
 	});
 	$('.section-compare').each(function () {
-		if ($(this).is(':in-viewport( -750 )')) {
-			$(this).addClass('handle-move');
+		if ($(this).is(':in-viewport( -700 )')) {
+			if ($(this).hasClass('first-time')) {
+				$(this).addClass('handle-move');
+			}
 			$(this).find('.handle img').addClass('animated').addClass('pulse');
 		}
 	});
@@ -166,6 +168,8 @@ function drags(dragElement, resizeElement, container) {
 
 	// Initialize the dragging event on mousedown.
 	dragElement.on('mousedown touchstart', function (e) {
+
+		$('.section-compare').removeClass('first-time').removeClass('handle-move');
 
 		dragElement.addClass('draggable');
 		resizeElement.addClass('resizable');

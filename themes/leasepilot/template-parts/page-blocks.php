@@ -93,7 +93,7 @@ if ( have_rows( 'page_blocks' ) ) {
 			case 'comparison_block':
 ?>
 <!-- Comparison section -->
-<div class="page-block page-block--compare pos-rel bg-cover section-compare no-overflow animated-move" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+<div class="page-block page-block--compare pos-rel bg-cover section-compare no-overflow first-time" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
 	<div class="main-container h100p">
 		<div class="grid-x pos-rel flex-center-items">
 			<div class="cell small-12 medium-5 medium-offset-1 large-6 large-offset-0 xlarge-4 page-block--compare__left">
@@ -193,11 +193,12 @@ if ( have_rows( 'page_blocks' ) ) {
 			<?php
 			$posts = get_sub_field( 'post' );
 			if ( $posts ) :
-			foreach ( $posts as $key => $post ) :
-				$post_obj = $post['post_object'];
-				$layout   = ( '2col' === $post['post_layout'] ) ? 'small-12 mobile-12 medium-6 featured' : 'small-12 mobile-6 medium-3';
+				foreach ( $posts as $key => $post ) :
+					$post_obj = $post['post_object'];
+					$layout   = ( '2col' === $post['post_layout'] ) ? 'small-12 mobile-12 medium-6 featured' : 'small-12 mobile-6 medium-3';
 			?>
-			<div class="cell bg-cover no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>" style="background-image:url('<?php echo esc_attr( get_the_post_thumbnail_url( $post_obj, 'large' ) ); ?>');">
+			<div class="cell no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>">
+				<div class="bg-cover grayscale bg-image" style="background-image:url('<?php echo esc_attr( get_the_post_thumbnail_url( $post_obj, 'large' ) ); ?>');"></div>
 				<p><a class="white-color bold" href="<?php the_permalink( $post_obj->ID ); ?>"><?php echo esc_html( $post_obj->post_title ); ?> »</a></p>
 				<div class="gradient-overlay"></div>
 			</div>
@@ -334,7 +335,7 @@ switch ( $type ) {
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>
 				<?php endif; ?>
 			</div>
-			<?php else: ?>
+			<?php else : ?>
 			<div class="cell small-12 medium-6 large-6 stack-down">
 				<h3><?php the_sub_field( 'step_title' ); ?><br><span class="lighter ff-hn"><?php the_sub_field( 'step_subtitle' ); ?></span></h3>
 				<p><?php the_sub_field( 'step_content' ); ?></p>

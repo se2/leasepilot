@@ -58,10 +58,6 @@ a.secondary-color {
   font-family: "Chronicle Deck", serif;
 }
 
-.ff-cdisp {
-	font-family: "Chronicle Display", serif;
-}
-
 .ff-hn {
   font-family: "Helvetica Neue", serif;
 }
@@ -92,6 +88,11 @@ a.secondary-color {
 
 .white-color {
   color: white;
+}
+
+.grayscale {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
 }
 
 .red-bg {
@@ -326,6 +327,7 @@ a.secondary-color {
   }
 }
 
+// Animation width
 @keyframes animate-width {
   from {
     width: 0;
@@ -335,6 +337,35 @@ a.secondary-color {
   }
 }
 
+@-moz-keyframes animate-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-o-keyframes animate-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes animate-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+// Animation width
+
+// Animation height
 @keyframes animate-height {
   from {
     height: 0;
@@ -344,6 +375,35 @@ a.secondary-color {
   }
 }
 
+@-webkit-keyframes animate-height {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@-moz-keyframes animate-height {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@-o-keyframes animate-height {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+// Animation height
+
+// Animation opacity
 @keyframes animate-opacity {
   from {
     opacity: 0;
@@ -352,6 +412,184 @@ a.secondary-color {
     opacity: 1;
   }
 }
+
+@-webkit-keyframes animate-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes animate-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes animate-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+// Animation opacity
+
+// Animation before image tease
+@keyframes before-tease {
+	0% {
+		width: 100%;
+	}
+	50% {
+		width: 75%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+@-webkit-keyframes before-tease {
+	0% {
+		width: 100%;
+	}
+	50% {
+		width: 75%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+@-moz-keyframes before-tease {
+	0% {
+		width: 100%;
+	}
+	50% {
+		width: 75%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+@-o-keyframes before-tease {
+	0% {
+		width: 100%;
+	}
+	50% {
+		width: 75%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+// Animation before image tease
+
+// Animation after image tease
+@keyframes after-tease {
+	0% {
+		width: 0%;
+	}
+	50% {
+		width: 25%;
+	}
+	100% {
+		width: 0%;
+	}
+}
+
+@-webkit-keyframes after-tease {
+	0% {
+		width: 0%;
+	}
+	50% {
+		width: 25%;
+	}
+	100% {
+		width: 0%;
+	}
+}
+
+@-moz-keyframes after-tease {
+	0% {
+		width: 0%;
+	}
+	50% {
+		width: 25%;
+	}
+	100% {
+		width: 0%;
+	}
+}
+
+@-o-keyframes after-tease {
+	0% {
+		width: 0%;
+	}
+	50% {
+		width: 25%;
+	}
+	100% {
+		width: 0%;
+	}
+}
+// Abimation after image tease
+
+// Abimation handle tease
+@keyframes handle-tease {
+	0% {
+		left: -10px;
+	}
+	50% {
+		left: 25%;
+	}
+	100% {
+		left: -10px;
+	}
+}
+
+@-webkit-keyframes handle-tease {
+	0% {
+		left: -10px;
+	}
+	50% {
+		left: 25%;
+	}
+	100% {
+		left: -10px;
+	}
+}
+
+@-moz-keyframes handle-tease {
+	0% {
+		left: -10px;
+	}
+	50% {
+		left: 25%;
+	}
+	100% {
+		left: -10px;
+	}
+}
+
+@-o-keyframes handle-tease {
+	0% {
+		left: -10px;
+	}
+	50% {
+		left: 25%;
+	}
+	100% {
+		left: -10px;
+	}
+}
+// Abimation handle tease
 
 .no-overflow {
   overflow: hidden;
