@@ -240,6 +240,30 @@ a.secondary-color {
   margin-bottom: 0;
 }
 
+$margin: 20;
+@mixin margin-classes {
+  @for $i from 1 through $margin {
+    .mb#{$i * 5} {
+      margin-bottom: #{$i * 5}px;
+    }
+    .mt#{$i * 5} {
+      margin-top: #{$i * 5}px;
+		}
+		.pull-left-#{$i * 5} {
+			@include breakpoint(large) {
+				margin-left: -#{$i * 5}px !important;
+			}
+		}
+		.pull-right-#{$i * 5} {
+			@include breakpoint(large) {
+				margin-right: -#{$i * 5}px !important;
+			}
+		}
+  }
+}
+
+@include margin-classes();
+
 .nostyle-list {
   list-style-type: none;
   margin: 0;
