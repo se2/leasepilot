@@ -194,11 +194,13 @@ if ( have_rows( 'page_blocks' ) ) {
 			$posts = get_sub_field( 'post' );
 			if ( $posts ) :
 				foreach ( $posts as $key => $post ) :
-					$post_obj = $post['post_object'];
-					$layout   = ( '2col' === $post['post_layout'] ) ? 'small-12 mobile-12 medium-6 featured' : 'small-12 mobile-6 medium-3';
+					$post_obj       = $post['post_object'];
+					$post_thumbnail = get_field( 'featured_image_home', $post_obj->ID ) ? get_field( 'featured_image_home', $post_obj->ID ) : get_the_post_thumbnail_url( $post_obj, 'large' );
+					$layout         = ( '2col' === $post['post_layout'] ) ? 'small-12 mobile-12 medium-6 featured' : 'small-12 mobile-6 medium-3';
 			?>
 			<div class="cell no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>">
-				<div class="bg-cover grayscale bg-image" style="background-image:url('<?php echo esc_attr( get_the_post_thumbnail_url( $post_obj, 'large' ) ); ?>');"></div>
+				<div class="bg-cover grayscale bg-image" style="background-image:url('<?php echo esc_attr( $post_thumbnail ); ?>');"></div>
+				<div class="blue-overlay"></div>
 				<p><a class="white-color bold" href="<?php the_permalink( $post_obj->ID ); ?>"><?php echo esc_html( $post_obj->post_title ); ?> »</a></p>
 				<div class="gradient-overlay"></div>
 			</div>

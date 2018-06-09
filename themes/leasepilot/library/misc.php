@@ -47,3 +47,34 @@ function the_socials_share( $services = array( 'email', 'facebook', 'twitter', '
 	echo $socials; //phpcs:ignore
 
 }
+
+/**
+ * Custom Color Palette
+ *
+ * @param mixed $init Init.
+ */
+function my_mce4_options( $init ) {
+
+	$custom_colours = '
+		"fc4513", "Primary Color",
+		"3c4542", "Secondary Color",
+		"e6e6e6", "Light Gray",
+		"97daea", "Light Blue",
+		"3adb76", "Success",
+		"ffae00", "Warning",
+		"cc4b37", "Alert",
+		"ffffff", "White",
+		"000000", "Black"
+	';
+
+	// build colour grid default+custom colors.
+	$init['textcolor_map'] = '[' . $custom_colours . ']';
+
+	// change the number of rows in the grid if the number of colors changes.
+	// 8 swatches per row.
+	$init['textcolor_rows'] = 2;
+
+	return $init;
+}
+
+add_filter( 'tiny_mce_before_init', 'my_mce4_options' );
