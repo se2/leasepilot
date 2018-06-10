@@ -622,19 +622,19 @@ img.archive-page-cover {
           }
         }
         @include breakpoint(medium) {
-          left: calc(#{100% - $before-width} - 20px);
+          left: calc(#{100% - $before-width} - 10px);
         }
       }
     }
     &.handle-move {
       .before {
-				animation: before-tease 3s ease-in;
+				animation: before-tease 4s ease-in-out;
       }
       .after {
-				animation: after-tease 3s ease-in;
+				animation: after-tease 4s ease-in-out;
       }
       .handle {
-				animation: handle-tease 3s ease-in;
+				animation: handle-tease 4s ease-in-out;
       }
     }
   }

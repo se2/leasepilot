@@ -360,7 +360,6 @@ $margin: 20;
     width: 100%;
   }
 }
-
 @-moz-keyframes animate-width {
   from {
     width: 0;
@@ -369,7 +368,6 @@ $margin: 20;
     width: 100%;
   }
 }
-
 @-o-keyframes animate-width {
   from {
     width: 0;
@@ -378,7 +376,6 @@ $margin: 20;
     width: 100%;
   }
 }
-
 @-webkit-keyframes animate-width {
   from {
     width: 0;
@@ -398,7 +395,6 @@ $margin: 20;
     height: 100%;
   }
 }
-
 @-webkit-keyframes animate-height {
   from {
     height: 0;
@@ -407,7 +403,6 @@ $margin: 20;
     height: 100%;
   }
 }
-
 @-moz-keyframes animate-height {
   from {
     height: 0;
@@ -416,7 +411,6 @@ $margin: 20;
     height: 100%;
   }
 }
-
 @-o-keyframes animate-height {
   from {
     height: 0;
@@ -436,7 +430,6 @@ $margin: 20;
     opacity: 1;
   }
 }
-
 @-webkit-keyframes animate-opacity {
   from {
     opacity: 0;
@@ -445,7 +438,6 @@ $margin: 20;
     opacity: 1;
   }
 }
-
 @-moz-keyframes animate-opacity {
   from {
     opacity: 0;
@@ -454,7 +446,6 @@ $margin: 20;
     opacity: 1;
   }
 }
-
 @-o-keyframes animate-opacity {
   from {
     opacity: 0;
@@ -477,7 +468,6 @@ $margin: 20;
 		width: 100%;
 	}
 }
-
 @-webkit-keyframes before-tease {
 	0% {
 		width: 100%;
@@ -489,7 +479,6 @@ $margin: 20;
 		width: 100%;
 	}
 }
-
 @-moz-keyframes before-tease {
 	0% {
 		width: 100%;
@@ -501,7 +490,6 @@ $margin: 20;
 		width: 100%;
 	}
 }
-
 @-o-keyframes before-tease {
 	0% {
 		width: 100%;
@@ -527,7 +515,6 @@ $margin: 20;
 		width: 0%;
 	}
 }
-
 @-webkit-keyframes after-tease {
 	0% {
 		width: 0%;
@@ -539,7 +526,6 @@ $margin: 20;
 		width: 0%;
 	}
 }
-
 @-moz-keyframes after-tease {
 	0% {
 		width: 0%;
@@ -551,7 +537,6 @@ $margin: 20;
 		width: 0%;
 	}
 }
-
 @-o-keyframes after-tease {
 	0% {
 		width: 0%;
@@ -568,52 +553,98 @@ $margin: 20;
 // Abimation handle tease
 @keyframes handle-tease {
 	0% {
-		left: -20px;
+		left: -5px;
 	}
 	50% {
 		left: 25%;
   }
 	100% {
-		left: -20px;
+		left: -5px;
 	}
 }
-
 @-webkit-keyframes handle-tease {
 	0% {
-		left: -20px;
+		left: -5px;
 	}
 	50% {
 		left: 25%;
   }
 	100% {
-		left: -20px;
+		left: -5px;
 	}
 }
-
 @-moz-keyframes handle-tease {
 	0% {
-		left: -20px;
+		left: -5px;
 	}
 	50% {
 		left: 25%;
   }
 	100% {
-		left: -20px;
+		left: -5px;
 	}
 }
-
 @-o-keyframes handle-tease {
 	0% {
-		left: -20px;
+		left: -5px;
 	}
 	50% {
 		left: 25%;
   }
 	100% {
-		left: -20px;
+		left: -5px;
 	}
 }
 // Abimation handle tease
+
+@include breakpoint(medium) {
+	// Abimation handle tease
+	@keyframes handle-tease {
+		0% {
+			left: -10px;
+		}
+		50% {
+			left: 25%;
+		}
+		100% {
+			left: -10px;
+		}
+	}
+	@-webkit-keyframes handle-tease {
+		0% {
+			left: -10px;
+		}
+		50% {
+			left: 25%;
+		}
+		100% {
+			left: -10px;
+		}
+	}
+	@-moz-keyframes handle-tease {
+		0% {
+			left: -10px;
+		}
+		50% {
+			left: 25%;
+		}
+		100% {
+			left: -10px;
+		}
+	}
+	@-o-keyframes handle-tease {
+		0% {
+			left: -10px;
+		}
+		50% {
+			left: 25%;
+		}
+		100% {
+			left: -10px;
+		}
+	}
+	// Abimation handle tease
+}
 
 .no-overflow {
   overflow: hidden;
