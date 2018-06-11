@@ -266,10 +266,10 @@ switch ( $type ) {
 	<?php endif; ?>
 	<?php if ( 'fade' === $type ) : ?>
 	<div class="h100p inner-div-bg inner-div-bg--fade page-block--animated--right bg-cover" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');"></div>
-	<img class="computer-img hide-for-small-only hide-for-mobile-only " src="<?php the_sub_field( 'block_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>">
+	<!-- <img class="computer-img hide-for-small-only hide-for-mobile-only " src="<?php the_sub_field( 'block_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>"> -->
 	<?php endif; ?>
 	<?php if ( 'bar' === $type ) : ?>
-	<div class="inner-div-bg bars bg-cover page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
+	<div class="inner-div-bg bars bg-contain page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
 	<?php
 	$bars = ( get_sub_field( 'bars' ) ) ? explode( ',', get_sub_field( 'bars' ) ) : array( 10, 20, 35, 55, 85 );
 	sort( $bars );

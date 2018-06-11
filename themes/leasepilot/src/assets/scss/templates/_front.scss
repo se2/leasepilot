@@ -1,12 +1,20 @@
 .home {
 	.page-header {
 		@include breakpoint(xlarge) {
-			height: auto;
-			padding-bottom: calc(56.25vw - #{map-get($nav-height, large)});
+			height: 600px;
+			// height: auto;
+			// padding-bottom: calc(56.25vw - #{map-get($nav-height, large)});
 		}
 		@include breakpoint(xxlarge) {
-			padding-bottom: 0;
-			height: calc(85vh - #{map-get($nav-height, large)});
+			// padding-bottom: 0;
+			// height: calc(85vh - #{map-get($nav-height, large)});
+		}
+		@include breakpoint(2559px) {
+			height: 800px;
+		}
+		@include breakpoint(2880px) {
+			height: 900px;
+			max-height: 900px;
 		}
 	}
 	@include breakpoint(small) {
@@ -28,11 +36,11 @@
 			}
     }
 	}
-  @include breakpoint(medium down) {
+  @include breakpoint(large down) {
     .page-header {
       &__content {
         h1 {
-					font-size: 43px;
+					font-size: 40px;
           line-height: 1.15;
           margin-bottom: 20px;
         }
@@ -46,12 +54,17 @@
 	}
 	@include breakpoint(414px down) {
 		.page-header {
-			background-position-x: -350px;
+			background-position-x: -380px;
 			&__content {
 				h1 {
-					font-size: 36px;
+					font-size: 34px;
 				}
 			}
+		}
+	}
+	@include breakpoint(376px down) {
+		.page-header {
+			background-position-x: -335px;
 		}
 	}
 	.site-header {
