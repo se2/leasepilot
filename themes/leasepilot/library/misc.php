@@ -172,10 +172,14 @@ function fb_opengraph() {
 	global $post;
 
 	if ( is_single() ) {
-		if ( has_post_thumbnail( $post->ID ) ) {
-			$img_src = get_the_post_thumbnail_url( $post->ID, 'medium' );
+		if ( has_post_thumbnail( $post->ID, 'fb_large' ) ) {
+			$img_src = get_the_post_thumbnail_url( $post->ID, 'fb_large' );
+		} else if ( has_post_thumbnail( $post->ID, 'fb_small' ) ) {
+			$img_src = get_the_post_thumbnail_url( $post->ID, 'fb_small' );
+		} else if ( has_post_thumbnail( $post->ID ) ) {
+			$img_src = get_the_post_thumbnail_url( $post->ID, 'large' );
 		} else {
-			$img_src = get_stylesheet_directory_uri() . '/src/assets/leasepilot-logo.jpg';
+			$img_src = get_stylesheet_directory_uri() . '/src/assets/leasepilot-fb.jpg';
 		}
 		if ( $excerpt = $post->post_excerpt ) {
 				$excerpt = strip_tags( $post->post_excerpt );

@@ -13,13 +13,17 @@
 // and optimized for HiDPI displays on 'small' and 'medium' screen sizes.
 add_image_size( 'cover_small', 400, 205, true ); // name, width, height, crop
 add_image_size( 'cover_large', 1200, 615, true );
+add_image_size( 'fb_small', 600, 315, true );
+add_image_size( 'fb_large', 1200, 630, true );
 
 // Register the new image sizes for use in the add media modal in wp-admin
 function foundationpress_custom_sizes( $sizes ) {
 	return array_merge(
 		$sizes, array(
 			'cover_small'  => __( 'Cover Small' ),
-			'cover_large'  => __( 'Cover Large' )
+			'cover_large'  => __( 'Cover Large' ),
+			'fb_small'     => __( 'Facebook Small' ),
+			'fb_large'     => __( 'Facebook Large' ),
 		)
 	);
 }
