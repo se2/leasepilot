@@ -14,6 +14,8 @@ $prefix      = '';
 $option      = '';
 $thin_header = '';
 $bg          = '';
+$bg_pos      = '';
+$bg_size     = '';
 $page_title  = get_the_title();
 
 if ( isset( get_queried_object()->term_id ) ) {
@@ -62,9 +64,19 @@ if ( is_singular( 'post' ) && ! get_field( $prefix . 'background_image', $option
 	$bg = 'background-image:url(' . get_field( $prefix . 'background_image', get_option( 'page_for_posts' ) ) . ')';
 }
 
+// Background position.
+if ( get_field( $prefix . 'background_position', $option ) ) {
+	$bg_pos = 'bg-' . get_field( $prefix . 'background_position', $option );
+}
+
+// Background size.
+if ( get_field( $prefix . 'background_position', $option ) ) {
+	$bg_size = 'bg-' . get_field( $prefix . 'background_size', $option );
+}
+
 ?>
 <!-- Page header -->
-<header class="page-header page-header--bg-img <?php echo esc_attr( $thin_header ); ?> pos-rel" style="<?php echo esc_attr( $bg ); ?>;">
+<header class="page-header page-header--bg-img <?php echo esc_attr( $thin_header . ' ' . $bg_pos . ' ' . $bg_size ); ?> pos-rel" style="<?php echo esc_attr( $bg ); ?>;">
 	<?php if ( 'video' === $bg_type ) : ?>
 	<video muted autoplay playsinline preload="none" class="fullscreen-bg__video" poster="<?php the_field( $prefix . 'background_video_poster', $option ); ?>">
 		<source src="<?php the_field( $prefix . 'background_video', $option ); ?>" type="video/mp4">
