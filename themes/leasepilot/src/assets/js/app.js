@@ -65,8 +65,9 @@ $(document).ready(function () {
 	// fullscreen-bg__video
 	// 0.7
 	// if ($(window).height() / $(window).width() > 0.7) {
-	// 	$('.fullscreen-bg__video').addClass('fullscreen-bg__video--portrait');
+	//   $('.fullscreen-bg__video').addClass('fullscreen-bg__video--portrait');
 	// }
+
 	$('#case-study-slider').slick({
 		infinite: true,
 		speed: 500,
@@ -91,6 +92,7 @@ $(document).ready(function () {
 			}
 		]
 	});
+
 	$('#testimonial-slider').slick({
 		infinite: true,
 		speed: 300,
@@ -100,11 +102,13 @@ $(document).ready(function () {
 		fade: true,
 		cssEase: 'ease-in'
 	});
+
 	$('.js-logo-click').on('click', function (e) {
 		e.preventDefault();
 		var slideNumber = $(this).data('index');
 		$('#testimonial-slider').slick('slickGoTo', slideNumber, false);
 	});
+
 	$('.ba-slider').each(function () {
 		var current = $(this);
 		// Adjust the slider
@@ -117,8 +121,9 @@ $(document).ready(function () {
 		// Bind dragging events
 		drags(current.find('.handle'), current.find('.resize'), current);
 	});
+
 	$('.js-request-demo').on('click', function (e) {
-    $('#request-demo').foundation('open');
+		$('#request-demo').foundation('open');
 		e.preventDefault();
 	});
 
@@ -164,7 +169,7 @@ $(window).resize(function () {
 /* Credit: https://codepen.io/bamf/pen/jEpxOX */
 function drags(dragElement, resizeElement, container) {
 
-  var beforeElement = container.find('.before');
+	var beforeElement = container.find('.before');
 
 	// Initialize the dragging event on mousedown.
 	dragElement.on('mousedown touchstart', function (e) {

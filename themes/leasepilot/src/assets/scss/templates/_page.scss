@@ -22,7 +22,7 @@
     }
     @include breakpoint(small) {
       padding-bottom: 0;
-      height: calc(100vh - #{map-get($nav-height, small)});
+      height: calc(60vh - #{map-get($nav-height, small)});
       .main-container,
       .container {
         padding-bottom: 0;
@@ -85,7 +85,7 @@
         .cell {
           width: 75%;
           h1 {
-            font-size: 75px;
+            font-size: 84px;
             line-height: 1.3;
           }
           a.button {

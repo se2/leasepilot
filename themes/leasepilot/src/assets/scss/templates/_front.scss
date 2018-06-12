@@ -49,12 +49,12 @@
 	}
 	@include breakpoint(mobile down) {
 		.page-header {
-			background-position-x: -510px;
+			background-position-x: -120px;
 		}
 	}
 	@include breakpoint(414px down) {
 		.page-header {
-			background-position-x: -380px;
+			background-position-x: -100px;
 			&__content {
 				h1 {
 					font-size: 34px;
@@ -64,7 +64,7 @@
 	}
 	@include breakpoint(376px down) {
 		.page-header {
-			background-position-x: -335px;
+			background-position-x: -50px;
 		}
 	}
 	.site-header {

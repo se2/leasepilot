@@ -217,19 +217,23 @@ if ( have_rows( 'page_blocks' ) ) {
 <!-- 2-column section -->
 <div class="page-block page-block--2-cols" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
 	<div class="main-container">
-		<div class="grid-x grid-margin-x flex-center-items">
-			<div class="cell page-block--2-cols__left small-12 medium-8 stack-down">
+		<div class="grid-x flex-center-items">
+			<?php if ( 'image_content' === get_sub_field( 'layout' ) ) : ?>
+			<div class="cell page-block--2-cols--img page-block--2-cols__left small-12 medium-5 text-right stack-up">
+				<img src="<?php the_sub_field( 'cta_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>" class="<?php echo ( 'yes' === get_sub_field( 'image_box_shadow' ) ) ? 'box-shadow' : ''; ?>">
+			</div>
+			<div class="cell page-block--2-cols__right small-12 medium-7 stack-down">
 				<h3 class="ff-hn lighter page-block--2-cols__title"><?php the_sub_field( 'block_title' ); ?></h3>
 				<p style="color:<?php the_sub_field( 'text_color' ); ?>;"><?php the_sub_field( 'block_subtitle' ); ?></p>
-				<?php if ( 'content_image' === get_sub_field( 'layout' ) ) : ?>
+				<?php if ( 'image_content' === get_sub_field( 'layout' ) ) : ?>
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_title' ); ?></a>
 				<?php endif; ?>
 			</div>
-			<?php if ( 'content_image' === get_sub_field( 'layout' ) ) : ?>
-			<div class="cell page-block--2-cols--img page-block--2-cols__right small-12 medium-4 text-right stack-up">
-				<img src="<?php the_sub_field( 'cta_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>" class="<?php echo ( 'yes' === get_sub_field( 'image_box_shadow' ) ) ? 'box-shadow' : ''; ?>">
-			</div>
 			<?php else : ?>
+			<div class="cell small-12 medium-8 stack-down">
+				<h3 class="ff-hn lighter page-block--2-cols__title"><?php the_sub_field( 'block_title' ); ?></h3>
+				<p style="color:<?php the_sub_field( 'text_color' ); ?>;"><?php the_sub_field( 'block_subtitle' ); ?></p>
+			</div>
 			<div class="cell page-block--2-cols__right small-12 medium-4 text-center stack-down">
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_title' ); ?></a>
 			</div>

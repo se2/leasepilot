@@ -311,6 +311,10 @@ img.archive-page-cover {
       padding: 60px 0 80px;
       &__left {
         text-align: left;
+      }
+      &__right {
+        text-align: right;
+        padding-left: 20px;
 			}
 			&__title {
 				font-size: 34px;

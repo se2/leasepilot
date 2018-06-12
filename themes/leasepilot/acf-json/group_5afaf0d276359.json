@@ -746,13 +746,13 @@
                                 "id": ""
                             },
                             "choices": {
-                                "content_image": "Content + CTA | Image",
+                                "image_content": "CTA | Image + Content",
                                 "content_cta": "Content | CTA"
                             },
                             "allow_null": 0,
                             "other_choice": 0,
                             "save_other_choice": 0,
-                            "default_value": "content_image",
+                            "default_value": "image_content",
                             "layout": "horizontal",
                             "return_format": "value"
                         },
@@ -1740,5 +1740,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1527786112
+    "modified": 1528824892
 }
