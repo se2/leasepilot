@@ -203,3 +203,20 @@ function fb_opengraph() {
 }
 
 add_action( 'wp_head', 'fb_opengraph', 5 );
+
+
+// Blockquote shortcode.
+// [blockquote style="start"]Content here.[/blockquote]
+// Add Shortcode.
+function blockquote_shortcode_handler( $atts , $content = null ) {
+
+	// Attributes.
+	$atts = shortcode_atts(
+		array(
+			'style' => 'start',
+		),
+		$atts
+	);
+	return $content;
+}
+add_shortcode( 'blockquote', 'blockquote_shortcode_handler' );
