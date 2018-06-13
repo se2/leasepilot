@@ -395,13 +395,24 @@ switch ( $type ) {
 <?php
 				break;
 			case 'hubspot_form_block':
+				$form_gray = '';
+				$bg_color  = get_sub_field( 'background_color' );
+				$rgb       = HTMLToRGB( $bg_color );
+				$hsl       = RGBToHSL( $rgb );
+				if ( $hsl->lightness > 250 ) {
+					// this is light colour!
+					$form_gray = 'form--gray';
+				}
 ?>
 <!-- Form Section -->
-<div class="hubspot-form-reset form-section" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
+<div class="hubspot-form-reset form-section <?php echo esc_attr( $form_gray ); ?>" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
 	<div class="main-container">
-		<div class="grid-x grid-margin-x form-wrapper">
-			<h3 class="form-title ff-hn secondary-color lighter"><?php the_sub_field( 'block_title' ); ?></h3>
-			<div class="cell medium-12 large-10 large-offset-1">
+		<div class="grid-x form-wrapper grid-centered">
+			<?php if ( '2_col' === get_sub_field( 'block_layout' ) ) : ?>
+			<div class="cell small-12 large-5">
+				<?php the_sub_field( 'block_content' ); ?>
+			</div>
+			<div class="cell small-12 large-6 large-offset-1">
 				<?php // phpcs:disable ?>
 				<script>
 					hbspt.forms.create({
@@ -411,6 +422,20 @@ switch ( $type ) {
 				</script>
 				<?php // phpcs:enable ?>
 			</div>
+			<?php else : ?>
+			<div class="cell medium-12 large-10">
+				<!-- <h3 class="form-title ff-hn secondary-color lighter"></h3> -->
+				<?php the_sub_field( 'block_content' ); ?>
+				<?php // phpcs:disable ?>
+				<script>
+					hbspt.forms.create({
+						portalId: "<?php the_sub_field( 'hubspot_portalid' ); ?>",
+						formId: "<?php the_sub_field( 'hubspot_formid' ); ?>"
+				});
+				</script>
+				<?php // phpcs:enable ?>
+			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>

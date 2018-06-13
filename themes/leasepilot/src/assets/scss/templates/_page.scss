@@ -11,7 +11,7 @@
     margin: 0 auto;
     max-height: 800px;
     &--thin {
-      max-height: 390px;
+      max-height: 400px;
       @include breakpoint(medium) {
         .page-header__content {
           left: 20px;

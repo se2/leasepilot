@@ -21,18 +21,15 @@
 	</div>
 	<div class="footer-container">
 		<div class="grid-x">
-			<div class="cell medium-12 large-3">
+			<div class="cell medium-4 large-3">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/leasepilot-logo-footer.png" alt="<?php bloginfo(); ?>" class="site-logo">
 				</a>
 			</div>
-			<div class="cell medium-5 large-4 copyright">
-				<p>800 Boyleston St. 29th Floor 02199</p>
+			<div class="cell medium-5 large-8 copyright">
+				<p>800 Boyleston St. 29th Floor 02199<br>© Gadfly © 2018. All rights reserved.</p>
 			</div>
-			<div class="cell medium-5 large-4 copyright">
-				<p>© Gadfly © 2018. All rights reserved.</p>
-			</div>
-			<div class="cell medium-2 large-1 socials">
+			<div class="cell medium-3 large-1 socials">
 				<a href="https://twitter.com/theleasepilot" class="social-link" target="_blank">
 					<span class="icon-twitter"></span>
 				</a>

@@ -43,6 +43,7 @@
     }
   }
   form {
+    margin: 0 -10px;
     fieldset.form-columns-1,
     fieldset.form-columns-2 {
       label {
@@ -90,7 +91,7 @@
           }
         }
         textarea.hs-input {
-          height: 125px;
+          min-height: 165px;
           line-height: 1.4;
         }
       }
@@ -137,7 +138,7 @@
         }
       }
       textarea.hs-input {
-        height: 125px;
+        min-height: 165px;
         line-height: 1.4;
       }
     }
@@ -199,8 +200,29 @@
 			}
 		}
 		textarea {
-			height: 125px;
+			min-height: 165px;
 			line-height: 1.4;
 		}
+  }
+  &.form--gray {
+    input[type='text'],
+		input[type='password'],
+		input[type='email'],
+		input[type='tel'],
+		input[type='url'],
+		select,
+		textarea {
+      background-color: #f6f6f6;
+    }
+    fieldset.form-columns-1,
+    fieldset.form-columns-2 {
+      .hs-form-field {
+        input.hs-input,
+        select.hs-input,
+        textarea.hs-input {
+          background-color: #f6f6f6;
+        }
+      }
+    }
   }
 }

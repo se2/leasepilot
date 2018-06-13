@@ -41,6 +41,10 @@ if ( isset( get_queried_object()->term_id ) ) {
 	$thin_header = 'page-header--bg-img--thin';
 }
 
+if ( 'thin' === get_field( $prefix . 'page_heading_height', $option ) ) {
+	$thin_header = 'page-header--bg-img--thin';
+}
+
 $bg_type  = get_field( $prefix . 'background', $option );
 $video_id = null;
 
@@ -88,7 +92,7 @@ if ( get_field( $prefix . 'background_position', $option ) ) {
 				<?php if ( is_singular( 'resources' ) && get_field( $prefix . 'case_study_logo_single', $option ) ) : ?>
 				<img src="<?php the_field( $prefix . 'case_study_logo_single' ); ?>" alt="<?php the_title(); ?>" class="archive-page-logo archive-page-logo--singular">
 				<?php else : ?>
-				<?php if ( ! is_front_page() ) : ?>
+				<?php if ( ! is_front_page() && get_field( $prefix . 'show_page_title', $option ) ) : ?>
 				<h1 class="page-title" style="color:<?php the_field( $prefix . 'page_title_color', $option ); ?>"><?php echo esc_attr( $page_title ); ?>:</h1>
 				<?php endif; ?>
 				<?php endif; ?>

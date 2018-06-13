@@ -19,13 +19,14 @@
 			<main class="main-content">
 				<div class="entry-content">
 					<?php the_content(); ?>
-					<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php // edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
 				</div>
 			</main>
-			<?php // get_sidebar(); ?>
 		</div>
 	</div>
 	<!-- /Page Content -->
+
+	<?php get_template_part( 'template-parts/page', 'blocks' ); ?>
 
 	<?php get_template_part( 'template-parts/page', 'footer' ); ?>
 

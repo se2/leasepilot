@@ -1630,10 +1630,34 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_5b215de09c7fd",
+                            "label": "Block Layout",
+                            "name": "block_layout",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "1_col": "1 Column",
+                                "2_col": "2 Columns"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "1_col",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
                             "key": "field_5b102a442aebd",
-                            "label": "Block Title",
-                            "name": "block_title",
-                            "type": "text",
+                            "label": "Block Content",
+                            "name": "block_content",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1643,10 +1667,10 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 0
                         },
                         {
                             "key": "field_5b102a192aeba",
@@ -1740,5 +1764,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1528824892
+    "modified": 1528913432
 }

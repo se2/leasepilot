@@ -19,6 +19,49 @@
             "endpoint": 0
         },
         {
+            "key": "field_5b2158433f5b0",
+            "label": "Show Page Title?",
+            "name": "show_page_title",
+            "type": "true_false",
+            "instructions": "Show page title on banner",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5b215a82a4a94",
+            "label": "Page Heading Height",
+            "name": "page_heading_height",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "normal": "Normal",
+                "thin": "Thin"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "normal",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_5afa4a216bff6",
             "label": "Page Title Color",
             "name": "page_title_color",
@@ -459,5 +502,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528829853
+    "modified": 1528912559
 }
