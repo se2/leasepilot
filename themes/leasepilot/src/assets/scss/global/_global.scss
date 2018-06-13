@@ -691,6 +691,93 @@ a.small {
   font-size: 16px;
 }
 
+blockquote {
+  @extend .ff-hn;
+  font-weight: 300;
+  border-left: 14px solid #97daea;
+  padding-left: 31px;
+  padding-top: 0;
+  font-size: 28px;
+  line-height: 1.3;
+  margin-left: auto;
+  margin-right: auto;
+  p {
+    margin-bottom: 0;
+    font-size: 28px;
+    line-height: 1.3;
+  }
+  @include breakpoint(medium) {
+    margin-bottom: 50px;
+    max-width: 82%;
+  }
+}
+
+.wp-caption>figcaption,
+.wp-caption-text {
+  color: get-color(secondary);
+  text-align: center;
+  font-size: 16px;
+  padding-top: 15px;
+}
+
+.blockquote {
+  @extend .ff-cd;
+  @extend .primary-color;
+  display: inline-block;
+  line-height: 1.3;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-left: 30px;
+  p,
+  span {
+    line-height: 1.3;
+  }
+  img {
+    width: 66px;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  &__source {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    margin-top: 12px;
+    font-size: 18px;
+    &::before {
+      content: "— ";
+      position: absolute;
+      left: 0;
+    }
+  }
+  &--end {
+    padding-left: 0;
+    img {
+      top: auto;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      transform: rotateX(180deg) rotateY(180deg);
+    }
+  }
+  @include breakpoint(mobile down) {
+    width: 100% !important;
+  }
+  @include breakpoint(medium) {
+    padding-top: 30px;
+    padding-left: 70px;
+    margin-bottom: 50px;
+    img {
+      width: auto;
+    }
+    &--end {
+      padding-left: 20px;
+      padding-right: 50px;
+      padding-top: 0;
+    }
+  }
+}
+
 @include breakpoint(mobile down) {
   /* reverse stack mobile */
   .stack-up {

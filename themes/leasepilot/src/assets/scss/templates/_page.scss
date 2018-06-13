@@ -284,4 +284,11 @@ aside.sidebar {
     font-size: 30px;
     line-height: 1.2;
   }
+  img,
+  figure {
+    max-width: 100%;
+  }
+  .main-container {
+    max-width: 730px;
+  }
 }

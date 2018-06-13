@@ -128,6 +128,19 @@ function fb_opengraph() {
 
 add_action( 'wp_head', 'fb_opengraph', 5 );
 
+/**
+ * Blockquote source shortcode.
+ * [source]Content here.[/source]
+ *
+ * @param mixed $atts Shortcode attributes.
+ * @param mixed $content Shortcode content.
+ */
+function blockquote_source_shortcode_handler( $atts, $content = null ) {
+	// Attributes.
+	$atts = shortcode_atts( array(), $atts );
+	return '<span class="ff-hn primary-color blockquote__source">' . $content . '</span>';
+}
+add_shortcode( 'source', 'blockquote_source_shortcode_handler' );
 
 /**
  * Blockquote shortcode.
@@ -137,20 +150,27 @@ add_action( 'wp_head', 'fb_opengraph', 5 );
  * @param mixed $content Shortcode content.
  */
 function blockquote_shortcode_handler( $atts, $content = null ) {
-
 	// Attributes.
 	$atts = shortcode_atts(
 		array(
+			'float' => 'none',
+			'width' => '100%',
 			'style' => 'start',
 		),
 		$atts
 	);
-	return $content;
+	$style = 'width:' . $atts['width'] . ';float:' . $atts['float'];
+	$blockquote  = ( 'end' === $atts['style'] ) ? '<div class="blockquote pos-rel blockquote--end" style="' . $style . '">' : '<div class="blockquote pos-rel" style="' . $style . '">';
+	$blockquote .= '<img src="' . get_template_directory_uri() . '/dist/assets/images/quotemark.png" alt="" class="pos-abs">';
+	$blockquote .= do_shortcode( $content );
+	$blockquote .= '</div>';
+	return $blockquote;
 }
 add_shortcode( 'blockquote', 'blockquote_shortcode_handler' );
 
 /**
  * Hooks your functions into the correct filters.
+ * Credit: http://qnimate.com/adding-buttons-to-wordpress-visual-editor/
  */
 function wdm_add_mce_button() {
 	// Check user permissions.
