@@ -57,7 +57,10 @@ require_once 'library/custom-post-type.php';
 /** ACF Options Page */
 require_once 'library/acf-options-page.php';
 
-/** Miscellaneous function */
+/** Class PostsWidget */
+require_once 'library/class-postswidget.php';
+
+/** Miscellaneous functions */
 require_once 'library/misc.php';
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
