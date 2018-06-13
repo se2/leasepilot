@@ -155,12 +155,13 @@ function blockquote_shortcode_handler( $atts, $content = null ) {
 		array(
 			'float' => 'none',
 			'width' => '100%',
+			'class' => '',
 			'style' => 'start',
 		),
 		$atts
 	);
 	$style = 'width:' . $atts['width'] . ';float:' . $atts['float'];
-	$blockquote  = ( 'end' === $atts['style'] ) ? '<div class="blockquote pos-rel blockquote--end" style="' . $style . '">' : '<div class="blockquote pos-rel" style="' . $style . '">';
+	$blockquote  = ( 'end' === $atts['style'] ) ? '<div class="'. $atts['class'] .' blockquote pos-rel blockquote--end" style="' . $style . '">' : '<div class="'. $atts['class'] .' blockquote pos-rel" style="' . $style . '">';
 	$blockquote .= '<img src="' . get_template_directory_uri() . '/dist/assets/images/quotemark.png" alt="" class="pos-abs">';
 	$blockquote .= do_shortcode( $content );
 	$blockquote .= '</div>';
