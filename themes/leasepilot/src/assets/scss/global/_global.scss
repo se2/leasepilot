@@ -267,11 +267,13 @@ $margin: 20;
 		}
 		.pull-left-#{$i * 5} {
 			@include breakpoint(large) {
+        margin-right: auto;
 				margin-left: -#{$i * 5}px !important;
 			}
 		}
 		.pull-right-#{$i * 5} {
 			@include breakpoint(large) {
+        margin-left: auto;
 				margin-right: -#{$i * 5}px !important;
 			}
 		}
@@ -280,12 +282,14 @@ $margin: 20;
 
 .pull-left {
   @include breakpoint(large) {
+    margin-right: auto;
     margin-left: -80px !important;
   }
 }
 
 .pull-right {
   @include breakpoint(large) {
+    margin-left: auto;
     margin-right: -80px !important;
   }
 }
@@ -736,7 +740,6 @@ blockquote {
 .blockquote {
   @extend .ff-cd;
   @extend .primary-color;
-  display: inline-block;
   line-height: 1.3;
   margin-bottom: 30px;
   padding-top: 20px;
