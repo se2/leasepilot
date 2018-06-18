@@ -269,7 +269,7 @@ switch ( $type ) {
 	</div>
 	<?php endif; ?>
 	<?php if ( 'fade' === $type ) : ?>
-	<div class="h100p inner-div-bg inner-div-bg--fade page-block--animated--right bg-cover" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');"></div>
+	<div class="h100p inner-div-bg inner-div-bg--fade page-block--animated--right bg-contain" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');"></div>
 	<!-- <img class="computer-img hide-for-small-only hide-for-mobile-only " src="<?php the_sub_field( 'block_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>"> -->
 	<?php endif; ?>
 	<?php if ( 'bar' === $type ) : ?>

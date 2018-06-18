@@ -22,7 +22,7 @@
     }
     @include breakpoint(small) {
       padding-bottom: 0;
-      height: calc(60vh - #{map-get($nav-height, small)});
+      height: calc(80vh - #{map-get($nav-height, small)});
       .main-container,
       .container {
         padding-bottom: 0;
