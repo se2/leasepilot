@@ -63,6 +63,9 @@ require_once 'library/class-postswidget.php';
 /** Miscellaneous functions */
 require_once 'library/misc.php';
 
+/** TinyMCE styles */
+require_once 'library/tinymce-styles.php';
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // phpcs:ignore
 // require_once 'library/class-foundationpress-protocol-relative-theme-assets.php';
