@@ -23,6 +23,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5b2a866128cf1",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5afaf1262cc84",
                             "label": "Big Heading",
                             "name": "big_heading",
@@ -81,6 +100,25 @@
                     "label": "Text Quote Block",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_5b2a867228cf2",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5afaf1eb2cc8b",
                             "label": "Block Title",
@@ -163,6 +201,25 @@
                     "label": "CTA Block",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_5b2a868028cf3",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5afafa71e55a6",
                             "label": "CTA Image",
@@ -367,6 +424,25 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_5b2a869028cf4",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5afda07b65ed5",
                             "label": "Block Title",
                             "name": "block_title",
@@ -444,6 +520,25 @@
                     "label": "Comparison Block",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_5b2a869d28cf5",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5b04ccece38bd",
                             "label": "Block Title",
@@ -599,6 +694,25 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_5b2a86a928cf6",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5b04e80a2380e",
                             "label": "Block Title",
                             "name": "block_title",
@@ -657,6 +771,25 @@
                     "label": "Posts Block",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_5b2a86b428cf7",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5b0f40b9cca78",
                             "label": "Post",
@@ -732,6 +865,25 @@
                     "label": "2-column CTA Block",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_5b2a86219f3ed",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5b057b83ebfdb",
                             "label": "Layout",
@@ -932,6 +1084,25 @@
                     "label": "Animated Background Block",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_5b2a86c128cf8",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5b05a6449f3a0",
                             "label": "Block Title",
@@ -1205,6 +1376,25 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_5b2a86ce28cf9",
+                            "label": "Admin Title",
+                            "name": "admin_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5b100b9a39ec4",
                             "label": "Feature",
                             "name": "feature",
@@ -1316,6 +1506,25 @@
                     "label": "Product Step Block",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_5b2a86d928cfa",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5b101362700ab",
                             "label": "Step Layout",
@@ -1505,6 +1714,25 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_5b2a86e428cfb",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5b101ca7f8f1d",
                             "label": "Block Title",
                             "name": "block_title",
@@ -1629,6 +1857,25 @@
                     "label": "HubSpot Form Block",
                     "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_5b2a86ef28cfc",
+                            "label": "Admin Title",
+                            "name": "layout_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5b215de09c7fd",
                             "label": "Block Layout",
@@ -1764,5 +2011,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1528913432
+    "modified": 1529513727
 }
