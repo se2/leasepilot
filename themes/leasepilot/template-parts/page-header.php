@@ -17,6 +17,7 @@ $bg          = '';
 $bg_pos      = '';
 $bg_size     = '';
 $page_title  = get_the_title();
+$is_home     = is_front_page() || is_page_template( 'page-templates/front.php' );
 
 if ( isset( get_queried_object()->term_id ) ) {
 	$term       = get_term( get_queried_object()->term_id );
@@ -87,12 +88,12 @@ if ( get_field( $prefix . 'background_position', $option ) ) {
 	</video>
 	<?php endif; ?>
 	<div class="main-container pos-rel">
-		<div class="grid-x page-header__content <?php echo ( is_front_page() ) ? 'page-header__content--home' : ''; ?> <?php echo ( is_single() && ! is_front_page() ) ? 'page-header__content--singular' : ''; ?>">
+		<div class="grid-x page-header__content <?php echo ( $is_home ) ? 'page-header__content--home' : ''; ?> <?php echo ( is_single() && ! $is_home ) ? 'page-header__content--singular' : ''; ?>">
 			<div class="cell <?php echo ( ! is_singular( 'post' ) ) ? 'small-9 medium-6 large-5' : 'small-12'; ?>">
 				<?php if ( is_singular( 'resources' ) && get_field( $prefix . 'case_study_logo_single', $option ) ) : ?>
 				<img src="<?php the_field( $prefix . 'case_study_logo_single' ); ?>" alt="<?php the_title(); ?>" class="archive-page-logo archive-page-logo--singular">
 				<?php else : ?>
-				<?php if ( ! is_front_page() && get_field( $prefix . 'show_page_title', $option ) ) : ?>
+				<?php if ( ! $is_home && get_field( $prefix . 'show_page_title', $option ) ) : ?>
 				<h1 class="page-title" style="color:<?php the_field( $prefix . 'page_title_color', $option ); ?>"><?php echo esc_attr( $page_title ); ?>:</h1>
 				<?php endif; ?>
 				<?php endif; ?>
