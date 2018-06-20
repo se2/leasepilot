@@ -840,7 +840,7 @@
                                     {
                                         "field": "field_5b057b83ebfdb",
                                         "operator": "==",
-                                        "value": "content_image"
+                                        "value": "image_content"
                                     }
                                 ]
                             ],
@@ -872,7 +872,7 @@
                                     {
                                         "field": "field_5b057b83ebfdb",
                                         "operator": "==",
-                                        "value": "content_image"
+                                        "value": "image_content"
                                     }
                                 ]
                             ],
@@ -1764,5 +1764,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1528913432
+    "modified": 1529512025
 }
