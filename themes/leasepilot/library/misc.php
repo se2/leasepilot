@@ -162,7 +162,6 @@ function blockquote_shortcode_handler( $atts, $content = null ) {
 	);
 	$style = 'width:' . $atts['width'] . ';float:' . $atts['float'];
 	$blockquote  = ( 'end' === $atts['style'] ) ? '<div class="'. $atts['class'] .' blockquote pos-rel blockquote--end" style="' . $style . '">' : '<div class="'. $atts['class'] .' blockquote pos-rel" style="' . $style . '">';
-	$blockquote .= '<img src="' . get_template_directory_uri() . '/dist/assets/images/quotemark.png" alt="" class="pos-abs">';
 	$blockquote .= do_shortcode( $content );
 	$blockquote .= '</div>';
 	return $blockquote;
@@ -184,7 +183,8 @@ function wdm_add_mce_button() {
 		add_filter( 'mce_buttons', 'wdm_register_mce_button' );
 	}
 }
-add_action( 'admin_head', 'wdm_add_mce_button' );
+// Disable shortcode selection for editor (redundant)
+// add_action( 'admin_head', 'wdm_add_mce_button' );
 
 /**
  * Register new button in the editor.
