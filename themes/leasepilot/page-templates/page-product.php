@@ -26,35 +26,28 @@ while ( have_posts() ) :
 	<?php get_template_part( 'template-parts/page', 'blocks' ); ?>
 
 	<?php
-	$parent = new WP_Query(array(
-		'post_type'   => 'page',
-		'post_parent' => $post->ID,
-		'order'       => 'ASC',
-		'orderby'     => 'menu_order',
-	));
-	if ( $parent->have_posts() ) :
-		$index    = 0;
-		while ( $parent->have_posts() ) :
+	if ( have_rows( 'product_content' ) ) :
+		$index = 0;
+		while ( have_rows( 'product_content' ) ) :
 			$is_right = ( 0 === ( $index % 2 ) );
-			$parent->the_post();
-			$product_image_class = ( $is_right ) ? 'product-image--left' : '';
+			the_row();
 	?>
 	<div class="page-block page-block--animated page-block--animated--none pos-rel no-overflow" <?php echo ( $is_right ) ? ' style="background-color:#f6f5f5;"' : ''; ?>>
 		<div class="main-container h100p pos-rel">
 			<div class="grid-x grid-margin-x h100p">
 				<?php if ( $is_right ) : ?>
 				<div class="cell small-12 medium-6 large-5 pos-rel stack-up">
-					<?php the_post_thumbnail( 'full', array( 'class' => 'product-image box-shadow ' . $product_image_class ) ); ?>
+					<img src="<?php the_sub_field( 'image' ); ?>" alt="" class="product-image box-shadow product-image--left">
 				</div>
 				<?php endif; ?>
 				<div class="cell small-12 medium-6 large-6 stack-down <?php echo ( $is_right ) ? 'large-offset-1 text-right' : ''; ?>">
-					<h3 class="secondary-color"><?php the_field( 'page_title' ); ?><br><span class="lighter ff-hn"><?php the_field( 'page_subtitle' ); ?></span></h3>
-					<p class="secondary-color"><?php the_field( 'page_subheading' ); ?></p>
-					<a href="<?php the_permalink(); ?>" class="button button__cta button__cta--dark">Learn more »</a>
+					<h3 class="secondary-color"><?php the_sub_field( 'title' ); ?><br><span class="lighter ff-hn"><?php the_sub_field( 'subtitle' ); ?></span></h3>
+					<?php the_sub_field( 'content' ); ?>
+					<a href="<?php the_sub_field( 'cta_button_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_button_title' ); ?></a>
 				</div>
 				<?php if ( ! $is_right ) : ?>
 				<div class="cell small-12 medium-6 large-5 large-offset-1 pos-rel stack-up">
-					<?php the_post_thumbnail( 'full', array( 'class' => 'product-image box-shadow ' . $product_image_class ) ); ?>
+					<img src="<?php the_sub_field( 'image' ); ?>" alt="" class="product-image box-shadow">
 				</div>
 				<?php endif; ?>
 			</div>
