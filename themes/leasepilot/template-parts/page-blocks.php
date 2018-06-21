@@ -149,6 +149,7 @@ if ( have_rows( 'page_blocks' ) ) {
 			<?php
 			while ( $case_study_query->have_posts() ) :
 				$case_study_query->the_post();
+				if ( get_field( 'testimonial' ) ) :
 			?>
 			<div class="grid-x testimonial-item flex-center-items">
 				<div class="cell medium-4">
@@ -158,6 +159,7 @@ if ( have_rows( 'page_blocks' ) ) {
 					<p class="ff-hn" style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_field( 'testimonial' ); ?></p>
 				</div>
 			</div>
+				<?php endif; ?>
 			<?php endwhile; ?>
 		</div>
 		<div class="logo-slider" id="case-study-slider">
@@ -165,6 +167,7 @@ if ( have_rows( 'page_blocks' ) ) {
 			$index = 0;
 			while ( $case_study_query->have_posts() ) :
 				$case_study_query->the_post();
+				if ( get_field( 'testimonial' ) ) :
 			?>
 			<div class="logo-item">
 				<a class="js-logo-click" data-index="<?php echo esc_attr( $index ); ?>">
@@ -173,7 +176,8 @@ if ( have_rows( 'page_blocks' ) ) {
 				<p class="ff-hn hide-for-medium white-color"><?php the_field( 'testimonial' ); ?></p>
 			</div>
 			<?php
-				$index++;
+					$index++;
+				endif;
 			endwhile;
 			?>
 		</div>
@@ -213,28 +217,29 @@ if ( have_rows( 'page_blocks' ) ) {
 <?php
 				break;
 			case '2_column_cta_block':
+				$is_reverse = get_sub_field( 'reverse_order' );
 ?>
 <!-- 2-column section -->
 <div class="page-block page-block--2-cols" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
 	<div class="main-container">
 		<div class="grid-x flex-center-items">
 			<?php if ( 'image_content' === get_sub_field( 'layout' ) ) : ?>
-			<div class="cell page-block--2-cols--img page-block--2-cols__left small-12 medium-5 text-right stack-up">
+			<div class="cell page-block--2-cols--img small-12 medium-5 stack-up <?php echo ( $is_reverse ) ? 'stack-down-medium page-block--2-cols__right' : 'page-block--2-cols__left text-right'; ?>">
 				<img src="<?php the_sub_field( 'cta_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>" class="<?php echo ( 'yes' === get_sub_field( 'image_box_shadow' ) ) ? 'box-shadow' : ''; ?>">
 			</div>
-			<div class="cell page-block--2-cols__right small-12 medium-7 stack-down">
-				<h3 class="ff-hn lighter page-block--2-cols__title"><?php the_sub_field( 'block_title' ); ?></h3>
+			<div class="cell small-12 medium-7 stack-down <?php echo ( $is_reverse ) ? 'stack-up-medium' : 'page-block--2-cols__right'; ?>">
+				<h3 style="color:<?php the_sub_field( 'text_color' ); ?>;" class="ff-hn lighter page-block--2-cols__title"><?php the_sub_field( 'block_title' ); ?></h3>
 				<p style="color:<?php the_sub_field( 'text_color' ); ?>;"><?php the_sub_field( 'block_subtitle' ); ?></p>
 				<?php if ( 'image_content' === get_sub_field( 'layout' ) ) : ?>
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_title' ); ?></a>
 				<?php endif; ?>
 			</div>
 			<?php else : ?>
-			<div class="cell small-12 medium-8 stack-down">
-				<h3 class="ff-hn lighter page-block--2-cols__title"><?php the_sub_field( 'block_title' ); ?></h3>
+			<div class="cell small-12 medium-8 stack-down <?php echo ( $is_reverse ) ? 'stack-down-medium' : ''; ?>">
+				<h3 style="color:<?php the_sub_field( 'text_color' ); ?>;" class="ff-hn lighter page-block--2-cols__title"><?php the_sub_field( 'block_title' ); ?></h3>
 				<p style="color:<?php the_sub_field( 'text_color' ); ?>;"><?php the_sub_field( 'block_subtitle' ); ?></p>
 			</div>
-			<div class="cell page-block--2-cols__right small-12 medium-4 text-center stack-down">
+			<div class="cell small-12 medium-4 stack-down <?php echo ( $is_reverse ) ? 'stack-up-medium' : 'page-block--2-cols__right text-center'; ?>">
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_title' ); ?></a>
 			</div>
 			<?php endif; ?>

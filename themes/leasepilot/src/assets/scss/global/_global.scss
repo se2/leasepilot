@@ -835,6 +835,17 @@ blockquote {
   }
 }
 
+.stack-up-medium {
+	@include breakpoint(medium) {
+		order: 11;
+	}
+}
+.stack-down-medium {
+	@include breakpoint(medium) {
+		order: 12;
+	}
+}
+
 .gradient-overlay {
   position: absolute;
   width: 100%;
