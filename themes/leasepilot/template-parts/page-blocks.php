@@ -256,6 +256,7 @@ if ( have_rows( 'page_blocks' ) ) {
 $type        = get_sub_field( 'animation_type' );
 $type_class  = 'section-img-crop';
 $right_class = 'medium-offset-5 large-offset-5 xlarge-offset-4 text-right';
+$mobile_img  = get_sub_field( 'mobile_image' ) ? get_sub_field( 'mobile_image' ) : get_sub_field( 'background_image' );
 switch ( $type ) {
 	case 'bar':
 		$type_class = 'section-bar';
@@ -299,7 +300,7 @@ switch ( $type ) {
 			</div>
 		</div>
 	</div>
-	<img class="hide-for-medium hide-for-medium-up animated-mobile-img" src="<?php the_sub_field( 'mobile_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>">
+	<img class="hide-for-medium hide-for-medium-up animated-mobile-img" src="<?php echo esc_attr( $mobile_img ); ?>" alt="<?php echo strip_tags( get_sub_field( 'block_title' ) ); ?>">
 </div>
 <!-- /Animated section -->
 <?php
