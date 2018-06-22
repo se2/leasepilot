@@ -127,8 +127,9 @@ if ( have_rows( 'page_blocks' ) ) {
 	<div class="main-container">
 		<h3 class="white-color text-center ff-hn lighter"><?php the_sub_field( 'block_title' ); ?></h3>
 		<?php
-		$case_study_id    = 13;
-		$case_study_query = new WP_Query(
+		$case_study_id      = 13;
+		$testimonials_count = 0;
+		$case_study_query   = new WP_Query(
 			array(
 				'post_type' => 'resources',
 				'paged'     => $paged,
@@ -145,24 +146,26 @@ if ( have_rows( 'page_blocks' ) ) {
 		);
 		if ( $case_study_query->have_posts() ) :
 		?>
-		<div class="testimonial-slider hide-for-small-only hide-for-mobile-only" id="testimonial-slider">
+		<div class="testimonial-slider " id="testimonial-slider">
 			<?php
 			while ( $case_study_query->have_posts() ) :
 				$case_study_query->the_post();
 				if ( get_field( 'testimonial' ) ) :
+					$testimonials_count++;
 			?>
 			<div class="grid-x testimonial-item flex-center-items">
-				<div class="cell medium-4">
+				<div class="cell medium-4 mb40-mobile">
 					<img src="<?php the_field( 'case_study_logo_slider' ); ?>" alt="<?php the_title(); ?>">
 				</div>
-				<div class="cell medium-7">
+				<div class="cell medium-7 text-center--mobile">
 					<p class="ff-hn" style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_field( 'testimonial' ); ?></p>
 				</div>
 			</div>
 				<?php endif; ?>
 			<?php endwhile; ?>
 		</div>
-		<div class="logo-slider" id="case-study-slider">
+		<?php if ( $testimonials_count > 1 ) : ?>
+		<div class="logo-slider show-for-medium" id="case-study-slider">
 			<?php
 			$index = 0;
 			while ( $case_study_query->have_posts() ) :
@@ -181,6 +184,7 @@ if ( have_rows( 'page_blocks' ) ) {
 			endwhile;
 			?>
 		</div>
+		<?php endif; ?>
 		<?php endif; ?>
 		<?php wp_reset_postdata(); ?>
 	</div>

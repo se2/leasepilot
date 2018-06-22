@@ -100,7 +100,21 @@ $(document).ready(function () {
 		slidesToScroll: 1,
 		arrows: false,
 		fade: true,
-		cssEase: 'ease-in'
+		cssEase: 'ease-in',
+		responsive: [
+			{
+				breakpoint: 767,
+				settings: {
+					autoplay: true,
+					fade: false,
+					speed: 1000,
+					autoplaySpeed: 6000,
+					nextArrow: '<div class="arrow next arrow-right"></div>',
+					prevArrow: '<div class="arrow prev arrow-left"></div>',
+					arrows: true,
+				}
+			}
+		]
 	});
 
 	$('.js-logo-click').on('click', function (e) {
