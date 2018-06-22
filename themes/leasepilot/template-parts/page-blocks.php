@@ -125,7 +125,7 @@ if ( have_rows( 'page_blocks' ) ) {
 <!-- Testimonials section -->
 <div class="page-block page-block--testimonials pos-rel" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
 	<div class="main-container">
-		<h3 class="white-color text-center ff-hn lighter"><?php the_sub_field( 'block_title' ); ?></h3>
+		<h3 class="white-color text-center ff-hn lighter lh1"><?php the_sub_field( 'block_title' ); ?></h3>
 		<?php
 		$case_study_id      = 13;
 		$testimonials_count = 0;
@@ -261,6 +261,7 @@ $type        = get_sub_field( 'animation_type' );
 $type_class  = 'section-img-crop';
 $right_class = 'medium-offset-5 large-offset-5 xlarge-offset-4 text-right';
 $mobile_img  = get_sub_field( 'mobile_image' ) ? get_sub_field( 'mobile_image' ) : get_sub_field( 'background_image' );
+$disable     = get_sub_field( 'disable_animation' ) ? 'animated--disable' : '';
 switch ( $type ) {
 	case 'bar':
 		$type_class = 'section-bar';
@@ -272,7 +273,7 @@ switch ( $type ) {
 		break;
 }
 ?>
-<div class="page-block page-block--animated page-block--animated--right pos-rel <?php echo esc_attr( $type_class ); ?>" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
+<div class="page-block page-block--animated page-block--animated--right pos-rel <?php echo esc_attr( $type_class . ' ' . $disable ); ?>" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
 	<?php if ( 'slide' === $type ) : ?>
 	<div class="h100p inner-div-bg img-crop">
 		<img src="<?php the_sub_field( 'background_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>" class="bg-image">

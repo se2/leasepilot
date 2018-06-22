@@ -387,7 +387,6 @@ img.archive-page-cover {
       }
     }
     @include breakpoint(xlarge) {
-      // height: 800px;
       &--none {
         height: 555px;
       }
@@ -396,7 +395,6 @@ img.archive-page-cover {
       }
     }
     @include breakpoint(1600) {
-      // height: 85vh;
       &--none {
         height: 555px;
       }
@@ -445,6 +443,30 @@ img.archive-page-cover {
             }
           }
         }
+      }
+    }
+    &.animated--disable {
+      .img-crop,
+      .inner-div-bg--fade,
+      .bars {
+        -webkit-animation: none !important;
+        animation: none !important;
+        $bars: 6;
+        @for $i from 0 to $bars {
+          .bar__outer:nth-child(#{$i + 1}) {
+            .bar__inner {
+              -webkit-animation: none !important;
+              animation: none !important;
+              height: 100%;
+            }
+          }
+        }
+      }
+      .img-crop {
+        width: 100%;
+      }
+      .inner-div-bg--fade {
+        opacity: 1;
       }
     }
     .inner-div-bg {
@@ -657,7 +679,7 @@ img.archive-page-cover {
       }
       @include breakpoint(large) {
         padding-top: 65px;
-        padding-bottom: 100px;
+        padding-bottom: 65px;
         h3 {
           font-size: 36px;
         }
@@ -696,7 +718,6 @@ img.archive-page-cover {
       &.slick-initialized {
         display: block;
         margin-top: 30px;
-        margin-bottom: 30px;
       }
       .testimonial-item {
         display: flex !important;
@@ -719,6 +740,8 @@ img.archive-page-cover {
       }
     }
     .logo-slider {
+      margin-top: 30px;
+      margin-bottom: 30px;
       .logo-item {
         display: none;
         text-align: center;

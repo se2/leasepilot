@@ -261,30 +261,35 @@ a.secondary-color {
   margin-bottom: 0;
 }
 
+.lh1 {
+  line-height: 1;
+}
+
 $margin: 20;
+$step: 1;
 @mixin margin-classes {
   @for $i from 1 through $margin {
-    .mb#{$i * 5} {
-      margin-bottom: #{$i * 5}px;
+    .mb#{$i * $step} {
+      margin-bottom: #{$i * $step}px;
     }
-    .mb#{$i * 5}-mobile {
+    .mb#{$i * $step}-mobile {
       @include breakpoint(mobile down) {
-        margin-bottom: #{$i * 5}px;
+        margin-bottom: #{$i * $step}px;
       }
     }
-    .mt#{$i * 5} {
-      margin-top: #{$i * 5}px;
+    .mt#{$i * $step} {
+      margin-top: #{$i * $step}px;
 		}
-		.pull-left-#{$i * 5} {
+		.pull-left-#{$i * $step} {
 			@include breakpoint(large) {
         margin-right: auto;
-				margin-left: -#{$i * 5}px !important;
+				margin-left: -#{$i * $step}px !important;
 			}
 		}
-		.pull-right-#{$i * 5} {
+		.pull-right-#{$i * $step} {
 			@include breakpoint(large) {
         margin-left: auto;
-				margin-right: -#{$i * 5}px !important;
+				margin-right: -#{$i * $step}px !important;
 			}
 		}
   }
