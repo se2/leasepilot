@@ -66,7 +66,11 @@ if ( have_rows( 'page_blocks' ) ) {
 					<span class="lighter ff-hn"><?php the_sub_field( 'cta_subtitle' ); ?></span>
 				</h2>
 				<p style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_sub_field( 'cta_description' ); ?></p>
-				<a href="<?php the_sub_field( 'cta_button_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_button_title' ); ?></a>
+				<?php if ( get_sub_field( 'hubspot_form_popup' ) ) : ?>
+				<a class="button button__primary mb0" href="#!" data-open="request-demo"><?php the_sub_field( 'cta_button_title' ); ?></a>
+				<?php else : ?>
+				<a class="button button__primary mb0" href="<?php the_sub_field( 'cta_button_link' ); ?>"><?php the_sub_field( 'cta_button_title' ); ?></a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
@@ -235,7 +239,11 @@ if ( have_rows( 'page_blocks' ) ) {
 				<h3 style="color:<?php the_sub_field( 'text_color' ); ?>;" class="ff-hn lighter page-block--2-cols__title"><?php the_sub_field( 'block_title' ); ?></h3>
 				<p style="color:<?php the_sub_field( 'text_color' ); ?>;"><?php the_sub_field( 'block_subtitle' ); ?></p>
 				<?php if ( 'image_content' === get_sub_field( 'layout' ) ) : ?>
-				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_title' ); ?></a>
+					<?php if ( get_sub_field( 'hubspot_form_popup' ) ) : ?>
+					<a class="button button__primary mb0" href="#!" data-open="request-demo"><?php the_sub_field( 'cta_title' ); ?></a>
+					<?php else : ?>
+					<a class="button button__primary mb0" href="<?php the_sub_field( 'cta_link' ); ?>"><?php the_sub_field( 'cta_title' ); ?></a>
+					<?php endif; ?>
 				<?php endif; ?>
 			</div>
 			<?php else : ?>
@@ -244,7 +252,11 @@ if ( have_rows( 'page_blocks' ) ) {
 				<p style="color:<?php the_sub_field( 'text_color' ); ?>;"><?php the_sub_field( 'block_subtitle' ); ?></p>
 			</div>
 			<div class="cell small-12 medium-4 stack-down <?php echo ( $is_reverse ) ? 'stack-up-medium' : 'page-block--2-cols__right text-center'; ?>">
-				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__primary mb0"><?php the_sub_field( 'cta_title' ); ?></a>
+				<?php if ( get_sub_field( 'hubspot_form_popup' ) ) : ?>
+				<a class="button button__primary mb0" href="#!" data-open="request-demo"><?php the_sub_field( 'cta_title' ); ?></a>
+				<?php else : ?>
+				<a class="button button__primary mb0" href="<?php the_sub_field( 'cta_link' ); ?>"><?php the_sub_field( 'cta_title' ); ?></a>
+				<?php endif; ?>
 			</div>
 			<?php endif; ?>
 		</div>

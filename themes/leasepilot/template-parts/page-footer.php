@@ -17,7 +17,11 @@ if ( get_field( 'show_footer_cta' ) ) : ?>
 		<div class="grid-x">
 			<div class="cell large-12 small-12 medium-12">
 				<h4 class="cta-section__title ff-hn"><?php the_field( 'footer_cta_content' ); ?></h4>
+				<?php if ( get_field( 'hubspot_form_popup' ) ) : ?>
+				<a class="button button__cta button__cta--dark mb0" href="#!" data-open="request-demo"><?php the_field( 'footer_cta_title' ); ?></a>
+				<?php else : ?>
 				<a class="button button__cta button__cta--dark mb0" href="<?php the_field( 'footer_cta_link' ); ?>"><?php the_field( 'footer_cta_title' ); ?></a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

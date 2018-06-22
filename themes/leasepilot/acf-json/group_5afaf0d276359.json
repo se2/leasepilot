@@ -369,13 +369,40 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_5b2d41b604b91",
+                            "label": "Hubspot Form Popup?",
+                            "name": "hubspot_form_popup",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_5afaf5217811b",
                             "label": "CTA Button Link",
                             "name": "cta_button_link",
                             "type": "link",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b2d41b604b91",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -985,13 +1012,40 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_5b2d4392ec981",
+                            "label": "Hubspot Form Popup?",
+                            "name": "hubspot_form_popup",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_5b057c35ebfdf",
                             "label": "CTA Link",
                             "name": "cta_link",
                             "type": "link",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b2d4392ec981",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -2025,5 +2079,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529688380
+    "modified": 1529693110
 }

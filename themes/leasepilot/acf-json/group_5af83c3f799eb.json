@@ -424,10 +424,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_5b05b38022bdd",
-            "label": "Footer CTA Link",
-            "name": "footer_cta_link",
-            "type": "url",
+            "key": "field_5b2d365a362bf",
+            "label": "Hubspot Form Popup?",
+            "name": "hubspot_form_popup",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -444,8 +444,39 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": ""
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5b05b38022bdd",
+            "label": "Footer CTA Link",
+            "name": "footer_cta_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5b05b33e22bdc",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5b2d365a362bf",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url"
         }
     ],
     "location": [
@@ -502,5 +533,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528912559
+    "modified": 1529690174
 }

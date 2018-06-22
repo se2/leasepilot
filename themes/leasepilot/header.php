@@ -33,8 +33,11 @@
 				<div class="cell small-12 medium-3 large-3">
 					<div class="top-bar-left">
 						<div class="site-desktop-title top-bar-title">
+							<?php
+							$header_logo = get_field( 'header_logo', 'option' ) ? get_field( 'header_logo', 'option' ) : get_template_directory_uri() . '/dist/assets/images/leasepilot-logo.svg';
+							?>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-								<img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/leasepilot-logo.svg" alt="<?php bloginfo( 'title' ); ?>" class="site-logo" title="<?php bloginfo( 'title' ); ?>">
+								<img src="<?php echo esc_attr( $header_logo ); ?>" alt="<?php bloginfo( 'title' ); ?>" class="site-logo" title="<?php bloginfo( 'title' ); ?>">
 							</a>
 						</div>
 					</div>
@@ -49,6 +52,7 @@
 		</div>
 	</header>
 
+	<?php if ( get_field( 'hubspot_form_portal_id', 'option' ) && get_field( 'hubspot_form_id', 'option' ) ) : ?>
 	<!-- Known issue if using data-animation-out -->
 	<!-- https://github.com/zurb/foundation-sites/issues/10626 -->
 	<div class="reveal" id="request-demo" data-reveal style="background-color:#f6f5f5;" data-animation-in="ease-in">
@@ -64,8 +68,8 @@
 					<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
 					<script>
 						hbspt.forms.create({
-							portalId: "2789668",
-							formId: "c30fa091-0566-4479-93b3-d898004d31b8",
+							portalId: "<?php the_field( 'hubspot_form_portal_id', 'option' ); ?>",
+							formId: "<?php the_field( 'hubspot_form_id', 'option' ); ?>",
 							css: ""
 					});
 					</script>
@@ -78,3 +82,4 @@
 			<span aria-hidden="true">&times;</span>
 		</button>
 	</div>
+	<?php endif; ?>

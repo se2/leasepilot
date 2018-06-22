@@ -22,20 +22,26 @@
 	<div class="footer-container">
 		<div class="grid-x">
 			<div class="cell medium-4 large-3">
+				<?php
+				$footer_logo = get_field( 'footer_logo', 'option' ) ? get_field( 'footer_logo', 'option' ) : get_template_directory_uri() . '/dist/assets/images/leasepilot-logo-footer.png';
+				?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/leasepilot-logo-footer.png" alt="<?php bloginfo(); ?>" class="site-logo">
+					<img src="<?php echo esc_attr( $footer_logo ); ?>" alt="<?php bloginfo(); ?>" class="site-logo">
 				</a>
 			</div>
 			<div class="cell medium-5 large-8 copyright">
-				<p>800 Boylston Street, 29th Floor, Boston, MA 02199<br>© Gadfly © 2018. All rights reserved.</p>
+				<p><?php the_field( 'footer_address', 'option' ) ?><?php echo '<br/>' . get_field( 'footer_copyright', 'option' ); ?></p>
 			</div>
 			<div class="cell medium-3 large-1 socials">
-				<a href="https://twitter.com/theleasepilot" class="social-link" target="_blank">
-					<span class="icon-twitter"></span>
+				<?php
+				if ( have_rows( 'socials', 'option' ) ) :
+					while ( have_rows( 'socials', 'option' ) ) : the_row();
+				?>
+				<a href="<?php the_sub_field( 'social_link', 'option' ); ?>" class="social-link" target="_blank">
+					<span class="icon-<?php echo strtolower( get_sub_field( 'social_service_id', 'option' ) ); ?>"></span>
 				</a>
-				<a href="https://www.linkedin.com/company/leasepilot" class="social-link" target="_blank">
-					<span class="icon-linkedin"></span>
-				</a>
+					<?php endwhile; ?>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
