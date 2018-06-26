@@ -9,17 +9,13 @@
   outline: none;
   cursor: pointer;
   &__cta {
-    line-height: 1;
-    border-width: 1.5px;
     @include breakpoint(small) {
       font-size: 18px;
       font-weight: normal;
-      padding: 11px 55px;
       border-width: 1px;
       min-width: 215px;
-      min-height: 41px;
-      line-height: 41px;
-      padding: 0;
+      padding: 10px 15px;
+      line-height: 1.2;
       margin-bottom: 0;
       &:hover,
       &:focus {
