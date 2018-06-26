@@ -36,23 +36,15 @@ if ($('#resource-grid').length > 0) {
 }
 
 $(window).on('resize scroll', function () {
-	$('.section-img-crop').each(function () {
-		if ($(this).is(':in-viewport( -700 )')) {
+	// add class animated on scroll to in viewport
+	$('.page-block--animated').each(function () {
+		if ($(this).is(':in-viewport( -650 )')) {
 			$(this).addClass('animated');
 		}
 	});
-	$('.section-computer').each(function () {
-		if ($(this).is(':in-viewport( -700 )')) {
-			$(this).addClass('animated');
-		}
-	});
-	$('.section-bar').each(function () {
-		if ($(this).is(':in-viewport( -700 )')) {
-			$(this).addClass('animated');
-		}
-	});
+	// add animation to before/after section
 	$('.section-compare').each(function () {
-		if ($(this).is(':in-viewport( -700 )')) {
+		if ($(this).is(':in-viewport( -650 )')) {
 			if ($(this).hasClass('first-time')) {
 				$(this).addClass('handle-move');
 			}
@@ -62,12 +54,7 @@ $(window).on('resize scroll', function () {
 });
 
 $(document).ready(function () {
-	// fullscreen-bg__video
-	// 0.7
-	// if ($(window).height() / $(window).width() > 0.7) {
-	//   $('.fullscreen-bg__video').addClass('fullscreen-bg__video--portrait');
-	// }
-
+	// Slick initialization for logo slider homepage
 	$('#case-study-slider').slick({
 		infinite: true,
 		speed: 500,
@@ -92,7 +79,7 @@ $(document).ready(function () {
 			}
 		]
 	});
-
+	// Slick initialization for testimonial slider homepage
 	$('#testimonial-slider').slick({
 		infinite: true,
 		speed: 300,
@@ -116,13 +103,13 @@ $(document).ready(function () {
 			}
 		]
 	});
-
+	// function for logo onclick to change testimonial slider
 	$('.js-logo-click').on('click', function (e) {
 		e.preventDefault();
 		var slideNumber = $(this).data('index');
 		$('#testimonial-slider').slick('slickGoTo', slideNumber, false);
 	});
-
+	// before/after slider functions
 	$('.ba-slider').each(function () {
 		var current = $(this);
 		// Adjust the slider
@@ -135,14 +122,14 @@ $(document).ready(function () {
 		// Bind dragging events
 		drags(current.find('.handle'), current.find('.resize'), current);
 	});
-
+	// open Request Demo popup onclick
 	$('.js-request-demo').on('click', function (e) {
 		$('#request-demo').foundation('open');
 		e.preventDefault();
 	});
-
+	// nav show/hide on scroll functions
+	// credit: https://github.com/estrattonbailey/updwn
 	const scroll = updwn({ speed: 150 })
-
 	scroll.up(() => {
 		/* up */
 		$('header.site-header').addClass('scroll-up');
@@ -170,7 +157,6 @@ $(document).ready(function () {
 	});
 
 });
-
 // Update sliders on resize.
 $(window).resize(function () {
 	$('.section-compare').each(function () {
@@ -179,7 +165,7 @@ $(window).resize(function () {
 		current.find('.resize img').css('width', width);
 	});
 });
-
+// dragging events
 /* Credit: https://codepen.io/bamf/pen/jEpxOX */
 function drags(dragElement, resizeElement, container) {
 

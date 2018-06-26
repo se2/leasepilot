@@ -269,55 +269,24 @@ if ( have_rows( 'page_blocks' ) ) {
 ?>
 <!-- Animated section -->
 <?php
-$type        = get_sub_field( 'animation_type' );
-$type_class  = 'section-img-crop';
-$right_class = 'medium-offset-5 large-offset-5 xlarge-offset-4 text-right';
+$layout      = get_sub_field( 'text_layout' );
 $mobile_img  = get_sub_field( 'mobile_image' ) ? get_sub_field( 'mobile_image' ) : get_sub_field( 'background_image' );
-$disable     = get_sub_field( 'disable_animation' ) ? 'animated--disable' : '';
-switch ( $type ) {
-	case 'bar':
-		$type_class = 'section-bar';
-		break;
-	case 'fade':
-		$type_class = 'section-computer';
-		break;
-	default:
-		break;
-}
+$disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 ?>
-<div class="page-block page-block--animated page-block--animated--right pos-rel <?php echo esc_attr( $type_class . ' ' . $disable ); ?>" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
-	<?php if ( 'slide' === $type ) : ?>
-	<div class="h100p inner-div-bg img-crop">
-		<img src="<?php the_sub_field( 'background_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>" class="bg-image">
-	</div>
-	<?php endif; ?>
-	<?php if ( 'fade' === $type ) : ?>
-	<div class="h100p inner-div-bg inner-div-bg--fade page-block--animated--right bg-contain" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');"></div>
-	<!-- <img class="computer-img hide-for-small-only hide-for-mobile-only " src="<?php the_sub_field( 'block_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>"> -->
-	<?php endif; ?>
-	<?php if ( 'bar' === $type ) : ?>
-	<div class="inner-div-bg bars bg-contain page-block--animated--left hide-for-mobile-only hide-for-small-only" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
-	<?php
-	$bars = ( get_sub_field( 'bars' ) ) ? explode( ',', get_sub_field( 'bars' ) ) : array( 10, 20, 35, 55, 85 );
-	sort( $bars );
-	foreach ( $bars as $key => $bar ) {
-	?>
-	<div class="bar__outer" style="height:<?php echo esc_attr( $bar ); ?>%;">
-		<div class="bar__inner"></div>
-	</div>
-	<?php } ?>
-	</div>
-	<?php endif; ?>
+<div class="page-block page-block--animated pos-rel <?php echo ( 'right' === $layout ) ? 'page-block--animated--right' : ''; ?> <?php echo esc_attr( $disable ); ?>" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
+	<div class="h100p inner-div-bg bg-contain" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');"></div>
 	<div class="main-container h100p pos-rel">
 		<div class="grid-x h100p">
-			<div class="cell small-12 medium-7 large-7 xlarge-8 <?php echo ( 'right' === get_sub_field( 'text_layout' ) ) ? esc_attr( $right_class ) : ''; ?>">
+			<div class="cell small-12 medium-7 large-7 xlarge-8">
 				<h3 class="secondary-color"><?php the_sub_field( 'block_title' ); ?> <span class="lighter ff-hn"><?php the_sub_field( 'block_subtitle' ); ?></span></h3>
-				<p class="secondary-color <?php echo ( 'left' === get_sub_field( 'text_layout' ) ) ? 'padding-right' : ''; ?>"><?php the_sub_field( 'block_description' ); ?></p>
+				<p class="secondary-color"><?php the_sub_field( 'block_description' ); ?></p>
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>
 			</div>
 		</div>
 	</div>
+	<?php if ( $mobile_img ) : ?>
 	<img class="hide-for-medium hide-for-medium-up animated-mobile-img" src="<?php echo esc_attr( $mobile_img ); ?>" alt="<?php echo strip_tags( get_sub_field( 'block_title' ) ); ?>">
+	<?php endif; ?>
 </div>
 <!-- /Animated section -->
 <?php

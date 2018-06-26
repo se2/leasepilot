@@ -330,11 +330,6 @@ img.archive-page-cover {
     p {
       font-size: 17px;
     }
-    @include breakpoint(small) {
-      p.padding-right {
-        padding-right: 20px;
-      }
-    }
     @include breakpoint(mobile down) {
       padding-top: #{$padding};
       padding-bottom: #{$padding};
@@ -375,9 +370,6 @@ img.archive-page-cover {
       }
       p {
         font-size: 17px;
-        &.padding-right {
-          padding-right: 0;
-        }
       }
       &--none {
         height: 475px;
@@ -399,73 +391,19 @@ img.archive-page-cover {
         height: 555px;
       }
     }
-    &.section-computer {
-      .computer-img {
-        position: absolute;
-        bottom: 10vw;
-        @include breakpoint(small) {
-          right: 0;
-          max-width: 50%;
-        }
-        @include breakpoint(xlarge) {
-          max-width: none;
-          width: 45%;
-        }
-      }
-    }
     &.animated {
-      .img-crop {
-        @include breakpoint(medium) {
-          animation: animate-width 6s ease-in;
-          /* keep state after animation */
-          animation-fill-mode: forwards;
-        }
-      }
-      .inner-div-bg--fade {
+      .inner-div-bg {
         @include breakpoint(medium) {
           animation: animate-opacity 2s ease-in;
           /* keep state after animation */
           animation-fill-mode: forwards;
         }
       }
-      .bars {
-        $bars: 6;
-        $duration: 700ms;
-        $delay: 500ms;
-        @for $i from 0 to $bars {
-          .bar__outer:nth-child(#{$i + 1}) {
-            .bar__inner {
-              animation: animate-height $duration ease-in;
-              /* overlap animation */
-              animation-delay: ($i * $delay);
-              /* keep state after animation */
-              animation-fill-mode: forwards;
-            }
-          }
-        }
-      }
     }
     &.animated--disable {
-      .img-crop,
-      .inner-div-bg--fade,
-      .bars {
+      .inner-div-bg {
         -webkit-animation: none !important;
         animation: none !important;
-        $bars: 6;
-        @for $i from 0 to $bars {
-          .bar__outer:nth-child(#{$i + 1}) {
-            .bar__inner {
-              -webkit-animation: none !important;
-              animation: none !important;
-              height: 100%;
-            }
-          }
-        }
-      }
-      .img-crop {
-        width: 100%;
-      }
-      .inner-div-bg--fade {
         opacity: 1;
       }
     }
@@ -475,51 +413,28 @@ img.archive-page-cover {
       width: 100%;
       height: 100%;
       height: 100%;
-      &--fade {
-        opacity: 0;
-      }
-    }
-    .img-crop {
-      width: 0;
-      right: 0;
-      text-align: right;
-      overflow: hidden;
-      img {
-        height: 100%;
-        max-width: initial;
-        position: absolute;
-        right: 0;
-      }
-    }
-    .bars {
-      display: flex;
-      align-items: flex-end;
-      .bar__outer {
-        max-height: 100%;
-        margin-right: 4px;
-        display: flex;
-        align-items: flex-end;
-        @include breakpoint(small) {
-          width: 80px;
-        }
-        @include breakpoint(xlarge) {
-          width: 108px;
-        }
-      }
-      .bar__inner {
-        width: 100%;
-        height: 0;
-        background-color: rgba(127, 184, 198, 0.75);
+      opacity: 0;
+      background-position: bottom right;
+      @include breakpoint(mobile down) {
+        background-image: none !important;
       }
     }
     .grid-x {
       align-items: center;
     }
     &--right {
-      background-position: bottom right;
-    }
-    &--left {
-      background-position: bottom left;
+      .inner-div-bg {
+        background-position: bottom left;
+      }
+      .grid-x {
+        justify-content: flex-end;
+        .cell {
+          text-align: center;
+          @include breakpoint(medium) {
+            text-align: right;
+          }
+        }
+      }
     }
   }
   &--compare {
@@ -724,9 +639,11 @@ img.archive-page-cover {
         img {
           margin: 0 auto;
           max-width: 170px;
+          margin-bottom: 30px;
           @include breakpoint(medium) {
             max-width: 75%;
             max-height: 125px;
+            margin-bottom: 0;
           }
           @include breakpoint(large) {
             max-width: 50%;
