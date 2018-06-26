@@ -29,10 +29,10 @@
 					<img src="<?php echo esc_attr( $footer_logo ); ?>" alt="<?php bloginfo(); ?>" class="site-logo">
 				</a>
 			</div>
-			<div class="cell medium-5 large-8 copyright">
+			<div class="cell medium-5 large-6 copyright">
 				<p><?php the_field( 'footer_address', 'option' ) ?><?php echo '<br/>' . get_field( 'footer_copyright', 'option' ); ?></p>
 			</div>
-			<div class="cell medium-3 large-1 socials">
+			<div class="cell medium-3 large-3 socials">
 				<?php
 				if ( have_rows( 'socials', 'option' ) ) :
 					while ( have_rows( 'socials', 'option' ) ) : the_row();
