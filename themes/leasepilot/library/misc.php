@@ -280,7 +280,7 @@ function my_layout_title( $title, $field, $layout, $i ) {
 		foreach ( $layout['sub_fields'] as $sub ) {
 			if ( $sub['name'] == 'layout_title' ) {
 				$key = $sub['key'];
-				if ( array_key_exists( $i, $field['value']) && $value = $field['value'][$i][$key] )
+				if ( is_array( $field['value'] ) && array_key_exists( $i, $field['value']) && $value = $field['value'][$i][$key] )
 					return $value;
 			}
 		}

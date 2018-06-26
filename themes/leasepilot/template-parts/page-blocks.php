@@ -434,6 +434,35 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 <!-- /Form Section -->
 <?php
 				break;
+			case 'people_block':
+				?>
+<div class="page-block">
+	<div class="main-container">
+		<div class="grid-x grid-margin-x people-section">
+			<?php
+			while ( have_rows( 'people' ) ) :
+				the_row();
+			?>
+			<div class="cell small-12 medium-4 large-4 people-section__person">
+				<div class="people-section__avatar" style="background-image:url('<?php the_sub_field( 'avatar' ); ?>');"></div>
+				<h3 class="people-section__name">
+					<span class="ff-cd">
+						<?php
+						the_sub_field( 'first_name' );
+						( get_sub_field( 'name_separator' ) ) ? the_sub_field( 'name_separator' ) : ' ';
+						?>
+					</span>
+					<span class="ff-hn lighter"><?php the_sub_field( 'last_name' ); ?></span>
+				</h3>
+				<h6 class="people-section__position primary-color bold ff-hn"><?php the_sub_field( 'position' ); ?></h6>
+			</div>
+			<?php endwhile; ?>
+		</div>
+	</div>
+</div>
+				<?php
+				break;
+
 			default:
 				break;
 		}
