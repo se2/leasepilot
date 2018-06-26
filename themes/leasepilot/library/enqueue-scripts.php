@@ -52,6 +52,9 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// CDN hosted jQuery migrate for compatibility with jQuery 3.x.
 		wp_register_script( 'jquery-migrate', '//code.jquery.com/jquery-migrate-3.0.1.min.js', array( 'jquery' ), '3.0.1', false );
 
+		// Local lottie-web
+		wp_enqueue_script( 'lottie-web', get_template_directory_uri() . '/src/assets/js/lib/lottie-web/build/player/lottie.js', array(), '5.1.18', true );
+
 		// Enqueue jQuery migrate. Uncomment the line below to enable.
 		// phpcs:ignore
 		// wp_enqueue_script( 'jquery-migrate' );
