@@ -536,6 +536,67 @@
                                 "id": ""
                             },
                             "default_value": "#ffffff"
+                        },
+                        {
+                            "key": "field_5b34e0ad0b186",
+                            "label": "CTA Button Title",
+                            "name": "cta_button_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b34e0c48920b",
+                            "label": "Hubspot Form Popup?",
+                            "name": "hubspot_form_popup",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5b34e0f58920c",
+                            "label": "CTA Button Link",
+                            "name": "cta_button_link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b34e0c48920b",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
                         }
                     ],
                     "min": "",
@@ -2169,5 +2230,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1530055985
+    "modified": 1530192158
 }

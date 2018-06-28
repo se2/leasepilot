@@ -87,6 +87,13 @@ if ( have_rows( 'page_blocks' ) ) {
 			<div class="cell large-12 small-12 medium-12">
 				<h3 class="lighter ff-hn cta-section__title" style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_sub_field( 'block_title' ); ?></h3>
 				<p class="mb0 cta-section__content" style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_sub_field( 'block_content' ); ?></p>
+				<?php if ( get_sub_field( 'cta_button_title' ) ) : ?>
+					<?php if ( get_sub_field( 'hubspot_form_popup' ) ) : ?>
+					<a class="button button__primary mb0" href="#!" data-open="request-demo"><?php the_sub_field( 'cta_button_title' ); ?></a>
+					<?php else : ?>
+					<a class="button button__primary mb0" href="<?php the_sub_field( 'cta_button_link' ); ?>"><?php the_sub_field( 'cta_button_title' ); ?></a>
+					<?php endif; ?>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
