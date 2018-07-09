@@ -264,3 +264,12 @@ function drags(dragElement, resizeElement, container) {
       beforeElement.removeClass("resizable--reverse");
     });
 }
+// allow "#request-demo" to open demo
+$(document).on('click', 'a[href*="#request-demo"]', function(e){
+    let $t = $(e.currentTarget);
+    if( !$t.is('[data-open="request-demo"]') ){
+        $t.attr('data-open', 'request-demo');
+        e.preventDefault();
+        $t.click();
+    }
+});

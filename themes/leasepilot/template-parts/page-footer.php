@@ -13,7 +13,7 @@
 if ( get_field( 'show_footer_cta' ) ) : ?>
 <!-- CTA Section -->
 <div class="cta-section cta-section--blue">
-	<div class="main-container">
+	<div class="main-container max-900">
 		<div class="grid-x">
 			<div class="cell large-12 small-12 medium-12">
 				<h4 class="cta-section__title ff-hn"><?php the_field( 'footer_cta_content' ); ?></h4>

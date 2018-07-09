@@ -153,8 +153,8 @@
           @extend .light;
           background-image: none;
           border-radius: unset;
-          width: 215px;
-          height: 42px;
+          min-width: 215px;
+          min-height: 42px;
           box-sizing: border-box;
           box-shadow: none;
         }
