@@ -552,12 +552,8 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 					?>
 				<div class="people-section__links">
 					<?php
-					if( get_sub_field( 'email' ) ){
-						?>
-					<a href="mailto:<?php the_sub_field( 'email' ) ?>">
-						<span class="icon-mail" aria-label="Email"></span>
-					</a>
-						<?php
+					if ( get_sub_field( 'email' ) ) {
+						echo do_shortcode( '[email]' . get_sub_field( 'email' ) . '[/email]' );
 					}
 					if( get_sub_field( 'linkedin_url' ) ){
 						?>
