@@ -10,12 +10,14 @@
 ?>
 
 <footer class="footer">
-	<div class="footer-container">
-		<div id="footer-widgets" class="grid-x grid-margin-x">
+	<div class="footer-container footer-container--widgets">
+		<div id="footer-widgets" class="footer-widgets">
 			<?php for ($i = 1; $i <= 6 ; $i++): ?>
-			<div id="footer-widget-<?php echo $i; ?>" class="footer-menu small-12 medium-3 large-2 cell">
-					<?php if ( is_active_sidebar( 'footer-widget-' . $i ) ) { dynamic_sidebar( 'footer-widget-' . $i ); } ?>
+			<?php if( is_active_sidebar( 'footer-widget-'.$i) ): ?>
+			<div id="footer-widget-<?php echo $i; ?>" class="footer-menu">
+					<?php dynamic_sidebar( 'footer-widget-' . $i ); ?>
 			</div>
+			<?php endif; ?>
 			<?php endfor; ?>
 		</div>
 	</div>

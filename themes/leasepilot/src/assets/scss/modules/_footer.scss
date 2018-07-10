@@ -6,10 +6,10 @@
     padding: 35px 0 39px;
   }
   @include breakpoint(medium) {
-    padding: 85px 0 96px;
+    padding: 45px 0 96px;
   }
   #footer-widgets {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
   .site-logo {
     @include breakpoint(mobile down) {
@@ -65,8 +65,8 @@
       padding: 0;
       font-size: 17px;
       line-height: 1.33;
-      color: $footer-menu-color;
-      font-weight: bold;
+      color: $primary-color;
+      font-weight: 400;
       margin-bottom: 15px;
     }
     .is-active>a {
@@ -77,6 +77,10 @@
 
 .footer-container {
   @include xy-grid-container;
+  &--widgets {
+    border-bottom: 1px solid RGBA(97, 106, 101, 1.00);
+    margin-bottom: 30px;
+  }
 }
 
 .footer-grid {
@@ -92,5 +96,16 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+}
+
+.footer-widgets {
+  @include breakpoint(medium){
+    display: table;
+    margin: 0 auto;
+    > * {
+      display: table-cell;
+      padding: 0 30px;
+    }
   }
 }

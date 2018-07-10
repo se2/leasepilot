@@ -67,7 +67,31 @@ if ( have_rows( 'page_blocks' ) ) {
 				</h2>
 				<p style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_sub_field( 'cta_description' ); ?></p>
 				<?php if ( get_sub_field( 'hubspot_form_popup' ) ) : ?>
-				<a class="button button__primary mb0" href="#!" data-open="request-demo"><?php the_sub_field( 'cta_button_title' ); ?></a>
+					<?php $modal_id = 'request-demo'; ?>
+					<?php if( ($code = get_sub_field( 'hubspot_form_code' )) ) : ?>
+						<?php $modal_id = 'cta-modal-'.get_row_index(); ?>
+						<?php $modal_title = get_sub_field( 'hubspot_modal_title' ) ? get_sub_field( 'hubspot_modal_title' ) : get_sub_field( 'cta_button_title' ); ?>
+						<?php add_action( 'wp_footer', function() use ($code, $modal_id, $modal_title){ ?>
+<!-- Known issue if using data-animation-out -->
+<!-- https://github.com/zurb/foundation-sites/issues/10626 -->
+<div class="reveal" id="<?php echo $modal_id ?>" data-reveal style="background-color:#f6f5f5;" data-animation-in="ease-in">
+	<!-- Form Section -->
+	<div class="hubspot-form-reset form-section">
+		<div class="grid-x grid-margin-x form-wrapper">
+			<h3 class="text-center form-title ff-hn secondary-color lighter"><?php echo $modal_title; ?></h3>
+			<div class="cell small-12">
+				<?php echo $code; ?>
+			</div>
+		</div>
+	</div>
+	<!-- /Form Section -->
+	<button class="close-button" data-close aria-label="Close modal" type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+						<?php }); ?>
+					<?php endif; ?>
+				<a class="button button__primary mb0" href="#!" data-open="<?php echo $modal_id ?>"><?php the_sub_field( 'cta_button_title' ); ?></a>
 				<?php else : ?>
 				<a class="button button__primary mb0" href="<?php the_sub_field( 'cta_button_link' ); ?>"><?php the_sub_field( 'cta_button_title' ); ?></a>
 				<?php endif; ?>
@@ -84,7 +108,7 @@ if ( have_rows( 'page_blocks' ) ) {
 <div class="page-block cta-section cta-section--secondary" style="background-color:<?php the_sub_field( 'block_background_color' ); ?>">
 	<div class="main-container">
 		<div class="grid-x">
-			<div class="cell large-12 small-12 medium-12">
+			<div class="cell small-12 medium-10 medium-offset-1">
 				<h3 class="lighter ff-hn cta-section__title" style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_sub_field( 'block_title' ); ?></h3>
 				<p class="mb0 cta-section__content" style="color:<?php the_sub_field( 'text_color' ); ?>"><?php the_sub_field( 'block_content' ); ?></p>
 				<?php if ( get_sub_field( 'cta_button_title' ) ) : ?>
@@ -105,7 +129,7 @@ if ( have_rows( 'page_blocks' ) ) {
 ?>
 <!-- Comparison section -->
 <div class="page-block page-block--compare pos-rel bg-cover section-compare no-overflow first-time" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');">
-	<div class="main-container h100p">
+	<div class="main-container h100p" style="max-width: 900px;">
 		<div class="grid-x pos-rel flex-center-items">
 			<div class="cell small-12 medium-5 medium-offset-1 large-6 large-offset-0 xlarge-4 page-block--compare__left">
 				<h2 class="secondary-color"><?php the_sub_field( 'block_title' ); ?></h2>
@@ -242,7 +266,7 @@ if ( have_rows( 'page_blocks' ) ) {
 			<div class="cell page-block--2-cols--img small-12 medium-5 stack-up <?php echo ( $is_reverse ) ? 'stack-down-medium page-block--2-cols__right' : 'page-block--2-cols__left text-right'; ?>">
 				<img src="<?php the_sub_field( 'cta_image' ); ?>" alt="<?php the_sub_field( 'block_title' ); ?>" class="<?php echo ( 'yes' === get_sub_field( 'image_box_shadow' ) ) ? 'box-shadow' : ''; ?>">
 			</div>
-			<div class="cell small-12 medium-7 stack-down <?php echo ( $is_reverse ) ? 'stack-up-medium' : 'page-block--2-cols__right'; ?>">
+			<div class="cell small-12 medium-7 large-offset-1 large-6 stack-down <?php echo ( $is_reverse ) ? 'stack-up-medium' : 'page-block--2-cols__right'; ?>">
 				<h3 style="color:<?php the_sub_field( 'text_color' ); ?>;" class="ff-hn lighter page-block--2-cols__title"><?php the_sub_field( 'block_title' ); ?></h3>
 				<p style="color:<?php the_sub_field( 'text_color' ); ?>;"><?php the_sub_field( 'block_subtitle' ); ?></p>
 				<?php if ( 'image_content' === get_sub_field( 'layout' ) ) : ?>
@@ -254,11 +278,11 @@ if ( have_rows( 'page_blocks' ) ) {
 				<?php endif; ?>
 			</div>
 			<?php else : ?>
-			<div class="cell small-12 medium-8 stack-down <?php echo ( $is_reverse ) ? 'stack-down-medium' : ''; ?>">
+			<div class="cell small-12 medium-7 large-6 stack-down <?php echo ( $is_reverse ) ? 'stack-down-medium' : ''; ?>">
 				<h3 style="color:<?php the_sub_field( 'text_color' ); ?>;" class="ff-hn lighter page-block--2-cols__title"><?php the_sub_field( 'block_title' ); ?></h3>
 				<p style="color:<?php the_sub_field( 'text_color' ); ?>;"><?php the_sub_field( 'block_subtitle' ); ?></p>
 			</div>
-			<div class="cell small-12 medium-4 stack-down <?php echo ( $is_reverse ) ? 'stack-up-medium' : 'page-block--2-cols__right text-center'; ?>">
+			<div class="cell small-12 medium-5 large-6 stack-down <?php echo ( $is_reverse ) ? 'stack-up-medium' : 'page-block--2-cols__right text-center'; ?>">
 				<?php if ( get_sub_field( 'hubspot_form_popup' ) ) : ?>
 				<a class="button button__primary mb0" href="#!" data-open="request-demo"><?php the_sub_field( 'cta_title' ); ?></a>
 				<?php else : ?>
@@ -284,7 +308,7 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 	<div class="h100p inner-div-bg bg-contain" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');"></div>
 	<div class="main-container h100p pos-rel">
 		<div class="grid-x h100p">
-			<div class="cell small-12 medium-7 large-7 xlarge-8">
+			<div class="cell small-12 medium-7 large-7 xlarge-6">
 				<h3 class="secondary-color"><?php the_sub_field( 'block_title' ); ?> <span class="lighter ff-hn"><?php the_sub_field( 'block_subtitle' ); ?></span></h3>
 				<p class="secondary-color"><?php the_sub_field( 'block_description' ); ?></p>
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>
@@ -443,14 +467,23 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 				break;
 			case 'people_block':
 				?>
-<div class="page-block">
+<div class="page-block page-block--people">
 	<div class="main-container">
+		<?php
+		if( get_sub_field( 'block_title') ) {
+			?>
+		<h3 class="ff-hn page-block__title">
+			<?php the_sub_field( 'block_title' ); ?>
+		</h3>
+			<?php
+		}
+		?>
 		<div class="grid-x grid-margin-x people-section">
 			<?php
 			while ( have_rows( 'people' ) ) :
 				the_row();
 			?>
-			<div class="cell small-12 medium-4 large-4 people-section__person">
+			<div class="cell small-12 medium-4 large-3 people-section__person">
 				<div class="people-section__avatar" style="background-image:url('<?php the_sub_field( 'avatar' ); ?>');"></div>
 				<h3 class="people-section__name">
 					<span class="ff-cd">
@@ -462,6 +495,29 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 					<span class="ff-hn lighter"><?php the_sub_field( 'last_name' ); ?></span>
 				</h3>
 				<h6 class="people-section__position primary-color bold ff-hn"><?php the_sub_field( 'position' ); ?></h6>
+				<?php if( get_sub_field( 'linkedin_url' ) || get_sub_field( 'email' ) ){
+					?>
+				<div class="people-section__links">
+					<?php
+					if( get_sub_field( 'email' ) ){
+						?>
+					<a href="mailto:<?php the_sub_field( 'email' ) ?>">
+						<span class="icon-mail" aria-label="Email"></span>
+					</a>
+						<?php
+					}
+					if( get_sub_field( 'linkedin_url' ) ){
+						?>
+					<a href="<?php the_sub_field( 'linkedin_url') ?>" target="_blank">
+						<span class="icon-linkedin" aria-label="LinkedIn"></span>
+					</a>
+						<?php
+					}
+					?>
+				</div>
+					<?php
+				}
+				?>
 			</div>
 			<?php endwhile; ?>
 		</div>

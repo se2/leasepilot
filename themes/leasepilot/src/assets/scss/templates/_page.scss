@@ -293,6 +293,16 @@ aside.sidebar {
   }
 }
 
+.page-block--people {
+
+  .page-block__title {
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 1em;
+    letter-spacing: 0.01em;
+    font-weight: 300;
+  }
+}
 .people-section {
   &__person {
     @include breakpoint(small) {
@@ -318,5 +328,11 @@ aside.sidebar {
     font-size: 18px;
     line-height: 1;
     margin-bottom: 0;
+  }
+  &__links{
+    margin-top: 0.666em;
+    > a {
+      color: #9c9da0;
+    }
   }
 }

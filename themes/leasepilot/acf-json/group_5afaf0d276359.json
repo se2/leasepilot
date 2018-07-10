@@ -383,9 +383,63 @@
                             },
                             "message": "",
                             "default_value": 0,
-                            "ui": 0,
+                            "ui": 1,
                             "ui_on_text": "",
                             "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5b3f8753c658f",
+                            "label": "Hubspot Form Code",
+                            "name": "hubspot_form_code",
+                            "type": "textarea",
+                            "instructions": "Leave this empty to use the global \"Request a Demo\" form.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b2d41b604b91",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_5b3f8c3ad4fda",
+                            "label": "Hubspot Modal Title",
+                            "name": "hubspot_modal_title",
+                            "type": "text",
+                            "instructions": "This will be used for the modal title if using custom Hubspot Code",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5b2d41b604b91",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         },
                         {
                             "key": "field_5afaf5217811b",
@@ -2052,6 +2106,25 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_5b3a6c2f44724",
+                            "label": "Block Title",
+                            "name": "block_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5b32652dbf6fa",
                             "label": "People",
                             "name": "people",
@@ -2064,10 +2137,10 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "collapsed": "",
+                            "collapsed": "field_5b32653ebf6fb",
                             "min": 0,
                             "max": 0,
-                            "layout": "table",
+                            "layout": "block",
                             "button_label": "Add person",
                             "sub_fields": [
                                 {
@@ -2103,26 +2176,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_5b326559bf6fd",
-                                    "label": "Name Separator",
-                                    "name": "name_separator",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
+                                        "width": "40",
                                         "class": "",
                                         "id": ""
                                     },
@@ -2141,7 +2195,26 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "40",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5b326559bf6fd",
+                                    "label": "Name Separator",
+                                    "name": "name_separator",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "20",
                                         "class": "",
                                         "id": ""
                                     },
@@ -2179,7 +2252,7 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "50",
                                         "class": "",
                                         "id": ""
                                     },
@@ -2188,6 +2261,24 @@
                                     "prepend": "",
                                     "append": "",
                                     "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5b3a6e510ff72",
+                                    "label": "Email",
+                                    "name": "email",
+                                    "type": "email",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
                                 }
                             ]
                         }
@@ -2218,7 +2309,7 @@
             {
                 "param": "post_taxonomy",
                 "operator": "==",
-                "value": "category:uncategorized"
+                "value": "resource-category:case-study"
             }
         ]
     ],
@@ -2230,5 +2321,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1530192158
+    "modified": 1530891399
 }

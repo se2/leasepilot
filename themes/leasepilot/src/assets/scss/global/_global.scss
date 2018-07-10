@@ -201,6 +201,10 @@ a.secondary-color {
   text-align: right;
 }
 
+body .max-900 {
+    max-width: rem-calc(900);
+}
+
 .fz-30 {
   line-height: 1.2;
   @include breakpoint(small) {
