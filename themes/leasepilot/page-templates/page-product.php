@@ -31,28 +31,27 @@ while ( have_posts() ) :
 		while ( have_rows( 'product_content' ) ) :
 			$is_right = ( 0 === ( $index % 2 ) );
 			the_row();
+			$mobile_img  = get_sub_field( 'mobile_image' ) ? get_sub_field( 'mobile_image' ) : get_sub_field( 'image' );
 	?>
-	<div class="page-block page-block--animated page-block--animated--none pos-rel no-overflow" <?php echo ( $is_right ) ? ' style="background-color:#f6f5f5;"' : ''; ?>>
+
+	<div class="page-block page-block--animated pos-rel animated--disable <?php echo ( $is_right ) ? 'page-block--animated--right' : ''; ?>" <?php echo ( $is_right ) ? ' style="background-color:#f6f5f5;"' : ''; ?>>
+		<div class="h100p inner-div-bg bg-contain" style="background-image:url('<?php the_sub_field( 'image' ); ?>');"></div>
 		<div class="main-container h100p pos-rel">
-			<div class="grid-x grid-margin-x h100p">
-				<?php if ( $is_right ) : ?>
-				<div class="cell small-12 medium-6 large-5 pos-rel stack-up">
-					<img src="<?php the_sub_field( 'image' ); ?>" alt="" class="product-image box-shadow product-image--left">
-				</div>
-				<?php endif; ?>
-				<div class="cell small-12 medium-6 large-6 stack-down <?php echo ( $is_right ) ? 'large-offset-1 text-right' : ''; ?>">
-					<h3 class="secondary-color"><?php the_sub_field( 'title' ); ?><br><span class="lighter ff-hn"><?php the_sub_field( 'subtitle' ); ?></span></h3>
-					<?php the_sub_field( 'content' ); ?>
+			<div class="grid-x h100p">
+				<div class="cell small-12 medium-9 large-7 xlarge-6">
+					<h3 class="secondary-color"><?php the_sub_field( 'title' ); ?> <span class="lighter ff-hn"><?php the_sub_field( 'subtitle' ); ?></span></h3>
+					<p class="secondary-color"><?php the_sub_field( 'content' ); ?></p>
+					<?php if ( get_sub_field( 'cta_button_title' ) && get_sub_field( 'cta_button_link' ) ) : ?>
 					<a href="<?php the_sub_field( 'cta_button_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_button_title' ); ?></a>
+					<?php endif; ?>
 				</div>
-				<?php if ( ! $is_right ) : ?>
-				<div class="cell small-12 medium-6 large-5 large-offset-1 pos-rel stack-up">
-					<img src="<?php the_sub_field( 'image' ); ?>" alt="" class="product-image box-shadow">
-				</div>
-				<?php endif; ?>
 			</div>
 		</div>
+		<?php if ( $mobile_img ) : ?>
+		<img class="hide-for-medium hide-for-medium-up animated-mobile-img" src="<?php echo esc_attr( $mobile_img ); ?>" alt="<?php echo strip_tags( get_sub_field( 'title' ) ); ?>">
+		<?php endif; ?>
 	</div>
+
 	<?php
 			$index++;
 		endwhile;

@@ -3,9 +3,6 @@
     &__person {
       @include breakpoint(small) {
         margin-bottom: 36px;
-        &:last-child {
-          margin-bottom: 0;
-        }
       }
     }
     &__avatar {

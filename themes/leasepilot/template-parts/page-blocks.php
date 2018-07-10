@@ -242,10 +242,12 @@ if ( have_rows( 'page_blocks' ) ) {
 					$layout         = ( '2col' === $post['post_layout'] ) ? 'small-12 mobile-12 medium-6 featured' : 'small-12 mobile-6 medium-3';
 			?>
 			<div class="cell no-overflow pos-rel h100p <?php echo esc_attr( $layout ); ?>">
-				<div class="bg-cover grayscale bg-image" style="background-image:url('<?php echo esc_attr( $post_thumbnail ); ?>');"></div>
-				<div class="blue-overlay"></div>
-				<p><a class="white-color bold" href="<?php the_permalink( $post_obj->ID ); ?>"><?php echo esc_html( $post_obj->post_title ); ?> »</a></p>
-				<div class="gradient-overlay"></div>
+				<a class="white-color bold" href="<?php the_permalink( $post_obj->ID ); ?>">
+					<div class="bg-cover grayscale bg-image" style="background-image:url('<?php echo esc_attr( $post_thumbnail ); ?>');"></div>
+					<div class="blue-overlay"></div>
+					<p><?php echo esc_html( $post_obj->post_title ); ?> »</p>
+					<div class="gradient-overlay"></div>
+				</a>
 			</div>
 			<?php endforeach; ?>
 			<?php endif; ?>
@@ -308,10 +310,12 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 	<div class="h100p inner-div-bg bg-contain" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');"></div>
 	<div class="main-container h100p pos-rel">
 		<div class="grid-x h100p">
-			<div class="cell small-12 medium-7 large-7 xlarge-6">
+			<div class="cell small-12 medium-9 large-7 xlarge-6">
 				<h3 class="secondary-color"><?php the_sub_field( 'block_title' ); ?> <span class="lighter ff-hn"><?php the_sub_field( 'block_subtitle' ); ?></span></h3>
 				<p class="secondary-color"><?php the_sub_field( 'block_description' ); ?></p>
+				<?php if ( get_sub_field( 'cta_link' ) && get_sub_field( 'cta_title' ) ) : ?>
 				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
@@ -467,7 +471,12 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 				break;
 			case 'people_block':
 				?>
+<!-- People Block -->
 <div class="page-block page-block--people">
+	<?php
+	$founders = 2;
+	$index    = 0;
+	?>
 	<div class="main-container">
 		<?php
 		if( get_sub_field( 'block_title') ) {
@@ -478,9 +487,53 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 			<?php
 		}
 		?>
-		<div class="grid-x grid-margin-x people-section">
+		<div class="grid-x grid-margin-x people-section grid-centered">
+			<?php
+			while ( have_rows( 'people' ) && ( $index < $founders ) ) :
+				the_row();
+			?>
+			<div class="cell small-12 medium-4 large-3 people-section__person">
+				<div class="people-section__avatar" style="background-image:url('<?php the_sub_field( 'avatar' ); ?>');"></div>
+				<h3 class="people-section__name">
+					<span class="ff-cd">
+						<?php
+						the_sub_field( 'first_name' );
+						( get_sub_field( 'name_separator' ) ) ? the_sub_field( 'name_separator' ) : ' ';
+						?>
+					</span>
+					<span class="ff-hn lighter"><?php the_sub_field( 'last_name' ); ?></span>
+				</h3>
+				<h6 class="people-section__position primary-color bold ff-hn"><?php the_sub_field( 'position' ); ?></h6>
+				<?php if( get_sub_field( 'linkedin_url' ) || get_sub_field( 'email' ) ){
+					?>
+				<div class="people-section__links">
+					<?php
+					if ( get_sub_field( 'email' ) ) {
+						echo do_shortcode( '[email]' . get_sub_field( 'email' ) . '[/email]' );
+					}
+					if( get_sub_field( 'linkedin_url' ) ){
+						?>
+					<a href="<?php the_sub_field( 'linkedin_url') ?>" target="_blank">
+						<span class="icon-linkedin" aria-label="LinkedIn"></span>
+					</a>
+						<?php
+					}
+					?>
+				</div>
+					<?php
+				}
+				?>
+			</div>
+			<?php
+				$index++;
+			endwhile;
+			$index = 0;
+			?>
+		</div>
+		<div class="grid-x grid-margin-x people-section grid-centered">
 			<?php
 			while ( have_rows( 'people' ) ) :
+				if ( $index >= $founders ) :
 				the_row();
 			?>
 			<div class="cell small-12 medium-4 large-3 people-section__person">
@@ -519,10 +572,15 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 				}
 				?>
 			</div>
-			<?php endwhile; ?>
+			<?php
+				endif;
+				$index++;
+			endwhile;
+			?>
 		</div>
 	</div>
 </div>
+<!-- /People Block -->
 				<?php
 				break;
 

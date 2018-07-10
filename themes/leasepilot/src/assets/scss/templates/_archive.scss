@@ -337,6 +337,7 @@ img.archive-page-cover {
         font-size: 32px;
       }
       img.animated-mobile-img {
+        margin-top: rem-calc(30);
         margin-bottom: -#{$padding};
       }
       .main-container,
