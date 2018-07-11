@@ -55,6 +55,9 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// Local lottie-web
 		wp_enqueue_script( 'lottie-web', get_template_directory_uri() . '/src/assets/js/lib/lottie-web/build/player/lottie.js', array(), '5.1.18', true );
 
+		// Local YT Background Library
+		wp_enqueue_script( 'jquery-youtube-bg', get_template_directory_uri() . '/src/assets/js/lib/jquery-youtube-background/jquery.youtubebackground.js', array('jquery'), '5.1.18', true );
+
 		// Enqueue jQuery migrate. Uncomment the line below to enable.
 		// phpcs:ignore
 		// wp_enqueue_script( 'jquery-migrate' );

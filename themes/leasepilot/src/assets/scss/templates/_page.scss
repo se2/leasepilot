@@ -49,7 +49,7 @@
     }
   }
   &--video {
-    @include breakpoint(large) {
+    @include breakpoint(xxlarge) {
       background-image: none !important;
     }
   }
@@ -74,13 +74,17 @@
     }
     @include breakpoint(large) {
       top: 75px;
-      left: 60px;
+      left: 100px;
     }
     @include breakpoint(xlarge) {
       top: 14vh;
       &--home {
         top: 6vh;
         transform: none;
+      }
+    }
+    @include breakpoint(1920px) {
+      &--home {
         left: 0;
       }
     }

@@ -273,3 +273,8 @@ $(document).on('click', 'a[href*="#request-demo"]', function(e){
         $t.click();
     }
 });
+
+$('#yt-video').YTPlayer({
+  // fitToBackground: true,
+  videoId: $(this).data('id')
+});

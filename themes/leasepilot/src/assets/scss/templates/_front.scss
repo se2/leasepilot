@@ -45,22 +45,16 @@
   }
   @include breakpoint(mobile down) {
     .page-header {
-      background-position-x: -120px;
+      background-position-x: 0;
     }
   }
   @include breakpoint(414px down) {
     .page-header {
-      background-position-x: -100px;
       &__content {
         h1 {
           font-size: 34px;
         }
       }
-    }
-  }
-  @include breakpoint(376px down) {
-    .page-header {
-      background-position-x: -50px;
     }
   }
   .site-header {
@@ -71,31 +65,83 @@
   }
 }
 
+.yt-wrapper,
 .vimeo-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-	height: 100%;
-	max-height: calc(600px + #{map-get($nav-height, large)});
+  height: 100%;
+  max-height: calc(600px + #{map-get($nav-height, large)});
   z-index: -1;
   pointer-events: none;
-	overflow: hidden;
-	@include breakpoint(2559px) {
-		max-height: calc(800px + #{map-get($nav-height, large)});
-	}
-	@include breakpoint(2880px) {
-		max-height: calc(900px + #{map-get($nav-height, large)});
-	}
+  overflow: hidden;
+  @include breakpoint(2559px) {
+    max-height: calc(800px + #{map-get($nav-height, large)});
+  }
+  @include breakpoint(2880px) {
+    max-height: calc(900px + #{map-get($nav-height, large)});
+  }
 }
 
-.vimeo-wrapper iframe {
-  width: 100vw;
-  height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
-  min-height: 100vh;
-  min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.vimeo-wrapper {
+  iframe {
+    width: 100vw;
+    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+    min-height: 100vh;
+    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+  }
 }
+
+// .ytplayer-container {
+//   position: absolute;
+//   top: 0;
+//   z-index: -1;
+// }
+
+// .loaded .ytplayer-container {
+//   display: block;
+// }
+
+// .loaded .placeholder-image {
+//   opacity: 0;
+// }
+
+// .ytplayer-container {
+//   bottom: 0;
+//   height: 100%;
+//   left: 0;
+//   min-width: 100%;
+//   overflow: hidden;
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   z-index: 3;
+// }
+
+// .placeholder-image {
+//   height: 100%;
+//   left: 0;
+//   min-height: 100%;
+//   min-width: 100%;
+//   position: fixed;
+//   top: 0;
+//   z-index: 1;
+// }
+
+// .ytplayer-shield {
+//   height: 100%;
+//   left: 0;
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+//   z-index: 2;
+// }
+
+// .ytplayer-player {
+//   position: absolute;
+// }

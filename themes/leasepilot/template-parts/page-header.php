@@ -90,6 +90,7 @@ if ( get_field( $prefix . 'background_position', $option ) ) {
 	<!-- poster="<?php // the_field( $prefix . 'background_video_poster', $option ); ?>" -->
 	<?php if ( 'video' === $bg_type ) : ?>
 		<?php if ( 'vimeo' === $video_type ) : ?>
+		<!-- <div class="yt-wrapper show-for-large" id="yt-video" data-id="LSmgKRx5pBo"></div> -->
 		<div class="vimeo-wrapper show-for-large">
 			<iframe src="<?php echo $player_url ?>?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		</div>
