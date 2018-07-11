@@ -48,6 +48,11 @@
       }
     }
   }
+  &--video {
+    @include breakpoint(large) {
+      background-image: none !important;
+    }
+  }
   &__content {
     @include breakpoint(small) {
       top: auto;

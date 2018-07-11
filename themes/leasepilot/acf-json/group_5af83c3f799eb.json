@@ -276,11 +276,11 @@
             "mime_types": ""
         },
         {
-            "key": "field_5af83cef4f986",
-            "label": "Background Video",
-            "name": "background_video",
-            "type": "file",
-            "instructions": "Background video",
+            "key": "field_5b4647371bb4f",
+            "label": "Background Video Type",
+            "name": "background_video_type",
+            "type": "radio",
+            "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
@@ -296,11 +296,80 @@
                 "class": "",
                 "id": ""
             },
+            "choices": {
+                "upload": "Upload",
+                "vimeo": "Vimeo"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "upload",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5af83cef4f986",
+            "label": "Background Video",
+            "name": "background_video",
+            "type": "file",
+            "instructions": "Background video",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5af83c494f983",
+                        "operator": "==",
+                        "value": "video"
+                    },
+                    {
+                        "field": "field_5b4647371bb4f",
+                        "operator": "==",
+                        "value": "upload"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "url",
             "library": "all",
             "min_size": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5b4647791bb51",
+            "label": "Vimeo Player URL",
+            "name": "vimeo_player_url",
+            "type": "text",
+            "instructions": "Vimeo Player URL should have format: https:\/\/player.vimeo.com\/video\/<video_id>",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5af83c494f983",
+                        "operator": "==",
+                        "value": "video"
+                    },
+                    {
+                        "field": "field_5b4647371bb4f",
+                        "operator": "==",
+                        "value": "vimeo"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https:\/\/player.vimeo.com\/video\/76979871",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5afc7907d71fd",
@@ -533,5 +602,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1529690174
+    "modified": 1531332644
 }
