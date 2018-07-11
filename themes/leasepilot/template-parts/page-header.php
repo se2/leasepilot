@@ -57,7 +57,7 @@ switch ( $bg_type ) {
 		$bg = 'background-image:url(' . get_field( $prefix . 'background_image', $option ) . ')';
 		break;
 	case 'video':
-		$bg       = 'background-image:url(' . get_field( $prefix . 'background_video_poster', $option ) . ')';
+		// $bg       = 'background-image:url(' . get_field( $prefix . 'background_video_poster', $option ) . ')';
 		$video_id = (int) substr( wp_parse_url( get_field( $prefix . 'background_video', $option ), PHP_URL_PATH ), 1 );
 		break;
 	default:
@@ -83,7 +83,8 @@ if ( get_field( $prefix . 'background_position', $option ) ) {
 <!-- Page header -->
 <header class="page-header page-header--bg-img <?php echo esc_attr( $thin_header . ' ' . $bg_pos . ' ' . $bg_size ); ?> pos-rel" style="<?php echo esc_attr( $bg ); ?>;">
 	<?php if ( 'video' === $bg_type ) : ?>
-	<video muted autoplay playsinline preload="none" class="fullscreen-bg__video" poster="<?php the_field( $prefix . 'background_video_poster', $option ); ?>">
+	<!-- poster="<?php // the_field( $prefix . 'background_video_poster', $option ); ?>" -->
+	<video muted autoplay playsinline preload="none" class="fullscreen-bg__video">
 		<source src="<?php the_field( $prefix . 'background_video', $option ); ?>" type="video/mp4">
 	</video>
 	<?php endif; ?>
