@@ -120,6 +120,7 @@ img.archive-page-cover {
 
 .cta-section {
   text-align: center;
+  z-index: 2;
   &--blue {
     background-color: $blue;
     color: $secondary-color;

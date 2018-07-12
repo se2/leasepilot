@@ -49,7 +49,7 @@
     }
   }
   &--video {
-    @include breakpoint(xxlarge) {
+    @include breakpoint(large) {
       background-image: none !important;
     }
   }

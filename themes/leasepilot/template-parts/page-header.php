@@ -87,19 +87,23 @@ if ( get_field( $prefix . 'background_position', $option ) ) {
 ?>
 <!-- Page header -->
 <header class="page-header page-header--bg-img <?php echo esc_attr( $thin_header . ' ' . $bg_pos . ' ' . $bg_size ); ?> pos-rel" style="<?php echo esc_attr( $bg ); ?>;">
-	<!-- poster="<?php // the_field( $prefix . 'background_video_poster', $option ); ?>" -->
-	<?php if ( 'video' === $bg_type ) : ?>
-		<?php if ( 'vimeo' === $video_type ) : ?>
-		<!-- <div class="yt-wrapper show-for-large" id="yt-video" data-id="LSmgKRx5pBo"></div> -->
-		<div class="vimeo-wrapper show-for-large">
-			<iframe src="<?php echo $player_url ?>?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-		</div>
-		<?php else : ?>
-		<video muted autoplay playsinline preload="none" class="fullscreen-bg__video show-for-large">
-			<source src="<?php the_field( $prefix . 'background_video', $option ); ?>" type="video/mp4">
-		</video>
-		<?php endif; ?>
-	<?php endif; ?>
+	<?php
+	if ( 'video' === $bg_type ) :
+		if ( 'vimeo' === $video_type ) :
+	?>
+	<div class="vimeo-wrapper show-for-large">
+		<iframe src="<?php echo esc_attr( $player_url ); ?>?background=1&autoplay=1&loop=1&title=0&byline=0&muted=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+	<?php
+		else :
+	?>
+	<video muted autoplay playsinline preload="none" class="fullscreen-bg__video show-for-large">
+		<source src="<?php the_field( $prefix . 'background_video', $option ); ?>" type="video/mp4">
+	</video>
+	<?php
+		endif;
+	endif;
+	?>
 	<div class="main-container pos-rel">
 		<div class="grid-x page-header__content <?php echo ( $is_home ) ? 'page-header__content--home' : ''; ?> <?php echo ( is_single() && ! $is_home ) ? 'page-header__content--singular' : ''; ?>">
 			<div class="cell <?php echo ( ! is_singular( 'post' ) ) ? 'small-9 medium-6 large-5' : 'small-12'; ?>">

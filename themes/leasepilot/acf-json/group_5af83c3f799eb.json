@@ -344,7 +344,7 @@
             "label": "Vimeo Player URL",
             "name": "vimeo_player_url",
             "type": "text",
-            "instructions": "Vimeo Player URL should have format: https:\/\/player.vimeo.com\/video\/<video_id>",
+            "instructions": "Vimeo Player URL should have format: https:\/\/player.vimeo.com\/video\/[video_id]",
             "required": 0,
             "conditional_logic": [
                 [
@@ -602,5 +602,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1531332644
+    "modified": 1531402862
 }
