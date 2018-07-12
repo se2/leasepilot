@@ -269,7 +269,7 @@ body .max-900 {
   line-height: 1;
 }
 
-$margin: 20;
+$margin: 80;
 $step: 1;
 @mixin margin-classes {
   @for $i from 1 through $margin {
@@ -283,19 +283,20 @@ $step: 1;
     }
     .mt#{$i * $step} {
       margin-top: #{$i * $step}px;
-		}
+    }
+    .margin-#{$i * $step} {
+      margin: #{$i * $step}px;
+    }
 		.pull-left-#{$i * $step} {
 			@include breakpoint(large) {
-        margin-right: auto;
 				margin-left: -#{$i * $step}px !important;
 			}
 		}
 		.pull-right-#{$i * $step} {
 			@include breakpoint(large) {
-        margin-left: auto;
 				margin-right: -#{$i * $step}px !important;
 			}
-		}
+    }
   }
 }
 
