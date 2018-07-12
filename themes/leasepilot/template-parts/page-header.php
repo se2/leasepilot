@@ -63,7 +63,8 @@ switch ( $bg_type ) {
 		$thin_header .= ' page-header--video';
 		$bg           = 'background-image:url(' . get_field( $prefix . 'background_video_poster', $option ) . ')';
 		$video_type   = get_field( $prefix . 'background_video_type', $option ) ? get_field( $prefix . 'background_video_type', $option ) : 'upload';
-		$player_url   = get_field( $prefix . 'vimeo_player_url', $option );
+		$vimeo_id     = get_field( $prefix . 'vimeo_video_id', $option );
+		$youtube_id   = get_field( $prefix . 'youtube_video_id', $option );
 		break;
 	default:
 		break;
@@ -92,7 +93,14 @@ if ( get_field( $prefix . 'background_position', $option ) ) {
 		if ( 'vimeo' === $video_type ) :
 	?>
 	<div class="vimeo-wrapper show-for-large">
-		<iframe src="<?php echo esc_attr( $player_url ); ?>?background=1&autoplay=1&loop=1&title=0&byline=0&muted=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<iframe src="https://player.vimeo.com/video/<?php echo esc_attr( $vimeo_id ); ?>?background=1&autoplay=1&loop=1&title=0&byline=0&muted=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+	<?php
+		elseif ( 'youtube' === $video_type ) :
+	?>
+	<div class="yt-bg hide-for-xlarge" style="<?php echo esc_attr( $bg ); ?>;"></div>
+	<div class="vimeo-wrapper show-for-xlarge">
+		<iframe src="https://www.youtube.com/embed/<?php echo esc_attr( $youtube_id ); ?>?autoplay=1&controls=0&loop=1&playlist=<?php echo esc_attr( $youtube_id ); ?>" allow="autoplay; encrypted-media" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
 	<?php
 		else :

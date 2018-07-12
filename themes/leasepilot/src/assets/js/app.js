@@ -274,7 +274,8 @@ $(document).on('click', 'a[href*="#request-demo"]', function(e){
     }
 });
 
-$('#yt-video').YTPlayer({
-  // fitToBackground: true,
-  videoId: $(this).data('id')
-});
+// Temporarily disable
+// $('#yt-video').YTPlayer({
+//   fitToBackground: true,
+//   videoId: $('#yt-video').data('id'),
+// });

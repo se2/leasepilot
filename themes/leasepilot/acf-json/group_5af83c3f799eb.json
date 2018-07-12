@@ -298,7 +298,8 @@
             },
             "choices": {
                 "upload": "Upload",
-                "vimeo": "Vimeo"
+                "vimeo": "Vimeo",
+                "youtube": "YouTube"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -309,7 +310,7 @@
         },
         {
             "key": "field_5af83cef4f986",
-            "label": "Background Video",
+            "label": "Upload Video",
             "name": "background_video",
             "type": "file",
             "instructions": "Background video",
@@ -341,10 +342,10 @@
         },
         {
             "key": "field_5b4647791bb51",
-            "label": "Vimeo Player URL",
-            "name": "vimeo_player_url",
+            "label": "Vimeo Video ID",
+            "name": "vimeo_video_id",
             "type": "text",
-            "instructions": "Vimeo Player URL should have format: https:\/\/player.vimeo.com\/video\/[video_id]",
+            "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
@@ -366,7 +367,39 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "https:\/\/player.vimeo.com\/video\/76979871",
+            "placeholder": 279541302,
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b47626fc0e74",
+            "label": "YouTube Video ID",
+            "name": "youtube_video_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5af83c494f983",
+                        "operator": "==",
+                        "value": "video"
+                    },
+                    {
+                        "field": "field_5b4647371bb4f",
+                        "operator": "==",
+                        "value": "youtube"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "LSmgKRx5pBo",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -602,5 +635,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1531402862
+    "modified": 1531405555
 }
