@@ -287,6 +287,18 @@ $step: 1;
     .margin-#{$i * $step} {
       margin: #{$i * $step}px;
     }
+    .margin-left-#{$i * $step} {
+      margin-left: #{$i * $step}px;
+    }
+    .margin-right-#{$i * $step} {
+      margin-right: #{$i * $step}px;
+    }
+    .margin-top-#{$i * $step} {
+      margin-top: #{$i * $step}px;
+    }
+    .margin-bottom-#{$i * $step} {
+      margin-bottom: #{$i * $step}px;
+    }
 		.pull-left-#{$i * $step} {
 			@include breakpoint(large) {
 				margin-left: -#{$i * $step}px !important;
