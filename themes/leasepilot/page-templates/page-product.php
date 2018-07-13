@@ -32,6 +32,10 @@ while ( have_posts() ) :
 			$is_right = ( 0 === ( $index % 2 ) );
 			the_row();
 			$mobile_img  = get_sub_field( 'mobile_image' ) ? get_sub_field( 'mobile_image' ) : get_sub_field( 'image' );
+			$cta_style   = 'button__cta--dark';
+			if ( get_sub_field( 'cta_button_style' ) ) {
+				$cta_style = get_sub_field( 'cta_button_style' );
+			}
 	?>
 
 	<div class="page-block page-block--animated pos-rel animated--disable <?php echo ( $is_right ) ? 'page-block--animated--right' : ''; ?>" <?php echo ( $is_right ) ? ' style="background-color:#f6f5f5;"' : ''; ?>>
@@ -42,7 +46,7 @@ while ( have_posts() ) :
 					<h3 class="secondary-color"><?php the_sub_field( 'title' ); ?> <span class="lighter ff-hn"><?php the_sub_field( 'subtitle' ); ?></span></h3>
 					<p class="secondary-color"><?php the_sub_field( 'content' ); ?></p>
 					<?php if ( get_sub_field( 'cta_button_title' ) && get_sub_field( 'cta_button_link' ) ) : ?>
-					<a href="<?php the_sub_field( 'cta_button_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_button_title' ); ?></a>
+					<a href="<?php the_sub_field( 'cta_button_link' ); ?>" class="button button__cta <?php echo esc_attr( $cta_style ); ?>"><?php the_sub_field( 'cta_button_title' ); ?></a>
 					<?php endif; ?>
 				</div>
 			</div>

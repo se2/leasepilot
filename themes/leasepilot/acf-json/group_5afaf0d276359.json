@@ -1383,6 +1383,30 @@
                             "return_format": "url"
                         },
                         {
+                            "key": "field_5b48a8dc6d98c",
+                            "label": "CTA Button Style",
+                            "name": "cta_button_style",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "button__cta--dark": "Outline",
+                                "button__cta--fill": "Solid"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "button__cta--dark",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
                             "key": "field_5b05a88bb5a53",
                             "label": "Text Layout",
                             "name": "text_layout",
@@ -1810,6 +1834,30 @@
                                 "id": ""
                             },
                             "return_format": "url"
+                        },
+                        {
+                            "key": "field_5b48ad0783397",
+                            "label": "CTA Button Style",
+                            "name": "cta_button_style",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "button__cta--dark": "Outline",
+                                "button__cta--fill": "Solid"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "button__cta--dark",
+                            "layout": "horizontal",
+                            "return_format": "value"
                         },
                         {
                             "key": "field_5b1012ff700a7",
@@ -2321,5 +2369,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1530891399
+    "modified": 1531489570
 }

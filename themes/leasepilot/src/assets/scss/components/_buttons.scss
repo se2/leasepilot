@@ -34,6 +34,16 @@
         color: white;
       }
     }
+    &--fill {
+      border-color: $secondary-color;
+      background-color: $secondary-color;
+      color: white;
+      &:hover,
+      &:focus {
+        background-color: rgba($color: $secondary-color, $alpha: 0.85);
+        border-color: rgba($color: $secondary-color, $alpha: 0.85);
+      }
+    }
     &--opacity {
       background-color: rgba($color: #eaeaea, $alpha: 0.75);
     }

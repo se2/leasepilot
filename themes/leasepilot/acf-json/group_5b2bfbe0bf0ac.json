@@ -159,6 +159,30 @@
                         "id": ""
                     },
                     "return_format": "url"
+                },
+                {
+                    "key": "field_5b48abdb77f0f",
+                    "label": "CTA Button Style",
+                    "name": "cta_button_style",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "button__cta--dark": "Outline",
+                        "button__cta--fill": "Solid"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "button__cta--dark",
+                    "layout": "horizontal",
+                    "return_format": "value"
                 }
             ]
         }
@@ -180,5 +204,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531232726
+    "modified": 1531489305
 }

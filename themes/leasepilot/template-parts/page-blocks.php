@@ -72,23 +72,22 @@ if ( have_rows( 'page_blocks' ) ) {
 						<?php $modal_id = 'cta-modal-'.get_row_index(); ?>
 						<?php $modal_title = get_sub_field( 'hubspot_modal_title' ) ? get_sub_field( 'hubspot_modal_title' ) : get_sub_field( 'cta_button_title' ); ?>
 						<?php add_action( 'wp_footer', function() use ($code, $modal_id, $modal_title){ ?>
-<!-- Known issue if using data-animation-out -->
-<!-- https://github.com/zurb/foundation-sites/issues/10626 -->
-<div class="reveal" id="<?php echo $modal_id ?>" data-reveal style="background-color:#f6f5f5;" data-animation-in="ease-in">
-	<!-- Form Section -->
-	<div class="hubspot-form-reset form-section">
-		<div class="grid-x grid-margin-x form-wrapper">
-			<h3 class="text-center form-title ff-hn secondary-color lighter"><?php echo $modal_title; ?></h3>
-			<div class="cell small-12">
-				<?php echo $code; ?>
-			</div>
-		</div>
-	</div>
-	<!-- /Form Section -->
-	<button class="close-button" data-close aria-label="Close modal" type="button">
-		<span aria-hidden="true">&times;</span>
-	</button>
-</div>
+						<!-- Form popup -->
+						<div class="reveal" id="<?php echo $modal_id ?>" data-reveal style="background-color:#f6f5f5;" data-animation-in="ease-in">
+							<!-- Form Section -->
+							<div class="hubspot-form-reset form-section">
+								<div class="grid-x grid-margin-x form-wrapper">
+									<h3 class="text-center form-title ff-hn secondary-color lighter"><?php echo $modal_title; ?></h3>
+									<div class="cell small-12">
+										<?php echo $code; ?>
+									</div>
+								</div>
+							</div>
+							<!-- /Form Section -->
+							<button class="close-button" data-close aria-label="Close modal" type="button">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
 						<?php }); ?>
 					<?php endif; ?>
 				<a class="button button__primary mb0" href="#!" data-open="<?php echo $modal_id ?>"><?php the_sub_field( 'cta_button_title' ); ?></a>
@@ -305,6 +304,10 @@ if ( have_rows( 'page_blocks' ) ) {
 $layout      = get_sub_field( 'text_layout' );
 $mobile_img  = get_sub_field( 'mobile_image' ) ? get_sub_field( 'mobile_image' ) : get_sub_field( 'background_image' );
 $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
+$cta_style   = 'button__cta--dark';
+if ( get_sub_field( 'cta_button_style' ) ) {
+	$cta_style = get_sub_field( 'cta_button_style' );
+}
 ?>
 <div class="page-block page-block--animated pos-rel <?php echo ( 'right' === $layout ) ? 'page-block--animated--right' : ''; ?> <?php echo esc_attr( $disable ); ?>" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
 	<div class="h100p inner-div-bg bg-contain" style="background-image:url('<?php the_sub_field( 'background_image' ); ?>');"></div>
@@ -314,7 +317,7 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 				<h3 class="secondary-color"><?php the_sub_field( 'block_title' ); ?> <span class="lighter ff-hn"><?php the_sub_field( 'block_subtitle' ); ?></span></h3>
 				<p class="secondary-color"><?php the_sub_field( 'block_description' ); ?></p>
 				<?php if ( get_sub_field( 'cta_link' ) && get_sub_field( 'cta_title' ) ) : ?>
-				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>
+				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta <?php echo esc_attr( $cta_style ); ?>"><?php the_sub_field( 'cta_title' ); ?></a>
 				<?php endif; ?>
 			</div>
 		</div>
@@ -352,6 +355,10 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 			case 'product_step_block':
 				$layout       = get_sub_field( 'step_layout' );
 				$image_layout = get_sub_field( 'image_layout' );
+				$cta_style    = 'button__cta--dark';
+				if ( get_sub_field( 'cta_button_style' ) ) {
+					$cta_style = get_sub_field( 'cta_button_style' );
+				}
 ?>
 <!-- Step Block -->
 <div class="page-block page-block--animated pos-rel no-overflow product-child" style="background-color:<?php the_sub_field( 'background_color' ); ?>;">
@@ -365,7 +372,7 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 				<h3><?php the_sub_field( 'step_title' ); ?><br><span class="lighter ff-hn"><?php the_sub_field( 'step_subtitle' ); ?></span></h3>
 				<p><?php the_sub_field( 'step_content' ); ?></p>
 				<?php if ( get_sub_field( 'cta_title' ) && get_sub_field( 'cta_link' ) ) : ?>
-				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>
+				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta <?php echo esc_attr( $cta_style ); ?>"><?php the_sub_field( 'cta_title' ); ?></a>
 				<?php endif; ?>
 			</div>
 			<?php else : ?>
@@ -373,7 +380,7 @@ $disable     = get_sub_field( 'faded_background' ) ? '' : 'animated--disable';
 				<h3><?php the_sub_field( 'step_title' ); ?><br><span class="lighter ff-hn"><?php the_sub_field( 'step_subtitle' ); ?></span></h3>
 				<p><?php the_sub_field( 'step_content' ); ?></p>
 				<?php if ( get_sub_field( 'cta_title' ) && get_sub_field( 'cta_link' ) ) : ?>
-				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta button__cta--dark"><?php the_sub_field( 'cta_title' ); ?></a>
+				<a href="<?php the_sub_field( 'cta_link' ); ?>" class="button button__cta <?php echo esc_attr( $cta_style ); ?>"><?php the_sub_field( 'cta_title' ); ?></a>
 				<?php endif; ?>
 			</div>
 			<div class="cell small-12 medium-6 large-5 large-offset-1 pos-rel stack-up">
