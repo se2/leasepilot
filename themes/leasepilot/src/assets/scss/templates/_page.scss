@@ -1,3 +1,12 @@
+h1.page-title {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin-top: 2rem;
+}
+
 .page-header {
   @include breakpoint(small) {
     .main-container {
@@ -288,11 +297,14 @@ aside.sidebar {
 
 .single-post-content {
   h3 {
-    font-size: rem-calc(32);
+    font-size: 1.5rem;
+    margin-top: 1.75rem;
   }
   h4 {
-    font-size: rem-calc(22);
-    font-weight: bold;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-top: 1.25rem;
   }
   img,
   figure {
