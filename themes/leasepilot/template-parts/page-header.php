@@ -138,7 +138,7 @@ if ( get_field( $prefix . 'background_position', $option ) ) {
 		var done = false;
 		function onPlayerStateChange(event) {
 			if (event.data == YT.PlayerState.PLAYING && !done) {
-				setTimeout(pauseVideo, (player.getDuration() * 1000 - 100));
+				setTimeout(pauseVideo, (player.getDuration() * 1000 - 500));
 				done = true;
 			}
 		}
