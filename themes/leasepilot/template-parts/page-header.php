@@ -102,7 +102,7 @@ if ( get_field( $prefix . 'background_position', $option ) ) {
 	<div class="yt-bg hide-for-xlarge" style="<?php echo esc_attr( $bg ); ?>;"></div>
 	<div class="vimeo-wrapper show-for-xlarge">
 		<!-- &loop=1&playlist=<?php // echo esc_attr( $youtube_id ); ?> -->
-		<iframe id="ytplayer" src="https://www.youtube.com/embed/<?php echo esc_attr( $youtube_id ); ?>?modestbranding=1&enablejsapi=1&autoplay=1&controls=0&rel=0" allow="autoplay; encrypted-media" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<iframe id="ytplayer" src="https://www.youtube.com/embed/<?php echo esc_attr( $youtube_id ); ?>?modestbranding=1&enablejsapi=1&autoplay=1&controls=0&rel=0&mute=1" allow="autoplay; encrypted-media" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
 	<script>
 		// Load the IFrame Player API code asynchronously.
@@ -124,7 +124,8 @@ if ( get_field( $prefix . 'background_position', $option ) ) {
 		}
 		// The API will call this function when the video player is ready.
 		function onPlayerReady(event) {
-			// event.target.playVideo();
+			player.setPlaybackQuality('hd1080');
+			player.playVideo();
 		}
 
 		// The API calls this function when the player's state changes.
