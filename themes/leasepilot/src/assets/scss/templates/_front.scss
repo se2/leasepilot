@@ -46,6 +46,9 @@
     .page-header {
       background-position-x: 0;
     }
+    h3 {
+      margin-bottom: rem-calc(16);
+    }
   }
   @include breakpoint(414px down) {
     .page-header {

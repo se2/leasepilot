@@ -19,7 +19,7 @@ while ( have_posts() ) :
 	the_post();
 ?>
 
-<div class="page-wrapper">
+<div class="page-wrapper page-product">
 
 	<?php get_template_part( 'template-parts/page', 'header' ); ?>
 

@@ -116,3 +116,11 @@
     }
   }
 }
+
+.page-product {
+  @include breakpoint(mobile down) {
+    h3 {
+      margin-bottom: rem-calc(16);
+    }
+  }
+}
