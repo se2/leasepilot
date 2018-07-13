@@ -20,6 +20,9 @@ h4,
 h5,
 h6 {
   font-family: "Chronicle Deck", serif;
+  @include breakpoint(medium down) {
+    line-height: 1.15;
+  }
 }
 
 a.secondary-color {
